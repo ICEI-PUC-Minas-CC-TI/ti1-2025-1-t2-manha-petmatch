@@ -2,22 +2,56 @@
 
 Informações básicas do projeto.
 
-* **Projeto:** [NOME DO PROJETO]
-* **Repositório GitHub:** [LINK PARA O REPOSITÓRIO NO GITHUB]
+* **Projeto:** [PetMatch]
+* **Repositório GitHub:** [https://github.com/ICEI-PUC-Minas-CC-TI/ti1-2025-1-t2-manha-petmatch]
 * **Membros da equipe:**
 
-  * [Fulano](https://github.com/fulano) ⚠️ EXEMPLO ⚠️
-  * [Beltrano](https://github.com/beltrano) ⚠️ EXEMPLO ⚠️
-  * [Cicrano](https://github.com/cicrano) ⚠️ EXEMPLO ⚠️
+  * [Artur Telles Martins da Costa](https://github.com/ScorpionCrush) 
+  * [Bernardo Mendes Rocha​](https://github.com/bmrocha00)
+  * [Bruno Mesquita Bicalho​](https://github.com/BrunoBicalho13)
+  * [Maria Fernanda Oliveira Maro](https://github.com/mafemaro)
+  * [Maria Luiza Gomes Beliene Vira​](https://github.com/cicrano)
+  * [Pedro Italo Borges Cardoso​](https://github.com/cicrano)
+  * [Sofia de Abreu Botelho Romualdo​](https://github.com/cicrano)
 
 A documentação do projeto é estruturada da seguinte forma:
 
-1. Introdução
+1. Introdução:
+O projeto tem como proposta a criação de uma plataforma digital (PetMatch) voltada à facilitação do processo de adoção de animais de estimação, promovendo um ambiente confiável, acessível e humano para adotantes e doadores.
+
 2. Contexto
+
+
 3. Product Discovery
+
+Para entender mais as propostas e funcionalidades que a aplicação deveria ter, nosso grupo fez questionamentos que consideramos necessários para dar procedência ao desenvolvimento do projeto.
+Como, por exemplo: identificar a dor, quais problemas deveriam ser resolvidos, para quem estávamos resolvendo esses problemas (usuários e personas) e quais soluções faziam sentido antes de começar a desenvolver.
+A ideia era evitar o desperdício de tempo construindo algo que não atendesse às demandas do usuário.
+O objetivo de todo esse questionamento era entender o que realmente gerava valor para o usuário e ter uma base sólida entre o grupo à respeito do propósito do produto.
+
 4. Product Design
+
+ * [Link do Figma](https://www.figma.com/file/A3Rsq52VzIq736pNw0g71G?node-id=0:1&locale=en&type=design)
+
 5. Metodologia
+
+Etapas da metodologia:
+ * Levantamento de requisitos - Identificamos as necessidades dos usuários por meio de entrevistas, análise de problemas reais enfrentados no processo de adoção e definição das personas.
+
+ *  Product Discovery - Validamos hipóteses e entendemos o valor que o produto deveria entregar, buscando evitar retrabalho e garantir foco no usuário da aplicação.
+
+ * Planejamento - Definimos as funcionalidades do produto e tecnologias a serem utilizadas (Figma, Miro, entre outras).
+
+ * Design de interface - Criamos o protótipo da aplicação utilizando o Figma, pensando na usabilidade e na acessibilidade.
+
+ * Validação - Apresentamos o protótipo para os professores e usuários alvos, afim de coletar feedback e realizar ajustes antes do desenvolvimento, como cor, logo da marca e interface.
+
+A metodologia utilizada ajudou a conduzir o projeto de forma clara e organizada. As etapas de levantamento de requisitos,  product discovery, planejamento, design e validação permitiram entender melhor as necessidades dos usuários e ajustar a solução antes do desenvolvimento, evitando retrabalho e garantindo mais eficiência no processo.
+
+
+
 6. Solução
+
 7. Referências Bibliográficas
 
 ✅ [Documentação de Design Thinking (MIRO)](files/processo-dt.pdf)
