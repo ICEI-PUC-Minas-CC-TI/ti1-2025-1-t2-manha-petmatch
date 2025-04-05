@@ -1,21 +1,23 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19030649&assignment_repo_type=AssignmentRepo)
 # Nome do projeto
+PetMatch
 
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
-
+Nosso aplicativo foi criado para tornar mais fácil e humano o processo de adoção de animais resgatados, tanto para quem quer adotar quanto para ONGs ou pessoas que disponibilizam os pets para adoção. A plataforma oferece recursos como dicas de cuidados, filtros de busca, fotos, e descrições detalhadas sobre a saúde e a personalidade de cada animal. Além disso, conta com um chat direto entre o adotante e quem está oferecendo o animal, e fóruns de discussão onde adotantes podem trocar experiências, dúvidas e conselhos.
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Artur Telles Martins da Costa
+* Bernardo Mendes Rocha​
+* Bruno Mesquita Bicalho​
+* Maria Fernanda Oliveira Maro​
+* Maria Luiza Gomes Beliene Vira​
+* Pedro Italo Borges Cardoso​
+* Sofia de Abreu Botelho Romualdo​
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
-
-
+* Hayala Nepomuceno Curto
+* Luciana Mara Freitas Diniz
+* Wesley Dias Maciel
 
 ## Instruções de utilização 
 
