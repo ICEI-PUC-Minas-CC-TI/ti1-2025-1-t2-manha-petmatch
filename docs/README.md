@@ -16,25 +16,161 @@ Informações básicas do projeto.
 
 A documentação do projeto é estruturada da seguinte forma:
 
-1. Introdução:
-O projeto tem como proposta a criação de uma plataforma digital (PetMatch) voltada à facilitação do processo de adoção de animais de estimação, promovendo um ambiente confiável, acessível e humano para adotantes e doadores.
-
+1. Introdução
 2. Contexto
-
-
 3. Product Discovery
-
-Para entender mais as propostas e funcionalidades que a aplicação deveria ter, nosso grupo fez questionamentos que consideramos necessários para dar procedência ao desenvolvimento do projeto.
-Como, por exemplo: identificar a dor, quais problemas deveriam ser resolvidos, para quem estávamos resolvendo esses problemas (usuários e personas) e quais soluções faziam sentido antes de começar a desenvolver.
-A ideia era evitar o desperdício de tempo construindo algo que não atendesse às demandas do usuário.
-O objetivo de todo esse questionamento era entender o que realmente gerava valor para o usuário e ter uma base sólida entre o grupo à respeito do propósito do produto.
-
 4. Product Design
+5. Metodologia
+6. Solução
+7. Referências Bibliográficas
+
+# Contexto
+
+Detalhes sobre o espaço de problema, os objetivos do projeto, sua justificativa e público-alvo.
+
+## Problema
+
+No Brasil atualmente, a demanda por animais de estimação tem aumentado cada vez mais. No entanto, o processo de adoção ainda é caracterizado por etapas burocráticas e demoradas, o que acaba desestimulando grande parte da população interessada. Enquanto isso, milhares de animais permanecem sem a oportunidade de serem acolhidos.
+
+## Objetivos
+
+O PetMatch foi criado para tornar mais fácil e humano o processo de adoção de animais resgatados,  tanto para quem quer adotar quanto para ONGs ou pessoas que disponibilizam os pets para adoção. A plataforma oferece recursos como dicas de cuidados, filtros de busca, fotos, e descrições detalhadas sobre a saúde e a personalidade de cada animal. Além disso, conta com um chat direto entre o adotante e quem está oferecendo o animal, e fóruns de discussão onde adotantes podem trocar experiências, dúvidas e conselhos.
+
+
+## Justificativa
+
+A motivação para desenvolver o PetMatch está ligada à necessidade de facilitar o processo de adoção de animais abandonados ou vítimas de maus-tratos. Diante das dificuldades enfrentadas por ONGs e pessoas que resgatam animais para assegurar um lar seguro e acolhedor, o site visa ser uma ponte que conecte adotantes e responsáveis, disponibilizando informações claras e acessíveis para ambos os lados do processo.
+
+Recursos como filtros de busca e descrições detalhadas dos animais têm como objetivo tornar a compatibilidade entre adotante e pet mais assertiva, aumentando as chances de uma adoção bem-sucedida. Outras funcionalidades importantes são o chat entre adotante e ONG, além dos fóruns de adotantes, que buscam fortalecer a conexão da comunidade e promover o engajamento entre os usuários.
+
+## Público-Alvo
+
+O PetMatch é voltado para pessoas interessadas em adotar animais de estimação, abrangendo desde adotantes iniciantes até os mais experientes. A plataforma foi pensada para ser acessível a usuários com diferentes níveis de familiaridade com tecnologia e com o processo de adoção.
+
+Para os adotantes iniciantes, a aplicação oferece filtros intuitivos, descrições detalhadas dos animais e uma área com dicas e fóruns, contribuindo para uma escolha mais consciente e auxiliando nos primeiros meses de adaptação. Já para os adotantes experientes, a plataforma torna o processo mais ágil e direto, permitindo o contato facilitado com ONGs ou tutores por meio de chats.
+
+As ONGs e pessoas que desejam disponibilizar animais para adoção também fazem parte do público da plataforma. Para elas, o PetMatch oferece ferramentas que ajudam a identificar o perfil do adotante, incluindo seu estilo de vida e preferências, aumentando a segurança de que o animal será encaminhado para um lar responsável e acolhedor.
+
+# Product Discovery
+
+## Etapa de Entendimento
+![Matriz de Alinhamento-pets-1](https://github.com/user-attachments/assets/fb2b9e48-5481-4094-b91e-79714e04f36f)
+![Stakeholders - pets_1-1](https://github.com/user-attachments/assets/9ee6c09b-c672-4b93-91dc-2f6b7f20b21a)
+
+Entrevistas e Highlights de pesquisa:
+[Entrevista Pets TI 11 (2).pdf](https://github.com/user-attachments/files/19658680/Entrevista.Pets.TI.11.2.pdf)
+ 
+
+## Etapa de Definição
+
+### Personas
+Persona 1(Ana Paula):
+![TI1-Pets (5)-1](https://github.com/user-attachments/assets/503cc8fa-9ad4-4b09-a1ad-1c108754d2d5)
+Persona 2(Joana): 
+![TI1-Pets (6)-1](https://github.com/user-attachments/assets/e97bece3-bf3c-49fb-a676-63cb350cb536)
+Persona 3(Ricardo):
+![TI1-Pets (7)-1](https://github.com/user-attachments/assets/e72ef470-d188-45c9-a401-ec5173bf5124)
+
+# Product Design
+
+Nesse momento, vamos transformar os insights e validações obtidos em soluções tangíveis e utilizáveis. Essa fase envolve a definição de uma proposta de valor, detalhando a prioridade de cada ideia e a consequente criação de wireframes, mockups e protótipos de alta fidelidade, que detalham a interface e a experiência do usuário.
+
+## Histórias de Usuários
+
+Com base na análise das personas foram identificadas as seguintes histórias de usuários:
+
+| EU COMO...                                    | QUERO/PRECISO ...                                            | PARA ...                                                   |
+| --------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| Ana Paula                                     | Uma descrição e foto do pet                                   | Encontrar um pet pra vida                                                |
+| Ricardo                                       | Método seguro e confiável para garantir um dono responsável   | Garantir que os pets resgatados encontrem lares responsáveis             |
+| Joana                                         | Apoio/dicas de como fazer a adaptação do pet pós adoção       | Facilitar a criação responsável do pet como um membro da família         |
+
+## Proposta de Valor
+
+
+##### Proposta para Persona 1(Ana Paula):
+![TI1-Pets (5)-2](https://github.com/user-attachments/assets/31e5eb96-d06d-43fb-bffd-7a7d3d98c090)
+##### Proposta para Persona 2(Joana):
+![TI1-Pets (6)-1](https://github.com/user-attachments/assets/fa216fbb-e8a6-475d-bf3b-2585c0949dd5)
+##### Proposta para Persona 3(Ricardo):
+![TI1-Pets (7)-1](https://github.com/user-attachments/assets/3b5f2140-fd92-4569-9604-b3dc11e08527)
+
+
+## Requisitos
+
+As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
+
+### Requisitos Funcionais
+
+ID     | Descrição do Requisito                                     | Prioridade 
+-------|-----------------------------------------------------------|------------
+RF-001 | Site precisa ter descrição e fotos dos pets                | ALTA       
+RF-002 | O site deve ter filtros para busca dos animais             | ALTA       
+RF-003 | Site deve permitir favoritar animais para fácil busca      | MÉDIA      
+RF-004 | Sistema de doações para auxílio dos adotantes (ração etc.) | MÉDIA      
+RF-005 | Site precisa ter integração com os maps                    | BAIXA
+
+### Requisitos não Funcionais
+## Requisitos Funcionais
+
+ID     | Descrição do Requisito                                     | Prioridade 
+-------|------------------------------------------------------------|------------
+RF-001 | Site precisa ter descrição e fotos dos pets                | ALTA       
+RF-002 | O site deve ter filtros para busca dos animais             | ALTA       
+RF-003 | Site deve permitir favoritar animais para fácil busca      | MÉDIA      
+RF-004 | Sistema de doações para auxílio dos adotantes (ração etc.) | MÉDIA      
+RF-005 | Site precisa ter integração com os maps                    | BAIXA      
+
+## Requisitos Não Funcionais
+
+ID      | Descrição do Requisito                                                               | Prioridade 
+--------|--------------------------------------------------------------------------------------|------------
+RNF-001 | O site deve ser publicado em um ambiente acessível publicamente na Internet         | ALTA       
+RNF-002 | Desenvolvimento em CSS/HTML/JS                                                      | ALTA       
+RNF-003 | Sistema deve funcionar 24h por dia                                                  | ALTA      
+RNF-004 | O site deverá ser responsivo permitindo a visualização em celular de forma adequada | MÉDIA
+
+## Projeto de Interface
+
+Artefatos relacionados com a interface e a interacão do usuário na proposta de solução.
+
+### Wireframes
+
+Estes são os protótipos de telas do sistema.
+![Favoritos PM](https://github.com/user-attachments/assets/c9d7ceaf-5c61-44be-bff9-8af0c40f06f1)
+Tela mostra a parte de favoritos de um usuário
+
+![ExplorarPM1](https://github.com/user-attachments/assets/de3cce99-1642-4560-9c54-cef8fe3fd2d7)
+Tela mostra o explorar de uma conta já logada
+
+![FiltrosPM](https://github.com/user-attachments/assets/24a24de8-1482-43d5-a3b5-17b918355797)
+Tela mostra os filtros de busca do site
+
+![PaginaPrincipalPM1](https://github.com/user-attachments/assets/a32c153c-a0f9-4214-87e0-3341391c58b4)
+Tela mostra a Página Principal do site quando não tem conta
+
+![PrincipaLOGPM1](https://github.com/user-attachments/assets/043085fd-0e57-4f3a-8ebb-eca829e7d0a8)
+Tela mostra a Página Principal do site quando tem conta
+
+![LOGPM](https://github.com/user-attachments/assets/9cb5a785-7596-43e1-86bb-ed98377ce586)
+Tela de Login/Sign up do site
+
+![PetPM](https://github.com/user-attachments/assets/c4b4e1a2-31df-41fe-ab04-1d43d99640da)
+Tela quando se clica no pet
+
+
+### User Flow
+
+![User Flow](https://github.com/user-attachments/assets/45220f02-83af-4c24-bfc7-6e521aa17507)
+User Flow do site
+
+
+
+### Protótipo Interativo
 
  * [Link do Figma](https://www.figma.com/file/A3Rsq52VzIq736pNw0g71G?node-id=0:1&locale=en&type=design)
 
-5. Metodologia
-
+# Metodologia
 Etapas da metodologia:
  * Levantamento de requisitos - Identificamos as necessidades dos usuários por meio de entrevistas, análise de problemas reais enfrentados no processo de adoção e definição das personas.
 
@@ -48,384 +184,25 @@ Etapas da metodologia:
 
 A metodologia utilizada ajudou a conduzir o projeto de forma clara e organizada. As etapas de levantamento de requisitos,  product discovery, planejamento, design e validação permitiram entender melhor as necessidades dos usuários e ajustar a solução antes do desenvolvimento, evitando retrabalho e garantindo mais eficiência no processo.
 
-
-
-6. Solução
-
-7. Referências Bibliográficas
-
-✅ [Documentação de Design Thinking (MIRO)](files/processo-dt.pdf)
-
-# Contexto
-
-Detalhes sobre o espaço de problema, os objetivos do projeto, sua justificativa e público-alvo.
-
-## Problema
-
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
->
-> **Orientações**:
->
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
-
-## Objetivos
-
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
->
-> **Orientações**:
->
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
-
-## Justificativa
-
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
->
-> O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
->
-> **Orientações**:
->
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
-
-## Público-Alvo
-
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Descreva quais são as pessoas que usarão a sua aplicação indicando os diferentes perfis. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
->
-> Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
->
-> **Orientações**:
->
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
-
-# Product Discovery
-
-## Etapa de Entendimento
-
-**✳️✳️✳️ APRESENTE OS ARTEFATOS DA ETAPA  ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nessa etapa, vamos trabalhar com a metdologia de Design Thinking para compreender com maior profundidade o problema a ser tratado. Nesse processo, vamos elaborar:
->
-> * **Matriz CSD**: também conhecida por Matriz de Alinhamento, é uma ferramenta utilizada no Design Thinking para organizar informações e facilitar o processo de tomada de decisão e solução de problemas;
-> * **Mapa de stakeholders**: ferramenta que nos permite compreender o grupo de pessoas e entidades que devemos estudar e conversar para entender mais sobre o problema
-> * **Entrevistas qualitativas**: série de entrevistas qualitativas para validar suposições e solucionar as dúvidas com as principais pessoas envolvidas;
-> * **Highlights de pesquisa**: um compilado do levantamento realizado por meio das entrevistas.
-
-## Etapa de Definição
-
-### Personas
-
-**✳️✳️✳️ APRESENTE OS DIAGRAMAS DE PERSONAS ✳️✳️✳️**
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
->
-> **Orientações**:
->
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Criar personas (Hotmart)](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-
-# Product Design
-
-Nesse momento, vamos transformar os insights e validações obtidos em soluções tangíveis e utilizáveis. Essa fase envolve a definição de uma proposta de valor, detalhando a prioridade de cada ideia e a consequente criação de wireframes, mockups e protótipos de alta fidelidade, que detalham a interface e a experiência do usuário.
-
-## Histórias de Usuários
-
-Com base na análise das personas foram identificadas as seguintes histórias de usuários:
-
-| EU COMO...`PERSONA` | QUERO/PRECISO ...`FUNCIONALIDADE`        | PARA ...`MOTIVO/VALOR`               |
-| --------------------- | ------------------------------------------ | -------------------------------------- |
-| Usuário do sistema   | Registrar minhas tarefas ⚠️ EXEMPLO ⚠️ | Não esquecer de fazê-las             |
-| Administrador         | Alterar permissões ⚠️ EXEMPLO ⚠️      | Permitir que possam administrar contas |
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
->
-> **Orientações**:
->
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-
-## Proposta de Valor
-
-**✳️✳️✳️ APRESENTE O DIAGRAMA DA PROPOSTA DE VALOR PARA CADA PERSONA ✳️✳️✳️**
-
-##### Proposta para Persona XPTO ⚠️ EXEMPLO ⚠️
-
-![Exemplo de proposta de valor](images/exemplo-proposta-valor.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> O mapa da proposta de valor é uma ferramenta que nos ajuda a definir qual tipo de produto ou serviço melhor atende às personas definidas anteriormente.
-
-## Requisitos
-
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
-
-### Requisitos Funcionais
-
-| ID     | Descrição do Requisito                                   | Prioridade |
-| ------ | ---------------------------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre tarefas ⚠️ EXEMPLO ⚠️ | ALTA       |
-| RF-002 | Emitir um relatório de tarefas no mês ⚠️ EXEMPLO ⚠️ | MÉDIA     |
-
-### Requisitos não Funcionais
-
-| ID      | Descrição do Requisito                                                              | Prioridade |
-| ------- | ------------------------------------------------------------------------------------- | ---------- |
-| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel ⚠️ EXEMPLO ⚠️ | MÉDIA     |
-| RNF-002 | Deve processar requisições do usuário em no máximo 3s ⚠️ EXEMPLO ⚠️          | BAIXA      |
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Os requisitos de um projeto são classificados em dois grupos:
->
-> - [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
->   correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
-> - [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
->   correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).
->
-> Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
->
-> **Orientações**:
->
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
-## Projeto de Interface
-
-Artefatos relacionados com a interface e a interacão do usuário na proposta de solução.
-
-### Wireframes
-
-Estes são os protótipos de telas do sistema.
-
-**✳️✳️✳️ COLOQUE AQUI OS PROTÓTIPOS DE TELAS COM TÍTULO E DESCRIÇÃO ✳️✳️✳️**
-
-##### TELA XPTO ⚠️ EXEMPLO ⚠️
-
-Descrição para a tela XPTO
-
-![Exemplo de wireframe](images/exemplo-wireframe.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante ao layout de elementos fundamentais na interface.
->
-> **Orientações**:
->
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-
-### User Flow
-
-**✳️✳️✳️ COLOQUE AQUI O DIAGRAMA DE FLUXO DE TELAS ✳️✳️✳️**
-
-![Exemplo de fluxo de telas](images/exemplo-userflow.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
->
-> **Orientações**:
->
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools &amp; Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
-
-### Protótipo Interativo
-
-**✳️✳️✳️ COLOQUE AQUI UM IFRAME COM SEU PROTÓTIPO INTERATIVO ✳️✳️✳️**
-
-✅ [Protótipo Interativo (MarvelApp)](https://marvelapp.com/prototype/4hd6091?emb=1&iosapp=false&frameless=false)  ⚠️ EXEMPLO ⚠️
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Um protótipo interativo apresenta o projeto de interfaces e permite ao usuário navegar pelas funcionalidades como se estivesse lidando com o software pronto. Utilize as mesmas ferramentas de construção de wireframes para montagem do seu protótipo interativo. Inclua o link para o protótipo interativo do projeto.
-
-# Metodologia
-
-Detalhes sobre a organização do grupo e o ferramental empregado.
-
-## Ferramentas
-
-Relação de ferramentas empregadas pelo grupo durante o projeto.
-
-| Ambiente                    | Plataforma | Link de acesso                                     |
-| --------------------------- | ---------- | -------------------------------------------------- |
-| Processo de Design Thinking | Miro       | https://miro.com/XXXXXXX ⚠️ EXEMPLO ⚠️        |
-| Repositório de código     | GitHub     | https://github.com/XXXXXXX ⚠️ EXEMPLO ⚠️      |
-| Hospedagem do site          | Render     | https://site.render.com/XXXXXXX ⚠️ EXEMPLO ⚠️ |
-| Protótipo Interativo       | MarvelApp  | https://marvelapp.com/XXXXXXX ⚠️ EXEMPLO ⚠️   |
-|                             |            |                                                    |
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Liste as ferramentas empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível. Inclua itens como: (1) Editor de código, (2) )ferramentas de comunicação, (3) )ferramentas de diagramação, (4) )plataformas de hospedagem, entre outras.
-
-## Gerenciamento do Projeto
-
-Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
-
-![Exemplo de Kanban](images/exemplo-kanban.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
->
-> Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
->
-> **Orientações**:
->
-> - [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-> - [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-> - [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
-
-# Solução Implementada
-
-Esta seção apresenta todos os detalhes da solução criada no projeto.
-
-## Vídeo do Projeto
-
-O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. ⚠️ EXEMPLO ⚠️
-
-[![Vídeo do projeto](images/video.png)](https://www.youtube.com/embed/70gGoFyGeqQ)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> O video de apresentação é voltado para que o público externo possa conhecer a solução. O formato é livre, sendo importante que seja apresentado o problema e a solução numa linguagem descomplicada e direta.
->
-> Inclua um link para o vídeo do projeto.
-
-## Funcionalidades
-
-Esta seção apresenta as funcionalidades da solução.Info
-
-##### Funcionalidade 1 - Cadastro de Contatos ⚠️ EXEMPLO ⚠️
-
-Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
-
-* **Estrutura de dados:** [Contatos](#ti_ed_contatos)
-* **Instruções de acesso:**
-  * Abra o site e efetue o login
-  * Acesse o menu principal e escolha a opção Cadastros
-  * Em seguida, escolha a opção Contatos
-* **Tela da funcionalidade**:
-
-![Tela de Funcionalidade](images/exemplo-funcionalidade.png)
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos administradores da solução.
->
-> Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.
-
-## Estruturas de Dados
-
-Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info
-
-##### Estrutura de Dados - Contatos   ⚠️ EXEMPLO ⚠️
-
-Contatos da aplicação
-
-```json
-  {
-    "id": 1,
-    "nome": "Leanne Graham",
-    "cidade": "Belo Horizonte",
-    "categoria": "amigos",
-    "email": "Sincere@april.biz",
-    "telefone": "1-770-736-8031",
-    "website": "hildegard.org"
-  }
-  
-```
-
-##### Estrutura de Dados - Usuários  ⚠️ EXEMPLO ⚠️
-
-Registro dos usuários do sistema utilizados para login e para o perfil do sistema
-
-```json
-  {
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    email: "admin@abc.com",
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    login: "admin",
-    nome: "Administrador do Sistema",
-    senha: "123"
-  }
-```
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração
->
-> Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.
->
-> **Orientações:**
->
-> * [JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
-> * [Trabalhando com JSON - Aprendendo desenvolvimento web | MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON)
-
-## Módulos e APIs
-
-Esta seção apresenta os módulos e APIs utilizados na solução
-
-**Images**:
-
-* Unsplash - [https://unsplash.com/](https://unsplash.com/) ⚠️ EXEMPLO ⚠️
-
-**Fonts:**
-
-* Icons Font Face - [https://fontawesome.com/](https://fontawesome.com/) ⚠️ EXEMPLO ⚠️
-
-**Scripts:**
-
-* jQuery - [http://www.jquery.com/](http://www.jquery.com/) ⚠️ EXEMPLO ⚠️
-* Bootstrap 4 - [http://getbootstrap.com/](http://getbootstrap.com/) ⚠️ EXEMPLO ⚠️
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1) Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas para acesso a dados, serviços, etc.
+Product Owner: Maria Fernanda Oliveira Maro
+
+Scrum Master: Bruno Mesquita Bicalho
+
+Time de Desenvolvimento: 
+Artur Telles Martins da Costa
+Bernardo Mendes Rocha​
+Bruno Mesquita Bicalho
+Maria Fernanda Oliveira Maro​
+Maria Luiza Gomes Beliene Vira
+Pedro Italo Borges Cardoso​
+Sofia de Abreu Botelho Romualdo​
 
 # Referências
 
 As referências utilizadas no trabalho foram:
 
-* SOBRENOME, Nome do autor. Título da obra. 8. ed. Cidade: Editora, 2000. 287 p ⚠️ EXEMPLO ⚠️
+CNN BRASIL. 80% dos pets nos lares brasileiros foram adotados, indica pesquisa. 27 mar. 2024. Disponível em: https://www.cnnbrasil.com.br/nacional/sudeste/sp/80-dos-pets-nos-lares-brasileiros-foram-adotados-indica-pesquisa/. Acesso em: 20 mar. 2025.
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
->
-> **Orientações**:
->
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+EXAME. Maior programa de adoção de pets do Brasil ajudou cães a encontrar um lar. Disponível em: https://exame.com/negocios/maior-programa-de-adocao-de-pets-do-brasil-ajudou-caes-a-encontrar-um-lar/. Acesso em: 20 mar. 2025.
+
+GALILEU. Número de pets nos lares brasileiros cresce 30% durante pandemia. 18 ago. 2021. Disponível em: https://revistagalileu.globo.com/Sociedade/Comportamento/noticia/2021/08/numero-de-pets-nos-lares-brasileiros-cresce-30-durante-pandemia.html. Acesso em: 19 mar. 2025.
