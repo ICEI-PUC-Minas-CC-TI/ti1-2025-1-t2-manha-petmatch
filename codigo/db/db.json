@@ -1,25 +1,148 @@
 {
-  "usuarios": [
+  "pets": [
     {
       "id": 1,
-      "login": "admin",
-      "senha": "123",
-      "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
-    },
-    {
-      "id": 2,
-      "login": "user",
-      "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
-    },
-    {
-      "login": "rommel",
-      "senha": "123",
-      "nome": "Rommel",
-      "email": "rommel@gmail.com",
-      "id": 3
+      "name": "Sonolento",
+      "type": "cachorro",
+      "size": "médio",
+      "animal_sex": "macho",
+      "description": "Muito pimposo",
+      "img_urls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUl9lJf2W1UHVouB9EdCsbS8NeBBGmyZpjiQ&s"],
+      "born_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
+      "breed": "Vira-lata caramelo", 
+      "vaccinated": true,
+      "castrated": true,
+      "available_for_adoption": true,
+      "personality": ["carinhoso", "preguiçoso", "brincalhão"],
+      "current_location": ["-16.311859577141863","-39.59786877024078"],
+      "medical_history": null,
+
+      "created_at": "uuid",
+      "updated_at": "uuid",
+
+      "donor_user_id": 3,
+      "donor_enterprise": null,
+
+      "current_adopter_id": null
     }
-  ]
+  ], 
+
+  "user": [{
+    "id": "uuid",
+    "cpf": "123.123.123-12",
+    "phone_number": "553340028922", 
+    "name": "Ricardão",
+    "description": "Meu nome é rircadão",
+    "born_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
+
+    "img_url": "someoneUrl",
+
+    "email": "someone@gmail.com",
+    "password": "somePassword",
+
+    "address": {
+      "street": "Flower Street",
+      "number": "123",
+      "complement": "Apartment 45",
+      "neighborhood": "Spring Garden",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "30123-456",
+      "country": "Brazil"
+    },
+
+    "coordinates": {
+      "latitude": -19.9245,
+      "longitude": -43.9352
+    },
+
+    "created_at": "createdDate",
+    "updated_at": "newDate"
+  }],
+
+  "donor_user": [
+    {
+      "user_id": "userId",
+      "rate": 5,
+      "adoptions_amount": 23,
+
+      "created_at": "date",
+      "upadated_at": "date"
+    }
+  ],
+  "donor_enterprise": [
+    {
+      "id": "uuid",
+      "cnpj": "123.123.123-12",
+      "phone_number": "553340028922",
+
+      "name": "Petshop do Ricardão",
+      "description": "PetShop do ricardão",
+      "born_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
+      "rate": 5,
+      "adoptions_amount": 23,
+      "img_url": "someoneUrl",
+
+      "email": "someone@gmail.com",
+      "password": "somePassword",
+
+      "address": {
+        "street": "Flower Street",
+        "number": "123",
+        "complement": "Apartment 45",
+        "neighborhood": "Spring Garden",
+        "city": "Belo Horizonte",
+        "state": "MG",
+        "zipCode": "30123-456",
+        "country": "Brazil"
+      },
+      "coordinates": {
+        "latitude": -19.9245,
+        "longitude": -43.9352
+      },
+      "founded_at": "someDate",
+      "created_at": "createdDate",
+      "updated_at": "newDate"
+    }
+  ],
+
+  "adopter_history": [
+    {
+      "id": "uuid",
+      "adopter_id": "uuid",
+      "action": "adoption",
+      "created_at": "someDate"    
+    }
+  ],
+
+  "donor_history": [
+    {
+      "id": "uuid",
+      "donor_id": "uuid",
+      "action": "adoption",
+      "created_at": "someDate"    
+    }
+  ],
+
+  "message_session": [
+    {
+      "id": "someId",
+      "adopter_id": "someAdopterId",
+      "donor_id": "someDonorId",
+      "created_at": "someDate"
+    }
+  ],
+
+  "message": [
+  {
+    "id": "someId",
+    "from_id": "someId", 
+    "to_id": "someId",
+    "message_session_id": "someId",
+    "type": "text / image / url",
+    "content": "someContent / url",
+    "created_at": "someDate",
+    "updated_at": "someDate"
+  }
+  ] 
 }
