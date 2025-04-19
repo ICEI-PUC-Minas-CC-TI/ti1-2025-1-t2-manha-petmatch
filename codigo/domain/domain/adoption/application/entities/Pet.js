@@ -92,30 +92,12 @@ export class Pet extends Entity {
         this.touch();
     }
 
-    get personality() {
-        return this.props.personality;
-    }
-
-    set personality(value) {
-        this.props.personality = value;
-        this.touch();
-    }
-
-    get currentLocation() {
-        return this.props.currentLocation;
-    }
-
-    set currentLocation(value) {
-        this.props.currentLocation = value;
-        this.touch();
-    }
-
     get createdAt() {
         return this.props.createdAt;
     }
 
-    get updated_at() {
-        return this.props.updated_at;
+    get updatedAt() {
+        return this.props.updatedAt;
     }
     // Ver depois
     get imgUrls() {
@@ -151,8 +133,8 @@ export class Pet extends Entity {
         const pet = new Pet({
             ...props,
             createdAt: props.createdAt ?? new Date(),
-
-        }, id)
+            updatedAt: props.updatedAt ?? new Date()
+        }, id);
 
         return pet;
     }

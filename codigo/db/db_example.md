@@ -1,3 +1,8 @@
+# DB EXAMPLE
+
+- This is an db.json example.
+
+```json
 {
   "pets": [
     {
@@ -89,8 +94,8 @@
   "donor": [
     {
       "id": "someId",
-      "donor_type": "enterprise / user",
-      "donor_id": "someId",
+      "type": "enterprise / user",
+      "entity_id": "someId",
 
       "adoption_amount": 0,
 
@@ -178,3 +183,4 @@
     "updated_at": "someDate"
   }]
 }
+```
