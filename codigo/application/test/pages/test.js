@@ -1,15 +1,20 @@
-import { User } from "../../domain/adoption/enterprise/entities/User.js";
+import { RegisterUserUseCase } from "../../domain/adoption/application/use-cases/register-user.js";
 
-const props = {
-    name: "some Name",
-    cpf: "123231",
+const obj = {
+    create: (value) => console.log(value),
+    findByCpf: () => {return null},
+    findByEmail: () => {return null}
 }
 
-const user = User.create(props)
+const newObj = new RegisterUserUseCase(obj)
 
-console.log("Antes:", user.updatedAt)
+const a = await newObj.execute({
+    email: "asdsa",
+    cpf: "11111111111", 
+    password: "sadsada",
+    name: "dssdf", 
+    bornAt: "asda",
+    phoneNumber: "sadasd",
+})
 
-setTimeout(() => {
-    user.name = "jOAO"
-    console.log("Depois:", user.updatedAt)
-}, 10000)
+console.log(a)
