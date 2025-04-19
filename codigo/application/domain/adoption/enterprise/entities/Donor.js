@@ -31,7 +31,6 @@ export class Donor extends Entity {
         return this.props.updatedAt;
     }
 
-
     touch() {
         this.props.updatedAt = new Date();
     }

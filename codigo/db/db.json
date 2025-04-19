@@ -1,5 +1,5 @@
 {
-  "pets": [
+  "pet": [
     {
       "id": 1,
       "name": "Sonolento",
@@ -104,6 +104,7 @@
       "id": "someId",
       "adopter_id": "someId",
       "donor_id": "someId",
+      "pet_id": "someId",
       "created_at": "someDate"
     }
   ],

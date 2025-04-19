@@ -4,11 +4,11 @@
 
 ```json
 {
-  "pets": [
+  "pet": [
     {
       "id": 1,
       "name": "Sonolento",
-      "type": "cachorro / gato/ hamster",
+      "animal_type_id": "someId",
       "size": "médio",
       "animal_sex": "macho",
       "description": "Muito pimposo",
@@ -94,8 +94,8 @@
   "donor": [
     {
       "id": "someId",
-      "type": "enterprise / user",
-      "entity_id": "someId",
+      "donor_type": "enterprise / user",
+      "donor_id": "someId",
 
       "adoption_amount": 0,
 
@@ -109,6 +109,7 @@
       "id": "someId",
       "adopter_id": "someId",
       "donor_id": "someId",
+      "pet_id": "someId",
       "created_at": "someDate"
     }
   ],
