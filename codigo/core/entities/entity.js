@@ -1,5 +1,3 @@
-import {randomUUID} from 'node:crypto'
-
 export class Entity {
     _id;
     props;
@@ -10,7 +8,7 @@ export class Entity {
 
     constructor(props, id) {
         this.props = props;
-        this._id = id ?? randomUUID();
+        this._id = id ?? self.crypto.randomUUID();
     }
 
     equals(entity) {

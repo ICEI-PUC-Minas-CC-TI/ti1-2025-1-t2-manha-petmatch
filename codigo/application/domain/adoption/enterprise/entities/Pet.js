@@ -10,12 +10,12 @@ export class Pet extends Entity {
         this.touch();
     }
 
-    get type() {
-        return this.props.type;
+    get animalTypeId() {
+        return this.props.animalTypeId;
     }
 
-    set type(value) {
-        this.props.type = value;
+    set animalTypeId(value) {
+        this.props.animalTypeId = value;
         this.touch();
     }
 

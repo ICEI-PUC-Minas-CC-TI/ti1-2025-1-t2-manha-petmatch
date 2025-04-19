@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Sonolento",
-      "type": "cachorro / gato/ hamster",
+      "animal_type_id": "someId",
       "size": "médio",
       "animal_sex": "macho",
       "description": "Muito pimposo",

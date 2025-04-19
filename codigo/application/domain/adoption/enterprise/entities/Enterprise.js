@@ -70,7 +70,8 @@ export class Enterprise extends Entity {
     static create(props, id) {
         const enterprise = new Enterprise({
             ...props,
-            create
+            createdAt: props.createdAt ?? new Date(),
+            updatedAt: props.updatedAt ?? new Date()
         }, id);
 
         return enterprise;
