@@ -48,6 +48,17 @@
     }
   ], 
 
+  "favoritePet": {
+    "id": "someId",
+
+    "appraiser_id": "someId",
+    "pet_id": "someId",
+    "value": true,
+
+    "created_at": "someDate",
+    "updated_at": "someDate"
+  },
+
   "address": [{
     "id": "someId",
     "entity_type": "pet / user / enterprise",
