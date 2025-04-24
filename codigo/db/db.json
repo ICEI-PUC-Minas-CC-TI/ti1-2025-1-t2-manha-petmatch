@@ -32,6 +32,7 @@
     {
         "id": "someId",
         "type": "Cachorro",
+        "img_url_reference": "someUrl",
         "created_at": "someDate"
     }
   ],
@@ -188,5 +189,17 @@
 
     "created_at": "someDate",
     "updated_at": "someDate"
-  }]
+  }], 
+
+  "tip": [
+    {
+      "id": "someId",
+      "title": "Titiulo da diga",
+      "type": "Pet / Pessoa",
+      "animal_category_id": "someString",
+      "content": "Conteudo",
+      "img_url": "someurl",
+      "created_at": "someDate"
+    }
+  ]
 }
