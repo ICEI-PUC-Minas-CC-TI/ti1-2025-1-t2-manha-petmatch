@@ -1,6 +1,6 @@
 # DB EXAMPLE
 
-- This is an db.json example.
+- This is an db.json example..s
 
 ```json
 {
@@ -37,6 +37,7 @@
     {
         "id": "someId",
         "type": "Cachorro",
+        "img_url_reference": "someUrl",
         "created_at": "someDate"
     }
   ],
@@ -118,7 +119,7 @@
   "adoption": [
     {
       "id": "someId",
-      "adopter_id": "someId",
+      "user_id": "someId",
       "donor_id": "someId",
       "pet_id": "someId",
       "created_at": "someDate"
@@ -193,6 +194,18 @@
 
     "created_at": "someDate",
     "updated_at": "someDate"
-  }]
+  }], 
+
+  "tip": [
+    {
+      "id": "someId",
+      "title": "Titiulo da dica",
+      "type": "Pet / Pessoa",
+      "animal_category_id": "someString",
+      "content": "Conteudo",
+      "img_url": "someurl",
+      "created_at": "someDate"
+    }
+  ]
 }
 ```
