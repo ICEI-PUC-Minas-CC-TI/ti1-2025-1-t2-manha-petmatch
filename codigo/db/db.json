@@ -1,34 +1,5 @@
 {
-  "pet": [
-    {
-      "id": "someId",
-      "name": "Sonolento",
-      "animal_type_id": "someId",
-      "size": "médio",
-      "animal_sex": "macho",
-      "description": "Muito pimposo",
-      "img_urls": [
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUl9lJf2W1UHVouB9EdCsbS8NeBBGmyZpjiQ&s"
-      ],
-      "born_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
-      "breed": "Vira-lata caramelo",
-      "vaccinated": true,
-      "castrated": true,
-      "available_for_adoption": true,
-      "personality": [
-        "carinhoso",
-        "preguiçoso",
-        "brincalhão"
-      ],
-      "medical_history": null,
-      "current_owner_id": "someId",
-      "created_at": "someDate",
-      "updated_at": "someDate",
-      "donor_user_id": "someId",
-      "donor_enterprise": null,
-      "current_adopter_id": null
-    }
-  ],
+  "pet": [],
   "animal_type": [
     {
       "id": "someId",
@@ -75,12 +46,34 @@
     }
   ],
   "user": [
-    
+    {
+      "id": "uuid",
+      "cpf": "12312312312",
+      "phone_number": "553340028922",
+      "name": "Benadete",
+      "description": "Meu nome é rircadão",
+      "born_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
+      "img_url": "someoneUrl",
+      "email": "someone@gmail.com",
+      "password": "somePassword",
+      "created_at": "someDate",
+      "updated_at": "someDate"
+    }
+  ],
+  "donor": [
+    {
+      "id": "someId",
+      "donor_type": "enterprise / user",
+      "donor_id": "someId",
+      "adoption_amount": 0,
+      "created_at": "someDate",
+      "updated_at": "someDate"
+    }
   ],
   "adoption": [
     {
       "id": "someId",
-      "adopter_id": "someId",
+      "user_id": "someId",
       "donor_id": "someId",
       "pet_id": "someId",
       "created_at": "someDate"

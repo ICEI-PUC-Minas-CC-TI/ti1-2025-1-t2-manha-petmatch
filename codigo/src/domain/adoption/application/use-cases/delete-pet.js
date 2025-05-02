@@ -1,4 +1,4 @@
-import { right, left } from '../../../../../core/Either.js';
+import { left } from '../../../../../core/Either.js';
 import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 import { ResourceNotFoundError } from '../../../../../core/errors/resource-not-found-error.js';
 
@@ -10,10 +10,10 @@ import { ResourceNotFoundError } from '../../../../../core/errors/resource-not-f
     }
 */
 
-export class DeleteUserUseCase {
-    userRepository;
-    constructor(userRepository) {
-        this.userRepository = userRepository;
+export class DeletePetUseCase {
+    petRepository;
+    constructor(petRepository) {
+        this.petRepository = petRepository;
     }
 
     async execute({
@@ -24,13 +24,13 @@ export class DeleteUserUseCase {
             return left(new RequestMissingDataError())
         }
 
-        const {user} = await this.userRepository.findById(id);
-        console.log(user)
+        const {pet} = await this.petRepository.findById(id);
+        console.log(pet)
 
-        if(!user) {
+        if(!pet) {
             return left(new ResourceNotFoundError());
         }
 
-        await this.userRepository.delete(user);
+        await this.petRepository.delete(pet);
     }
 }

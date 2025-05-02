@@ -47,12 +47,12 @@ export class Pet extends Entity {
     }
 
 
-    get born_at() {
-        return this.props.born_at;
+    get bornAt() {
+        return this.props.bornAt;
     }
 
-    set born_at(value) {
-        this.props.born_at = value;
+    set bornAt(value) {
+        this.props.bornAt = value;
         this.touch();
     }
 
@@ -99,6 +99,10 @@ export class Pet extends Entity {
     get updatedAt() {
         return this.props.updatedAt;
     }
+
+    set updatedAt(date) {
+        this.props.updatedAt = date
+    }
     // Ver depois
     get imgUrls() {
         return this.props.imgUrls;
@@ -138,4 +142,4 @@ export class Pet extends Entity {
 
         return pet;
     }
-}z
+}

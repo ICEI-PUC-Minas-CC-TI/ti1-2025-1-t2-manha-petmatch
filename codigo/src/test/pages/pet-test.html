@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Management</title>
+</head>
+<body>
+    <h1>Gerenciamento de Pets</h1>
+
+    <h2>Registrar Pet</h2>
+    <textarea id="petData" placeholder="Insira os dados do pet em JSON"></textarea>
+    <button id="registerPet">Registrar</button>
+
+    <h2>Excluir Pet</h2>
+    <input type="text" id="deleteId" placeholder="ID do pet a excluir">
+    <button id="deletePet">Excluir</button>
+
+    <h2>Obter Pets</h2>
+    <button id="getPets">Listar Pets</button>
+
+    <p id="result"></p>
+
+    <script type="module" src="./pet-test.js"></script>
+</body>
+</html>

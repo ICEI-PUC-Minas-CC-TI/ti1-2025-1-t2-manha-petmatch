@@ -1,4 +1,5 @@
 import { right, left } from '../../../../../core/Either.js';
+import { NotAllowedError } from '../../../../../core/errors/not-allowed-error.js';
 import {Pet} from '../../enterprise/entities/Pet.js'
 import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 
@@ -19,6 +20,8 @@ import { RequestMissingDataError } from '../errors/request-missing-data-error.js
         availableForAdoption: boolean,
         personality: string[]
         donorId: someId,
+        donorType: null,
+        id: someId
     }
 */
 
@@ -42,46 +45,41 @@ export class RegisterPetUseCase {
         availableForAdoption,
         personality,
         donorId,
+        id
     }) {
 
-        console.log("a")
+        if(!id || !donorId) {
+            return left(new RequestMissingDataError())
+        }
 
-        if( !name ||
-            !animalTypeId ||
-            !size ||
-            !animalSex ||
-            !descriptions ||
-            !imgUrls ||
-            !bornAt ||
-            !breed ||
-            !vaccinated ||
-            !castrated ||
-            !availableForAdoption ||
-            !personality ||
-            !donorId) {
-            return left(new RequestMissingDataError());
-        } 
+        const {pet} = await this.petRepository.findById(id);
+        console.log(pet)
 
-        const pet = Pet.create(
-            {
-                name,
-                animalTypeId,
-                size,
-                animalSex,
-                descriptions,
-                imgUrls,
-                bornAt,
-                breed,
-                vaccinated,
-                castrated,
-                availableForAdoption,
-                personality,
-                donorId,
-                
-            }
-        )
+        if(!pet) {
+            return left(new ResourceNotFoundError());
+        }
 
-        await this.petRepository.create(pet);
+        if(pet.donorId != donorId) {
+            return left(new NotAllowedError())
+        }
+
+        pet.name = name;
+        pet.animalTypeId = animalTypeId;
+        pet.size = size;
+        pet.animalSex = animalSex;
+        pet.descriptions = descriptions;
+        pet.imgUrls = imgUrls;
+        pet.bornAt = bornAt;
+        pet.vaccinated = vaccinated;
+        pet.castrated = castrated;
+        pet.availableForAdoption = availableForAdoption;
+        pet.personality = personality;
+        pet.breed = breed;
+
+        pet.updatedAt = new Date();
+    
+
+        await this.petRepository.save(pet);
 
         return right({
             pet

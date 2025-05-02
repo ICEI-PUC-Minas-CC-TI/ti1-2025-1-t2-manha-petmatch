@@ -2,7 +2,7 @@ import { CPF } from '../../enterprise/entities/value-objects/cpf.js'
 import { right, left } from '../../../../../core/Either.js';
 import { UserAlredyExistsError } from '../errors/user-already-exists-error.js';
 import {User} from '../../enterprise/entities/User.js'
-import { UserMissingDataError } from '../errors/user-missing-data-error.js';
+import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 
 
 /*
@@ -40,7 +40,7 @@ export class RegisterUserUseCase {
     }) {
 
         if(!email || !cpf || !name || !bornAt || !phoneNumber) {
-            return left(new UserMissingDataError());
+            return left(new RequestMissingDataError());
         } 
 
         const userCpf = CPF.create(cpf)
