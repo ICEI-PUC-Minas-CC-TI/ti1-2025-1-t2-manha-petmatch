@@ -8,6 +8,7 @@ export class JsonPetRepository {
     async create(pet) {
         try {
             const dbPet = JsonPetRepositoryMapper.toJson(pet)
+            console.log(dbPet)
 
             await fetch(this.url, {
                 method: "POST",
@@ -54,6 +55,29 @@ export class JsonPetRepository {
             console.error(err);
         }
     }
+
+    async findPetsByFilters(filters) {
+        try {
+            const response = await fetch(this.url);
+            const jsonFormat = await response.json();
+    
+            const pets = jsonFormat.filter(pet => {
+                return Object.values(pet).some(value => {
+                    if (Array.isArray(value)) {
+                        return value.some(item => item.toLowerCase().includes(filters.toLowerCase()));
+                    } else if (typeof value === "string") {
+                        return value.toLowerCase().includes(filters.toLowerCase());
+                    }
+                    return false;
+                });
+            });
+    
+            return pets;
+        } catch (err) {
+            console.error(err);
+        }
+    }
+    
 
     async save(pet) {
     try {

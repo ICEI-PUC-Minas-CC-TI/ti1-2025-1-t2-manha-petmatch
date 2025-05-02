@@ -7,7 +7,7 @@ export class JsonPetRepositoryMapper {
                 animalTypeId: raw.animal_type_id,
                 size: raw.size,
                 animalSex: raw.animal_sex,
-                descriptions: raw.descriptions,
+                description: raw.description,
                 imgUrls: raw.img_urls,
                 bornAt: raw.born_at,
                 breed: raw.breed,
@@ -16,7 +16,6 @@ export class JsonPetRepositoryMapper {
                 availableForAdoption: raw.available_for_adoption,
                 personality: raw.personality,
                 donorId: raw.donor_id,
-                donorType: raw.donor_type,
                 createdAt: raw.created_at,
                 updatedAt: raw.updated_at
         }, raw.id)
@@ -32,7 +31,7 @@ export class JsonPetRepositoryMapper {
             animal_type_id: pet.animalTypeId,
             size: pet.size,
             animal_sex: pet.animalSex,
-            descriptions: pet.descriptions,
+            description: pet.description,
             img_urls: pet.imgUrls,
             born_at: pet.bornAt,
             breed: pet.breed,
@@ -41,7 +40,6 @@ export class JsonPetRepositoryMapper {
             available_for_adoption: pet.availableForAdoption,
             personality: pet.personality,
             donor_id: pet.donorId,
-            donor_type: pet.donorType,
             created_at: pet.createdAt,
             updated_at: pet.updatedAt
 

@@ -2,6 +2,12 @@ import { RegisterPetUseCase } from "../../domain/adoption/application/use-cases/
 import { JsonPetRepository } from "../../database/repositories/adoption/json-pet-repository.js";
 import { DeletePetUseCase } from "../../domain/adoption/application/use-cases/delete-pet.js";
 import { FetchPetUseCase } from "../../domain/adoption/application/use-cases/fetch-pet.js";
+import { FetchPetByFiterUseCase } from "../../domain/adoption/application/use-cases/fetch-pet-by-filter.js";
+
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+const searchResults = document.getElementById("searchResults");
+
 
 const registerButton = document.getElementById("registerPet");
 const deleteButton = document.getElementById("deletePet");
@@ -14,7 +20,6 @@ const result = document.getElementById("result");
 
 const db = new JsonPetRepository();
 
-// Função para registrar um pet
 async function registerPet() {
     const registerFunction = new RegisterPetUseCase(db);
     try {
@@ -27,7 +32,6 @@ async function registerPet() {
     }
 }
 
-// Função para excluir um pet
 async function deletePet() {
     const deleteFunction = new DeletePetUseCase(db);
     try {
@@ -39,7 +43,6 @@ async function deletePet() {
     }
 }
 
-// Função para obter a lista de pets
 async function getPets() {
     const fetchPetUseCase = new FetchPetUseCase(db);
     try {
@@ -55,6 +58,28 @@ async function getPets() {
     }
 }
 
+async function searchPets() {
+    const searchQuery = searchInput.value.trim();
+
+    if (!searchQuery) {
+        searchResults.innerHTML = "Digite um termo para buscar.";
+        return;
+    }
+
+    try {
+        const fetchPetUseCase = new FetchPetByFiterUseCase(db);
+        const response = await fetchPetUseCase.execute({ search: searchQuery });
+
+        searchResults.innerHTML = JSON.stringify(response, null, 2);
+    } catch (error) {
+        console.error("Erro ao buscar pets:", error);
+        searchResults.innerHTML = "Ocorreu um erro. Verifique o console.";
+    }
+}
+
+searchButton.addEventListener("click", searchPets);
+
+
 registerButton.addEventListener('click', registerPet);
 deleteButton.addEventListener('click', deletePet);
 getPetsButton.addEventListener('click', () => getPets());
@@ -65,7 +90,7 @@ window.addEventListener("load", () => {
         animalTypeId: "dog",
         size: "medium",
         animalSex: "male",
-        descriptions: "Um cão amigável e brincalhão.",
+        description: "Um cão amigável e brincalhão.",
         imgUrls: ["https://example.com/buddy.jpg"],
         bornAt: "2022-03-15",
         breed: ["Golden Retriever"],
@@ -74,6 +99,7 @@ window.addEventListener("load", () => {
         availableForAdoption: true,
         personality: ["brincalhão", "carinhoso"],
         donorId: "12345",
+        availableForAdoption: false,
         id: "67890"
     }, null, 2);
 });

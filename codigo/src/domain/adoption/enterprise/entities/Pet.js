@@ -46,6 +46,13 @@ export class Pet extends Entity {
         this.touch();
     }
 
+    get breed() {
+        return this.props.breed;
+    }
+
+    set breed(breed) {
+        this.props.breed = breed;
+    }
 
     get bornAt() {
         return this.props.bornAt;
@@ -56,12 +63,12 @@ export class Pet extends Entity {
         this.touch();
     }
 
-    get avalaibleForAdoption() {
-        return this.props.avalaibleForAdoption;
+    get availableForAdoption() {
+        return this.props.availableForAdoption;
     }
 
-    set avalaibleForAdoption(value) {
-        this.props.avalaibleForAdoption = value;
+    set availableForAdoption(value) {
+        this.props.availableForAdoption = value;
         this.touch();
     }
 

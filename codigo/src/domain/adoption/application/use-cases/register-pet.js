@@ -33,7 +33,7 @@ export class RegisterPetUseCase {
         animalTypeId,
         size,
         animalSex,
-        descriptions,
+        description,
         imgUrls,
         bornAt,
         breed,
@@ -44,23 +44,25 @@ export class RegisterPetUseCase {
         donorId,
     }) {
 
-        console.log("a")
+        console.log(availableForAdoption)
 
-        if( !name ||
-            !animalTypeId ||
-            !size ||
-            !animalSex ||
-            !descriptions ||
-            !imgUrls ||
-            !bornAt ||
-            !breed ||
-            !vaccinated ||
-            !castrated ||
-            !availableForAdoption ||
-            !personality ||
-            !donorId) {
+        if( name == undefined ||
+            animalTypeId == undefined ||
+            size == undefined ||
+            animalSex == undefined ||
+            description == undefined ||
+            imgUrls == undefined ||
+            bornAt == undefined ||
+            breed == undefined ||
+            vaccinated == undefined ||
+            castrated == undefined ||
+            availableForAdoption == undefined ||
+            personality == undefined ||
+            donorId == undefined) {
             return left(new RequestMissingDataError());
         } 
+
+        console.log(availableForAdoption)
 
         const pet = Pet.create(
             {
@@ -68,7 +70,7 @@ export class RegisterPetUseCase {
                 animalTypeId,
                 size,
                 animalSex,
-                descriptions,
+                description,
                 imgUrls,
                 bornAt,
                 breed,
