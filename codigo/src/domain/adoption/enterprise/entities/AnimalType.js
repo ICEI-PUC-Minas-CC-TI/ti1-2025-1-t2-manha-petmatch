@@ -1,8 +1,16 @@
 import {Entity} from "../../../../../core/entities/entity.js"
 
-export class AniamlType extends Entity {
+export class AnimalType extends Entity {
     get type() {
         return this.props.type;
+    }
+
+    get imgUrlReference() {
+        return this.props.imgUrlReference;
+    }
+
+    set imgUrlReference(newUrl) {
+        this.props.imgUrlReference = newUrl;
     }
 
     get createdAt() {
@@ -10,7 +18,7 @@ export class AniamlType extends Entity {
     }
 
     static create(props, id) {
-        const adoption = new AniamlType({
+        const adoption = new AnimalType({
             ...props,
             createdAt: props.createdAt ?? new Date(),
         }, id);

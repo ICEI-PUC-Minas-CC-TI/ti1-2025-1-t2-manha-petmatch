@@ -1,8 +1,8 @@
-import { RegisterPetUseCase } from "../../domain/adoption/application/use-cases/register-pet.js";
-import { JsonPetRepository } from "../../database/repositories/adoption/json-pet-repository.js";
-import { DeletePetUseCase } from "../../domain/adoption/application/use-cases/delete-pet.js";
-import { FetchPetUseCase } from "../../domain/adoption/application/use-cases/fetch-pet.js";
-import { FetchPetByFiterUseCase } from "../../domain/adoption/application/use-cases/fetch-pet-by-filter.js";
+import { RegisterPetUseCase } from "../../../domain/adoption/application/use-cases/register-pet.js";
+import { JsonPetRepository } from "../../../database/repositories/adoption/json-pet-repository.js";
+import { DeletePetUseCase } from "../../../domain/adoption/application/use-cases/delete-pet.js";
+import { FetchPetUseCase } from "../../../domain/adoption/application/use-cases/fetch-pet.js";
+import { FetchPetByFiterUseCase } from "../../../domain/adoption/application/use-cases/fetch-pet-by-filter.js";
 
 const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");

@@ -1,7 +1,7 @@
 {
   "pet": [
     {
-      "id": "dc0e2113-21ea-40a2-b947-52d314513651",
+      "id": "daf31e0b-886b-40bf-b899-005cece1576d",
       "name": "Buddy",
       "animal_type_id": "dog",
       "size": "medium",
@@ -22,66 +22,46 @@
         "carinhoso"
       ],
       "donor_id": "12345",
-      "created_at": "2025-05-02T11:38:11.968Z",
-      "updated_at": "2025-05-02T11:38:11.968Z"
-    },
-    {
-      "id": "7f8be8a5-0c1f-4f22-aa34-e9bd33fcbab8",
-      "name": "Bernadete",
-      "animal_type_id": "dog",
-      "size": "medium",
-      "animal_sex": "male",
-      "description": "Baiano demaias",
-      "img_urls": [
-        "https://example.com/buddy.jpg"
-      ],
-      "born_at": "2022-03-15",
-      "breed": [
-        "Golden Retriever"
-      ],
-      "vaccinated": true,
-      "castrated": true,
-      "available_for_adoption": false,
-      "personality": [
-        "brincalhão",
-        "carinhoso"
-      ],
-      "donor_id": "12345",
-      "created_at": "2025-05-02T11:38:24.667Z",
-      "updated_at": "2025-05-02T11:38:24.667Z"
-    },
-    {
-      "id": "4377acc7-487e-4c7a-8d3b-1635d9278afe",
-      "name": "A",
-      "animal_type_id": "cat",
-      "size": "medium",
-      "animal_sex": "male",
-      "description": "Um cão amigável e brincalhão.",
-      "img_urls": [
-        "https://example.com/buddy.jpg"
-      ],
-      "born_at": "2022-03-15",
-      "breed": [
-        "Golden Retriever"
-      ],
-      "vaccinated": true,
-      "castrated": true,
-      "available_for_adoption": false,
-      "personality": [
-        "brincalhão",
-        "carinhoso"
-      ],
-      "donor_id": "12345",
-      "created_at": "2025-05-02T11:39:46.540Z",
-      "updated_at": "2025-05-02T11:39:46.540Z"
+      "created_at": "2025-05-02T12:07:43.749Z",
+      "updated_at": "2025-05-02T12:07:43.749Z"
     }
   ],
   "animal_type": [
     {
-      "id": "someId",
+      "id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
       "type": "Cachorro",
       "img_url_reference": "someUrl",
-      "created_at": "someDate"
+      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
+    },
+    {
+      "id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
+      "type": "Gato",
+      "img_url_reference": "someUrl",
+      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
+    },
+    {
+      "id": "22f23a90-b097-4056-81a7-373f7af5f8a2",
+      "type": "Hamster",
+      "img_url_reference": "someUrl",
+      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
+    },
+    {
+      "id": "23485b50-a18d-4a3a-a9f0-6e1002cb0eff",
+      "type": "Coelho",
+      "img_url_reference": "someUrl",
+      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
+    },
+    {
+      "id": "d70ddae5-7cdc-46c9-b03d-62120d5e9215",
+      "type": "Peixe",
+      "img_url_reference": "someUrl",
+      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
+    },
+    {
+      "id": "7422243c-8a72-4998-9bd2-a480652acbbd",
+      "type": "Pássaro",
+      "img_url_reference": "someUrl",
+      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
     }
   ],
   "star_rate": [

@@ -20,7 +20,6 @@
       "available_for_adoption": true,
       "personality": ["carinhoso", "preguiçoso", "brincalhão"],
 
-      "medical_history": null,
       "current_owner_id": "someId",
 
       "created_at": "someDate",
