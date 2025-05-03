@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritar Pets</title>
+</head>
+<body>
+    <h1>Gerenciamento de Pets Favoritos</h1>
+
+    <h2>Favoritar um Pet</h2>
+    <input type="text" id="favoritePetId" placeholder="ID do Pet">
+    <input type="text" id="appraiserId" placeholder="ID do Usuário">
+    <button id="favoritePetButton">Favoritar Pet</button>
+
+    <h2>Listar Pets Favoritos</h2>
+    <input type="text" id="appraiserIdFetch" placeholder="ID do Usuário">
+    <button id="fetchFavoritesButton">Listar Favoritos</button>
+
+    <h2>Desfavoritar um Pet</h2>
+    <input type="text" id="unfavoritePetId" placeholder="ID do Pet Favoritado">
+    <input type="text" id="appraiserIdUnfavorite" placeholder="ID do Usuário">
+    <button id="unfavoritePetButton">Desfavoritar Pet</button>
+
+    <p id="result"></p>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>

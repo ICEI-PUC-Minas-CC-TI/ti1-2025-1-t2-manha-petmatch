@@ -30,7 +30,7 @@ export class JsonPetRepository {
 
             const jsonFormat = await response.json()
 
-            const pet = {pet: JsonPetRepositoryMapper.toDomain(jsonFormat)}
+            const pet = Object.keys(jsonFormat).length === 0 ? {pet: null} : {pet: JsonPetRepositoryMapper.toDomain(jsonFormat)}
 
             return pet
         } catch(err) {

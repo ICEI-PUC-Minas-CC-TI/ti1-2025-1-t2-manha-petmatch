@@ -28,8 +28,9 @@ export class JsonUserRepository {
             const response = await fetch(newUrl);
 
             const jsonFormat = await response.json()
-
-            const user = {user: JsonUserRepositoryMapper.toDomain(jsonFormat)}
+            
+            const user = Object.keys(jsonFormat).length === 0 ? {user: null} : {user: JsonUserRepositoryMapper.toDomain(jsonFormat)}
+            console.log("asads",user)
 
             return user
         } catch(err) {
