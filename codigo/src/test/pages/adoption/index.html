@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Adoção de Pets</title>
+</head>
+<body>
+    <h1>Teste de Adoção de Pets</h1>
+
+    <h2>Registrar Adoção</h2>
+    <label for="userId">ID do Usuário:</label>
+    <input type="text" id="userId">
+    <label for="donorId">ID do Doador:</label>
+    <input type="text" id="donorId">
+    <label for="petId">ID do Pet:</label>
+    <input type="text" id="petId">
+    <button id="adoptPetButton">Adotar Pet</button>
+
+    <h2>Listar Pets Adotados</h2>
+    <label for="userIdFetch">ID do Usuário:</label>
+    <input type="text" id="userIdFetch">
+    <button id="fetchAdoptedPetsButton">Listar Pets Adotados</button>
+    <br>
+    <label for="donorIdFetch">ID do dono:</label>
+    <input type="text" id="donorIdFetch">
+    <button id="fetchAdoptedPetsButtonDonor">Listar Pets Adotados</button>
+
+    <h3>Resultado:</h3>
+    <pre id="result"></pre>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

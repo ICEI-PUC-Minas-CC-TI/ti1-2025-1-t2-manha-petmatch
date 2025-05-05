@@ -1,8 +1,8 @@
 import {Entity} from "../../../../../core/entities/entity.js"
 
 export class Adoption extends Entity {
-    get adopterId() {
-        return this.props.adopterId;
+    get userId() {
+        return this.props.userId;
     }
 
     get donorId() {
@@ -25,4 +25,4 @@ export class Adoption extends Entity {
 
         return adoption;
     }
-}z
+}

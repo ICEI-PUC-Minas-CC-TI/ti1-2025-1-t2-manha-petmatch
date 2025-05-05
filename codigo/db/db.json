@@ -16,12 +16,12 @@
       ],
       "vaccinated": true,
       "castrated": true,
-      "available_for_adoption": false,
+      "available_for_adoption": true,
       "personality": [
         "brincalhão",
         "carinhoso"
       ],
-      "donor_id": "12345",
+      "donor_id": "donorTestId",
       "created_at": "2025-05-02T12:07:43.749Z",
       "updated_at": "2025-05-02T12:07:43.749Z"
     }
@@ -118,7 +118,7 @@
   ],
   "donor": [
     {
-      "id": "someId",
+      "id": "donorTestId",
       "donor_type": "enterprise / user",
       "donor_id": "someId",
       "adoption_amount": 0,
@@ -133,6 +133,13 @@
       "donor_id": "someId",
       "pet_id": "someId",
       "created_at": "someDate"
+    },
+    {
+      "created_at": "2025-05-05T12:09:53.711Z",
+      "id": "f525483c-b905-48ed-89a6-35685ffbc718",
+      "user_id": "userTestId",
+      "donor_id": "donorTestId",
+      "pet_id": "petTest"
     }
   ],
   "enterprise": [
@@ -199,13 +206,196 @@
   ],
   "tip": [
     {
-      "id": "someId",
-      "title": "Titiulo da dica",
-      "type": "Pet / Pessoa",
-      "animal_category_id": "someString",
-      "content": "Conteudo",
+      "id": "b68e3c70-a4e2-4c4d-8b47-376a5f8f2c01",
+      "animal_type_id": "Cachorro",
       "img_url": "someurl",
-      "created_at": "someDate"
+      "created_at": "2025-05-03T14:17:59.909Z",
+      "tips": [
+        {
+          "title": "Qual é a melhor idade para adotar um cachorro?",
+          "content": "Filhotes exigem mais tempo e paciência, enquanto adultos geralmente já têm hábitos formados e podem se adaptar mais facilmente à rotina da casa."
+        },
+        {
+          "title": "O que devo comprar antes de trazer um cachorro para casa?",
+          "content": "Compre cama, comedouro, bebedouro, ração apropriada, coleira com identificação, brinquedos e produtos de higiene."
+        },
+        {
+          "title": "Preciso adestrar meu cachorro?",
+          "content": "Sim, o adestramento básico ajuda no comportamento e convivência, além de fortalecer o vínculo entre tutor e pet."
+        },
+        {
+          "title": "Cachorros precisam de companhia constante?",
+          "content": "A maioria sim. Eles são animais sociais e podem desenvolver ansiedade se ficarem muito tempo sozinhos."
+        },
+        {
+          "title": "Com que frequência devo levar ao veterinário?",
+          "content": "Consultas anuais são recomendadas, além de visitas extras em caso de sintomas anormais."
+        },
+        {
+          "title": "É obrigatório vacinar meu cachorro?",
+          "content": "Sim. Vacinas são essenciais para a saúde do animal e de todos ao redor."
+        },
+        {
+          "title": "Qual tipo de alimentação é ideal?",
+          "content": "Rações de qualidade são a base, podendo ser complementadas com orientação veterinária."
+        },
+        {
+          "title": "Posso adotar se moro em apartamento?",
+          "content": "Sim, desde que o cachorro tenha espaço suficiente e passeios diários para gastar energia."
+        },
+        {
+          "title": "Como evitar que ele destrua objetos?",
+          "content": "Dê brinquedos apropriados e estimule atividades físicas e mentais regularmente."
+        },
+        {
+          "title": "Adotar é melhor que comprar?",
+          "content": "Adotar salva vidas e dá uma chance a animais que precisam de um lar."
+        }
+      ]
+    },
+    {
+      "id": "4fbcfd2d-768a-42ad-b82c-1e5f2a176b75",
+      "animal_type_id": "Gato",
+      "img_url": "someurl",
+      "created_at": "2025-05-03T14:17:59.909Z",
+      "tips": [
+        {
+          "title": "Gatos se adaptam bem em apartamentos?",
+          "content": "Sim, desde que o ambiente seja seguro e enriquecido com arranhadores e brinquedos."
+        },
+        {
+          "title": "Gatos precisam de vacinas?",
+          "content": "Sim. Vacinas protegem contra doenças sérias e devem ser aplicadas anualmente."
+        },
+        {
+          "title": "Como montar um ambiente ideal para um gato?",
+          "content": "Proporcione locais para subir, arranhar, esconder e descansar, além de uma caixinha de areia limpa."
+        },
+        {
+          "title": "Gatos são independentes demais?",
+          "content": "Eles são independentes, mas também afetuosos e precisam de atenção e carinho diário."
+        },
+        {
+          "title": "É necessário castrar um gato?",
+          "content": "Sim. A castração previne doenças e comportamentos indesejados como a marcação de território."
+        },
+        {
+          "title": "Posso deixar meu gato sair sozinho?",
+          "content": "Não é recomendado. Gatos soltos estão sujeitos a acidentes, doenças e envenenamento."
+        },
+        {
+          "title": "Gatos se dão bem com crianças?",
+          "content": "Sim, desde que a criança respeite o espaço do animal."
+        },
+        {
+          "title": "Como saber se meu gato está doente?",
+          "content": "Mudança de comportamento, apatia ou alteração no apetite são sinais importantes."
+        },
+        {
+          "title": "Qual o melhor tipo de ração?",
+          "content": "Rações específicas para idade e condição de saúde, recomendadas por veterinários."
+        },
+        {
+          "title": "Como evitar que arranhem móveis?",
+          "content": "Ofereça arranhadores e use atrativos próprios para eles usarem esses objetos."
+        }
+      ]
+    },
+    {
+      "id": "95dc1d2e-8a7a-423b-9d19-f4378bd00d3f",
+      "animal_type_id": "Coelho",
+      "img_url": "someurl",
+      "created_at": "2025-05-03T14:17:59.909Z",
+      "tips": [
+        {
+          "title": "Coelhos podem viver soltos em casa?",
+          "content": "Sim, mas é necessário 'prova de coelho': esconder fios, produtos tóxicos e objetos pequenos."
+        },
+        {
+          "title": "O que coelhos comem?",
+          "content": "Feno é a base, além de ração específica e verduras frescas recomendadas pelo veterinário."
+        },
+        {
+          "title": "Eles precisam de companhia?",
+          "content": "São sociáveis e gostam de companhia, humana ou de outro coelho, se introduzido corretamente."
+        },
+        {
+          "title": "É necessário castrar coelhos?",
+          "content": "Sim. Isso evita doenças e reduz comportamentos agressivos ou territoriais."
+        },
+        {
+          "title": "Coelhos tomam banho?",
+          "content": "Não. Banhos podem ser perigosos. Eles se limpam sozinhos e só precisam de limpeza localizada se necessário."
+        },
+        {
+          "title": "Qual o espaço ideal para um coelho?",
+          "content": "Um cercado espaçoso ou ambiente seguro com liberdade diária para se movimentar."
+        },
+        {
+          "title": "Coelhos são bons para crianças?",
+          "content": "Podem ser, mas requerem cuidados delicados. Crianças devem ser supervisionadas."
+        },
+        {
+          "title": "Eles fazem barulho?",
+          "content": "São silenciosos, mas se comunicam com o corpo e podem emitir sons leves em certas situações."
+        },
+        {
+          "title": "Coelhos roem tudo?",
+          "content": "Sim, por isso brinquedos e madeira segura são importantes para distração e desgaste dentário."
+        },
+        {
+          "title": "Com que frequência visitar o veterinário?",
+          "content": "Ao menos uma vez por ano, além de emergências ou sinais de doença."
+        }
+      ]
+    },
+    {
+      "id": "c23a7de5-1093-45b9-951d-d3b9e9a62c7a",
+      "animal_type_id": "Pássaro",
+      "img_url": "someurl",
+      "created_at": "2025-05-03T14:17:59.909Z",
+      "tips": [
+        {
+          "title": "Qual o melhor tipo de gaiola?",
+          "content": "Espaçosa o suficiente para abrir as asas, com poleiros variados e espaço para voar."
+        },
+        {
+          "title": "Pássaros precisam sair da gaiola?",
+          "content": "Sim. Voos supervisionados fora da gaiola estimulam o bem-estar físico e mental."
+        },
+        {
+          "title": "O que devo oferecer na alimentação?",
+          "content": "Mistura de sementes, frutas, verduras e rações específicas, conforme espécie e orientação veterinária."
+        },
+        {
+          "title": "Eles precisam de companhia?",
+          "content": "Sim. Muitas espécies são sociáveis e se beneficiam da companhia de outros pássaros ou humanos."
+        },
+        {
+          "title": "Como saber se o pássaro está doente?",
+          "content": "Penas eriçadas, apatia, alterações nas fezes ou perda de apetite são sinais preocupantes."
+        },
+        {
+          "title": "Posso ensinar truques ao meu pássaro?",
+          "content": "Sim. Paciência e reforço positivo funcionam muito bem com aves como calopsitas e papagaios."
+        },
+        {
+          "title": "Eles fazem muita sujeira?",
+          "content": "Sim, exigem limpeza frequente da gaiola e do ambiente ao redor."
+        },
+        {
+          "title": "Pássaros precisam de banho?",
+          "content": "Sim. Ofereça um recipiente com água ou borrife levemente para que eles se banhem."
+        },
+        {
+          "title": "É preciso cortar as asas?",
+          "content": "Isso depende. O corte pode ser feito para segurança, mas sempre com orientação de um veterinário."
+        },
+        {
+          "title": "Qual o maior erro com pássaros em casa?",
+          "content": "Falta de estímulo. Eles precisam de brinquedos, interação e enriquecimento ambiental."
+        }
+      ]
     }
   ]
 }
