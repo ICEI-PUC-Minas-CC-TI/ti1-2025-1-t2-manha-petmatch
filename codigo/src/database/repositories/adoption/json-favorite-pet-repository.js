@@ -22,6 +22,22 @@ export class JsonFavoritePetRepository {
         }
     }
 
+    async findByPetId(petId){
+         try{
+            const newUrl = `${this.url}?pet_id=${petId}`
+
+            const response = await fetch(newUrl);
+
+            const jsonFormat = await response.json()
+
+            const favoritePet = jsonFormat.length === 0 ? null : {favoritePet: JsonFavoritePetRepositoryMapper.toDomain(jsonFormat[0])}
+
+            return favoritePet
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
     async findById(id) {
         try{
             const newUrl = `${this.url}/${id}`

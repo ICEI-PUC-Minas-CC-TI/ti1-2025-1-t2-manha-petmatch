@@ -9,7 +9,7 @@ import { RequestMissingDataError } from '../errors/request-missing-data-error.js
     INPUT {
         NOT OPTIONAL
         petId
-        appraiserId
+        userId
     }
 */
 
@@ -23,20 +23,19 @@ export class FavoritePetUseCase {
 
     async execute({
         petId,
-        appraiserId
+        userId
     }) {
-
-        if( petId == undefined || appraiserId == undefined) {
+        if( petId == undefined || userId == undefined) {
             return left(new RequestMissingDataError());
         } 
 
-        const {user} = await this.userRepository.findById(appraiserId);
+        const {user} = await this.userRepository.findById(userId);
 
         if(!user) {
             return left(new ResourceNotFoundError());
         }
         
-        const petAlredyFavorited = await this.favoritePetRepository.findFavoriteByAppraiserAndPet(appraiserId, petId)
+        const petAlredyFavorited = await this.favoritePetRepository.findFavoriteByAppraiserAndPet(userId, petId)
 
 
         if(petAlredyFavorited) {
@@ -44,7 +43,7 @@ export class FavoritePetUseCase {
         }
         const favoritePet = FavoritePet.create({
                 petId,
-                appraiserId
+                userId
             })
 
         await this.favoritePetRepository.create(favoritePet);

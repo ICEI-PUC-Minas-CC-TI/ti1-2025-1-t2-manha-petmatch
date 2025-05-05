@@ -27,7 +27,7 @@ export class UnfavoritePetUseCase {
     }) {
 
 
-        if( petId == undefined || appraiserId == undefined) {
+        if( !petId ||  !appraiserId) {
             return left(new RequestMissingDataError());
         } 
 
@@ -37,7 +37,7 @@ export class UnfavoritePetUseCase {
             return left(new NotAllowedError());
         }
 
-        const {favoritePet} = await this.favoritePetRepository.findById(
+        const {favoritePet} = await this.favoritePetRepository.findByPetId(
            petId
         )
 

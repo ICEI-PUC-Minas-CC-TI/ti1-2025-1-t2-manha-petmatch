@@ -25,7 +25,7 @@ import { RequestMissingDataError } from '../errors/request-missing-data-error.js
     }
 */
 
-export class RegisterPetUseCase {
+export class EditPetUseCase {
     petRepository;
     constructor(petRepository) {
         this.petRepository = petRepository;

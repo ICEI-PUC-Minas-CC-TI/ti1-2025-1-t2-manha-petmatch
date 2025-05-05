@@ -24,6 +24,31 @@
       "donor_id": "donorTestId",
       "created_at": "2025-05-02T12:07:43.749Z",
       "updated_at": "2025-05-02T12:07:43.749Z"
+    },
+    {
+      "id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673",
+      "name": "Vendaval",
+      "animal_type_id": "dog",
+      "size": "medium",
+      "animal_sex": "male",
+      "description": "Um cão Sapeca e brincalhão.",
+      "img_urls": [
+        "https://example.com/buddy.jpg"
+      ],
+      "born_at": "2022-03-15",
+      "breed": [
+        "Golden Retriever"
+      ],
+      "vaccinated": true,
+      "castrated": true,
+      "available_for_adoption": true,
+      "personality": [
+        "brincalhão",
+        "carinhoso"
+      ],
+      "donor_id": "donorTestId",
+      "created_at": "2025-05-05T19:35:54.548Z",
+      "updated_at": "2025-05-05T19:35:54.548Z"
     }
   ],
   "animal_type": [
@@ -76,10 +101,9 @@
   ],
   "favorite_pet": [
     {
-      "id": "0ce39381-40d7-4d4e-a769-fe1e3529525b",
-      "appraiser_id": "userTestId",
+      "id": "a495187e-3fc4-40c1-ad96-fbfdaea61819",
       "pet_id": "petTest",
-      "created_at": "2025-05-03T14:17:59.909Z"
+      "created_at": "2025-05-05T19:53:16.695Z"
     }
   ],
   "address": [

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Funcionalidades de Pets</title>
+</head>
+<body>
+    <h1>Teste de Funcionalidades de Pets</h1>
+
+    <h2>Registrar um Pet</h2>
+    <textarea id="petInfo" placeholder="Insira o JSON do pet"></textarea>
+    <label for="donorIdRegister">ID do Doador:</label>
+    <input type="text" id="donorIdRegister">
+    <button id="registerPetButton">Registrar Pet</button>
+
+    <h2>Buscar Pet por ID</h2>
+    <label for="petId">ID do Pet:</label>
+    <input type="text" id="petId">
+    <button id="getPetButton">Buscar Pet</button>
+
+    <h2>Pets Favoritos</h2>
+    <label for="userIdFetchFavorites">ID do Usuário:</label>
+    <input type="text" id="userIdFetchFavorites">
+    <button id="fetchFavoritePetsButton">Listar Favoritos</button>
+
+
+    <h2>Listar Todos os Pets</h2>
+    <button id="fetchPetsButton">Listar Pets</button>
+
+    <h2>Buscar Pets por Categoria</h2>
+    <label for="searchCategory">Categoria:</label>
+    <input type="text" id="searchCategory">
+    <button id="fetchPetsByCategoryButton">Buscar</button>
+
+    <h2>Favoritar um Pet</h2>
+    <label for="favoritePetId">ID do Pet:</label>
+    <input type="text" id="favoritePetId">
+    <label for="userId">ID do Usuário:</label>
+    <input type="text" id="userId">
+    <button id="favoritePetButton">Favoritar</button>
+
+    <h2>Desfavoritar um Pet</h2>
+    <label for="unfavoritePetId">ID do Pet:</label>
+    <input type="text" id="unfavoritePetId">
+    <label for="userIdUnfavorite">ID do Usuário:</label>
+    <input type="text" id="userIdUnfavorite">
+    <button id="unfavoritePetButton">Desfavoritar</button>
+
+    <h2>Deletar um Pet</h2>
+    <label for="deletePetId">ID do Pet:</label>
+    <input type="text" id="deletePetId">
+    <label for="donorId">ID do Doador:</label>
+    <input type="text" id="donorId">
+    <button id="deletePetButton">Deletar</button>
+
+    <h2>Editar um Pet</h2>
+    <textarea id="editPetData" placeholder="Insira o JSON do pet"></textarea>
+    <label for="donorIdEdit">ID do Doador:</label>
+    <input type="text" id="donorIdEdit">
+    <button id="editPetButton">Editar Pet</button>
+
+    <h3>Resultado:</h3>
+    <pre id="result"></pre>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@ import { right, left } from '../../../../../core/Either.js';
     }
 */
 
-export class FetchPetByFiterUseCase {
+export class FetchPetByFilterUseCase {
     petRepository;
     constructor(petRepository) {
         this.petRepository = petRepository;

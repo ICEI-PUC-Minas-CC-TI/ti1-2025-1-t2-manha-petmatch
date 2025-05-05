@@ -1,4 +1,5 @@
 import { right, left } from '../../../../../core/Either.js';
+import { NotAllowedError } from '../../../../../core/errors/not-allowed-error.js';
 import {Pet} from '../../enterprise/entities/Pet.js'
 import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 
@@ -24,8 +25,10 @@ import { RequestMissingDataError } from '../errors/request-missing-data-error.js
 
 export class RegisterPetUseCase {
     petRepository;
-    constructor(petRepository) {
+    donorRepository;
+    constructor(petRepository, donorRepository) {
         this.petRepository = petRepository;
+        this.donorRepository = donorRepository 
     }
 
     async execute({
@@ -62,7 +65,11 @@ export class RegisterPetUseCase {
             return left(new RequestMissingDataError());
         } 
 
-        console.log(availableForAdoption)
+        const {donor} = await this.donorRepository.findById(donorId)
+
+        if(!donor) {
+            return left(new NotAllowedError());
+        }
 
         const pet = Pet.create(
             {
