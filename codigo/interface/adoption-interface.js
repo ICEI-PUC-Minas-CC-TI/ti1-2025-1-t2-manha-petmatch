@@ -21,7 +21,6 @@ export class AdoptionInterface {
         userId: string,
         petId: string,
         donorId: string,
-
     }
     */
     async registerAdoption({userId, petId, donorId}) {

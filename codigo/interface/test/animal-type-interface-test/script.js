@@ -18,7 +18,7 @@ const animalTypeId = document.getElementById("animalTypeId");
 
 async function getAnimalType() {
     try {
-        const response = await animalTypeManager.getAnimalType(animalTypeId.value);
+        const response = await animalTypeManager.getAnimalType({id: animalTypeId.value});
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         console.error("Erro ao buscar tipo de animal:", error);

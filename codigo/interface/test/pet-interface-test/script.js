@@ -29,10 +29,10 @@ const fetchFavoritePetsButton = document.getElementById("fetchFavoritePetsButton
 
 async function registerPet() {
     try {
-        const response = await petManager.registerPetInterface({
+        const response = await petManager.registerPetInterface({petInfo: {
             ...JSON.parse(petInfo.value),
             donorId: donorIdRegister.value
-        });
+        }});
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao registrar pet.";
@@ -43,7 +43,7 @@ async function registerPet() {
 
 async function fetchFavoritePets() {
     try {
-        const response = await petManager.fetchFavoritePet(userIdFetchFavorites.value);
+        const response = await petManager.fetchFavoritePet({ userId: userIdFetchFavorites.value});
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao listar pets favoritos.";
@@ -53,7 +53,7 @@ async function fetchFavoritePets() {
 
 async function getPet() {
     try {
-        const response = await petManager.getPetById(petId.value);
+        const response = await petManager.getPetById({id: petId.value});
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao buscar pet.";
@@ -71,7 +71,7 @@ async function fetchPets() {
 
 async function fetchPetsByCategory() {
     try {
-        const response = await petManager.fetchPetsByCategory(searchCategory.value);
+        const response = await petManager.fetchPetsByCategory({search: searchCategory.value});
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao buscar pets por categoria.";
@@ -80,7 +80,7 @@ async function fetchPetsByCategory() {
 
 async function favoritePet() {
     try {
-        const response = await petManager.favoritePet(favoritePetId.value, userId.value);
+        const response = await petManager.favoritePet({petId: favoritePetId.value, userId: userId.value});
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao favoritar pet.";
@@ -90,7 +90,7 @@ async function favoritePet() {
 
 async function unfavoritePet() {
     try {
-        const response = await petManager.unfavoritePet(unfavoritePetId.value, userIdUnfavorite.value);
+        const response = await petManager.unfavoritePet({petId: unfavoritePetId.value, userId: userIdUnfavorite.value});
         result.innerHTML = "Pet desfavoritado com sucesso.";
     } catch (error) {
         result.innerHTML = "Erro ao desfavoritar pet.";
@@ -99,7 +99,7 @@ async function unfavoritePet() {
 
 async function deletePet() {
     try {
-        const response = await petManager.deletePet(deletePetId.value, donorId.value);
+        const response = await petManager.deletePet({petId: deletePetId.value, donorId: donorId.value});
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao deletar pet.";
@@ -110,7 +110,7 @@ async function editPet() {
     try {
         const value = JSON.parse(editPetData.value)
 
-        const response = await petManager.editPet(value, value.id, donorIdEdit.value);
+        const response = await petManager.editPet({pet: value, petId: value.id, donorId: donorIdEdit.value});
 
         console.log(response)
         result.innerHTML = JSON.stringify(response, null, 2);

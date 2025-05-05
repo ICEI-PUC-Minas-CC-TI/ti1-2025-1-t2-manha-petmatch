@@ -6,6 +6,13 @@ import { GetAnimalTypeUseCase } from '../src/domain/adoption/application/use-cas
 export class AnimalTypeInterface {
     animalTypeRepository = new JsonAnimalTypeRepository()
  
+       /*
+     
+        OUTPUT {
+            animalTypes: animalType[]
+        }
+        */
+
 
     async fetchAnimalType() {
         const fetchAnimalTypeUseCase = new FetchAnimalTypeUseCase(this.animalTypeRepository)
@@ -20,7 +27,13 @@ export class AnimalTypeInterface {
         return response.value;
     }
 
-    async getAnimalType(id) {
+     
+       /*
+        OUTPUT {
+            animalType: animalType
+        }
+        */
+    async getAnimalType({id}) {
         const getAnimalTypeUseCase = new GetAnimalTypeUseCase(this.animalTypeRepository)
 
         const response = await getAnimalTypeUseCase.execute({id});
