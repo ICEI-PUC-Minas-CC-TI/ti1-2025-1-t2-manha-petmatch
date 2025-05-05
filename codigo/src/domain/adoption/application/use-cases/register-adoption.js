@@ -41,6 +41,8 @@ export class RegisterAdoptionUseCase {
 
         const {user} = await this.userRepository.findById(userId)
         
+
+        console.log(userId, donorId, petId)
         const {donor} = await this.donorRepository.findById(donorId)
 
         const {pet} =  await this.petRepository.findById(petId)

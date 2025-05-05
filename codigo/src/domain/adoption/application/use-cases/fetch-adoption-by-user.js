@@ -1,7 +1,5 @@
 import { right, left } from '../../../../../core/Either.js';
 import { ResourceNotFoundError } from '../../../../../core/errors/resource-not-found-error.js';
-import {Adoption} from '../../enterprise/entities/Adoption.js'
-import { PetAlredyFavoritedError } from '../errors/pet-alredy-favorited-error.js';
 import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 
 
