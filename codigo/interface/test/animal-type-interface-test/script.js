@@ -13,5 +13,19 @@ async function fetchAnimalType() {
         result.innerHTML = "Erro ao buscar tipos de animais.";
     }
 }
+const getAnimalTypeButton = document.getElementById("getAnimalTypeButton");
+const animalTypeId = document.getElementById("animalTypeId");
+
+async function getAnimalType() {
+    try {
+        const response = await animalTypeManager.getAnimalType(animalTypeId.value);
+        result.innerHTML = JSON.stringify(response, null, 2);
+    } catch (error) {
+        console.error("Erro ao buscar tipo de animal:", error);
+        result.innerHTML = "Erro ao buscar tipo de animal.";
+    }
+}
+
+getAnimalTypeButton.addEventListener("click", getAnimalType);
 
 fetchAnimalTypeButton.addEventListener("click", fetchAnimalType);
