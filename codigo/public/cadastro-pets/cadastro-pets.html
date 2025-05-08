@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Pet</title>
+
+  <!-- Fonte da página -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Icons sidebar -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- link dos css`s -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+
+<body>
+
+  <!-- sidebar da página -->
+  <aside id="sidebar">
+    <div id="logo"><img src="../application-assets/logo.png" alt="Logo" /></div>
+    <div>
+      <div id="profile">
+        <div>
+          <img src="https://placecats.com/200/200" alt="User Avatar" id="avatar" />
+          <div id="profile-info">
+            <h3>Ricardão</h3>
+            <span><i class="material-icons">stars</i>5.0</span>
+          </div>
+        </div>
+        <button class="btn-style">Perfil</button>
+      </div>
+      <nav id="menu">
+        <a href="#" id="active"><i class="material-icons">home</i> Home</a>
+        <a href="#"><i class="material-icons">explore</i> Explorar</a>
+        <a href="#"><i class="material-icons">category</i> Categorias</a>
+        <a href="#"><i class="material-icons">favorite</i> Favoritos</a>
+        <a href="#"><i class="material-icons">pets</i> Meus Pets</a>
+        <a href="#"><i class="material-icons">map</i> Petmap</a>
+        <a href="#"><i class="material-icons">lightbulb</i> Pet Tips</a>
+      </nav>
+    </div>
+    <div id="aside-footer">
+      <button class="btn-style">Colocar para Adoção</button>
+      <button class="btn-logout btn-style">Sair</button>
+    </div>
+  </aside>
+
+  <!-- Header --------------------------------------------------------------------------- -->
+  <header class="topbar">
+    <!-- h1 do header -->
+    <h1 class="logo">PETMATCH</h1>
+
+    <!-- Campo de pesquisa -->
+    <div class="search">
+      <input type="text" placeholder="Pesquisa" />
+      <button><i class="material-icons">search</i></button>
+    </div>
+  </header>
+
+  <!-- main -->
+  <main class="form-container">
+
+    <!-- area para adicionar a imagem e dados iniciais do pet -->
+    <section class="card image-card">
+      <div class="adicionar-nome-e-imagem">
+
+        <!-- upload das imagens -->
+        <div class="image-placeholder">
+          <i class="material-icons icon-image">image</i>
+          <span>Adicionar Imagem do PET</span>
+          <button class="add-button">
+            <h1 class="mais-botao-add-imagem">+</h1>
+          </button>
+        </div>
+
+        <!-- Campo para nome do pet -->
+        <div class="campo-de-digitar-com-a-imagem">
+          <input type="text" placeholder="Nome do PET" />
+        </div>
+
+        <!-- Campo de descrição do pet -->
+        <div class="campo-de-digitar">
+          <input type="text" placeholder="Descrição do PET" />
+        </div>
+
+        <!-- Botão para colocar para adoção -->
+        <button class="submit">Colocar para adoção</button>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
