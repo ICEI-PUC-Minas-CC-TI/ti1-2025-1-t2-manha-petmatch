@@ -199,8 +199,47 @@
  
   .main {
     padding: 20px;
-  }
+}
 
+h1.topo-categorias{
+    margin: 40px;
+}
+div.titulo{
+    margin: 20px;
+}
+h2.titulo{
+    margin: 10px;
+}
+div.titulo-categoria{
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+div.tipos{
+    background-color: var(--yellow);
+    color: var(--black);
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    margin: 7px;
+    cursor: pointer;
+ }
+
+.imagem-categorias{
+    height: 100px;
+    width: 100px;
+    display: block;
+    border-radius: 7px;
+    border: solid var(--yellow);
+}
+
+p.escrito-card{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+   
   footer {
     margin-top: 40px;
     padding: 20px;
@@ -210,6 +249,7 @@
     font-size: 0.85rem;
     flex-wrap: wrap;
     gap: 10px;
+    bottom: 0px;
   }
  
   footer a {
