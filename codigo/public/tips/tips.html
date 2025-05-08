@@ -13,10 +13,12 @@
 <body>
     <main>
         <h1>Dicas para Pet</h1>
-        <a><div class="container">Cachorro</div></a>        
-        <div class="container">Gato</div>
-        <div class="container">Coelho</div>
-        <div class="container">Pássaro</div>
+        <div class="container" data-animal="Cachorro">Cachorro</div>        
+        <div class="container" data-animal="Gato">Gato</div>
+        <div class="container" data-animal="Coelho">Coelho</div>
+        <div class="container" data-animal="Pássaro">Pássaro</div>
+        
+        <div id="container-dicas"></div>
     </main>
   <aside id="sidebar">
   <div id="logo"><img src="/codigo/public/tips/PetMatchLogo.png" alt="Logo"></div>
@@ -50,5 +52,6 @@
     <button class="btn-logout btn-style">Sair</button>
   </div>
   </aside>
+  <script type="module" src="tips.js"></script>
 </body>
 </html>
