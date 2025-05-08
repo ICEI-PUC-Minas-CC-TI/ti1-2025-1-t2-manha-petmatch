@@ -176,3 +176,17 @@ body {
     gap: 8px;
     width: 100%;
 }
+
+.container {
+    background-color: white;
+    border-radius: 16px;
+    padding: 30px 40px;
+    max-width: 1000px;
+    margin: 80px auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+h1 {
+    padding: 6% 0 0 6% ;
+}
