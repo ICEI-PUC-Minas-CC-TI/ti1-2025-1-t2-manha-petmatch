@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PETMATCH - Adoção de Pets</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/pet-card.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="logo">PETMATCH</h1>
+      <div class="search-container">
+        <div class="search-box">
+          <input type="text" placeholder="Pesquisar...">
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="pet-detail-layout">
+        <div class="owner-card">
+          <div class="owner-profile">
+            <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" alt="Ricardão" class="owner-image">
+            <h2 class="owner-name">Ricardão</h2>
+            <div class="rating-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <span>5.0</span>
+            </div>
+          </div>
+          <p class="owner-description">
+            Um cara topzera demais
+            <p>Eu quero um cachorro diferente e inteligente, achei ele e tals </p>.
+          </p>
+          <button class="contact-button">Contatar</button>
+        </div>
+        
+        <div class="pet-details">
+          <img src="https://images.pexels.com/photos/1124002/pexels-photo-1124002.jpeg" alt="SCOOBY" class="pet-image">
+          
+          <h1 class="pet-name">SCOOBY</h1>
+          
+          <div class="pet-info-grid">
+            <div class="pet-description">
+              <p>Descrição do cachorro (pet muito sociável, adora brincar então escreverei qualquer coisa, beleza).</p>
+            </div>
+            
+            <div class="pet-attributes">
+              <h2 class="attributes-title">Sobre o PET</h2>
+              <table class="attributes-table">
+                <tr>
+                  <td>Animal</td>
+                  <td>Cachorro</td>
+                </tr>
+                <tr>
+                  <td>Raça</td>
+                  <td>Shitsu</td>
+                </tr>
+                <tr>
+                  <td>Gênero</td>
+                  <td>Macho</td>
+                </tr>
+                <tr>
+                  <td>Idade</td>
+                  <td>6 Meses</td>
+                </tr>
+                <tr>
+                  <td>Vacinado</td>
+                  <td>Sim</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <button class="adopt-button">
+            Quero adotar esse PET
+            <i class="fas fa-heart heart-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/rating.js"></script>
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
