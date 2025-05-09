@@ -193,6 +193,12 @@ body {
     cursor: pointer;
 }
 
+.container:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
 h1 {
     padding: 4% 0 0 6%;
 }
