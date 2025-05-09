@@ -21,14 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const existingTips = container.nextElementSibling;
             if (existingTips && existingTips.classList.contains('container-dicas')) {
-                existingTips.remove(); 
+                existingTips.remove();
                 return;
             }
 
             const result = await tipinterface.getTip({ id });
-            const tipObj = result.tip;
+            console.log("Resultado da API:", result);
 
-            const dicas = tipObj.props?.tips;
+            const dicas = result.tip?.tip?.props?.tips;
+
+            if (!Array.isArray(dicas)) {
+                console.warn("Nenhuma dica foi retornada.");
+                return;
+            }
 
             const tipsContainer = document.createElement('div');
             tipsContainer.classList.add('container-dicas');
@@ -37,13 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('div');
                 card.classList.add('card-dica');
                 card.innerHTML = `
-                 <h3>${dica.title}</h3>
+                <h3>${dica.title}</h3>
                 <p>${dica.content}</p>
-                 `;
+                `;
                 tipsContainer.appendChild(card);
             });
 
             container.insertAdjacentElement('afterend', tipsContainer);
+
 
         });
     });
