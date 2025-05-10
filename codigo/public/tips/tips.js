@@ -37,14 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const tipsContainer = document.createElement('div');
             tipsContainer.classList.add('container-dicas');
-
+            let cont = 1;
             dicas.forEach(dica => {
                 const card = document.createElement('div');
                 card.classList.add('card-dica');
                 card.innerHTML = `
-                <h3>${dica.title}</h3>
+                <h3>${cont}. ${dica.title}</h3>
                 <p>${dica.content}</p>
                 `;
+                cont++;
                 tipsContainer.appendChild(card);
             });
 

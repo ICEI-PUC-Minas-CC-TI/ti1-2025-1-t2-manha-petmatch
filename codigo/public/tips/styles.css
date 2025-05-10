@@ -30,7 +30,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    border-radius: 15px;
+    border-radius: 0 0 15px;
     font-size: 0.85rem;
     justify-content: space-between;
 }
