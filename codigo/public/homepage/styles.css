@@ -349,10 +349,11 @@ body {
   .carousel {
     position: relative;
     width: 50%;
+    height: auto;
     margin: 20px auto 20px auto;
     overflow: hidden;
     border: 2px solid #FFD700;
-    border-radius: 30px;
+    border-radius: 35px;
   }
  
   .carousel-slide {
@@ -362,9 +363,11 @@ body {
  
   .carousel-slide img {
     width: 100%;
+    display: block;
     max-width: 1200px;
     border-radius: 30px;
-    object-fit: cover;
+    border: 2px solid transparent
+    object-fit: contain;
   }
  
   .carousel-prev,
