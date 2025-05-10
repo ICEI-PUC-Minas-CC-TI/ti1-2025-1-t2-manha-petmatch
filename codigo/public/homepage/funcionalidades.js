@@ -8,7 +8,7 @@ function showSlide(index) {
   slides.forEach(slide => slide.style.display = 'none');
  
  
-  slides[index].style.display = 'block';
+  slides[index].style.display = 'flex';
 }
 
 
