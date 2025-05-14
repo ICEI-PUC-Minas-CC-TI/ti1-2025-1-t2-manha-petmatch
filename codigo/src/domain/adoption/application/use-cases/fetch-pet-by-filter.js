@@ -3,7 +3,7 @@ import { right, left } from '../../../../../core/Either.js';
 /*
     INPUT {
         NOT OPTIONAL
-        search: string
+        search: string[]
     }
 
     OUTPUT: {

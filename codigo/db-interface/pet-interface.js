@@ -95,14 +95,14 @@ export class PetInterface {
     /*
     INPUT {
         NOT OPTIONAL
-        search: string
+        search: string[]
     }
 
     OUTPUT: {
         pet: Pet[]
     }
     */
-    async fetchPetsByCategory({search}) {
+    async fetchPetsBySearch({search}) {
         const fetchPetByFilterUseCase = new FetchPetByFilterUseCase(this.petRepository)
 
         const response = await fetchPetByFilterUseCase.execute({search});

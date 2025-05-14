@@ -52,16 +52,16 @@
     <h1 class="logo">PETMATCH</h1>
 
     <div class="search">
-      <input type="text" placeholder="Pesquisa" />
-      <button><i class="material-icons">search</i></button>
+      <input type="text" placeholder="Pesquisa" id="searchBar"/>
+      <button id="searchButton"><i class="material-icons">search</i></button>
     </div>
   </header>
 
     <main>
 
-      <ul class="pet-card-list">
+      <ul class="pet-card-list" id="cachorro">
 
-        <li class="pet-card">
+        <!-- <li class="pet-card">
          <img src="https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg" alt="">
          <div class="pet-card-container">
            <div class="pet-card-content">
@@ -152,13 +152,12 @@
                <button class="pet-card-favorite-pet-button"><i class="material-icons" style="color: white;">favorite</i></button>
              </div>
            </div>
-         </li>
+         </li> -->
       </ul>
-
-       </div>
 
     </main>
 
+    <script src="../../jquery/jquery.js"></script>
     <script type="module" src="./script.js"></script>
   </div>
 </body>

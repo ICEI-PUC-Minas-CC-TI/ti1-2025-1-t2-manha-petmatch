@@ -71,7 +71,7 @@ async function fetchPets() {
 
 async function fetchPetsByCategory() {
     try {
-        const response = await petManager.fetchPetsByCategory({search: searchCategory.value});
+        const response = await petManager.fetchPetsBySearch({search: ["vendaval"]});
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao buscar pets por categoria.";
