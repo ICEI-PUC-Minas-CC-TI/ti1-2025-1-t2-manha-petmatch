@@ -60,17 +60,23 @@ export class JsonPetRepository {
         try {
             const response = await fetch(this.url);
             const jsonFormat = await response.json();
-    
-            const pets = jsonFormat.filter(pet => {
+
+            let pets = jsonFormat
+
+            filters.map((filter) => {
+                pets = pets.filter(pet => {
                 return Object.values(pet).some(value => {
                     if (Array.isArray(value)) {
-                        return value.some(item => item.toLowerCase().includes(filters.toLowerCase()));
+                        return value.some(item => item.toLowerCase().includes(filter.toLowerCase()));
                     } else if (typeof value === "string") {
-                        return value.toLowerCase().includes(filters.toLowerCase());
+                        return value.toLowerCase().includes(filter.toLowerCase());
                     }
                     return false;
                 });
             });
+            return pets
+            })
+            
     
             return pets;
         } catch (err) {
