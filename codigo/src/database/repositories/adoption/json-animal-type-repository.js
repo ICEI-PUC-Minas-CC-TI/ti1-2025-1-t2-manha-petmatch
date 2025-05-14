@@ -30,7 +30,7 @@ export class JsonAnimalTypeRepository {
 
             const jsonFormat = await response.json()
 
-            const animaltype = Object.keys(jsonFormat).length === 0 ? {animalType: null} : {animaltype: JsonAnimalTypeRepositoryMapper.toDomain(jsonFormat)}
+            const animaltype = Object.keys(jsonFormat).length === 0 ? {animalType: null} : {animalType: JsonAnimalTypeRepositoryMapper.toDomain(jsonFormat)}
 
             return animaltype
         } catch(err) {
