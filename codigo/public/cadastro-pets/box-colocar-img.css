@@ -84,9 +84,9 @@
   height: 40px;
   border: none;
   margin: 20px auto 0 auto;
-  /* centraliza horizontalmente e reduz espaço acima */
+  /* centraliza horizontalmente*/
   display: block;
-  /* necessário para margin auto funcionar */
+  /*para margin auto funcionar */
 }
 
 /* Corrigir a digitação indo para a esquerda ao invés de ir para a direita
@@ -140,11 +140,11 @@ input[type="text"] {
 }
 
 /* Borda que engloba tudo da parte de adicionar imagem, nome, descrição e etc */
-/* container externo da imagem e campo de digitação */
+/* container externo da imagem + campo de digitação */
 .adicionar-nome-e-imagem {
   border: 2px solid var(--yellow);
   border-radius: 15px;
-  padding: 20px 20px 30px 20px;
+  padding: 20px 20px 40px 20px;
   background-color: var(--white);
   width: 320px;
   margin-top: 40px;

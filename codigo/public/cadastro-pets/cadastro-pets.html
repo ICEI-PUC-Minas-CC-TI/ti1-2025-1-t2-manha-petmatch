@@ -12,21 +12,21 @@
   <!-- Icons sidebar -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-  <!-- link dos css`s -->
+  <!-- links dos css -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="header.css" />
-  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="sidebar.css" />
+  <link rel="stylesheet" href="informacoes-do-pet.css" />
 </head>
 
 <body>
-
-  <!-- sidebar da página -->
+  <!-- Sidebar -->
   <aside id="sidebar">
-    <div id="logo"><img src="../application-assets/logo.png" alt="Logo" /></div>
+    <div id="logo"><img src="../assets/images/logo-pet-match.png" alt="Logo" /></div>
     <div>
       <div id="profile">
         <div>
-          <img src="https://placecats.com/200/200" alt="User Avatar" id="avatar" />
+          <img src="https://placecats.com/millie/300/150" alt="User Avatar" id="avatar" />
           <div id="profile-info">
             <h3>Ricardão</h3>
             <span><i class="material-icons">stars</i>5.0</span>
@@ -50,26 +50,20 @@
     </div>
   </aside>
 
-  <!-- Header --------------------------------------------------------------------------- -->
+  <!-- Header -->
   <header class="topbar">
-    <!-- h1 do header -->
     <h1 class="logo">PETMATCH</h1>
-
-    <!-- Campo de pesquisa -->
     <div class="search">
       <input type="text" placeholder="Pesquisa" />
       <button><i class="material-icons">search</i></button>
     </div>
   </header>
 
-  <!-- main -->
+  <!-- Formulário -->
   <main class="form-container">
-
-    <!-- area para adicionar a imagem e dados iniciais do pet -->
-    <section class="card image-card">
+    <!-- Coluna esquerda: Imagem, nome e descrição -->
+    <section class="coluna-esquerda">
       <div class="adicionar-nome-e-imagem">
-
-        <!-- upload das imagens -->
         <div class="image-placeholder">
           <i class="material-icons icon-image">image</i>
           <span>Adicionar Imagem do PET</span>
@@ -77,24 +71,116 @@
             <h1 class="mais-botao-add-imagem">+</h1>
           </button>
         </div>
-
-        <!-- Campo para nome do pet -->
         <div class="campo-de-digitar-com-a-imagem">
           <input type="text" placeholder="Nome do PET" />
         </div>
-
-        <!-- Campo de descrição do pet -->
         <div class="campo-de-digitar">
           <input type="text" placeholder="Descrição do PET" />
         </div>
-
-        <!-- Botão para colocar para adoção -->
         <button class="submit">Colocar para adoção</button>
-
       </div>
     </section>
 
+    <!-- Coluna direita: Infos do pet + Endereço -->
+    <section class="coluna-direita">
+      <!-- Informações sobre o pet -->
+      <div class="info-card">
+        <h2>Informações Sobre o Pet</h2>
+
+        <label>Animal</label>
+        <input type="text" placeholder="Cachorro, gato, papagaio..." />
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Vacinado</label><br />
+            <div class="toggle-group" id="vacina-toggle">
+              <button type="button" class="toggle-btn">Sim</button>
+              <button type="button" class="toggle-btn">Não</button>
+            </div>
+          </div>
+
+          <div>
+            <label>Idade</label>
+            <input type="text" placeholder="Quando você encontrou o pet?" />
+          </div>
+        </div>
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Tamanho</label><br />
+            <div class="toggle-group" id="tamanho-toggle">
+              <button type="button" class="toggle-btn">Pequeno</button>
+              <button type="button" class="toggle-btn">Médio</button>
+              <button type="button" class="toggle-btn">Grande</button>
+            </div>
+          </div>
+        </div>
+
+        <label>Raça</label>
+        <input type="text" placeholder="Shitsu, British Shorthair, Vira-Lata..." />
+      </div>
+
+      <!-- Endereço do pet -->
+      <div class="info-card">
+        <h2>Endereço do Pet</h2>
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Estado</label>
+            <input type="text" placeholder="Minas Gerais, Bahia..." />
+          </div>
+          <div>
+            <label>CEP</label>
+            <input type="text" placeholder="Ex: 12.345-000..." />
+          </div>
+        </div>
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Cidade</label>
+            <input type="text" placeholder="Belo Horizonte, São Paulo..." />
+          </div>
+          <div>
+            <label>Complemento*</label>
+            <input type="text" placeholder="Casa, apartamento..." />
+          </div>
+        </div>
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Rua</label>
+            <input type="text" placeholder="Rua São João..." />
+          </div>
+          <div>
+            <label>Bairro</label>
+            <input type="text" placeholder="Lourdes..." />
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Script para configurar os botões (deixa-los amarelos quando clicados)-->
+  <script>
+    function configurarBotoesToggle(idDoGrupo) {
+      var grupo = document.getElementById(idDoGrupo);
+      if (!grupo) return;
+
+      var botoes = grupo.querySelectorAll('button');
+
+      for (var i = 0; i < botoes.length; i++) {
+        botoes[i].addEventListener('click', function () {
+          for (var j = 0; j < botoes.length; j++) {
+            botoes[j].classList.remove('active');
+          }
+          this.classList.add('active');
+        });
+      }
+    }
+
+    configurarBotoesToggle('vacina-toggle');
+    configurarBotoesToggle('tamanho-toggle');
+  </script>
 
 </body>
 
