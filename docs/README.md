@@ -197,6 +197,95 @@ Maria Luiza Gomes Beliene Vira
 Pedro Italo Borges Cardoso​
 Sofia de Abreu Botelho Romualdo​
 
+# Solução Implementada
+Esta seção apresenta todos os detalhes da solução criada no projeto.
+
+# Vídeo do Projeto
+O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. ⚠️ EXEMPLO ⚠️
+
+# Vídeo do projeto
+
+⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
+
+O video de apresentação é voltado para que o público externo possa conhecer a solução. O formato é livre, sendo importante que seja apresentado o problema e a solução numa linguagem descomplicada e direta.
+
+Inclua um link para o vídeo do projeto.
+
+# Funcionalidades
+Esta seção apresenta as funcionalidades da solução.Info
+
+Funcionalidade 1 - Cadastro de Contatos ⚠️ EXEMPLO ⚠️
+Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
+
+Estrutura de dados: Contatos
+Instruções de acesso:
+Abra o site e efetue o login
+Acesse o menu principal e escolha a opção Cadastros
+Em seguida, escolha a opção Contatos
+Tela da funcionalidade:
+Tela de Funcionalidade
+
+⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
+
+Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos administradores da solução.
+
+Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.
+
+# Estruturas de Dados
+Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info
+
+Estrutura de Dados - Contatos ⚠️ EXEMPLO ⚠️
+Contatos da aplicação
+
+  {
+    "id": 1,
+    "nome": "Leanne Graham",
+    "cidade": "Belo Horizonte",
+    "categoria": "amigos",
+    "email": "Sincere@april.biz",
+    "telefone": "1-770-736-8031",
+    "website": "hildegard.org"
+  }
+  
+Estrutura de Dados - Usuários ⚠️ EXEMPLO ⚠️
+Registro dos usuários do sistema utilizados para login e para o perfil do sistema
+
+  {
+    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
+    email: "admin@abc.com",
+    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
+    login: "admin",
+    nome: "Administrador do Sistema",
+    senha: "123"
+  }
+⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
+
+Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração
+
+Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.
+
+Orientações:
+
+JSON Introduction
+Trabalhando com JSON - Aprendendo desenvolvimento web | MDN
+Módulos e APIs
+Esta seção apresenta os módulos e APIs utilizados na solução
+
+Images:
+
+Unsplash - https://unsplash.com/ ⚠️ EXEMPLO ⚠️
+Fonts:
+
+Icons Font Face - https://fontawesome.com/ ⚠️ EXEMPLO ⚠️
+Scripts:
+
+jQuery - http://www.jquery.com/ ⚠️ EXEMPLO ⚠️
+Bootstrap 4 - http://getbootstrap.com/ ⚠️ EXEMPLO ⚠️
+⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
+
+# Módulos e APIs
+Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1) Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas para acesso a dados, serviços, etc.
+
 # Referências
 
 As referências utilizadas no trabalho foram:
