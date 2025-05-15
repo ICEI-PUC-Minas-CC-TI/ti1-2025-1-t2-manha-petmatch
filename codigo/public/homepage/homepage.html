@@ -8,6 +8,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <title>PetMatch Homepage</title>
+  <link rel="stylesheet" href="../../components/header/styles.css"> 
+  <link rel="stylesheet" href="../../components/pet-card/style.css">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -44,23 +46,19 @@
     <button class="btn-logout btn-style">Sair</button>
   </div>
   </aside>
-</body>
-</html>
 
- <!-- Header --------------------------------------------------------------------------- -->
+  <div id="screen-container">
   <header class="topbar">
-    <!-- h1 do header -->
     <h1 class="logo">PETMATCH</h1>
 
-    <!-- Campo de pesquisa -->
     <div class="search">
-      <input type="text" placeholder="Pesquisa" />
-      <button><i class="material-icons">search</i></button>
+      <input type="text" placeholder="Pesquisa" id="searchBar"/>
+      <button id="searchButton"><i class="material-icons">search</i></button>
     </div>
   </header>
 
-
-    <!-- Seção do Caroussel -->
+    <main>
+       <!-- Seção do Caroussel -->
     <section class="carousel">
       <button class="carousel-prev">&#10094;</button>
       <div class="carousel-slide">
@@ -85,86 +83,133 @@
       </div>
       <button class="carousel-next">&#10095;</button>
     </section>
-
-
-
-
-    <!-- Seção Cards dos Pets -->
     <section class="pets-header">
       <h2>Pets Filtrados</h2>
       <button class="options">Opções</button>
     </section>
+      <ul class="pet-card-list" id="cachorro">
 
+         <li class="pet-card">
+         <img src="https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg" alt="">
+         <div class="pet-card-container">
+           <div class="pet-card-content">
+             <header class="pet-card-content-header">
+               <div class="pet-card-main-info"><h3>Scooby</h3> <span>3 meses</span></div>
+               <p class="pet-card-category">cachorro-Macho</p>
+             </header>
+ 
+             <p class="pet-card-info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati quia magnam delectu.</p>
+           </div>
+ 
+ 
+             <div class="pet-card-button-container">
+               <button class="pet-card-see-pet-button">Ver Pet</button> 
+               <button class="pet-card-favorite-pet-button"><i class="material-icons" style="color: white;">favorite</i></button>
+             </div>
+           </div>
+         </li>
+           <li class="pet-card">
+         <img src="https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg" alt="">
+         <div class="pet-card-container">
+           <div class="pet-card-content">
+             <header class="pet-card-content-header">
+               <div class="pet-card-main-info"><h3>Scooby</h3> <span>3 meses</span></div>
+               <p class="pet-card-category">cachorro-Macho</p>
+             </header>
+ 
+             <p class="pet-card-info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati quia magnam delectu.</p>
+           </div>
+ 
+ 
+             <div class="pet-card-button-container">
+               <button class="pet-card-see-pet-button">Ver Pet</button> 
+               <button class="pet-card-favorite-pet-button"><i class="material-icons" style="color: white;">favorite</i></button>
+             </div>
+           </div>
+         </li> 
+          <li class="pet-card">
+         <img src="https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg" alt="">
+         <div class="pet-card-container">
+           <div class="pet-card-content">
+             <header class="pet-card-content-header">
+               <div class="pet-card-main-info"><h3>Scooby</h3> <span>3 meses</span></div>
+               <p class="pet-card-category">cachorro-Macho</p>
+             </header>
+ 
+             <p class="pet-card-info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati quia magnam delectu.</p>
+           </div>
+ 
+ 
+             <div class="pet-card-button-container">
+               <button class="pet-card-see-pet-button">Ver Pet</button> 
+               <button class="pet-card-favorite-pet-button"><i class="material-icons" style="color: white;">favorite</i></button>
+             </div>
+           </div>
+         </li>
+           <li class="pet-card">
+         <img src="https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg" alt="">
+         <div class="pet-card-container">
+           <div class="pet-card-content">
+             <header class="pet-card-content-header">
+               <div class="pet-card-main-info"><h3>Scooby</h3> <span>3 meses</span></div>
+               <p class="pet-card-category">cachorro-Macho</p>
+             </header>
+ 
+             <p class="pet-card-info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati quia magnam delectu.</p>
+           </div>
+ 
+ 
+             <div class="pet-card-button-container">
+               <button class="pet-card-see-pet-button">Ver Pet</button> 
+               <button class="pet-card-favorite-pet-button"><i class="material-icons" style="color: white;">favorite</i></button>
+             </div>
+           </div>
+         </li>  
+         <li class="pet-card">
+         <img src="https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg" alt="">
+         <div class="pet-card-container">
+           <div class="pet-card-content">
+             <header class="pet-card-content-header">
+               <div class="pet-card-main-info"><h3>Scooby</h3> <span>3 meses</span></div>
+               <p class="pet-card-category">cachorro-Macho</p>
+             </header>
+ 
+             <p class="pet-card-info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati quia magnam delectu.</p>
+           </div>
+ 
+ 
+             <div class="pet-card-button-container">
+               <button class="pet-card-see-pet-button">Ver Pet</button> 
+               <button class="pet-card-favorite-pet-button"><i class="material-icons" style="color: white;">favorite</i></button>
+             </div>
+           </div>
+         </li> 
+          <li class="pet-card">
+         <img src="https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg" alt="">
+         <div class="pet-card-container">
+           <div class="pet-card-content">
+             <header class="pet-card-content-header">
+               <div class="pet-card-main-info"><h3>Scooby</h3> <span>3 meses</span></div>
+               <p class="pet-card-category">cachorro-Macho</p>
+             </header>
+ 
+             <p class="pet-card-info">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati quia magnam delectu.</p>
+           </div>
+ 
+ 
+             <div class="pet-card-button-container">
+               <button class="pet-card-see-pet-button">Ver Pet</button> 
+               <button class="pet-card-favorite-pet-button"><i class="material-icons" style="color: white;">favorite</i></button>
+             </div>
+           </div>
+         </li> 
+      </ul>
 
-    <section class="pet-cards">
-      <div class="card">
-        <a href="https://placecats.com" target="_blank">
-          <img src="https://placecats.com/200/200" alt="Pet 1" />
-        </a>
-        <h3>Bruno</h3>
-        <p class="desc">Gato grande de 2 anos de idade</p>
-        <button class="btn-fav">&#9829; Favoritar</button>
-        <button class="btn-view">Ver Pet</button>
-      </div>
-      <div class="card">
-        <a href="https://placecats.com" target="_blank">
-          <img src="https://placecats.com/200/200" alt="Pet 2" />
-        </a>
-        <h3>Bernardo</h3>
-        <p class="desc">Gato grande de 2 anos de idade</p>
-        <button class="btn-fav">&#9829; Favoritar</button>
-        <button class="btn-view">Ver Pet</button>
-      </div>
-      <div class="card">
-        <a href="https://placecats.com" target="_blank">
-          <img src="https://placecats.com/200/200" alt="Pet 3" />
-        </a>
-        <h3>Pedro</h3>
-        <p class="desc">Gato grande de 2 anos de idade</p>
-        <button class="btn-fav">&#9829; Favoritar</button>
-        <button class="btn-view">Ver Pet</button>
-      </div>
-      <div class="card">
-        <a href="https://placecats.com" target="_blank">
-          <img src="https://placecats.com/200/200" alt="Pet 4" />
-        </a>
-        <h3>Telles</h3>
-        <p class="desc">Gato grande de 2 anos de idade</p>
-        <button class="btn-fav">&#9829; Favoritar</button>
-        <button class="btn-view">Ver Pet</button>
-      </div>
-      <div class="card">
-        <a href="https://placecats.com" target="_blank">
-          <img src="https://placecats.com/200/200" alt="Pet 5" />
-        </a>
-        <h3>Sofia</h3>
-        <p class="desc">Gato grande de 2 anos de idade</p>
-        <button class="btn-fav">&#9829; Favoritar</button>
-        <button class="btn-view">Ver Pet</button>
-      </div>
-      <div class="card">
-        <a href="https://placecats.com" target="_blank">
-          <img src="https://placecats.com/200/200" alt="Pet 6" />
-        </a>
-        <h3>Mafe</h3>
-        <p class="desc">Gato grande de 2 anos de idade</p>
-        <button class="btn-fav">&#9829; Favoritar</button>
-        <button class="btn-view">Ver Pet</button>
-      </div>
-    </section>
+    </main>
 
-
-    <!-- Footer -->
-    <footer>
-      <span>&copy; 2025 PetMatch</span>
-      <div>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-      </div>
-    </footer>
+    <script src="../../jquery/jquery.js"></script>
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="scriptcarousel.js"></script>
   </div>
-
-
-  <script src="funcionalidades.js"></script>
 </body>
 </html>
