@@ -33,6 +33,3 @@ showSlide(currentIndex);
 
 document.querySelector('.carousel-next').addEventListener('click', nextSlide);
 document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
-
-
-
