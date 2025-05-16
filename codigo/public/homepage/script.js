@@ -1,4 +1,4 @@
-import {PetInterface} from "../../db-interface/pet-interface"
+import {PetInterface} from "../../db-interface/pet-interface.js"
 
 const petInterface = new PetInterface();
 let searchBarValue = ''
