@@ -178,12 +178,29 @@
   width: 100%;
  }
 
+#pet-card-list-container {
+ margin: 0 auto 2rem;
+ padding: 0 1rem 6rem;
+
+ display: flex;
+ flex-direction: column;
+ gap: 1.5rem;
+}
+
+.pet-card-list-content {
+ display: flex;
+ flex-direction: column;
+ gap: 1rem;
+}
+
+.pet-card-list-content > h3 {
+  font-size: 2rem;
+}
+
 .pet-card-list {
   display: flex;
   max-width: 62rem;
-  margin: 0 auto;
   flex-wrap: wrap;
   list-style: none;
   gap: 1rem;
-  padding: 2rem 0;
 }

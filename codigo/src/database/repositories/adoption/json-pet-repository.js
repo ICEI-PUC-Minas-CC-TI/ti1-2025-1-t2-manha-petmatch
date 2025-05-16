@@ -62,7 +62,7 @@ export class JsonPetRepository {
             const jsonFormat = await response.json();
 
             let pets = jsonFormat
-
+            console.log("filters", filters)
             filters.map((filter) => {
                 pets = pets.filter(pet => {
                 return Object.values(pet).some(value => {
