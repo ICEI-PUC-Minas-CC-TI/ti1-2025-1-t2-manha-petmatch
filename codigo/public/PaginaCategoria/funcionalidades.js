@@ -2,6 +2,7 @@ import {AnimalTypeInterface} from "../../interface/animal-type-interface.js"
 const animaltypeinterface = new AnimalTypeInterface()
 async function puxabicho(){
     var bichos = await animaltypeinterface.fetchAnimalType();
+    console.log(bichos);
 }
 async function pegabicho(){
    try {
@@ -13,3 +14,7 @@ async function pegabicho(){
     }
 }
     bichos.foreach((elemento) => elemento.id);
+
+window.addEventListener("load,", async () => {
+    await puxabicho();
+})
