@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PETMATCH - Adoção de Pets</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/header.css">
-  <link rel="stylesheet" href="css/pet-card.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="pet-card.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -15,8 +15,8 @@
       <h1 class="logo">PETMATCH</h1>
       <div class="search-container">
         <div class="search-box">
-          <input type="text" placeholder="Pesquisar...">
-          <button type="submit" class="search-button">
+          <input type="text" id="searchInput" placeholder="Pesquisar...">
+          <button type="submit" class="search-button" id="searchButton">
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -40,21 +40,20 @@
               <span>5.0</span>
             </div>
           </div>
-          <p class="owner-description">
-            Um cara topzera demais
-            <p>Eu quero um cachorro diferente e inteligente, achei ele e tals </p>.
-          </p>
-          <button class="contact-button">Contatar</button>
+          <div class="owner-description">
+            <p>Descrição do cara responsável pela publicação da adoção, eu não sei o que colocar, então escreverei qualquer coisa, beleza.</p>
+            </div>
+          <button class="contact-button" id="contactButton">Contatar</button>
         </div>
         
-        <div class="pet-details">
+        <div class="pet-details-column">
           <img src="https://images.pexels.com/photos/1124002/pexels-photo-1124002.jpeg" alt="SCOOBY" class="pet-image">
           
           <h1 class="pet-name">SCOOBY</h1>
           
           <div class="pet-info-grid">
             <div class="pet-description">
-              <p>Descrição do cachorro (pet muito sociável, adora brincar então escreverei qualquer coisa, beleza).</p>
+              <p>Descrição do cachorro, eu não sei o que colocar, então escreverei qualquer coisa, beleza.</p>
             </div>
             
             <div class="pet-attributes">
@@ -84,9 +83,9 @@
             </div>
           </div>
           
-          <button class="adopt-button">
+          <button class="adopt-button" id="adoptButton">
             Quero adotar esse PET
-            <i class="fas fa-heart heart-icon"></i>
+            <i class="fas fa-heart heart-icon" id="favoriteIcon"></i>
           </button>
         </div>
       </div>

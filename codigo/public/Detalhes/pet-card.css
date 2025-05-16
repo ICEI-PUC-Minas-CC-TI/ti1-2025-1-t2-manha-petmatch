@@ -1,0 +1,190 @@
+/* Owner Card & Pet Details Styles */
+
+/* Owner Card */
+.owner-card {
+  background-color: #fff;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.owner-profile {
+  margin-bottom: 15px;
+}
+
+.owner-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #f0f0f0;
+}
+
+.owner-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.rating-stars {
+  color: #FFC107; /* Star color */
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.rating-stars span {
+  color: #555;
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: 1em;
+  vertical-align: middle;
+}
+
+.owner-description {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: left; /* As per image text block */
+  line-height: 1.5;
+}
+
+.owner-description p {
+    margin-bottom: 10px;
+}
+
+
+.contact-button {
+  background-color: #FFD100; /* Yellow color */
+  color: #333;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+  background-color: #f2c300; /* Darker yellow on hover */
+}
+
+/* Pet Details Column */
+.pet-details-column {
+  background-color: #fff;
+  border-radius: 10px;
+  /* No specific card shadow for the whole column, items inside are styled */
+  padding: 25px; /* Padding for content around the image */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.pet-image {
+  width: 100%;
+  max-height: 450px; /* Increased max-height a bit */
+  object-fit: cover;
+  border-radius: 8px; /* Rounded corners for the image */
+  margin-bottom: 25px;
+  display: block;
+}
+
+.pet-name {
+  font-size: 2.8em; /* Larger font for Scooby */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.pet-info-grid {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Description takes available space, attributes fit content */
+  gap: 30px; /* Gap between description and attributes table */
+  align-items: start;
+  margin-bottom: 25px;
+}
+
+.pet-description p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.pet-attributes {
+  /* No background, border only on top of title */
+}
+
+.attributes-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  border-top: 4px solid #FFD100; /* Yellow top border */
+  padding-top: 10px;
+}
+
+.attributes-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+
+.attributes-table td {
+  padding: 10px 5px; /* Adjusted padding */
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.attributes-table td:first-child {
+  font-weight: bold;
+  color: #333;
+  width: 100px; /* Fixed width for labels */
+}
+
+.attributes-table td:last-child {
+  text-align: left; /* As per image */
+  color: #555;
+}
+
+.attributes-table tr:last-child td {
+  border-bottom: none;
+}
+
+
+.adopt-button {
+  background-color: #FFD100; /* Yellow color */
+  color: #333;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.adopt-button:hover {
+  background-color: #f2c300; /* Darker yellow on hover */
+}
+
+.heart-icon {
+  color: #FF5C5C; /* Default heart color (matches image more closely) */
+  margin-left: 15px;
+  font-size: 1.3em; /* Slightly larger heart */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.heart-icon.favorited {
+  color: #E53935; /* Darker red when favorited */
+  transform: scale(1.1); /* Slight pulse effect */
+}
