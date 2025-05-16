@@ -1,6 +1,3 @@
-/* Owner Card & Pet Details Styles */
-
-/* Owner Card */
 .owner-card {
   background-color: #fff;
   border: 1px solid #E0E0E0;
@@ -31,7 +28,7 @@
 }
 
 .rating-stars {
-  color: #FFC107; /* Star color */
+  color: #FFC107;
   margin-bottom: 15px;
   font-size: 1.1em;
 }
@@ -48,7 +45,7 @@
   font-size: 0.9em;
   color: #555;
   margin-bottom: 20px;
-  text-align: left; /* As per image text block */
+  text-align: left;
   line-height: 1.5;
 }
 
@@ -58,7 +55,7 @@
 
 
 .contact-button {
-  background-color: #FFD100; /* Yellow color */
+  background-color: #FFD100;
   color: #333;
   border: none;
   padding: 12px 25px;
@@ -71,29 +68,26 @@
 }
 
 .contact-button:hover {
-  background-color: #f2c300; /* Darker yellow on hover */
+  background-color: #f2c300; 
 }
-
-/* Pet Details Column */
 .pet-details-column {
   background-color: #fff;
   border-radius: 10px;
-  /* No specific card shadow for the whole column, items inside are styled */
-  padding: 25px; /* Padding for content around the image */
+  padding: 25px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .pet-image {
   width: 100%;
-  max-height: 450px; /* Increased max-height a bit */
+  max-height: 450px; 
   object-fit: cover;
-  border-radius: 8px; /* Rounded corners for the image */
+  border-radius: 8px;
   margin-bottom: 25px;
   display: block;
 }
 
 .pet-name {
-  font-size: 2.8em; /* Larger font for Scooby */
+  font-size: 2.8em;
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
@@ -103,7 +97,7 @@
 .pet-info-grid {
   display: grid;
   grid-template-columns: 1fr auto; /* Description takes available space, attributes fit content */
-  gap: 30px; /* Gap between description and attributes table */
+  gap: 30px; 
   align-items: start;
   margin-bottom: 25px;
 }
