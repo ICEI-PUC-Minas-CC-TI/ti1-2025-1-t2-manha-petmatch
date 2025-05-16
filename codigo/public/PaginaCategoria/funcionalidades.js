@@ -1,8 +1,24 @@
 import {AnimalTypeInterface} from "../../interface/animal-type-interface.js"
+const petInterface = new PetInterface();
+let searchBarValue = ''
+
+async function handleSeachButton() {
+  window.location.href = `../explore/index.html?search=${searchBarValue}`;
+}
+
+function onSearchBar(event) {
+  searchBarValue = event.target.value;
+}
 const animaltypeinterface = new AnimalTypeInterface()
 async function puxabicho(){
     var bichos = await animaltypeinterface.fetchAnimalType();
-    console.log(bichos);
+    const{animaltypes} = bichos
+    animaltypes.foreach((element)=>{$('#animal-type-container').append(`<div id="" class="tipos">
+        <img class="imagem-categorias" src="${element.props.img_url_reference}" alt="Foto cachorro">
+
+        <div>
+            <p class="escrito-card">${element.props.type}</p>
+        </div>`)})
 }
 async function pegabicho(){
    try {
@@ -18,3 +34,5 @@ async function pegabicho(){
 window.addEventListener("load,", async () => {
     await puxabicho();
 })
+
+
