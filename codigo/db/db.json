@@ -148,37 +148,37 @@
     {
       "id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
       "type": "Cachorro",
-      "img_url_reference": "someUrl",
+      "img_url_reference": "https://br.freepik.com/fotos-gratis/imagem-vertical-de-foco-raso-de-um-filhote-de-cachorro-golden-retriever-fofo-sentado-em-um-gramado_12177096.htm#fromView=keyword&page=1&position=0&uuid=d8f32dcd-8380-48d2-b3cd-f3cbc4538e72&query=Lindos+Cachorros",
       "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
     },
     {
       "id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
       "type": "Gato",
-      "img_url_reference": "someUrl",
+      "img_url_reference": "https://br.freepik.com/fotos-gratis/foto-vertical-de-um-gato-gordo-olhando-para-a-direita-no-escuro_16226044.htm#fromView=search&page=1&position=23&uuid=913e5a75-113d-4f76-8639-a7911e3f3b2b&query=Lindos+gatos",
       "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
     },
     {
       "id": "22f23a90-b097-4056-81a7-373f7af5f8a2",
       "type": "Hamster",
-      "img_url_reference": "someUrl",
+      "img_url_reference": "https://br.freepik.com/imagem-ia-gratis/vista-de-um-animal-engracado_158478735.htm#fromView=search&page=1&position=1&uuid=64f71693-0a06-4cca-b6dc-dd00e9ec6abc&query=Lindos+hamsters",
       "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
     },
     {
       "id": "23485b50-a18d-4a3a-a9f0-6e1002cb0eff",
       "type": "Coelho",
-      "img_url_reference": "someUrl",
+      "img_url_reference": "https://br.freepik.com/fotos-gratis/lindo-coelho-cinza-engracado-em-um-verde-natural_9604097.htm#fromView=search&page=1&position=3&uuid=073b49a3-399c-4df7-8005-db5c6d493e9e&query=Lindos+coelhos",
       "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
     },
     {
       "id": "d70ddae5-7cdc-46c9-b03d-62120d5e9215",
       "type": "Peixe",
-      "img_url_reference": "someUrl",
+      "img_url_reference": "https://br.freepik.com/fotos-gratis/lutando-contra-peixes-em-fundo-preto_13181446.htm#fromView=search&page=1&position=3&uuid=ab192e0a-76b5-404d-b5d1-51b65a99b135&query=Lindos+peixes",
       "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
     },
     {
       "id": "7422243c-8a72-4998-9bd2-a480652acbbd",
       "type": "Pássaro",
-      "img_url_reference": "someUrl",
+      "img_url_reference": "https://br.freepik.com/fotos-gratis/foto-vertical-de-uma-adoravel-periquita_17088380.htm#fromView=search&page=1&position=13&uuid=c22694e4-3f5d-46c8-b944-81a16162dc64&query=Lindos+periquito",
       "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
     }
   ],
