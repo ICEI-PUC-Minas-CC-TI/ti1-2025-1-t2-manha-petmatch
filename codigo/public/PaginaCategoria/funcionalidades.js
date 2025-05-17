@@ -1,5 +1,4 @@
-import {AnimalTypeInterface} from "../../interface/animal-type-interface.js"
-const petInterface = new PetInterface();
+import {AnimalTypeInterface} from "../../db-interface/animal-type-interface.js"
 let searchBarValue = ''
 
 async function handleSeachButton() {
@@ -12,9 +11,12 @@ function onSearchBar(event) {
 const animaltypeinterface = new AnimalTypeInterface()
 async function puxabicho(){
     var bichos = await animaltypeinterface.fetchAnimalType();
-    const{animaltypes} = bichos
-    animaltypes.foreach((element)=>{$('#animal-type-container').append(`<div id="" class="tipos">
-        <img class="imagem-categorias" src="${element.props.img_url_reference}" alt="Foto cachorro">
+    const {animaltypes} = bichos;
+    console.log('oi', animaltypes);
+    animaltypes.forEach((element)=>{ 
+        console.log(element);
+        $('#animal-type-container').append(`<div id="" class="tipos">
+        <img class="imagem-categorias" src="${element.props.imgUrlReference}" alt="Foto cachorro">
 
         <div>
             <p class="escrito-card">${element.props.type}</p>
@@ -29,9 +31,9 @@ async function pegabicho(){
         result.innerHTML = "Erro ao buscar tipo de animal.";
     }
 }
-    bichos.foreach((elemento) => elemento.id);
+    
 
-window.addEventListener("load,", async () => {
+window.addEventListener("load", async () => {
     await puxabicho();
 })
 
