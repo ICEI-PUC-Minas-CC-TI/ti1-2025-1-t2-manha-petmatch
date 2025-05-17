@@ -15,12 +15,12 @@ async function puxabicho(){
     console.log('oi', animaltypes);
     animaltypes.forEach((element)=>{ 
         console.log(element);
-        $('#animal-type-container').append(`<div id="" class="tipos">
+        $('#animal-type-container').append(`<a href="/codigo/public/explore/index.html?search=${element._id}}" id="" class="tipos">
         <img class="imagem-categorias" src="${element.props.imgUrlReference}" alt="Foto cachorro">
 
-        <div>
+        
             <p class="escrito-card">${element.props.type}</p>
-        </div>`)})
+        </a>`)})
 }
 async function pegabicho(){
    try {
@@ -36,5 +36,4 @@ async function pegabicho(){
 window.addEventListener("load", async () => {
     await puxabicho();
 })
-
 
