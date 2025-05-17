@@ -274,7 +274,7 @@ div.titulo-categoria {
 }
 
 /*Design dos Cards*/
-div.tipos {
+a.tipos {
   background-color: var(--yellow);
   color: var(--black);
   border: 2px solid var(--black);
@@ -284,6 +284,7 @@ div.tipos {
   width: 100%;
   width: 120px;
   max-width: 1500px;
+  text-decoration: none;
 }
 
 .imagem-categorias {
