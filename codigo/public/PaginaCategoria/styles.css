@@ -282,13 +282,13 @@ div.tipos {
   margin: 7px;
   cursor: pointer;
   width: 100%;
-  max-width: 100px;
- 
+  width: 120px;
+  max-width: 1500px;
 }
 
 .imagem-categorias {
   height: 100px;
-  width: 100px;
+  width: 120px;
   display: block;
   border-radius: 7px;
   border: solid var(--yellow);
