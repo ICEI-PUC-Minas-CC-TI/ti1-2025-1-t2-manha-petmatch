@@ -29,13 +29,17 @@ function drawElements(listOfPets, favoritedPetList) {
 
             const favoritePetClassName = favoritedPetList.some(element => element.props.petId === pet.id) ? "favorited" : "unFavorited"
 
-            $('#pet-card-list-container').append(`
-                <div class="pet-card-list-content">
-                  <h3>${type}</h3>
-                  <ul class="pet-card-list" id="${type}">       
-                  </ul>
-                </div>
-            `)
+            const containerAlredyExists = $(`#container-${type}`).length > 0
+
+            if(!containerAlredyExists){
+              $('#pet-card-list-container').append(`
+                  <div class="pet-card-list-content" id="container-${type}">
+                    <h3>${type}</h3>
+                    <ul class="pet-card-list" id="${type}">       
+                    </ul>
+                  </div>
+              `)
+            }
 
            $(`#${type}`).append(` <li class="pet-card" }>
               <img src="${pet.img_urls}" alt="">
