@@ -1,4 +1,4 @@
-import { TipInterface } from "../../interface/tip-interface.js";
+import { TipInterface } from "../../db-interface/tip-interface.js";
 
 const tipinterface = new TipInterface();
 
