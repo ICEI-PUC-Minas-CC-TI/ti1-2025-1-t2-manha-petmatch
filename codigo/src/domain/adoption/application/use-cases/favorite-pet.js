@@ -41,11 +41,13 @@ export class FavoritePetUseCase {
         if(petAlredyFavorited) {
             return left(new PetAlredyFavoritedError())
         }
-        const favoritePet = FavoritePet.create({
-                petId,
-                userId
-            })
 
+        
+        const favoritePet = FavoritePet.create({
+            appraiserId: userId,
+            petId
+        })
+        
         await this.favoritePetRepository.create(favoritePet);
 
         return right({

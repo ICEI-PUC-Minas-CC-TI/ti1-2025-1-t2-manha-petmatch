@@ -8,7 +8,6 @@ export class JsonFavoritePetRepository {
     async create(favoritePet) {
         try {
             const dbFavoritePet = JsonFavoritePetRepositoryMapper.toJson(favoritePet)
-            console.log("asad",favoritePet)
 
             await fetch(this.url, {
                 method: "POST",
@@ -59,6 +58,8 @@ export class JsonFavoritePetRepository {
             const newUrl = `${this.url}?appraiser_id=${appraiserId}&pet_id=${petId}`;
     
             const response = await fetch(newUrl);
+
+            console.log(response)
             const jsonFormat = await response.json();
     
             return jsonFormat.length > 0 ? JsonFavoritePetRepositoryMapper.toDomain(jsonFormat[0]) : null;

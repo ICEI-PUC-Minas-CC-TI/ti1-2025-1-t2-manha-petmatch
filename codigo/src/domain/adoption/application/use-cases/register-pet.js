@@ -47,7 +47,6 @@ export class RegisterPetUseCase {
         donorId,
     }) {
 
-        console.log(availableForAdoption)
 
         if( name == undefined ||
             animalTypeId == undefined ||

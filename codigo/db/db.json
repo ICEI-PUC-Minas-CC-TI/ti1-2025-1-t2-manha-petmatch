@@ -1,7 +1,7 @@
 {
   "pet": [
     {
-      "id": "petTest",
+      "id": "petTest2",
       "name": "Chitãozinho",
       "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
       "size": "medium",
@@ -25,7 +25,7 @@
       "created_at": "2025-05-02T12:07:43.749Z",
       "updated_at": "2025-05-02T12:07:43.749Z"
     },
-     {
+    {
       "id": "petTest",
       "name": "Chororo",
       "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
@@ -48,8 +48,8 @@
       "donor_id": "donorTestId",
       "created_at": "2025-05-02T12:07:43.749Z",
       "updated_at": "2025-05-02T12:07:43.749Z"
-    }, 
-     {
+    },
+    {
       "id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673",
       "name": "Vendaval",
       "animal_type_id": "23485b50-a18d-4a3a-a9f0-6e1002cb0eff",
@@ -123,13 +123,7 @@
       "updated_at": "someDate"
     }
   ],
-  "favorite_pet": [
-    {
-      "id": "a495187e-3fc4-40c1-ad96-fbfdaea61819",
-      "pet_id": "petTest",
-      "created_at": "2025-05-05T19:53:16.695Z"
-    }
-  ],
+  "favorite_pet": [],
   "address": [
     {
       "id": "someId",

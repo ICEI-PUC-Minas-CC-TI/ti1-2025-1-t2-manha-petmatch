@@ -19,7 +19,6 @@ export class JsonUserRepositoryMapper {
     }
     static toJson(user) {
 
-        console.log("domain: ",user)
         const jsonUser =  {
             "id": user.id,
             "cpf": user.cpf.value,
@@ -34,7 +33,6 @@ export class JsonUserRepositoryMapper {
             "updated_at": user.updatedAt,
         }
 
-        console.log("db: ",jsonUser)
 
 
         return jsonUser

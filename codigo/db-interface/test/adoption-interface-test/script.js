@@ -22,10 +22,9 @@ async function registerAdoption() {
             donorId: donorId.value,
             petId: petId.value
         });
-        console.log(response)
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
-        console.log(error)
+        console.error(error)
         result.innerHTML = "Erro ao registrar adoção.";
     }
 }

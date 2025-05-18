@@ -6,7 +6,6 @@ export class JsonAdoptionRepository {
     constructor() {}
 
     async create(adoption) {
-        console.log("test")
         try {
             const dbAdoption = JsonAdoptionRepositoryMapper.toJson(adoption)
 
@@ -59,7 +58,6 @@ export class JsonAdoptionRepository {
     async findManyAdoptionByDonorId(donorId) {
         try{
             const newUrl = `${this.url}?donor_id=${donorId}`
-            console.log(newUrl)
 
             const response = await fetch(newUrl);
 

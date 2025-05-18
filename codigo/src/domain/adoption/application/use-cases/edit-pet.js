@@ -53,7 +53,6 @@ export class EditPetUseCase {
         }
 
         const {pet} = await this.petRepository.findById(id);
-        console.log(pet)
 
         if(!pet) {
             return left(new ResourceNotFoundError());

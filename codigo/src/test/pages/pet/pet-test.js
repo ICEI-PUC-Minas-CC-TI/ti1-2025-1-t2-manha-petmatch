@@ -24,7 +24,6 @@ async function registerPet() {
     const registerFunction = new RegisterPetUseCase(db);
     try {
         const pet = await registerFunction.execute(JSON.parse(petData.value));
-        console.log("register: ", pet)
         result.innerHTML = JSON.stringify(pet, null, 2);
     } catch (error) {
         console.error("Erro ao registrar pet:", error);
@@ -47,9 +46,7 @@ async function getPets() {
     const fetchPetUseCase = new FetchPetUseCase(db);
     try {
 
-        console.log("asd")
         const pets = await fetchPetUseCase.execute();
-        console.log("getPets: ", pets)
 
         result.innerHTML = JSON.stringify(pets, null, 2);
     } catch (error) {

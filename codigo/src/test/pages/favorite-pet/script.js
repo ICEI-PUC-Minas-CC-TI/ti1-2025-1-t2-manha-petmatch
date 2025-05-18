@@ -30,7 +30,6 @@ async function favoritePet() {
             appraiserId: appraiserId.value
         });
 
-        console.log(response)
 
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
@@ -63,7 +62,6 @@ async function unfavoritePet() {
             appraiserId: appraiserIdUnfavorite.value
         });
 
-        console.log(result)
 
         result.innerHTML = "Pet desfavoritado com sucesso.";
     } catch (error) {

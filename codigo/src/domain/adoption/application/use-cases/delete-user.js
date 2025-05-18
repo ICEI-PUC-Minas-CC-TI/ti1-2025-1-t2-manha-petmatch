@@ -25,12 +25,12 @@ export class DeleteUserUseCase {
         }
 
         const {user} = await this.userRepository.findById(id);
-        console.log(user)
 
         if(!user) {
             return left(new ResourceNotFoundError());
         }
 
         await this.userRepository.delete(user);
+        return right({message: "user deleted"})
     }
 }

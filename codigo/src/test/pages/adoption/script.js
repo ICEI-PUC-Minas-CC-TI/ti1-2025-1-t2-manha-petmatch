@@ -37,7 +37,6 @@ async function registerAdoption() {
             petId: petId.value
         });
 
-        console.log(response)
 
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
@@ -67,8 +66,6 @@ async function fetchAdoptedPetsDonor() {
         const response = await fetchAdoptionByDonorUseCase.execute({
             donorId: donorIdFetch.value
         });
-
-        console.log(donorIdFetch.value)
 
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
