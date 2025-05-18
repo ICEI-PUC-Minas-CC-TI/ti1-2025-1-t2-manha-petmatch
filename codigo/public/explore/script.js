@@ -165,6 +165,8 @@ $("#searchButton").click(handleSeachButton)
 
 $(document).on("click", ".pet-card-see-pet-button", function (e) {
   e.preventDefault();
+  const value = e.currentTarget.value;
+  window.location.href = `../Detalhes/index.html?petId=${value}`
 });
 
 $(document).on("click", ".pet-card-favorite-pet-button", async function (e) {
