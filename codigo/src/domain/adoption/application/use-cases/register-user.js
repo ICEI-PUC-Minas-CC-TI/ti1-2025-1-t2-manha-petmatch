@@ -47,7 +47,6 @@ export class RegisterUserUseCase {
 
         const userCpfAlredyExists = await this.userRepository.findByCpf(userCpf.value);
         const userEmailAlredyExists = await this.userRepository.findByEmail(email);
-        console.log(userCpfAlredyExists, userEmailAlredyExists)
 
         if(userCpfAlredyExists || userEmailAlredyExists) {
             return left(new UserAlredyExistsError());

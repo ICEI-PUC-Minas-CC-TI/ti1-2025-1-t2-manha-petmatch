@@ -33,7 +33,6 @@ export class AnimalTypeInterface {
     async getAnimalType({id}) {
         const getAnimalTypeUseCase = new GetAnimalTypeUseCase(this.animalTypeRepository)
 
-        console.log(id)
         const response = await getAnimalTypeUseCase.execute({id});
 
         if(response.isLeft() === true) {

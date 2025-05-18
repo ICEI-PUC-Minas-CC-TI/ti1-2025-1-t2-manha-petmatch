@@ -30,7 +30,6 @@ export class JsonTipRepository {
             const jsonFormat = await response.json()
             
             const tip = Object.keys(jsonFormat).length === 0 ? {tip: null} : {tip: JsonTipRepositoryMapper.toDomain(jsonFormat)}
-            console.log("asads",tip)
 
             return tip
         } catch(err) {
@@ -59,7 +58,6 @@ export class JsonTipRepository {
 
     async delete(tip) {
 
-        console.log(tip.id)
         try {
             const newUrl = `${this.url}/${tip.id}`
 

@@ -8,7 +8,6 @@ export class JsonPetRepository {
     async create(pet) {
         try {
             const dbPet = JsonPetRepositoryMapper.toJson(pet)
-            console.log(dbPet)
 
             await fetch(this.url, {
                 method: "POST",
@@ -62,7 +61,6 @@ export class JsonPetRepository {
             const jsonFormat = await response.json();
 
             let pets = jsonFormat
-            console.log("filters", filters)
             filters.map((filter) => {
                 pets = pets.filter(pet => {
                 return Object.values(pet).some(value => {

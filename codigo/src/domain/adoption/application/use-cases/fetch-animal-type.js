@@ -15,7 +15,6 @@ export class FetchAnimalTypeUseCase {
     async execute() {
         const animaltypes = await this.animaltypeRepository.findManyAnimalTypes()
 
-        console.log(animaltypes)
 
         return right({
             animaltypes

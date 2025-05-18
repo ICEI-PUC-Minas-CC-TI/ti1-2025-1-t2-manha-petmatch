@@ -153,7 +153,6 @@ export class PetInterface {
     async favoritePet({petId, userId}) {
         const favoritePetUseCase = new FavoritePetUseCase(this.favoritePetRepository, this.userRepository)
 
-        console.log("p u ", petId, userId)
 
         const response = await favoritePetUseCase.execute({
             petId,

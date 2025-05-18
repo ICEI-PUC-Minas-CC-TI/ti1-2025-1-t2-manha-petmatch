@@ -8,7 +8,6 @@ export class JsonAnimalTypeRepository {
     async create(animaltype) {
         try {
             const dbAnimalType = JsonAnimalTypeRepositoryMapper.toJson(animaltype)
-            console.log(dbAnimalType)
 
             await fetch(this.url, {
                 method: "POST",

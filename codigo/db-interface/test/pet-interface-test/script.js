@@ -36,7 +36,7 @@ async function registerPet() {
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao registrar pet.";
-        console.log(error)
+        console.error(error)
     }
 
 }
@@ -47,7 +47,7 @@ async function fetchFavoritePets() {
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao listar pets favoritos.";
-        console.log(error)
+        console.error(error)
     }
 }
 
@@ -84,7 +84,7 @@ async function favoritePet() {
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao favoritar pet.";
-        console.log(error)
+        console.error(error)
     }
 }
 
@@ -112,11 +112,10 @@ async function editPet() {
 
         const response = await petManager.editPet({pet: value, petId: value.id, donorId: donorIdEdit.value});
 
-        console.log(response)
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
         result.innerHTML = "Erro ao editar pet.";
-        console.log(error)
+        console.error(error)
 
     }
 }

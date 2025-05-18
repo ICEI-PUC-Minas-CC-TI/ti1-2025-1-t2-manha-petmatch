@@ -9,7 +9,7 @@ async function fetchAnimalType() {
         const response = await animalTypeManager.fetchAnimalType();
         result.innerHTML = JSON.stringify(response, null, 2);
     } catch (error) {
-        console.log(error)
+        console.error(error)
         result.innerHTML = "Erro ao buscar tipos de animais.";
     }
 }

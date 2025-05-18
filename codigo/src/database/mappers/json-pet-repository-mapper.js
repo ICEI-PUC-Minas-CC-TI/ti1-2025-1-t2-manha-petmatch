@@ -24,7 +24,6 @@ export class JsonPetRepositoryMapper {
     }
     static toJson(pet) {
 
-        console.log("domain: ",pet)
         const jsonPet =  {
             id: pet.id,
             name: pet.name,
@@ -45,7 +44,6 @@ export class JsonPetRepositoryMapper {
 
         }
 
-        console.log("db: ",jsonPet)
 
 
         return jsonPet

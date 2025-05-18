@@ -30,7 +30,6 @@ export class JsonDonorRepository {
             const jsonFormat = await response.json()
             
             const donor = Object.keys(jsonFormat).length === 0 ? {donor: null} : {donor: JsonDonorRepositoryMapper.toDomain(jsonFormat)}
-            console.log("asads",donor)
 
             return donor
         } catch(err) {
@@ -72,7 +71,6 @@ export class JsonDonorRepository {
 
     async delete(donor) {
 
-        console.log(donor.id)
         try {
             const newUrl = `${this.url}/${donor.id}`
 

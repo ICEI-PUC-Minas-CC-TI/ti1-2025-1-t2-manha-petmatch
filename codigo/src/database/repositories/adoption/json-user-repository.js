@@ -30,7 +30,6 @@ export class JsonUserRepository {
             const jsonFormat = await response.json()
             
             const user = Object.keys(jsonFormat).length === 0 ? {user: null} : {user: JsonUserRepositoryMapper.toDomain(jsonFormat)}
-            console.log("asads",user)
 
             return user
         } catch(err) {
@@ -72,7 +71,6 @@ export class JsonUserRepository {
 
     async delete(user) {
 
-        console.log(user.id)
         try {
             const newUrl = `${this.url}/${user.id}`
 

@@ -100,6 +100,14 @@
 
 .pet-card-favorite-pet-button {
     width: 4rem;
+}
+
+.favorited {
     background-color: var(--red);
     border: 2px solid var(--red);
+}
+
+.unFavorited {
+    background-color: var(--gray);
+    border: 2px solid var(--gray);
 }

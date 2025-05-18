@@ -1,7 +1,6 @@
 import { right, left } from '../../../../../core/Either.js';
 import { NotAllowedError } from '../../../../../core/errors/not-allowed-error.js';
 import { ResourceNotFoundError } from '../../../../../core/errors/resource-not-found-error.js';
-import {FavoritePet} from '../../enterprise/entities/FavoritePet.js'
 import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 
 
@@ -36,19 +35,22 @@ export class UnfavoritePetUseCase {
         if(!user) {
             return left(new NotAllowedError());
         }
-
-        const {favoritePet} = await this.favoritePetRepository.findByPetId(
-           petId
+        
+        
+        const favoritePet = await this.favoritePetRepository.findFavoriteByAppraiserAndPet(
+            appraiserId, petId
         )
-
+        
         if(!favoritePet) {
             return left(new ResourceNotFoundError())
         }
-
+        
         if(favoritePet.appraiserId !== appraiserId) {
             return left(new NotAllowedError())
         }
 
         await this.favoritePetRepository.delete(favoritePet);
+
+        return right({message: "Unfavorited"})
     }
 }

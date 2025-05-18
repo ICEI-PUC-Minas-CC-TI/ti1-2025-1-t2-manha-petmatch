@@ -35,7 +35,6 @@ export class FetchFavoritePetUseCase {
         }
         const favoritePets = await this.favoritePetRepository.findManyFavoritePetByAppraiserId(appraiserId)
         
-        console.log(favoritePets)
         return right({
             favoritePets
         })
