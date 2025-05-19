@@ -1,8 +1,8 @@
-/* Global Styles & Main Layout */
+
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
-  background-color: #f4f4f4; /* Light grey background instead of black */
+  background-color: #f4f4f4; 
   color: #333;
   line-height: 1.6;
 }
@@ -20,10 +20,9 @@ body {
   align-items: start;
 }
 
-/* Responsive adjustments */
 @media (max-width: 900px) {
   .pet-detail-layout {
-    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    grid-template-columns: 1fr; 
   }
   .owner-card {
     margin-bottom: 30px;
@@ -40,12 +39,30 @@ body {
     margin-top: 10px;
   }
   .search-box {
-      width: calc(100% - 22px); /* Account for padding/border */
+      width: calc(100% - 22px); /
   }
   .pet-info-grid {
-    grid-template-columns: 1fr; /* Stack pet info and attributes */
+    grid-template-columns: 1fr;
   }
   .pet-attributes {
     margin-top: 20px;
   }
+  /* Ícone de favoritar que esta com bug*/
+#favoriteIcon {
+  cursor: pointer;
+  font-size: 24px;
+  color: #bbb; /* cinza claro padrão */
+  transition: color 0.3s ease;
+}
+
+#favoriteIcon:hover {
+  color: #ffffff; /* branco no hover */
+}
+
+#favoriteIcon.favorited {
+  color: #e74c3c; /* vermelho quando favoritado */
+  filter: drop-shadow(0 0 3px #e74c3c);
+}
+
+
 }

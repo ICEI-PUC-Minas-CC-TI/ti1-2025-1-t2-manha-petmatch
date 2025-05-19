@@ -50,9 +50,8 @@
 }
 
 .owner-description p {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
-
 
 .contact-button {
   background-color: #FFD100;
@@ -68,8 +67,9 @@
 }
 
 .contact-button:hover {
-  background-color: #f2c300; 
+  background-color: #f2c300;
 }
+
 .pet-details-column {
   background-color: #fff;
   border-radius: 10px;
@@ -79,7 +79,7 @@
 
 .pet-image {
   width: 100%;
-  max-height: 450px; 
+  max-height: 450px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 25px;
@@ -96,8 +96,8 @@
 
 .pet-info-grid {
   display: grid;
-  grid-template-columns: 1fr auto; /* Description takes available space, attributes fit content */
-  gap: 30px; 
+  grid-template-columns: 1fr auto;
+  gap: 30px;
   align-items: start;
   margin-bottom: 25px;
 }
@@ -109,16 +109,12 @@
   margin: 0;
 }
 
-.pet-attributes {
-  /* No background, border only on top of title */
-}
-
 .attributes-title {
   font-size: 1.3em;
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
-  border-top: 4px solid #FFD100; /* Yellow top border */
+  border-top: 4px solid #FFD100;
   padding-top: 10px;
 }
 
@@ -129,7 +125,7 @@
 }
 
 .attributes-table td {
-  padding: 10px 5px; /* Adjusted padding */
+  padding: 10px 5px;
   border-bottom: 1px solid #eee;
   vertical-align: top;
 }
@@ -137,11 +133,11 @@
 .attributes-table td:first-child {
   font-weight: bold;
   color: #333;
-  width: 100px; /* Fixed width for labels */
+  width: 100px;
 }
 
 .attributes-table td:last-child {
-  text-align: left; /* As per image */
+  text-align: left;
   color: #555;
 }
 
@@ -149,9 +145,8 @@
   border-bottom: none;
 }
 
-
 .adopt-button {
-  background-color: #FFD100; /* Yellow color */
+  background-color: #FFD100;
   color: #333;
   border: none;
   padding: 15px 30px;
@@ -168,17 +163,17 @@
 }
 
 .adopt-button:hover {
-  background-color: #f2c300; /* Darker yellow on hover */
+  background-color: #f2c300;
 }
 
 .heart-icon {
-  color: #FF5C5C; /* Default heart color (matches image more closely) */
+  color: #FF5C5C;
   margin-left: 15px;
-  font-size: 1.3em; /* Slightly larger heart */
+  font-size: 1.3em;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .heart-icon.favorited {
-  color: #E53935; /* Darker red when favorited */
-  transform: scale(1.1); /* Slight pulse effect */
+  color: #E53935;
+  transform: scale(1.1);
 }

@@ -1,70 +1,175 @@
-import { PetInterface} from "../../db-interface/pet-interface.js"
-const gerenciamentopets = new PetInterface()
-gerenciamentopets.getPetById({id:})
-async getPetById (id)
-// Main script for interactions
+import { PetInterface } from '../../db-interface/pet-interface.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const contactButton = document.getElementById('contactButton');
-    const adoptButton = document.getElementById('adoptButton');
-    const favoriteIcon = document.getElementById('favoriteIcon');
+const gerenciamentopets = new PetInterface();
 
-    // 1. "Contatar" button functionality
-    if (contactButton) {
-        contactButton.addEventListener('click', () => {
-            alert('Informações de contato de Ricardão seriam exibidas aqui! (Ex: Telefone, Email)');
-        });
+document.addEventListener('DOMContentLoaded', async () => {
+  // A url q deve ficar no meu parametro
+  const params = new URLSearchParams(window.location.search);
+  if (!params.has('petId')) {
+    params.set('petId', '52cbc36c-bd71-420e-a1f9-f284c9cc9673');
+    const newUrl = `${window.location.pathname}?${params.toString()}`;
+    history.replaceState(null, '', newUrl);
+  }
+
+  const contactButton = document.getElementById('contactButton');
+  const adoptButton = document.getElementById('adoptButton');
+  const favoriteIcon = document.getElementById('favoriteIcon');
+
+  const petNameElement = document.getElementById('petName');
+  const petDescriptionElement = document.getElementById('petDescription');
+  const petSpeciesElement = document.getElementById('petSpecies');
+  const petBreedElement = document.getElementById('petBreed');
+  const petGenderElement = document.getElementById('petGender');
+  const petAgeElement = document.getElementById('petAge');
+  const petVaccinatedElement = document.getElementById('petVaccinated');
+  const petImageElement = document.getElementById('petImage');
+
+  const searchInput = document.getElementById('searchInput');
+  const searchButton = document.getElementById('searchButton');
+  const petListContainer = document.getElementById('petListContainer');
+
+  const currentPetId = params.get('petId');
+  const currentUserId = 'current-user-id-abc'; // eu fui arrumar pra por sua url mas agr nem aparece mais a opcao
+
+  let loadedPetName = 'este PET';
+
+  if (currentPetId) {
+    console.log('ID do PET encontrado:', currentPetId);
+
+    const result = await gerenciamentopets.getPetById(currentPetId);
+    console.log('Resultado getPetById:', result);
+
+    if (result.success && result.pet) {
+      const pet = result.pet;
+      loadedPetName = pet.name || loadedPetName;
+
+      if (petNameElement) petNameElement.textContent = pet.name || 'Nome indisponível';
+      if (petDescriptionElement) petDescriptionElement.textContent = pet.description || 'Descrição indisponível';
+      if (petSpeciesElement) petSpeciesElement.textContent = pet.species || '-';
+      if (petBreedElement) petBreedElement.textContent = pet.breed || '-';
+      if (petGenderElement) petGenderElement.textContent = pet.gender || '-';
+      if (petAgeElement) petAgeElement.textContent = pet.age || '-';
+      if (petVaccinatedElement) petVaccinatedElement.textContent = pet.vaccinated ? 'Sim' : 'Não';
+
+      if (petImageElement && pet.imageUrl) petImageElement.src = pet.imageUrl;
+    } else {
+      console.error('Erro ao carregar detalhes do PET:', result.error);
+      alert('Não foi possível carregar os detalhes do PET. Tente novamente mais tarde.');
     }
+  } else {
+    console.warn('ID do PET não encontrado na URL.');
+  }
 
-    // 2. "Quero adotar esse PET" button functionality (Adoption part)
-    if (adoptButton) {
-        // The adopt functionality is primarily the alert on the whole button
-        // The favorite is handled by the icon click
-        adoptButton.addEventListener('click', (event) => {
-            // Prevent alert if only heart icon was clicked
-            if (event.target === favoriteIcon || favoriteIcon.contains(event.target)) {
-                // If click was on heart or its child, do nothing here, let heart handler do its job
-                return;
-            }
-            alert('Você demonstrou interesse em adotar o SCOOBY! Próximos passos seriam exibidos aqui.');
-        });
-    }
-    
-    // 3. "Favoritar" functionality (Heart icon click)
-    if (favoriteIcon) {
-        favoriteIcon.addEventListener('click', (event) => {
-            event.stopPropagation(); // Prevent the adoptButton's click event from firing
-            
-            favoriteIcon.classList.toggle('favorited');
-            const isFavorited = favoriteIcon.classList.contains('favorited');
+  if (contactButton) {
+    contactButton.addEventListener('click', async () => {
+      if (!currentPetId) {
+        alert('Não foi possível contatar. ID do PET não disponível.');
+        return;
+      }
+      const result = await gerenciamentopets.getDonorContactInfo(currentPetId);
+      if (result.success && result.donor) {
+        const donor = result.donor;
+        alert(`Informações de contato de ${donor.name}:\nTelefone: ${donor.phone || 'Não informado'}\nEmail: ${
+          donor.email || 'Não informado'
+        }`);
+      } else {
+        alert(`Não foi possível obter informações de contato do doador para ${loadedPetName}.`);
+        console.error('Erro ao obter informações do doador:', result.error);
+      }
+    });
+  }
 
-            if (isFavorited) {
-                console.log('SCOOBY adicionado aos favoritos!');
-                // Here you could call a function like your `WorkspaceFavoritePets` or similar
-                // For example: markAsFavorite('SCOOBY_ID');
-            } else {
-                console.log('SCOOBY removido dos favoritos!');
-                // For example: removeFromFavorites('SCOOBY_ID');
-            }
-            // You can update the icon style via CSS or directly:
-            // favoriteIcon.style.color = isFavorited ? '#E53935' : '#FF5C5C';
+  if (adoptButton) {
+    adoptButton.addEventListener('click', (event) => {
+      if (event.target === favoriteIcon || favoriteIcon.contains(event.target)) {
+        return;
+      }
+      alert(`Você demonstrou interesse em adotar o ${loadedPetName}! Um formulário de adoção ou próximos passos seriam exibidos aqui.`);
+      console.log(`Interesse em adotar o ${loadedPetName} (ID: ${currentPetId}) registrado.`);
+    });
+  }
+
+  if (favoriteIcon) {
+    favoriteIcon.addEventListener('click', async (event) => {
+      event.stopPropagation();
+
+      if (!currentUserId || !currentPetId) {
+        alert('Para favoritar, você precisa estar logado e ter um PET selecionado.');
+        console.error('ID do usuário ou do PET ausente para a ação de favoritar.');
+        return;
+      }
+
+      const isCurrentlyFavorited = favoriteIcon.classList.contains('favorited');
+      let result;
+
+      if (isCurrentlyFavorited) {
+        result = await gerenciamentopets.unfavoritePet(currentUserId, currentPetId);
+        if (result.success) {
+          favoriteIcon.classList.remove('favorited');
+          console.log(`${loadedPetName} removido dos favoritos!`);
+        } else {
+          alert(`Erro ao remover ${loadedPetName} dos favoritos: ${result.error}`);
+          console.error('Erro ao desfavoritar:', result.error);
+        }
+      } else {
+        result = await gerenciamentopets.favoritePet(currentUserId, currentPetId);
+        if (result.success) {
+          favoriteIcon.classList.add('favorited');
+          console.log(`${loadedPetName} adicionado aos favoritos!`);
+        } else {
+          alert(`Erro ao adicionar ${loadedPetName} aos favoritos: ${result.error}`);
+          console.error('Erro ao favoritar:', result.error);
+        }
+      }
+    });
+  }
+
+  if (searchButton && searchInput && petListContainer) {
+    searchButton.addEventListener('click', async () => {
+      const searchTerm = searchInput.value.trim();
+      const petsResult = await gerenciamentopets.fetchPets(searchTerm);
+
+      petListContainer.innerHTML = ''; // limpa
+
+      if (petsResult.success && Array.isArray(petsResult.pets) && petsResult.pets.length > 0) {
+        petsResult.pets.forEach((pet) => {
+          const petCard = createPetCard(pet);
+          petListContainer.appendChild(petCard);
         });
-    }
+      } else {
+        petListContainer.innerHTML = '<p>Nenhum pet encontrado para a pesquisa.</p>';
+      }
+    });
+  }
 });
 
-// Placeholder for actual API calls if you integrate a backend
-// async function markAsFavorite(petId) {
-//   // const userId = ... get current user ID ...;
-//   // try {
-//   //   const response = await petManager.addFavoritePet({ userId: userId, petId: petId });
-//   //   console.log("Pet favoritado via API:", response);
-//   // } catch (error) {
-//   //   console.error("Erro ao favoritar pet via API:", error);
-//   //   // Revert UI change if API call fails
-//   //   document.getElementById('favoriteIcon').classList.remove('favorited');
-//   // }
-// }
+function createPetCard(pet) {
+  const card = document.createElement('article');
+  card.classList.add('pet-card');
 
-// async function removeFromFavorites(petId) {
-//   // ... similar logic for removing ...
-// }
+  const img = document.createElement('img');
+  img.src = pet.imageUrl || 'https://via.placeholder.com/150';
+  img.alt = pet.name ? `Foto do pet ${pet.name}` : 'Foto do pet';
+
+  const name = document.createElement('h3');
+  name.textContent = pet.name || 'Pet sem nome';
+
+  const species = document.createElement('p');
+  species.textContent = pet.species || 'Espécie desconhecida';
+
+  const breed = document.createElement('p');
+  breed.textContent = pet.breed || 'Raça desconhecida';
+
+  const detailsButton = document.createElement('a');
+  detailsButton.textContent = 'Ver Detalhes';
+  detailsButton.classList.add('details-button');
+  detailsButton.href = `detalhes.html?petId=${encodeURIComponent(pet.id)}`;
+
+  card.appendChild(img);
+  card.appendChild(name);
+  card.appendChild(species);
+  card.appendChild(breed);
+  card.appendChild(detailsButton);
+
+  return card;
+}

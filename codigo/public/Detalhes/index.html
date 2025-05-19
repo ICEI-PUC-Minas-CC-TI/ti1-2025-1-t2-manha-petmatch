@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PETMATCH - Adoção de Pets</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="header.css">
-  <link rel="stylesheet" href="pet-card.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Adote o pet Scooby e descubra mais sobre seu perfil e o responsável por ele." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="pet-card.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <header class="header">
@@ -15,8 +16,8 @@
       <h1 class="logo">PETMATCH</h1>
       <div class="search-container">
         <div class="search-box">
-          <input type="text" id="searchInput" placeholder="Pesquisar...">
-          <button type="submit" class="search-button" id="searchButton">
+          <input type="text" id="searchInput" placeholder="Pesquisar..." aria-label="Campo de pesquisa" />
+          <button type="submit" class="search-button" id="searchButton" aria-label="Buscar pet">
             <i class="fas fa-search"></i>
           </button>
         </div>
@@ -27,75 +28,87 @@
   <main>
     <div class="container">
       <div class="pet-detail-layout">
-        <div class="owner-card">
+
+        <section class="owner-card" aria-label="Informações do responsável">
           <div class="owner-profile">
-            <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg" alt="Ricardão" class="owner-image">
+            <img
+              src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg"
+              alt="Foto do responsável Ricardão"
+              class="owner-image"
+            />
             <h2 class="owner-name">Ricardão</h2>
-            <div class="rating-stars">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+            <div class="rating-stars" aria-label="Avaliação do responsável: 5 estrelas">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
+              ><i class="fas fa-star"></i>
               <span>5.0</span>
             </div>
           </div>
           <div class="owner-description">
-            <p>Descrição do cara responsável pela publicação da adoção, eu não sei o que colocar, então escreverei qualquer coisa, beleza.</p>
-            </div>
-          <button class="contact-button" id="contactButton">Contatar</button>
-        </div>
-        
-        <div class="pet-details-column">
-          <img src="https://images.pexels.com/photos/1124002/pexels-photo-1124002.jpeg" alt="SCOOBY" class="pet-image">
-          
-          <h1 class="pet-name">SCOOBY</h1>
-          
+            <p>Descrição do responsável pela publicação da adoção. Exemplo de texto descritivo sobre a pessoa.</p>
+          </div>
+          <button class="contact-button" id="contactButton" aria-label="Contatar o responsável">Contatar</button>
+        </section>
+
+        <section class="pet-details-column" aria-label="Detalhes do pet">
+          <img
+            src="https://images.pexels.com/photos/1124002/pexels-photo-1124002.jpeg"
+            alt="Foto do pet Scooby"
+            class="pet-image"
+            id="petImage"
+          />
+
+          <h1 class="pet-name" id="petName">SCOOBY</h1>
+
           <div class="pet-info-grid">
             <div class="pet-description">
-              <p>Descrição do cachorro, eu não sei o que colocar, então escreverei qualquer coisa, beleza.</p>
+              <p id="petDescription">
+                Scooby é um pet amigável e ativo que está em busca de um novo lar cheio de amor.
+              </p>
             </div>
-            
+
             <div class="pet-attributes">
               <h2 class="attributes-title">Sobre o PET</h2>
-              <table class="attributes-table">
+              <table class="attributes-table" aria-label="Características do pet">
                 <tr>
                   <td>Animal</td>
-                  <td>Cachorro</td>
+                  <td id="petSpecies">Cachorro</td>
                 </tr>
                 <tr>
                   <td>Raça</td>
-                  <td>Shitsu</td>
+                  <td id="petBreed">Shih-tzu</td>
                 </tr>
                 <tr>
                   <td>Gênero</td>
-                  <td>Macho</td>
+                  <td id="petGender">Macho</td>
                 </tr>
                 <tr>
                   <td>Idade</td>
-                  <td>6 Meses</td>
+                  <td id="petAge">6 Meses</td>
                 </tr>
                 <tr>
                   <td>Vacinado</td>
-                  <td>Sim</td>
+                  <td id="petVaccinated">Sim</td>
                 </tr>
               </table>
             </div>
           </div>
-          
-          <button class="adopt-button" id="adoptButton">
-            Quero adotar esse PET
-            <i class="fas fa-heart heart-icon" id="favoriteIcon"></i>
-          </button>
-        </div>
+
+ <button class="adopt-button" id="adoptButton" aria-label="Quero adotar esse pet">
+  Quero adotar esse PET
+  <i class="fas fa-heart heart-icon" id="favoriteIcon" aria-hidden="true"></i>
+</button>
+
+        </section>
       </div>
+    </div>
+
+    <div class="container">
+      <section id="petListContainer" class="pet-cards-grid" aria-label="Outros pets disponíveis para adoção">
+        <!-- Os pets vão aparecer aqui -->
+      </section>
     </div>
   </main>
 
-  <script src="js/app.js"></script>
-  <script src="js/search.js"></script>
-  <script src="js/rating.js"></script>
   <script type="module" src="script.js"></script>
-
 </body>
 </html>
