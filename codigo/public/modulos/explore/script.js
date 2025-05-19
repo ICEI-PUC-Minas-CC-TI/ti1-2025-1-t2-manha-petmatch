@@ -75,25 +75,25 @@ async function handleFavoritePet(petId) {
     const {favoritePet} = await favoritePetInterface.getFavoritePet({appraiserId: "userTestId", petId})
     if(favoritePet) {
       try{
-        $(`favorite-${pet.id}`).prop('disable', true)
+        $(`#favorite-${pet.id}`).prop('disable', true)
         await favoritePetInterface.unfavoritePet({petId, userId: "userTestId"})
       } catch(err) {
         console.error(err)
       } finally {
-        $(`favorite-${pet.id}`).prop('disable', false)
-        $(`favorite-${pet.id}`).removeClass('favorited')
-        $(`favorite-${pet.id}`).addClass('unFavorited')
+        $(`#favorite-${pet.id}`).prop('disable', false)
+        $(`#favorite-${pet.id}`).removeClass('favorited')
+        $(`#favorite-${pet.id}`).addClass('unFavorited')
       }
     }else {
      try{
-        $(`favorite-${pet.id}`).prop('disable', true)
+        $(`#favorite-${pet.id}`).prop('disable', true)
         await favoritePetInterface.favoritePet({petId, userId: "userTestId"})
       } catch(err) {
         console.error(err)
       } finally {
-        $(`favorite-${pet.id}`).prop('disable', false)
-        $(`favorite-${pet.id}`).removeClass('unFavorited')
-        $(`favorite-${pet.id}`).addClass('favorited')
+        $(`#favorite-${pet.id}`).prop('disable', false)
+        $(`#favorite-${pet.id}`).removeClass('unFavorited')
+        $(`#favorite-${pet.id}`).addClass('favorited')
       }
     }
   }
