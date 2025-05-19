@@ -148,20 +148,7 @@
       "updated_at": "someDate"
     }
   ],
-  "favorite_pet": [
-    {
-      "id": "5093bc3a-6d04-4469-8ae5-be5c84d86128",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest",
-      "created_at": "2025-05-19T17:20:31.045Z"
-    },
-    {
-      "id": "c1b790b7-c11b-41b1-ab79-ac822fd4d15a",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest3",
-      "created_at": "2025-05-19T17:20:43.437Z"
-    }
-  ],
+  "favorite_pet": [],
   "address": [
     {
       "id": "someId",

@@ -1,7 +1,7 @@
 import { JsonAnimalTypeRepositoryMapper } from "../../mappers/json-animal-type-repository-mapper.js";
 
 export class JsonAnimalTypeRepository {
-    url="http://localhost:3000/animal_type";
+    url=`${window.location.origin}/animal_type`;
 
     constructor() {}
 

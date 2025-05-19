@@ -1,7 +1,7 @@
 import {JsonAdoptionRepositoryMapper} from '../../mappers/json-adoption-repository-mapper.js'
 
 export class JsonAdoptionRepository {
-    url="http://localhost:3000/adoption";
+    url=`${window.location.origin}/adoption`;
 
     constructor() {}
 

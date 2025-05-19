@@ -1,7 +1,8 @@
 import { JsonUserRepositoryMapper } from "../../mappers/json-user-repository-mapper.js";
 
 export class JsonUserRepository {
-    url="http://localhost:3000/user";
+    url=`${window.location.origin}/user`;
+
 
     constructor() {}
 

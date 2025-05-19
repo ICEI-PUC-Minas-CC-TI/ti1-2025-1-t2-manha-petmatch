@@ -1,7 +1,7 @@
 import { JsonFavoritePetRepositoryMapper } from "../../mappers/json-favorite-pet-repository-mapper.js";
 
 export class JsonFavoritePetRepository {
-    url="http://localhost:3000/favorite_pet";
+    url=`${window.location.origin}/favorite_pet`;
 
     constructor() {}
 

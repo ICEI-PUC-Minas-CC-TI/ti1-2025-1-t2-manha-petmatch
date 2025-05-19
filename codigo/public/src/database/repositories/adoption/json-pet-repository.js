@@ -1,7 +1,7 @@
 import { JsonPetRepositoryMapper } from "../../mappers/json-pet-repository-mapper.js";
 
 export class JsonPetRepository {
-    url="http://localhost:3000/pet";
+    url=`${window.location.origin}/pet`;
 
     constructor() {}
 

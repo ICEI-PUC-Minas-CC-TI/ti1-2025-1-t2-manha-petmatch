@@ -1,7 +1,8 @@
 import { JsonDonorRepositoryMapper } from "../../mappers/json-donor-repository-mapper.js";
 
 export class JsonDonorRepository {
-    url="http://localhost:3000/donor";
+    url=`${window.location.origin}/donor`;
+
 
     constructor() {}
 

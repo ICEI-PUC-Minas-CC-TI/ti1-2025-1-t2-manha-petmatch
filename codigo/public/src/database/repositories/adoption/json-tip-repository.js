@@ -1,7 +1,8 @@
 import { JsonTipRepositoryMapper } from "../../mappers/json-tip-repository-mapper.js";
 
 export class JsonTipRepository {
-    url="http://localhost:3000/tip";
+        url=`${window.location.origin}/tip`;
+
 
     constructor() {}
 
