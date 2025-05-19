@@ -1,4 +1,4 @@
-import {JsonPetRepository} from '../src/database/repositories/adoption/json-pet-repository.js'
+import {JsonPetRepository} from './../src/database/repositories/adoption/json-pet-repository.js'
 import {JsonDonorRepository} from '../src/database/repositories/adoption/json-donor-repository.js'
 import {JsonUserRepository} from '../src/database/repositories/adoption/json-user-repository.js'
 import {JsonAdoptionRepository} from '../src/database/repositories/adoption/json-adoption-repository.js'
