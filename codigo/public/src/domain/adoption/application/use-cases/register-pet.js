@@ -47,7 +47,10 @@ export class RegisterPetUseCase {
         donorId,
     }) {
 
+<<<<<<< HEAD
         console.log("O name é ", name);
+=======
+>>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
 
         if (name == undefined ||
             animalTypeId == undefined ||

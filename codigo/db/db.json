@@ -4,7 +4,11 @@
       "id": "petTest2",
       "name": "Chitãozinho",
       "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
+<<<<<<< HEAD
       "size": "Médio",
+=======
+      "size": "medium",
+>>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
       "animal_sex": "male",
       "description": "Um cão amigável e brincalhão.",
       "img_urls": [
@@ -29,7 +33,11 @@
       "id": "petTest3",
       "name": "Chitãozinho",
       "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
+<<<<<<< HEAD
       "size": "Grande",
+=======
+      "size": "medium",
+>>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
       "animal_sex": "male",
       "description": "Um cão amigável e brincalhão.",
       "img_urls": [
@@ -54,7 +62,11 @@
       "id": "petTest",
       "name": "Chororo",
       "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
+<<<<<<< HEAD
       "size": "Pequeno",
+=======
+      "size": "medium",
+>>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
       "animal_sex": "male",
       "description": "Um cão amigável e brincalhão.",
       "img_urls": [
@@ -78,7 +90,11 @@
       "id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673",
       "name": "Vendaval",
       "animal_type_id": "23485b50-a18d-4a3a-a9f0-6e1002cb0eff",
+<<<<<<< HEAD
       "size": "Grande",
+=======
+      "size": "medium",
+>>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
       "animal_sex": "male",
       "description": "Um cão Sapeca e brincalhão.",
       "img_urls": [
@@ -198,6 +214,7 @@
   ],
   "favorite_pet": [
     {
+<<<<<<< HEAD
       "id": "07637cd7-70b8-4c21-9dac-db8636f8e073",
       "appraiser_id": "userTestId",
       "pet_id": "petTest3",
@@ -208,6 +225,18 @@
       "appraiser_id": "userTestId",
       "pet_id": "petTest2",
       "created_at": "2025-05-20T22:47:26.213Z"
+=======
+      "id": "f0b37543-c509-4d5e-addc-56d3db211e14",
+      "appraiser_id": "userTestId",
+      "pet_id": "petTest2",
+      "created_at": "2025-05-19T21:34:42.234Z"
+    },
+    {
+      "id": "c853fd18-3a04-464f-979f-307e7a6e5650",
+      "appraiser_id": "userTestId",
+      "pet_id": "petTest3",
+      "created_at": "2025-05-19T21:34:43.932Z"
+>>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
     }
   ],
   "address": [
