@@ -55,3 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+let searchBarValue = '';
+
+function onSearchBar(event) {
+  searchBarValue = event.target.value;
+}
+
+async function handleSearchButton() {
+  if (searchBarValue.trim() === "") {
+    window.location.href = "../explore/index.html";
+  } else {
+    window.location.href = `../explore/index.html?search=${searchBarValue}`;
+  }
+}
+
+$("#searchBar").on("propertychange input", onSearchBar);
+
+$("#searchButton").click(handleSearchButton);
