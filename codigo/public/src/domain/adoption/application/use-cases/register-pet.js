@@ -1,6 +1,6 @@
 import { right, left } from '../../../../../core/Either.js';
 import { NotAllowedError } from '../../../../../core/errors/not-allowed-error.js';
-import {Pet} from '../../enterprise/entities/Pet.js'
+import { Pet } from '../../enterprise/entities/Pet.js'
 import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 
 
@@ -28,7 +28,7 @@ export class RegisterPetUseCase {
     donorRepository;
     constructor(petRepository, donorRepository) {
         this.petRepository = petRepository;
-        this.donorRepository = donorRepository 
+        this.donorRepository = donorRepository
     }
 
     async execute({
@@ -47,8 +47,9 @@ export class RegisterPetUseCase {
         donorId,
     }) {
 
+        console.log("O name é ", name);
 
-        if( name == undefined ||
+        if (name == undefined ||
             animalTypeId == undefined ||
             size == undefined ||
             animalSex == undefined ||
@@ -62,11 +63,11 @@ export class RegisterPetUseCase {
             personality == undefined ||
             donorId == undefined) {
             return left(new RequestMissingDataError());
-        } 
+        }
 
-        const {donor} = await this.donorRepository.findById(donorId)
+        const { donor } = await this.donorRepository.findById(donorId)
 
-        if(!donor) {
+        if (!donor) {
             return left(new NotAllowedError());
         }
 
@@ -85,7 +86,7 @@ export class RegisterPetUseCase {
                 availableForAdoption,
                 personality,
                 donorId,
-                
+
             }
         )
 

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Pet</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="sidebar.css" />
+  <link rel="stylesheet" href="informacoes-do-pet.css" />
+  <link rel="stylesheet" href="adicionar-vacinas.css">
+
+</head>
+
+<body>
+  <aside id="sidebar">
+    <div id="logo"><img src="../assets/images/logo-pet-match.png" alt="Logo" /></div>
+    <div>
+      <div id="profile">
+        <div>
+          <img src="https://placecats.com/millie/300/150" alt="User Avatar" id="avatar" />
+          <div id="profile-info">
+            <h3>Ricardão</h3>
+            <span><i class="material-icons">stars</i>5.0</span>
+          </div>
+        </div>
+        <button class="btn-style">Perfil</button>
+      </div>
+      <nav id="menu">
+        <a href="#" id="active"><i class="material-icons">home</i> Home</a>
+        <a href="#"><i class="material-icons">explore</i> Explorar</a>
+        <a href="#"><i class="material-icons">category</i> Categorias</a>
+        <a href="#"><i class="material-icons">favorite</i> Favoritos</a>
+        <a href="#"><i class="material-icons">pets</i> Meus Pets</a>
+        <a href="#"><i class="material-icons">map</i> Petmap</a>
+        <a href="#"><i class="material-icons">lightbulb</i> Pet Tips</a>
+      </nav>
+    </div>
+    <div id="aside-footer">
+      <button class="btn-style">Colocar para Adoção</button>
+      <button class="btn-logout btn-style">Sair</button>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <h1 class="logo">PETMATCH</h1>
+    <div class="search">
+      <input type="text" placeholder="Pesquisa" />
+      <button><i class="material-icons">search</i></button>
+    </div>
+  </header>
+
+  <main class="form-container">
+    <section class="coluna-esquerda">
+      <div class="adicionar-nome-e-imagem">
+        <div class="image-placeholder">
+          <i class="material-icons icon-image">image</i>
+          <span>Adicionar Imagem do PET</span>
+          <input id="file-button" type="file" class="add-button">
+          <label for="file-button" class="add-button">
+            <h1 class="mais-botao-add-imagem">+</h1>
+          </label>
+
+        </div>
+        <div class="campo-de-digitar-com-a-imagem">
+          <input type="text" placeholder="Nome do PET" />
+        </div>
+        <div class="campo-de-digitar">
+          <input type="text" placeholder="Descrição do PET" />
+        </div>
+        <button class="submit">Colocar para adoção</button>
+      </div>
+    </section>
+
+    <section class="coluna-direita">
+      <div class="info-card">
+        <h2>Informações Sobre o Pet</h2>
+
+        <label>Animal</label>
+        <select id="classificacao" type="text" placeholder="Cachorro, gato, papagaio..." class="campo-de-digitar">
+          <option>Cachorro</option>
+        </select>
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Vacinado</label><br />
+            <div class="toggle-group" id="vacina-toggle">
+              <button type="button" class="toggle-btn active" data-action="mostrar-vacinas">Sim</button>
+              <button type="button" class="toggle-btn" data-action="esconder-vacinas">Não</button>
+            </div>
+            <br>
+            <div id="campos-vacina" style="display: block;">
+              <label>Quais vacinas?</label>
+              <input type="text" placeholder="Ex: Raiva, V8, V10..." class="campo-de-digitar" />
+              <div id="lista-de-vacinas">
+              </div>
+              <button type="button" id="adicionar-vacina-btn" class="add-vaccine-btn">Adicionar outra vacina</button>
+            </div>
+          </div>
+
+          <div>
+            <label>Data de encontro</label>
+            <input type="text" placeholder="Quando você encontrou o pet?" class="campo-de-digitar" />
+          </div>
+        </div>
+
+
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Tamanho</label><br />
+            <div class="toggle-group" id="tamanho-toggle">
+              <button type="button" class="toggle-btn">Pequeno</button>
+              <button type="button" class="toggle-btn">Médio</button>
+              <button type="button" class="toggle-btn">Grande</button>
+            </div>
+          </div>
+        </div>
+
+        <label>Raça</label>
+        <input type="text" placeholder="Shitsu, British Shorthair, Vira-Lata..." class="campo-de-digitar" />
+        <br>
+        <!-- Campo é castrado? -->
+        <div>
+          <label>É castrado?</label><br />
+          <div class="toggle-group" id="castrado-toggle">
+            <button type="button" class="toggle-btn">Sim</button>
+            <button type="button" class="toggle-btn">Não</button>
+          </div>
+        </div>
+        <!-- Campo "Já foi ao veterinário?" -->
+        <div style="margin-top: 20px;">
+          <label>Seu pet já foi no veterinário?</label><br />
+          <div class="toggle-group" id="veterinario-toggle">
+            <button type="button" class="toggle-btn" data-action="mostrar-consulta">Sim</button>
+            <button type="button" class="toggle-btn" data-action="esconder-consulta">Não</button>
+          </div>
+
+          <div id="campo-consulta" style="display: none; margin-top: 10px;">
+            <label>Como foi a consulta?</label>
+            <input type="text" placeholder="Descreva como foi a consulta..." class="campo-de-digitar" />
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+      <div class="info-card">
+        <h2>Endereço do Pet</h2>
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Estado</label>
+            <input type="text" placeholder="Minas Gerais, Bahia..." class="campo-de-digitar" />
+          </div>
+          <div>
+            <label>CEP</label>
+            <input type="text" placeholder="Ex: 12.345-000..." class="campo-de-digitar" />
+          </div>
+        </div>
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Cidade</label>
+            <input type="text" placeholder="Belo Horizonte, São Paulo..." class="campo-de-digitar" />
+          </div>
+          <div>
+            <label>Complemento*</label>
+            <input type="text" placeholder="Casa, apartamento..." class="campo-de-digitar" />
+          </div>
+        </div>
+
+        <div class="form-group-horizontal">
+          <div>
+            <label>Rua</label>
+            <input type="text" placeholder="Rua São João..." class="campo-de-digitar" />
+          </div>
+          <div>
+            <label>Bairro</label>
+            <input type="text" placeholder="Lourdes..." class="campo-de-digitar" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function configurarBotoesToggleComAcao(idDoGrupo) {
+      const grupo = document.getElementById(idDoGrupo);
+      if (!grupo) return;
+
+      const botoes = grupo.querySelectorAll('button');
+
+      const camposVacina = document.getElementById('campos-vacina');
+      const adicionarVacinaBtn = document.getElementById('adicionar-vacina-btn');
+      const listaDeVacinas = document.getElementById('lista-de-vacinas');
+
+      const campoConsulta = document.getElementById('campo-consulta');
+
+      botoes.forEach(botao => {
+        botao.addEventListener('click', function () {
+          botoes.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          const action = this.getAttribute('data-action');
+
+          if (action === 'mostrar-vacinas' && camposVacina) {
+            camposVacina.style.display = 'block';
+          } else if (action === 'esconder-vacinas' && camposVacina) {
+            camposVacina.style.display = 'none';
+            listaDeVacinas.innerHTML = '';
+            camposVacina.querySelector('input').value = '';
+          }
+
+          if (action === 'mostrar-consulta' && campoConsulta) {
+            campoConsulta.style.display = 'block';
+          } else if (action === 'esconder-consulta' && campoConsulta) {
+            campoConsulta.style.display = 'none';
+            campoConsulta.querySelector('input').value = '';
+          }
+        });
+      });
+
+      // Adicionar novo campo de vacina (apenas para o botão "adicionar-vacina-btn")
+      if (adicionarVacinaBtn && !adicionarVacinaBtn.hasOwnProperty('clickListenerAdicionado')) {
+        adicionarVacinaBtn.addEventListener('click', function () {
+          const novoCampoVacina = document.createElement('div');
+          novoCampoVacina.classList.add('vacina-item');
+
+          const inputVacina = document.createElement('input');
+          inputVacina.type = 'text';
+          inputVacina.placeholder = 'Outra vacina';
+          inputVacina.classList.add('campo-de-digitar');
+          novoCampoVacina.appendChild(inputVacina);
+
+          const removerBtn = document.createElement('button');
+          removerBtn.innerHTML = '<i class="material-icons">delete_forever</i>';
+          removerBtn.classList.add('remover-vacina-btn');
+          removerBtn.type = 'button';
+          novoCampoVacina.appendChild(removerBtn);
+
+          listaDeVacinas.appendChild(novoCampoVacina);
+
+          removerBtn.addEventListener('click', function () {
+            listaDeVacinas.removeChild(novoCampoVacina);
+          });
+        });
+
+        adicionarVacinaBtn.clickListenerAdicionado = true;
+      }
+    }
+
+    configurarBotoesToggleComAcao('vacina-toggle');
+    configurarBotoesToggleComAcao('tamanho-toggle');
+    configurarBotoesToggleComAcao('castrado-toggle');
+    configurarBotoesToggleComAcao('veterinario-toggle');
+  </script>
+
+  <script type="module" src="animalType.js"></script>
+  <script type="module" src="userCatchInputs.js"></script>
+</body>
+
+</html>

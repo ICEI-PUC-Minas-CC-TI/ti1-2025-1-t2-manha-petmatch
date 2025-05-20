@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pet Finder - Quiz</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../cadastro-pets/style.css" />
+  <link rel="stylesheet" href="../cadastro-pets/header.css" />
+  <link rel="stylesheet" href="../cadastro-pets/sidebar.css" />
+  <link rel="stylesheet" href="pet-finder.css" />
+
+  <script src="quiz.js" defer></script>
+</head>
+
+<body>
+  <aside id="sidebar">
+    <div id="logo"><img src="../assets/images/logo-pet-match.png" alt="Logo" /></div>
+    <div>
+      <div id="profile">
+        <div>
+          <img src="https://placecats.com/millie/300/150" alt="User Avatar" id="avatar" />
+          <div id="profile-info">
+            <h3>Ricardão</h3>
+            <span><i class="material-icons">stars</i>5.0</span>
+          </div>
+        </div>
+        <button class="btn-style">Perfil</button>
+      </div>
+      <nav id="menu">
+        <a href="#" id="active"><i class="material-icons">home</i> Home</a>
+        <a href="#"><i class="material-icons">explore</i> Explorar</a>
+        <a href="#"><i class="material-icons">category</i> Categorias</a>
+        <a href="#"><i class="material-icons">favorite</i> Favoritos</a>
+        <a href="#"><i class="material-icons">pets</i> Meus Pets</a>
+        <a href="#"><i class="material-icons">map</i> Petmap</a>
+        <a href="#"><i class="material-icons">lightbulb</i> Pet Tips</a>
+      </nav>
+    </div>
+    <div id="aside-footer">
+      <button class="btn-style">Colocar para Adoção</button>
+      <button class="btn-logout btn-style">Sair</button>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <h1 class="logo">PETMATCH</h1>
+    <div class="search">
+      <input type="text" placeholder="Pesquisa" />
+      <button><i class="material-icons">search</i></button>
+    </div>
+  </header>
+
+  <main class="form-container">
+    <div id="quiz-container">
+
+      <!-- Introdução -->
+      <div class="intro">
+        <h2>Está com dificuldade de entender qual seria o melhor pet para você e sua família?</h2>
+        <p>
+          Nós temos a solução! Com base em suas respostas, vamos analisar seu estilo de vida, preferências e ambiente
+          para recomendar o pet ideal — aquele que se encaixa perfeitamente na sua rotina e no seu coração.
+        </p>
+      </div>
+
+      <!-- Pergunta 1 -->
+      <div class="pergunta" id="pergunta1">
+        <p>1. Qual dessas opções descreve melhor o lugar onde você mora?</p>
+        <button onclick="responderLocal('Casa/apartamento grande')">Casa/apartamento grande</button>
+        <button onclick="responderLocal('Casa com quintal/fazenda')">Casa com quintal/fazenda</button>
+        <button onclick="responderLocal('Apartamento pequeno')">Apartamento pequeno</button>
+        <button onclick="responderLocal('Studio/Kitnet')">Studio/Kitnet</button>
+      </div>
+
+      <!-- Pergunta 2 -->
+      <div class="pergunta" id="pergunta2" style="display:none;">
+        <p>2. Você tem filhos pequenos ou mora com crianças?</p>
+        <button onclick="responder(2, 'a')">Sim</button>
+        <button onclick="responder(2, 'b')">Não</button>
+      </div>
+
+      <!-- Pergunta 3 -->
+      <div class="pergunta" id="pergunta3" style="display:none;">
+        <p>3. Você prefere um animal brincalhão e com muita energia ou mais tranquilo?</p>
+        <button onclick="responder(3, 'a')">Brincalhão</button>
+        <button onclick="responder(3, 'b')">Tranquilo</button>
+      </div>
+
+      <!-- Pergunta 4 -->
+      <div class="pergunta" id="pergunta4" style="display:none;">
+        <p>4. Você se incomoda com barulho em casa?</p>
+        <button onclick="responder(4, 'a')">Sim, prefiro silêncio</button>
+        <button onclick="responder(4, 'b')">Não me incomoda</button>
+      </div>
+
+      <!-- Pergunta 5 -->
+      <div class="pergunta" id="pergunta5" style="display:none;">
+        <p>5. Você busca um companheiro afetuoso ou mais independente?</p>
+        <button onclick="responder(5, 'a')">Afetuoso</button>
+        <button onclick="responder(5, 'b')">Independente</button>
+      </div>
+
+      <!-- Pergunta 6 -->
+      <div class="pergunta" id="pergunta6" style="display:none;">
+        <p>6. Você costuma passar muito tempo em casa?</p>
+        <button onclick="responder(6, 'a')">Sim</button>
+        <button onclick="responder(6, 'b')">Não</button>
+      </div>
+
+      <!-- Pergunta 7 -->
+      <div class="pergunta" id="pergunta7" style="display:none;">
+        <p>7. Você quer um pet que interaja com todos ou seja mais reservado?</p>
+        <button onclick="responder(7, 'a')">Interativo</button>
+        <button onclick="responder(7, 'b')">Reservado</button>
+      </div>
+
+      <!-- Pergunta 8 -->
+      <div class="pergunta" id="pergunta8" style="display:none;">
+        <p>8. Você pratica atividades físicas ao ar livre com frequência?</p>
+        <button onclick="responder(8, 'a')">Sim</button>
+        <button onclick="responder(8, 'b')">Raramente</button>
+      </div>
+
+      <!-- Resultado -->
+      <div class="pergunta" id="resultado" style="display:none;">
+        <h2>Seu pet ideal é:</h2>
+        <p id="pet-recomendado"></p>
+        <h3>Pontuação final:</h3>
+        <ul>
+          <li><strong>Temperamento:</strong> <span id="resultado-temperamento"></span></li>
+          <li><strong>Tipo de animal:</strong> <span id="resultado-animal"></span></li>
+          <li><strong>Tamanho:</strong> <span id="resultado-tamanho"></span></li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+</body>
+
+</html>
