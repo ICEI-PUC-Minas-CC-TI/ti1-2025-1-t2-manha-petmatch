@@ -1,4 +1,5 @@
-* {
+
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -178,29 +179,109 @@
   width: 100%;
  }
 
-#pet-card-list-container {
- margin: 0 auto 2rem;
- padding: 0 1rem 6rem;
 
- display: flex;
- flex-direction: column;
- gap: 1.5rem;
-}
+ /* Seção de Carrousel*/
+  .carousel {
+    position: relative;
+    width: 50%;
+    height: auto;
+    margin: 20px auto 20px auto;
+    overflow: hidden;
+    border: 2px solid #FFD700;
+    border-radius: 30px;
+  }
+ 
+  .carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+ 
+  .carousel-slide img {
+    width: 100%;
+    display:block;
+    max-width: 1200px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    object-fit: contain;
+  }
+ 
+  .carousel-prev,
+  .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+ 
+  .carousel-prev {
+    left: 10px;
+  }
+ 
+  .carousel-next {
+    right: 10px;
+  }
 
-.pet-card-list-content {
- display: flex;
- flex-direction: column;
- gap: 1rem;
-}
+/* header dos cards */
 
-.pet-card-list-content > h3 {
-  font-size: 2rem;
-}
+.pets-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    border-top: 2px solid var(--gray);
+    
+  }
+ 
+  .pets-header h2 {
+    font-size: 1.8rem;
+   
+   
+  }
+
+  .options {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
 
 .pet-card-list {
   display: flex;
   max-width: 62rem;
+  margin: 0 auto;
   flex-wrap: wrap;
   list-style: none;
   gap: 1rem;
+  padding: 2rem 0;
+}
+
+footer {
+margin-left: 0%;
+width: 100%;
+background: linear-gradient(to right, #FFD700, #FFA500);
+padding-left: 220px;
+margin-top: 40px;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 0.85rem;
+flex-wrap: wrap;
+gap: 10px;
+bottom: 0px;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+  margin-left: 10px;
 }
