@@ -4,11 +4,7 @@
       "id": "petTest2",
       "name": "Chitãozinho",
       "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
-<<<<<<< HEAD
       "size": "Médio",
-=======
-      "size": "medium",
->>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
       "animal_sex": "male",
       "description": "Um cão amigável e brincalhão.",
       "img_urls": [
@@ -33,11 +29,7 @@
       "id": "petTest3",
       "name": "Chitãozinho",
       "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
-<<<<<<< HEAD
       "size": "Grande",
-=======
-      "size": "medium",
->>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
       "animal_sex": "male",
       "description": "Um cão amigável e brincalhão.",
       "img_urls": [
@@ -62,11 +54,7 @@
       "id": "petTest",
       "name": "Chororo",
       "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
-<<<<<<< HEAD
       "size": "Pequeno",
-=======
-      "size": "medium",
->>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
       "animal_sex": "male",
       "description": "Um cão amigável e brincalhão.",
       "img_urls": [
@@ -232,11 +220,15 @@
       "created_at": "2025-05-19T21:34:42.234Z"
     },
     {
-      "id": "c853fd18-3a04-464f-979f-307e7a6e5650",
+      "id": "07637cd7-70b8-4c21-9dac-db8636f8e073",
       "appraiser_id": "userTestId",
       "pet_id": "petTest3",
+<<<<<<< HEAD
       "created_at": "2025-05-19T21:34:43.932Z"
 >>>>>>> ff42be3 (add funcionalidade favoritar e voltar as pastas ao normal)
+=======
+      "created_at": "2025-05-20T21:46:05.595Z"
+>>>>>>> d4a58d5 (Cliquei no botão de like db mudou opa)
     }
   ],
   "address": [
