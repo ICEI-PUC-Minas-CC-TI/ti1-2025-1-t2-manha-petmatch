@@ -1,0 +1,128 @@
+:root {
+  --white: #f8f8f8;
+  --yellow: #FFD02F;
+  --red: #F60000;
+  --gray: #A4A4A4;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.intro h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.intro p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+
+/* Container central do quiz */
+#quiz-container {
+  width: 100%;
+  max-width: 800px;
+  min-height: calc(100vh - 100px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+
+/* Box fixa para cada pergunta */
+.pergunta {
+  width: 100%;
+  max-width: 600px;
+  height: 360px;
+  padding: 30px 25px;
+  background-color: white;
+  border: 1px solid var(--gray);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+/* Pergunta */
+.pergunta p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Container dos botões */
+.pergunta .opcoes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botões */
+.pergunta .opcoes button {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pergunta .opcoes button:hover {
+  background-color: #e6bc2a;
+}
+
+/* Resultado final do quiz */
+#resultado {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#resultado h2 {
+  font-size: 1.5rem;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+#resultado p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+#resultado ul {
+  list-style: none;
+  padding: 0;
+}
+
+#resultado li {
+  font-size: 1rem;
+  margin: 8px 0;
+  color: #333;
+}
