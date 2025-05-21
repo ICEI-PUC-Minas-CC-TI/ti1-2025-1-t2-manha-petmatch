@@ -118,6 +118,26 @@
       "donor_id": "donorTestId",
       "created_at": "2025-05-20T23:30:42.012Z",
       "updated_at": "2025-05-20T23:30:42.012Z"
+    },
+    {
+      "id": "7be41cb1-8972-4378-a71a-c0daa24f48a2",
+      "name": "ads",
+      "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
+      "size": "Pequeno",
+      "animal_sex": "Male",
+      "description": "das",
+      "img_urls": [],
+      "born_at": "das",
+      "breed": [
+        "das"
+      ],
+      "vaccinated": false,
+      "castrated": false,
+      "available_for_adoption": true,
+      "personality": [],
+      "donor_id": "donorTestId",
+      "created_at": "2025-05-21T00:05:31.868Z",
+      "updated_at": "2025-05-21T00:05:31.868Z"
     }
   ],
   "animal_type": [
@@ -170,16 +190,22 @@
   ],
   "favorite_pet": [
     {
-      "id": "f0b37543-c509-4d5e-addc-56d3db211e14",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest2",
-      "created_at": "2025-05-19T21:34:42.234Z"
-    },
-    {
       "id": "07637cd7-70b8-4c21-9dac-db8636f8e073",
       "appraiser_id": "userTestId",
       "pet_id": "petTest3",
       "created_at": "2025-05-20T21:46:05.595Z"
+    },
+    {
+      "id": "0f78131b-9496-433a-bfbc-f74df0af0627",
+      "appraiser_id": "userTestId",
+      "pet_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
+      "created_at": "2025-05-20T23:45:02.922Z"
+    },
+    {
+      "id": "c90e0ffb-e855-4d67-a4a7-b8c5fedbc1a0",
+      "appraiser_id": "userTestId",
+      "pet_id": "petTest",
+      "created_at": "2025-05-21T00:03:18.305Z"
     }
   ],
   "address": [
