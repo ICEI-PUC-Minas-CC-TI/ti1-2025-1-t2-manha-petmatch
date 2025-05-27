@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <title>Explore</title>
+  <link rel="stylesheet" href="../../components/header/styles.css">
+  <link rel="stylesheet" href="../../components/pet-card/style.css">
+  <link rel="stylesheet" href="styles.css" />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+    <style>
+        .marker {
+            display: block;
+            border: 2px solid #000;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+        }
+    </style>
+
+    <main>
+        <aside id="aside">
+            <div id="main-aside">
+                <button id="go-back-button">
+                    <i class="material-icons">arrow_back_ios_new</i>
+                </button>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <i class="material-icons">pets</i>
+
+                            <p>
+                                Todos os Pets
+                            </p>
+                        </li>
+                        <li>
+                            <i class="material-icons">favorite</i>
+
+                            <p>
+                                Pets favoritos
+                            </p>
+                        </li>
+                        <li>
+                            <i class="material-icons">category</i>
+
+                            <p>
+                                Categorias
+                            </p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="dinamic_aside">
+
+            </div>
+
+            <button id="toggle-aside">
+                    <i class="material-icons">arrow_back_ios</i>
+            </button>
+        </aside>
+    </main>
+
+
+
+
+    <!-- O mapa -->
+        <div id='map' style='width: 400px; height: 300px;'></div>
+    <script src="../../jquery/jquery.js"></script>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>

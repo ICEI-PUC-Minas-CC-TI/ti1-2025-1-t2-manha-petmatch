@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+  }
+ 
+   :root {
+        --white: #f8f8f8;
+        --yellow: #FFD02F;
+        --red: #F60000;
+        --gray: #A4A4A4;
+
+   }
+ 
+  body, html {
+    height: 100%;
+  }
+
+   body {
+    font-family: Arial, sans-serif;
+    background-color: var(--red);
+  }
+
+  aside {
+    display: block;
+    position: fixed;
+    z-index: 999;
+    height: 100%;   
+  }
+
+  #main-aside{
+    height: 100%;
+    background-color: var(--yellow);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    padding: 25px;
+}
+
+ #go-back-button {
+    all: unset;
+    display: flex;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 50%;
+    
+    box-shadow: 1px 2px 1.4px 0px #000;
+    transition: filter .3s;
+ }
+
+  #go-back-button:hover {
+   cursor: pointer;
+   filter: brightness(.96); 
+   }
