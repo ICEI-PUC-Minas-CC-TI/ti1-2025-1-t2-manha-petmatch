@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     pergunta.appendChild(wrapper);
   });
 
-  mostrarProximaPergunta(0); // Start from the first question on load
+  mostrarProximaPergunta(0);
 });
 
 function responderLocal(opcao) {
