@@ -1,0 +1,434 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 280px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.sidebar .logo span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .profile .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid #f0f0f0;
+}
+
+.sidebar .profile p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.sidebar .profile .rating {
+    color: #f5c518;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.sidebar .profile .rating .fa-star {
+    margin-right: 3px;
+}
+
+.sidebar .profile .profile-btn {
+    background-color: #f0c14b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    color: #111;
+    font-size: 14px;
+}
+
+.sidebar .profile .profile-btn .fa-edit {
+    margin-left: 8px;
+}
+
+
+.sidebar .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .menu li {
+    margin-bottom: 15px;
+}
+
+.sidebar .menu li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar .menu li a .fas {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar .menu li.active a {
+    background-color: #ffe5ac;
+    color: #b57600;
+    font-weight: bold;
+}
+
+.sidebar .menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+.sidebar .sair-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: auto;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 0 20px 20px 20px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.top-header {
+    padding: 15px 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.search-bar input {
+    border: none;
+    background-color: transparent;
+    padding: 8px;
+    outline: none;
+    width: 250px;
+    font-size: 14px;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.events-section h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.featured-event {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.event-image-large {
+    flex-basis: 45%;
+    position: relative;
+}
+
+.event-image-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.event-promo-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ff9900;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+.event-promo-text span {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.event-date-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.3;
+}
+.event-date-badge span {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 5px;
+}
+.event-date-badge p {
+    font-size: 10px;
+    margin: 0;
+    max-width: 120px;
+}
+
+
+.event-details-large {
+    flex-basis: 55%;
+    padding: 20px 25px;
+}
+
+.event-details-large h2 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.event-details-large .event-date-location {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 2px;
+}
+.event-details-large .event-location-city {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+
+.event-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+.event-description .info-legais {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.event-description .onde-vamos-estar {
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.view-event-btn {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-image-small {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.event-image-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-promo-text-small {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ff9900;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 10px;
+    text-align: center;
+}
+.event-promo-text-small span {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.event-date-badge-small {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #007bff;
+    color: white;
+    padding: 8px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.event-date-badge-small span {
+    font-size: 9px;
+    display: block;
+    margin-bottom: 3px;
+}
+.event-date-badge-small p {
+    font-size: 8px;
+    margin: 0;
+    max-width: 100px;
+}
+
+.event-card h3 {
+    font-size: 18px;
+    margin: 15px 15px 5px 15px;
+    color: #333;
+}
+.event-card .event-date-location-small {
+    font-size: 12px;
+    color: #777;
+    margin: 0 15px 2px 15px;
+}
+.event-card .event-location-city-small {
+    font-size: 12px;
+    color: #777;
+    margin: 0 15px 10px 15px;
+}
+
+
+.event-card .event-description-small {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0 15px 5px 15px;
+    flex-grow: 1;
+}
+.event-card .info-legais-small {
+    font-weight: bold;
+    font-size: 13px;
+    margin: 5px 15px 2px 15px;
+     color: #555;
+}
+.event-card .onde-vamos-estar-small {
+    font-style: italic;
+    font-size: 13px;
+    margin: 0 15px 15px 15px;
+     color: #555;
+}
+
+.view-event-btn-small {
+    background-color: #ffc107;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    margin: 0 15px 15px auto;
+}
+
+img[src^="placeholder_"] {
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 12px;
+}
+img[src="placeholder_logo.png"]::after { content: "Logo"; }
+img[src="placeholder_ricardao.jpg"]::after { content: "User"; }
+img[src="placeholder_dog_large.jpg"]::after { content: "Event Image"; }
+img[src="placeholder_dog_small.jpg"]::after { content: "Event Image"; }
