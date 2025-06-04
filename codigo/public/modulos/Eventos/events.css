@@ -1,0 +1,260 @@
+#events-section {
+    padding: 20px;
+}
+
+#events-section h2 {
+    color: #ff8c00;
+    margin-bottom: 20px;
+}
+
+#events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.event-card-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+}
+
+.event-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.event-card-details {
+    padding: 15px;
+}
+
+.event-card-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.event-card-date,
+.event-card-location {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.event-card-description {
+    color: #555;
+    font-size: 0.95em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.event-card-actions {
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+.event-card-actions button {
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.event-card-actions button:hover {
+    background-color: #e67e00;
+}
+
+#screen-container {
+    margin-left: 280px;
+    transition: margin-left 0.3s ease;
+}
+
+#screen-container.sidebar-collapsed {
+    margin-left: 80px;
+}
+
+.topbar {
+    background-color: #ffbb00;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.topbar .search {
+    display: flex;
+}
+
+.topbar .search input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+}
+
+.topbar .search button {
+    background-color: #f4a460;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+}
+
+#sidebar {
+    background-color: #fff;
+    width: 280px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+#sidebar.collapsed {
+    width: 80px;
+}
+
+#sidebar #logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#sidebar #logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+#sidebar #profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#sidebar #profile > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#sidebar #profile img#avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+#sidebar #profile #profile-info {
+    text-align: left;
+}
+
+#sidebar #profile h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+#sidebar #profile span {
+    font-size: 0.9em;
+    color: #777;
+}
+
+#sidebar #menu {
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar #menu a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#sidebar #menu a:hover,
+#sidebar #menu a.active {
+    background-color: #f9f9f9;
+    color: #ff8c00;
+}
+
+#sidebar #menu a i {
+    margin-right: 10px;
+}
+
+#sidebar #aside-footer {
+    text-align: center;
+}
+
+#sidebar .btn-style {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#sidebar .btn-logout {
+    background-color: #ddd;
+    color: #333;
+}
+
+#sidebar .btn-logout:hover {
+    background-color: #ccc;
+}
+
+#sidebar #aside-footer a.btn-style {
+    background-color: #ff8c00;
+    color: white;
+}
+
+#sidebar #aside-footer a.btn-style:hover {
+    background-color: #e67e00;
+}
