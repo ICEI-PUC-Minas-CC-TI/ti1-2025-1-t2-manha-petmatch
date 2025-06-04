@@ -38,6 +38,8 @@ aside {
     align-items: center;
     width: 100px;
     padding: 25px 0;
+    position: relative;
+    z-index: 1000;
 }
 
 #go-back-button {
@@ -64,12 +66,21 @@ aside {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    list-style: none;
+    justify-content: center;
 }
 
-
-#aside-nav > ul li{
-    width: 100%;
+#aside-nav > ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--yellow);
+    width: 100px;
+    transition: filter .3s;
+}
+#aside-nav > ul li:hover {
+   filter: brightness(.9);
+   cursor:  pointer;
 }
 
 #aside-nav > ul li button {
@@ -80,15 +91,13 @@ aside {
     justify-content: center;
     text-align: center;
     height: 100px;
-    padding: 12px;
-    width: fit-content;
-    background-color: var(--yellow);
-    transition: filter .3s;
+    width: 100%;   
 }
 
-#aside-nav > ul li button:hover {
-   filter: brightness(.9);
-   cursor:  pointer;
+
+
+#aside-nav > ul li button p {
+    font-size: 12px;
 }
 
 #map {
@@ -108,8 +117,8 @@ aside {
     align-items: center;
     align-self: center;
     margin-left: 15px;
-    width: 20px;
-    height: 50px;
+    width: 16px;
+    height: 45px;
 
     background-color: var(--white);
     border-radius: 16px;
@@ -119,4 +128,16 @@ aside {
 #toggle-aside:hover {
     filter: brightness(.9);
     cursor: pointer;
+}
+
+#toggle-aside i {
+    font-size: 12px;
+}
+
+#dinamic_aside {
+    position: relative;
+    width: 310px;
+    background-color: var(--white);
+    left: -10px;
+    padding: 40px 25px 40px 35px;
 }
