@@ -9,7 +9,7 @@ Nosso aplicativo foi criado para tornar mais fácil e humano o processo de adoç
 * Bernardo Mendes Rocha​
 * Bruno Mesquita Bicalho​
 * Maria Fernanda Oliveira Maro​
-* Maria Luiza Gomes Beliene Vira​
+* Maria Luiza Gomes Beliene Vila​
 * Pedro Italo Borges Cardoso​
 * Sofia de Abreu Botelho Romualdo​
 
