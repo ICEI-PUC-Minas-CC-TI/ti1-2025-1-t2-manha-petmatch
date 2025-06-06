@@ -10,7 +10,7 @@
         --yellow: #FFD02F;
         --red: #F60000;
         --gray: #A4A4A4;
-
+        --black: #000;
    }
  
 body, html {
@@ -116,7 +116,6 @@ aside {
     justify-content: center;
     align-items: center;
     align-self: center;
-    margin-left: 15px;
     width: 16px;
     height: 45px;
 
@@ -141,3 +140,191 @@ aside {
     left: -10px;
     padding: 40px 25px 40px 35px;
 }
+
+#petListContainer {
+    margin-top: 38px;
+    height: 100%;
+}
+
+#petListContainer > h2{
+    font-size: 30.5px;
+    color: var(--black);
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.petList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.petList li {
+    width: 100%;
+    height: 80px;
+}
+
+.petList li button {
+    all: unset;
+    background-color: var(--white);
+    border-radius: 20px;
+    width: 100%;
+    border: var(--yellow) 1px solid;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    transition: filter .3s;
+}
+
+.petList li button:hover {
+    cursor: pointer;
+    filter: brightness(.9);
+}
+
+.petList li button img {
+    width: 80px;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.petListCardContent > div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+}
+
+.pet-card {
+    width: 27rem;
+    height: 37rem;
+    border: 2px solid var(--yellow);
+    background-color: var(--white);
+    border-radius: 8px;
+
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+}
+
+.pet-card > img {
+    width: 100%;
+    height: 40%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.pet-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60%;
+    padding: 1rem;
+}
+
+.pet-card-content-header {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid black;
+}
+
+.pet-card-main-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pet-card-main-info > h3 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.pet-card-main-info > span {
+    font-size: 0.9rem;
+}
+
+.pet-card-category {
+    font-size: 0.9rem;
+}
+
+.pet-card-info {
+    text-align: justify;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.1;
+    padding: 0.3rem;
+    max-height: 100px;
+    overflow: hidden;
+}
+
+.pet-card-button-container {
+    display: flex;
+    gap: 0.25rem;
+    width: 100%;
+}
+
+.pet-card-button-container button {
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: filter 0.3s;
+}
+
+.pet-card-button-container button:hover {
+    filter: brightness(0.9);
+}
+
+.pet-card-see-pet-button {
+    flex: 1;
+    background-color: var(--yellow);
+    border: 2px solid var(--yellow);
+}
+
+.pet-card-favorite-pet-button {
+    width: 4rem;
+}
+
+.favorited {
+    background-color: var(--red);
+    border: 2px solid var(--red);
+}
+
+.unFavorited {
+    background-color: var(--gray);
+    border: 2px solid var(--gray);
+}
+
+
+#closeCard {
+    all: unset;
+    display: flex;
+    background: var(--white);
+    padding: .5rem;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    
+    box-shadow: 2px 2px 10px -5px #000;
+    transition: filter .3s;
+ }
+
+#closeCard:hover {
+   cursor: pointer;
+   filter: brightness(.96); 
+   }
