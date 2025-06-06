@@ -663,88 +663,7 @@
             "conteudo": "Uma startup brasileira desenvolveu um aplicativo inovador que ajuda a localizar cães perdidos usando inteligência artificial e geolocalização. O app, chamado *EncontraPet*, permite que o tutor registre a perda com uma foto e a última localização conhecida do animal. Usuários na região recebem alertas e podem enviar fotos de cães encontrados para comparação automática com os animais desaparecidos.\n\nO sistema utiliza reconhecimento facial canino — baseado em padrões únicos do focinho e olhos — para fazer a identificação. Em fase de testes em São Paulo e Curitiba, o aplicativo já conseguiu reunir mais de 400 cães com seus tutores em menos de dois meses.\n\nA ferramenta também permite cadastrar animais encontrados nas ruas, servindo de ponte entre protetores independentes e donos em busca. A previsão é de que o *EncontraPet* seja lançado nacionalmente até o fim de 2025, com integração a abrigos e clínicas veterinárias."
         }
     ],
-    "pet": [
-        {
-            "id": "petTest2",
-            "name": "Chitãozinho",
-            "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
-            "size": "Médio",
-            "animal_sex": "male",
-            "description": "Um cão amigável e brincalhão.",
-            "img_urls": [
-                "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
-            ],
-            "born_at": "2022-03-15",
-            "breed": [
-                "Pastor Alemão"
-            ],
-            "vaccinated": true,
-            "castrated": true,
-            "available_for_adoption": true,
-            "personality": [
-                "brincalhão",
-                "carinhoso"
-            ],
-            "donor_id": "donorTestId",
-            "created_at": "2025-05-02T12:07:43.749Z",
-            "updated_at": "2025-05-02T12:07:43.749Z",
-            "petAddress": {
-                "id": "someId",
-                "entity_type": "pet / user / enterprise",
-                "entity_id": "someId",
-                "street": "Flower Street",
-                "number": "123",
-                "complement": "Apartment 45",
-                "neighborhood": "Spring Garden",
-                "city": "Belo Horizonte",
-                "state": "MG",
-                "zipCode": "30123-456",
-                "country": "Brazil",
-                "latitude": -19.9245,
-                "longitude": -43.9352,
-                "created_at": "someDate",
-                "updated_at": "someDate"
-            },
-        ],
-        "user": {
-            "id": "userTestId",
-            "cpf": "12312312312",
-            "phone_number": "553340028922",
-            "name": "Benadete",
-            "description": "Meu nome é rircadão",
-            "born_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
-            "img_url": "someoneUrl",
-            "email": "someone@gmail.com",
-            "password": "somePassword",
-            "created_at": "someDate",
-            "updated_at": "someDate",
-            "userAddress": {
-                "id": "someId",
-                "entity_type": "pet / user / enterprise",
-                "entity_id": "someId",
-                "street": "Flower Street",
-                "number": "123",
-                "complement": "Apartment 45",
-                "neighborhood": "Spring Garden",
-                "city": "Belo Horizonte",
-                "state": "MG",
-                "zipCode": "30123-456",
-                "country": "Brazil",
-                "latitude": -19.9245,
-                "longitude": -43.9352,
-                "created_at": "someDate",
-                "updated_at": "someDate"
-            }
-        },
-        "animal_type": [
-            {
-                "id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
-                "type": "Cachorro",
-                "img_url_reference": "https://www.portaldodog.com.br/wp-content/uploads/2024/12/Qual-e-o-cachorro-mais-bonito-do-mundo.jpg",
-                "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
-            }
-        ],
-        "evento": [
+    "evento": [
             {
                 "id": "evento_1",
                 "titulo": "Vem aí! EVENTO DE ADOÇÃO PET",
@@ -783,129 +702,7 @@
                 "link_detalhes": "/evento/4"
             }
         ],
-        "pageTitle": "PetMatch - Apadrinhar um Pet",
-        "header": {
-            "searchBar": {
-                "placeholder": "Pesquisa",
-                "functionality": "Permite ao usuário buscar por pets, raças ou termos específicos."
-            },
-            "profilePicture": {
-                "userName": "Ricardão",
-                "rating": 5.0,
-                "link": "#profile"
-            }
-        },
-        "sidebar": {
-            "navigation": [
-                {
-                    "label": "Perfil",
-                    "icon": "user-circle",
-                    "link": "#profile",
-                    "functionality": "Acessa a página de perfil do usuário para visualização e edição de dados, e gerenciamento de apadrinhamentos."
-                },
-                {
-                    "label": "Home",
-                    "icon": "home",
-                    "link": "#home",
-                    "functionality": "Retorna à página principal com a listagem de pets para apadrinhamento."
-                },
-                {
-                    "label": "Explorar",
-                    "icon": "compass",
-                    "link": "#explore",
-                    "functionality": "Oferece opções de filtro e busca avançada por características dos pets (espécie, idade, porte, etc.)."
-                },
-                {
-                    "label": "Categorias",
-                    "icon": "tags",
-                    "link": "#categories",
-                    "functionality": "Filtra os pets exibidos por categorias (cães, gatos, pássaros, etc.)."
-                },
-                {
-                    "label": "Favoritos",
-                    "icon": "heart",
-                    "link": "#favorites",
-                    "functionality": "Exibe uma lista de pets que o usuário marcou como favoritos para fácil acesso."
-                }
-            ],
-            "logoutButton": {
-                "label": "SAIR",
-                "functionality": "Encerra a sessão do usuário na plataforma."
-            }
-        },
-        "mainContent": [
-            {
-                "sectionTitle": "Apadrinhar um Pet",
-                "petListings": [
-                    {
-                        "petName": "SCOOBY",
-                        "species": "Cachorro",
-                        "gender": "Macho",
-                        "age": "3 meses",
-                        "description": "Descrição do cachorro, eu não sei o que colocar, então escreverei qualquer coisa, beleza.",
-                        "image": "url_da_imagem_scooby_1.jpg",
-                        "apadrinharButton": {
-                            "label": "Apadrinhar pet",
-                            "functionality": "Inicia o fluxo de apadrinhamento, direcionando o usuário para uma página de detalhes do pet e formulário."
-                        },
-                        "cardClickFunctionality": "Ao clicar no card, o usuário é levado para uma página com mais detalhes do pet, incluindo mais fotos, histórico e informações de saúde."
-                    },
-                    {
-                        "petName": "SCOOBY",
-                        "species": "Cachorro",
-                        "gender": "Macho",
-                        "age": "3 meses",
-                        "description": "Descrição do cachorro, eu não sei o que colocar, então escreverei qualquer coisa, beleza.",
-                        "image": "url_da_imagem_scooby_2.jpg",
-                        "apadrinharButton": {
-                            "label": "Apadrinhar pet",
-                            "functionality": "Inicia o fluxo de apadrinhamento, direcionando o usuário para uma página de detalhes do pet e formulário."
-                        },
-                        "cardClickFunctionality": "Ao clicar no card, o usuário é levado para uma página com mais detalhes do pet, incluindo mais fotos, histórico e informações de saúde."
-                    },
-                    {
-                        "petName": "SCOOBY",
-                        "species": "Cachorro",
-                        "gender": "Macho",
-                        "age": "3 meses",
-                        "description": "Descrição do cachorro, eu não sei o que colocar, então escreverei qualquer coisa, beleza.",
-                        "image": "url_da_imagem_scooby_3.jpg",
-                        "apadrinharButton": {
-                            "label": "Apadrinhar pet",
-                            "functionality": "Inicia o fluxo de apadrinhamento, direcionando o usuário para uma página de detalhes do pet e formulário."
-                        },
-                        "cardClickFunctionality": "Ao clicar no card, o usuário é levado para uma página com mais detalhes do pet, incluindo mais fotos, histórico e informações de saúde."
-                    },
-                    {
-                        "petName": "SCOOBY",
-                        "species": "Cachorro",
-                        "gender": "Macho",
-                        "age": "3 meses",
-                        "description": "Descrição do cachorro, eu não sei o que colocar, então escreverei qualquer coisa, beleza.",
-                        "image": "url_da_imagem_scooby_4.jpg",
-                        "apadrinharButton": {
-                            "label": "Apadrinhar pet",
-                            "functionality": "Inicia o fluxo de apadrinhamento, direcionando o usuário para uma página de detalhes do pet e formulário."
-                        },
-                        "cardClickFunctionality": "Ao clicar no card, o usuário é levado para uma página com mais detalhes do pet, incluindo mais fotos, histórico e informações de saúde."
-                    },
-                    {
-                        "petName": "SCOOBY",
-                        "species": "Cachorro",
-                        "gender": "Macho",
-                        "age": "3 meses",
-                        "description": "Descrição do cachorro, eu não sei o que colocar, então escreverei qualquer coisa, beleza.",
-                        "image": "url_da_imagem_scooby_5.jpg",
-                        "apadrinharButton": {
-                            "label": "Apadrinhar pet",
-                            "functionality": "Inicia o fluxo de apadrinhamento, direcionando o usuário para uma página de detalhes do pet e formulário."
-                        },
-                        "cardClickFunctionality": "Ao clicar no card, o usuário é levado para uma página com mais detalhes do pet, incluindo mais fotos, histórico e informações de saúde."
-                    }
-                ]
-            }
-        ],
-        "avaliacoes_gerais": {
+    "avaliacoes_gerais": {
             "media": 4.8,
             "total_avaliacoes": 10000,
             "distribuicao_estrelas": {
@@ -916,7 +713,7 @@
                 "1": 500
             }
         },
-        "avaliacoes_resenhas": [
+    "avaliacoes_resenhas": [
             {
                 "id": 1,
                 "usuario": {
