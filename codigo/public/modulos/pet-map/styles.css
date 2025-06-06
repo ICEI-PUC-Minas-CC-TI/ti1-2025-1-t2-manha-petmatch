@@ -109,7 +109,7 @@ aside {
     color: var(--white);
 }
 
-#toggle-aside {
+.toggle-aside {
     all: unset;
 
     display: flex;
@@ -124,13 +124,21 @@ aside {
     transition: filter .3s;
 }
 
-#toggle-aside:hover {
+.toggle-aside:hover {
     filter: brightness(.9);
     cursor: pointer;
 }
 
-#toggle-aside i {
+.toggle-aside i {
     font-size: 12px;
+}
+
+#toggle-aside-close {
+    margin-left: 12px;
+}
+
+#toggle-aside-close i {
+    transform: rotate(180deg);
 }
 
 #dinamic_aside {
@@ -327,4 +335,8 @@ aside {
 #closeCard:hover {
    cursor: pointer;
    filter: brightness(.96); 
-   }
+}
+
+.asideButtonSelected > i, .asideButtonSelected > p {
+    color: var(--white);
+}
