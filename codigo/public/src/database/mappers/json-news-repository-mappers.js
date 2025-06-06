@@ -10,8 +10,6 @@ export class JsonNewsRepositoryMapper {
             categoria: news.categoria,
             imagem: news.imagem,
             conteudo: news.conteudo,
-            createdAt: news.createdAt.toISOString(),
-            updatedAt: news.updatedAt.toISOString()
         }
     }
 
@@ -23,8 +21,6 @@ export class JsonNewsRepositoryMapper {
             categoria: jsonData.categoria,
             imagem: jsonData.imagem,
             conteudo: jsonData.conteudo,
-            createdAt: jsonData.createdAt ? new Date(jsonData.createdAt) : new Date(),
-            updatedAt: jsonData.updatedAt ? new Date(jsonData.updatedAt) : new Date()
         }, jsonData.id)
     }
 }

@@ -21,10 +21,6 @@ export class FetchNewsUseCase {
     async execute() {
         const news = await this.newsRepository.findManyNews();
 
-        if(!news || news.length === 0) {
-            return left(new ResourceNotFoundError())
-        }
-
         return right({
             news
         })
