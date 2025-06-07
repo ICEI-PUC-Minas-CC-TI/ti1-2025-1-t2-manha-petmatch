@@ -999,21 +999,34 @@
   ],
   "address": [
     {
-      "id": "someId",
-      "entity_type": "pet / user / enterprise",
-      "entity_id": "someId",
-      "street": "Flower Street",
-      "number": "123",
-      "complement": "Apartment 45",
-      "neighborhood": "Spring Garden",
-      "city": "Belo Horizonte",
-      "state": "MG",
-      "zipCode": "30123-456",
-      "country": "Brazil",
-      "latitude": -19.9245,
-      "longitude": -43.9352,
-      "created_at": "someDate",
-      "updated_at": "someDate"
+      "id": "419af288-6dc0-446a-b1cf-de022292bd25",
+      "entity_type": "pet",
+      "entity_id": "petTest2",
+      "street": "asdasd",
+      "number": "asd",
+      "complement": "asd",
+      "neighborhood": "asd",
+      "city": "asd",
+      "state": "asd",
+      "zipCode": "asd",
+      "country": "asd",
+      "latitude": "asd",
+      "longitude": "asd"
+    },
+    {
+      "id": "e92669ab-dfc4-4c27-bdb3-74ba4fef324e",
+      "entity_type": "pet",
+      "entity_id": "petTest",
+      "street": "asdasd",
+      "number": "asd",
+      "complement": "asd",
+      "neighborhood": "asd",
+      "city": "asd",
+      "state": "asd",
+      "zipCode": "asd",
+      "country": "asd",
+      "latitude": "asd",
+      "longitude": "asd"
     }
   ],
   "user": [
@@ -1321,4 +1334,3 @@
     }
   ]
 }
-

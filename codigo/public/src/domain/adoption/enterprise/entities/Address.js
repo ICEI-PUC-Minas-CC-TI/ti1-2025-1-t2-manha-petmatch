@@ -2,20 +2,20 @@ import { Entity } from "../../../../../core/entities/entity.js";
 
 export class Address extends Entity {
     get entityId() {
-        return this.props.entity_id;
+        return this.props.entityId;
     }
 
     set entityId(value) {
-        this.props.entity_id = value;
+        this.props.entityId = value;
         this.touch();
     }
 
     get entityType() {
-        return this.props.entity_type;
+        return this.props.entityType;
     }
 
     set entityType(value) {
-        this.props.entity_type = value;
+        this.props.entityType = value;
         this.touch();
     }
 
@@ -117,6 +117,9 @@ export class Address extends Entity {
         return this.props.updated_at;
     }
    
+    touch() {
+        this.props.updated_at = new Date();
+    }
 
     static create(props, id) {
         const address = new Address({
