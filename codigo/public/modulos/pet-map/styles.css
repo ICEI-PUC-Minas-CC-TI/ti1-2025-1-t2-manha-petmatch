@@ -143,15 +143,24 @@ aside {
 
 #dinamic_aside {
     position: relative;
-    width: 310px;
+    width: 340px;
     background-color: var(--white);
     left: -10px;
     padding: 40px 25px 40px 35px;
+    overflow-y: scroll;
+
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE e Edge */
+
+    /* Para navegadores baseados em WebKit */
+    scrollbar-width: none;
+
 }
 
 #petListContainer {
     margin-top: 38px;
     height: 100%;
+    max-height: 100px;
 }
 
 #petListContainer > h2{
@@ -167,6 +176,7 @@ aside {
     flex-direction: column;
     gap: 12px;
     width: 100%;
+    padding-bottom: 2rem;
 }
 
 .petList li {
@@ -185,8 +195,6 @@ aside {
     display: flex;
     align-items: center;
 
-    gap: 10px;
-
     transition: filter .3s;
 }
 
@@ -203,6 +211,16 @@ aside {
     border-bottom-left-radius: 20px;
 }
 
+.petListCardContent {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.petListCardContent > p, .petListCardContent > div > h3 {
+        white-space: nowrap;      
+        overflow: hidden;         
+        text-overflow: ellipsis;   
+}
 .petListCardContent > div{
         display: flex;
         justify-content: space-between;

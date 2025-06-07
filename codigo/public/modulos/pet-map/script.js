@@ -2,36 +2,55 @@ import {PetInterface} from "../../db-interface/pet-interface.js"
 import {AnimalTypeInterface} from  "../../db-interface/animal-type-interface.js"
 import {FavoritePetInterface} from '../../db-interface/favorite-pet-interface.js'
 
-let animalTypeList = []
-let petsList = []
 const petInterface = new PetInterface();
 const animalTypeInterface = new AnimalTypeInterface();
 const favoritePetInterface = new FavoritePetInterface();
 
-function drawElements(listOfPets, favoritedPetList) {
-        const petsByType = separatePetsByType(listOfPets)
+let animalTypeList = []
+let petsList = []
+let searchBarValue = ''
 
 
+
+function splitSearchParamsWords(search) {
+  if(!search) {
+    return []
+  } else {
+    return search.split(" ")
+  }
+}
+
+
+function drawElements(listOfPets) {
         $("#pet-card-list-container").empty()
-        for(let type in petsByType) {
-          petsByType[type].forEach(pet => {
+          listOfPets.forEach(pet => {
 
-            const favoritePetClassName = favoritedPetList.some(element => element.props.petId === pet.id) ? "favorited" : "unFavorited"
-
-            const containerAlredyExists = $(`#container-${type}`).length > 0
-
-            if(!containerAlredyExists){
+              console.log(pet)
               $('#pet-card-list-container').append(`
-                  <div class="pet-card-list-content" id="container-${type}">
-                    <h3>${type}</h3>
-                    <ul class="pet-card-list" id="${type}">       
-                    </ul>
-                  </div>
+                  <li>
+                     <button class="pet-list-btn" id="${pet.id}">
+                          <img src="${pet.img_urls[0]}" alt="Image of  ${pet.name}">
+                          <div class="petListCardContent">
+                              <div><h3>${pet.name}</h3> <span>2 Anos</span></div>
+                              <p>${pet.breed}</p>
+                          </div>
+                      </button>
+                  </li>
               `)
-            }
+        });
 
-           $(`#${type}`).append(` <li class="pet-card" }>
-              <img src="${pet.img_urls}" alt="">
+}
+
+function handleDrawCard(id) {
+  handleClosePetCard()
+  const pet = petsList.find((pet) => pet.id === id)
+
+  $('#mainContainer').append(`
+       <div class="pet-card">
+              <button id="closeCard">
+                <i class="material-icons">close</i>
+              </button>
+              <img src="${pet.img_urls[0]}" alt="">
               <div class="pet-card-container">
                 <div class="pet-card-content">
                   <header class="pet-card-content-header">
@@ -45,15 +64,11 @@ function drawElements(listOfPets, favoritedPetList) {
 
                   <div class="pet-card-button-container">
                     <button class="pet-card-see-pet-button" value="${pet.id}">Ver Pet</button> 
-                    <button class="pet-card-favorite-pet-button ${favoritePetClassName}" value="${pet.id}" id="favorite-${pet.id}"><i class="material-icons" style="color: white;">favorite</i></button>
+                    <button class="pet-card-favorite-pet-button " value="${pet.id}" id="favorite-${pet.id}"><i class="material-icons" style="color: white;">favorite</i></button>
                   </div>
                 </div>
-              </li>`
-            );
-          
-        });
-        }
-
+        </div>
+    `)
 }
 
 async function handleFavoritePet(petId) {
@@ -117,13 +132,11 @@ async function fetchAnimalTypes() {
 
 async function fetchPets(search) {
     try {   
-      $('#cachorro').empty()
         const searchValues = splitSearchParamsWords(search) 
         const {pets} = await petInterface.fetchPetsBySearch({search: searchValues});
         const {favoritePets} = await favoritePetInterface.fetchFavoritePet({userId: "userTestId"});
 
         petsList = pets
-        
 
         drawElements(pets, favoritePets)
     }catch(err) {
@@ -166,10 +179,24 @@ function goBack() {
     window.location = document.referrer
 }
 
+$(document).ready(async () => {
+    await fetchPets(searchBarValue)
+})
 $('.toggle-aside').click(handleToggleDinamicBar)
-$('#closeCard').click(handleClosePetCard)
 $(".mainAsideButton").click(handleClickAsideButton);
 $("#go-back-button").click(goBack)
+
+$("#searchBar").on("propertychange input", onSearchBar)
+
+$("#searchButton").click(handleSeachButton)
+
+$(document).on("click", ".pet-list-btn", function (e) {
+  e.preventDefault();
+  const petId = e.currentTarget.id;
+  handleDrawCard(petId)
+});
+
+$(document).on("click", "#closeCard", handleClosePetCard);
 
 
 
