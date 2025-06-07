@@ -9,6 +9,9 @@ function onSearchBar(event) {
   searchBarValue = event.target.value;
   console.log(searchBarValue)
 }
+$("#searchBar").on("propertychange input", onSearchBar)
+
+$("#searchButton").click(handleSeachButton)
 
 const stars = document.querySelectorAll('.star');
 const ratingValue = document.getElementById('rating-value');
