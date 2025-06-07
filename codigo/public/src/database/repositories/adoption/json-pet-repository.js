@@ -28,7 +28,7 @@ export class JsonPetRepository {
             const response = await fetch(newUrl);
 
             const jsonFormat = await response.json()
-
+            
             const pet = Object.keys(jsonFormat).length === 0 ? {pet: null} : {pet: JsonPetRepositoryMapper.toDomain(jsonFormat)}
 
             return pet
