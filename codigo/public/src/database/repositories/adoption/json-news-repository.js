@@ -1,4 +1,4 @@
-import { JsonNewsRepositoryMapper } from "../../mappers/json-news-repository-mapper.js";
+import { JsonNewsRepositoryMapper } from "../../mappers/json-news-repository-mappers.js";
 
 export class JsonNewsRepository {
     url = `${window.location.origin}/noticias`;
@@ -41,11 +41,16 @@ export class JsonNewsRepository {
 
     async findManyNews() {
         try{
-            const newUrl = `${this.url}/`
+            const newUrl = `${this.url}`
 
             const response = await fetch(newUrl);
 
             const jsonFormat = await response.json()
+
+            // Verificação mínima para evitar erro de .map()
+            if (!Array.isArray(jsonFormat)) {
+                return [];
+            }
 
             const news = jsonFormat.map((element) => {
                 return {...JsonNewsRepositoryMapper.toDomain(element)}
@@ -54,6 +59,7 @@ export class JsonNewsRepository {
             return news
         } catch(err) {
             console.error(err);
+            return [];
         }
     }
 

@@ -1,534 +1,748 @@
 {
-  "pet": [
-    {
-      "id": "petTest2",
-      "name": "Chitãozinho",
-      "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
-      "size": "Médio",
-      "animal_sex": "male",
-      "description": "Um cão amigável e brincalhão.",
-      "img_urls": [
-        "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
-      ],
-      "born_at": "2022-03-15",
-      "breed": [
-        "Pastor Alemão"
-      ],
-      "vaccinated": true,
-      "castrated": true,
-      "available_for_adoption": true,
-      "personality": [
-        "brincalhão",
-        "carinhoso"
-      ],
-      "donor_id": "donorTestId",
-      "created_at": "2025-05-02T12:07:43.749Z",
-      "updated_at": "2025-05-02T12:07:43.749Z"
-    },
-    {
-      "id": "petTest3",
-      "name": "Chitãozinho",
-      "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
-      "size": "Grande",
-      "animal_sex": "male",
-      "description": "Um cão amigável e brincalhão.",
-      "img_urls": [
-        "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
-      ],
-      "born_at": "2022-03-15",
-      "breed": [
-        "Pastor Alemão"
-      ],
-      "vaccinated": true,
-      "castrated": true,
-      "available_for_adoption": true,
-      "personality": [
-        "brincalhão",
-        "carinhoso"
-      ],
-      "donor_id": "donorTestId",
-      "created_at": "2025-05-02T12:07:43.749Z",
-      "updated_at": "2025-05-02T12:07:43.749Z"
-    },
-    {
-      "id": "petTest",
-      "name": "Chororo",
-      "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
-      "size": "Pequeno",
-      "animal_sex": "male",
-      "description": "Um cão amigável e brincalhão.",
-      "img_urls": [
-        "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
-      ],
-      "born_at": "2022-03-15",
-      "breed": [
-        "Pastor Alemão"
-      ],
-      "vaccinated": true,
-      "castrated": true,
-      "available_for_adoption": true,
-      "personality": [
-        "preguiçoso"
-      ],
-      "donor_id": "donorTestId",
-      "created_at": "2025-05-02T12:07:43.749Z",
-      "updated_at": "2025-05-02T12:07:43.749Z"
-    },
-    {
-      "id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673",
-      "name": "Vendaval",
-      "animal_type_id": "23485b50-a18d-4a3a-a9f0-6e1002cb0eff",
-      "size": "Grande",
-      "animal_sex": "male",
-      "description": "Um cão Sapeca e brincalhão.",
-      "img_urls": [
-        "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
-      ],
-      "born_at": "2022-03-15",
-      "breed": [
-        "Golden Retriever"
-      ],
-      "vaccinated": true,
-      "castrated": true,
-      "available_for_adoption": true,
-      "personality": [
-        "brincalhão",
-        "carinhoso"
-      ],
-      "donor_id": "donorTestId",
-      "created_at": "2025-05-05T19:35:54.548Z",
-      "updated_at": "2025-05-05T19:35:54.548Z"
-    },
-    {
-      "id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
-      "name": "Lucas",
-      "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
-      "size": "Pequeno",
-      "animal_sex": "Male",
-      "description": "Fofo",
-      "img_urls": [],
-      "born_at": "",
-      "breed": [
-        "vira-lata"
-      ],
-      "vaccinated": true,
-      "castrated": false,
-      "available_for_adoption": true,
-      "personality": [],
-      "donor_id": "donorTestId",
-      "created_at": "2025-05-20T23:30:42.012Z",
-      "updated_at": "2025-05-20T23:30:42.012Z"
-    },
-    {
-      "id": "7be41cb1-8972-4378-a71a-c0daa24f48a2",
-      "name": "ads",
-      "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
-      "size": "Pequeno",
-      "animal_sex": "Male",
-      "description": "das",
-      "img_urls": [],
-      "born_at": "das",
-      "breed": [
-        "das"
-      ],
-      "vaccinated": false,
-      "castrated": false,
-      "available_for_adoption": true,
-      "personality": [],
-      "donor_id": "donorTestId",
-      "created_at": "2025-05-21T00:05:31.868Z",
-      "updated_at": "2025-05-21T00:05:31.868Z"
-    }
-  ],
-  "animal_type": [
-    {
-      "id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
-      "type": "Cachorro",
-      "img_url_reference": "https://www.portaldodog.com.br/wp-content/uploads/2024/12/Qual-e-o-cachorro-mais-bonito-do-mundo.jpg",
-      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
-    },
-    {
-      "id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
-      "type": "Gato",
-      "img_url_reference": "https://www.estadao.com.br/resizer/v2/KJDE6VL4F5AVJJJBLH5XYGVWD4.png?quality=80&auth=9298eb03c61f9b7995df9a8c47b7eed8ca9e118c532d97b464527bc3286740b8&width=1200&height=1200&smart=true",
-      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
-    },
-    {
-      "id": "22f23a90-b097-4056-81a7-373f7af5f8a2",
-      "type": "Hamster",
-      "img_url_reference": "https://cdn.pixabay.com/photo/2022/02/12/04/39/hamster-7008457_1280.jpg",
-      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
-    },
-    {
-      "id": "23485b50-a18d-4a3a-a9f0-6e1002cb0eff",
-      "type": "Coelho",
-      "img_url_reference": "https://petshoplovers.com/wp-content/uploads/2014/03/coelho-01.jpg",
-      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
-    },
-    {
-      "id": "d70ddae5-7cdc-46c9-b03d-62120d5e9215",
-      "type": "Peixe",
-      "img_url_reference": "https://i.pinimg.com/originals/75/1f/4f/751f4fb8cb415c5cf661caacb2fc3fc7.jpg",
-      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
-    },
-    {
-      "id": "7422243c-8a72-4998-9bd2-a480652acbbd",
-      "type": "Pássaro",
-      "img_url_reference": "https://png.pngtree.com/thumb_back/fh260/background/20220228/pngtree-budgerigar-parrot-in-his-cage-budgerigar-green-cute-photo-image_23907780.jpg",
-      "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
-    }
-  ],
-  "star_rate": [
-    {
-      "id": "someId",
-      "appraiser_id": "someId",
-      "rated_entity_id": "someId",
-      "rate": 5,
-      "created_at": "someDate",
-      "updated_at": "someDate"
-    }
-  ],
-  "favorite_pet": [
-    {
-      "id": "07637cd7-70b8-4c21-9dac-db8636f8e073",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest3",
-      "created_at": "2025-05-20T21:46:05.595Z"
-    },
-    {
-      "id": "856d8867-2241-4b22-99b8-b60b4c227498",
-      "appraiser_id": "userTestId",
-      "pet_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
-      "created_at": "2025-05-21T00:24:53.845Z"
-    },
-    {
-      "id": "96783932-35fb-4117-aa84-7903f5e33c88",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest",
-      "created_at": "2025-06-06T17:55:53.928Z"
-    }
-  ],
-  "address": [
-    {
-      "id": "someId",
-      "entity_type": "pet / user / enterprise",
-      "entity_id": "someId",
-      "street": "Flower Street",
-      "number": "123",
-      "complement": "Apartment 45",
-      "neighborhood": "Spring Garden",
-      "city": "Belo Horizonte",
-      "state": "MG",
-      "zipCode": "30123-456",
-      "country": "Brazil",
-      "latitude": -19.9245,
-      "longitude": -43.9352,
-      "created_at": "someDate",
-      "updated_at": "someDate"
-    }
-  ],
-  "user": [
-    {
-      "id": "userTestId",
-      "cpf": "12312312312",
-      "phone_number": "553340028922",
-      "name": "Benadete",
-      "description": "Meu nome é rircadão",
-      "born_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
-      "img_url": "someoneUrl",
-      "email": "someone@gmail.com",
-      "password": "somePassword",
-      "created_at": "someDate",
-      "updated_at": "someDate"
-    }
-  ],
-  "donor": [
-    {
-      "id": "donorTestId",
-      "donor_type": "enterprise / user",
-      "donor_id": "someId",
-      "adoption_amount": 0,
-      "created_at": "someDate",
-      "updated_at": "someDate"
-    }
-  ],
-  "adoption": [
-    {
-      "id": "someId",
-      "user_id": "someId",
-      "donor_id": "someId",
-      "pet_id": "someId",
-      "created_at": "someDate"
-    },
-    {
-      "created_at": "2025-05-05T12:09:53.711Z",
-      "id": "f525483c-b905-48ed-89a6-35685ffbc718",
-      "user_id": "userTestId",
-      "donor_id": "donorTestId",
-      "pet_id": "petTest"
-    },
-    {
-      "created_at": "2025-05-05T21:05:19.493Z",
-      "id": "9a6cc17d-5ff1-4f4b-a6a4-f3008a412a9c",
-      "user_id": "userTestId",
-      "donor_id": "donorTestId",
-      "pet_id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673"
-    }
-  ],
-  "enterprise": [
-    {
-      "id": "uuid",
-      "cnpj": "12312312312",
-      "phone_number": "553340028922",
-      "name": "Petshop do Ricardão",
-      "description": "PetShop do ricardão",
-      "founded_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
-      "img_url": "someoneUrl",
-      "email": "someone@gmail.com",
-      "password": "somePassword",
-      "created_at": "someDate",
-      "updated_at": "someDate"
-    }
-  ],
-  "adopter_history": [
-    {
-      "id": "uuid",
-      "adopter_id": "uuid",
-      "action": "adoption",
-      "created_at": "someDate"
-    }
-  ],
-  "donor_history": [
-    {
-      "id": "uuid",
-      "donor_id": "uuid",
-      "action": "adoption",
-      "created_at": "someDate"
-    }
-  ],
-  "message_session": [
-    {
-      "id": "someId",
-      "adopter_id": "someAdopterId",
-      "donor_id": "someDonorId",
-      "created_at": "someDate"
-    }
-  ],
-  "message": [
-    {
-      "id": "someId",
-      "from_id": "someId",
-      "to_id": "someId",
-      "message_session_id": "someId",
-      "type": "text / image / url",
-      "content": "someContent / url",
-      "created_at": "someDate",
-      "updated_at": "someDate"
-    }
-  ],
-  "notification": [
-    {
-      "id": "someId",
-      "user_id": "someId",
-      "type": "content / approved / refused",
-      "title": "Titulo da notificação",
-      "content": "Conteudo da notificação",
-      "created_at": "someDate",
-      "updated_at": "someDate"
-    }
-  ],
-  "tip": [
-    {
-      "id": "b68e3c70-a4e2-4c4d-8b47-376a5f8f2c01",
-      "animal_type_id": "Cachorro",
-      "img_url": "someurl",
-      "created_at": "2025-05-03T14:17:59.909Z",
-      "tips": [
+    "pet": [
         {
-          "title": "Qual é a melhor idade para adotar um cachorro?",
-          "content": "Filhotes exigem mais tempo e paciência, enquanto adultos geralmente já têm hábitos formados e podem se adaptar mais facilmente à rotina da casa."
+            "id": "petTest2",
+            "name": "Chitãozinho",
+            "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
+            "size": "Médio",
+            "animal_sex": "male",
+            "description": "Um cão amigável e brincalhão.",
+            "img_urls": [
+                "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
+            ],
+            "born_at": "2022-03-15",
+            "breed": [
+                "Pastor Alemão"
+            ],
+            "vaccinated": true,
+            "castrated": true,
+            "available_for_adoption": true,
+            "personality": [
+                "brincalhão",
+                "carinhoso"
+            ],
+            "donor_id": "donorTestId",
+            "created_at": "2025-05-02T12:07:43.749Z",
+            "updated_at": "2025-05-02T12:07:43.749Z"
         },
         {
-          "title": "O que devo comprar antes de trazer um cachorro para casa?",
-          "content": "Compre cama, comedouro, bebedouro, ração apropriada, coleira com identificação, brinquedos e produtos de higiene."
+            "id": "petTest3",
+            "name": "Chitãozinho",
+            "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
+            "size": "Grande",
+            "animal_sex": "male",
+            "description": "Um cão amigável e brincalhão.",
+            "img_urls": [
+                "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
+            ],
+            "born_at": "2022-03-15",
+            "breed": [
+                "Pastor Alemão"
+            ],
+            "vaccinated": true,
+            "castrated": true,
+            "available_for_adoption": true,
+            "personality": [
+                "brincalhão",
+                "carinhoso"
+            ],
+            "donor_id": "donorTestId",
+            "created_at": "2025-05-02T12:07:43.749Z",
+            "updated_at": "2025-05-02T12:07:43.749Z"
         },
         {
-          "title": "Preciso adestrar meu cachorro?",
-          "content": "Sim, o adestramento básico ajuda no comportamento e convivência, além de fortalecer o vínculo entre tutor e pet."
+            "id": "petTest",
+            "name": "Chororo",
+            "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
+            "size": "Pequeno",
+            "animal_sex": "male",
+            "description": "Um cão amigável e brincalhão.",
+            "img_urls": [
+                "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
+            ],
+            "born_at": "2022-03-15",
+            "breed": [
+                "Pastor Alemão"
+            ],
+            "vaccinated": true,
+            "castrated": true,
+            "available_for_adoption": true,
+            "personality": [
+                "preguiçoso"
+            ],
+            "donor_id": "donorTestId",
+            "created_at": "2025-05-02T12:07:43.749Z",
+            "updated_at": "2025-05-02T12:07:43.749Z"
         },
         {
-          "title": "Cachorros precisam de companhia constante?",
-          "content": "A maioria sim. Eles são animais sociais e podem desenvolver ansiedade se ficarem muito tempo sozinhos."
+            "id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673",
+            "name": "Vendaval",
+            "animal_type_id": "23485b50-a18d-4a3a-a9f0-6e1002cb0eff",
+            "size": "Grande",
+            "animal_sex": "male",
+            "description": "Um cão Sapeca e brincalhão.",
+            "img_urls": [
+                "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
+            ],
+            "born_at": "2022-03-15",
+            "breed": [
+                "Golden Retriever"
+            ],
+            "vaccinated": true,
+            "castrated": true,
+            "available_for_adoption": true,
+            "personality": [
+                "brincalhão",
+                "carinhoso"
+            ],
+            "donor_id": "donorTestId",
+            "created_at": "2025-05-05T19:35:54.548Z",
+            "updated_at": "2025-05-05T19:35:54.548Z"
         },
         {
-          "title": "Com que frequência devo levar ao veterinário?",
-          "content": "Consultas anuais são recomendadas, além de visitas extras em caso de sintomas anormais."
+            "id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
+            "name": "Lucas",
+            "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
+            "size": "Pequeno",
+            "animal_sex": "Male",
+            "description": "Fofo",
+            "img_urls": [],
+            "born_at": "",
+            "breed": [
+                "vira-lata"
+            ],
+            "vaccinated": true,
+            "castrated": false,
+            "available_for_adoption": true,
+            "personality": [],
+            "donor_id": "donorTestId",
+            "created_at": "2025-05-20T23:30:42.012Z",
+            "updated_at": "2025-05-20T23:30:42.012Z"
         },
         {
-          "title": "É obrigatório vacinar meu cachorro?",
-          "content": "Sim. Vacinas são essenciais para a saúde do animal e de todos ao redor."
-        },
-        {
-          "title": "Qual tipo de alimentação é ideal?",
-          "content": "Rações de qualidade são a base, podendo ser complementadas com orientação veterinária."
-        },
-        {
-          "title": "Posso adotar se moro em apartamento?",
-          "content": "Sim, desde que o cachorro tenha espaço suficiente e passeios diários para gastar energia."
-        },
-        {
-          "title": "Como evitar que ele destrua objetos?",
-          "content": "Dê brinquedos apropriados e estimule atividades físicas e mentais regularmente."
-        },
-        {
-          "title": "Adotar é melhor que comprar?",
-          "content": "Adotar salva vidas e dá uma chance a animais que precisam de um lar."
+            "id": "7be41cb1-8972-4378-a71a-c0daa24f48a2",
+            "name": "ads",
+            "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
+            "size": "Pequeno",
+            "animal_sex": "Male",
+            "description": "das",
+            "img_urls": [],
+            "born_at": "das",
+            "breed": [
+                "das"
+            ],
+            "vaccinated": false,
+            "castrated": false,
+            "available_for_adoption": true,
+            "personality": [],
+            "donor_id": "donorTestId",
+            "created_at": "2025-05-21T00:05:31.868Z",
+            "updated_at": "2025-05-21T00:05:31.868Z"
         }
-      ]
-    },
-    {
-      "id": "4fbcfd2d-768a-42ad-b82c-1e5f2a176b75",
-      "animal_type_id": "Gato",
-      "img_url": "someurl",
-      "created_at": "2025-05-03T14:17:59.909Z",
-      "tips": [
+    ],
+    "animal_type": [
         {
-          "title": "Gatos se adaptam bem em apartamentos?",
-          "content": "Sim, desde que o ambiente seja seguro e enriquecido com arranhadores e brinquedos."
+            "id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
+            "type": "Cachorro",
+            "img_url_reference": "https://www.portaldodog.com.br/wp-content/uploads/2024/12/Qual-e-o-cachorro-mais-bonito-do-mundo.jpg",
+            "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
         },
         {
-          "title": "Gatos precisam de vacinas?",
-          "content": "Sim. Vacinas protegem contra doenças sérias e devem ser aplicadas anualmente."
+            "id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
+            "type": "Gato",
+            "img_url_reference": "https://www.estadao.com.br/resizer/v2/KJDE6VL4F5AVJJJBLH5XYGVWD4.png?quality=80&auth=9298eb03c61f9b7995df9a8c47b7eed8ca9e118c532d97b464527bc3286740b8&width=1200&height=1200&smart=true",
+            "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
         },
         {
-          "title": "Como montar um ambiente ideal para um gato?",
-          "content": "Proporcione locais para subir, arranhar, esconder e descansar, além de uma caixinha de areia limpa."
+            "id": "22f23a90-b097-4056-81a7-373f7af5f8a2",
+            "type": "Hamster",
+            "img_url_reference": "https://cdn.pixabay.com/photo/2022/02/12/04/39/hamster-7008457_1280.jpg",
+            "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
         },
         {
-          "title": "Gatos são independentes demais?",
-          "content": "Eles são independentes, mas também afetuosos e precisam de atenção e carinho diário."
+            "id": "23485b50-a18d-4a3a-a9f0-6e1002cb0eff",
+            "type": "Coelho",
+            "img_url_reference": "https://petshoplovers.com/wp-content/uploads/2014/03/coelho-01.jpg",
+            "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
         },
         {
-          "title": "É necessário castrar um gato?",
-          "content": "Sim. A castração previne doenças e comportamentos indesejados como a marcação de território."
+            "id": "d70ddae5-7cdc-46c9-b03d-62120d5e9215",
+            "type": "Peixe",
+            "img_url_reference": "https://i.pinimg.com/originals/75/1f/4f/751f4fb8cb415c5cf661caacb2fc3fc7.jpg",
+            "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
         },
         {
-          "title": "Posso deixar meu gato sair sozinho?",
-          "content": "Não é recomendado. Gatos soltos estão sujeitos a acidentes, doenças e envenenamento."
-        },
-        {
-          "title": "Gatos se dão bem com crianças?",
-          "content": "Sim, desde que a criança respeite o espaço do animal."
-        },
-        {
-          "title": "Como saber se meu gato está doente?",
-          "content": "Mudança de comportamento, apatia ou alteração no apetite são sinais importantes."
-        },
-        {
-          "title": "Qual o melhor tipo de ração?",
-          "content": "Rações específicas para idade e condição de saúde, recomendadas por veterinários."
-        },
-        {
-          "title": "Como evitar que arranhem móveis?",
-          "content": "Ofereça arranhadores e use atrativos próprios para eles usarem esses objetos."
+            "id": "7422243c-8a72-4998-9bd2-a480652acbbd",
+            "type": "Pássaro",
+            "img_url_reference": "https://png.pngtree.com/thumb_back/fh260/background/20220228/pngtree-budgerigar-parrot-in-his-cage-budgerigar-green-cute-photo-image_23907780.jpg",
+            "created_at": "Fri May 02 2025 23:15:56 GMT-0300 (Horário Padrão de Brasília)"
         }
-      ]
-    },
-    {
-      "id": "95dc1d2e-8a7a-423b-9d19-f4378bd00d3f",
-      "animal_type_id": "Coelho",
-      "img_url": "someurl",
-      "created_at": "2025-05-03T14:17:59.909Z",
-      "tips": [
+    ],
+    "star_rate": [
         {
-          "title": "Coelhos podem viver soltos em casa?",
-          "content": "Sim, mas é necessário 'prova de coelho': esconder fios, produtos tóxicos e objetos pequenos."
-        },
-        {
-          "title": "O que coelhos comem?",
-          "content": "Feno é a base, além de ração específica e verduras frescas recomendadas pelo veterinário."
-        },
-        {
-          "title": "Eles precisam de companhia?",
-          "content": "São sociáveis e gostam de companhia, humana ou de outro coelho, se introduzido corretamente."
-        },
-        {
-          "title": "É necessário castrar coelhos?",
-          "content": "Sim. Isso evita doenças e reduz comportamentos agressivos ou territoriais."
-        },
-        {
-          "title": "Coelhos tomam banho?",
-          "content": "Não. Banhos podem ser perigosos. Eles se limpam sozinhos e só precisam de limpeza localizada se necessário."
-        },
-        {
-          "title": "Qual o espaço ideal para um coelho?",
-          "content": "Um cercado espaçoso ou ambiente seguro com liberdade diária para se movimentar."
-        },
-        {
-          "title": "Coelhos são bons para crianças?",
-          "content": "Podem ser, mas requerem cuidados delicados. Crianças devem ser supervisionadas."
-        },
-        {
-          "title": "Eles fazem barulho?",
-          "content": "São silenciosos, mas se comunicam com o corpo e podem emitir sons leves em certas situações."
-        },
-        {
-          "title": "Coelhos roem tudo?",
-          "content": "Sim, por isso brinquedos e madeira segura são importantes para distração e desgaste dentário."
-        },
-        {
-          "title": "Com que frequência visitar o veterinário?",
-          "content": "Ao menos uma vez por ano, além de emergências ou sinais de doença."
+            "id": "someId",
+            "appraiser_id": "someId",
+            "rated_entity_id": "someId",
+            "rate": 5,
+            "created_at": "someDate",
+            "updated_at": "someDate"
         }
-      ]
-    },
-    {
-      "id": "c23a7de5-1093-45b9-951d-d3b9e9a62c7a",
-      "animal_type_id": "Pássaro",
-      "img_url": "someurl",
-      "created_at": "2025-05-03T14:17:59.909Z",
-      "tips": [
+    ],
+    "favorite_pet": [
         {
-          "title": "Qual o melhor tipo de gaiola?",
-          "content": "Espaçosa o suficiente para abrir as asas, com poleiros variados e espaço para voar."
+            "id": "07637cd7-70b8-4c21-9dac-db8636f8e073",
+            "appraiser_id": "userTestId",
+            "pet_id": "petTest3",
+            "created_at": "2025-05-20T21:46:05.595Z"
         },
         {
-          "title": "Pássaros precisam sair da gaiola?",
-          "content": "Sim. Voos supervisionados fora da gaiola estimulam o bem-estar físico e mental."
+            "id": "856d8867-2241-4b22-99b8-b60b4c227498",
+            "appraiser_id": "userTestId",
+            "pet_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
+            "created_at": "2025-05-21T00:24:53.845Z"
         },
         {
-          "title": "O que devo oferecer na alimentação?",
-          "content": "Mistura de sementes, frutas, verduras e rações específicas, conforme espécie e orientação veterinária."
-        },
-        {
-          "title": "Eles precisam de companhia?",
-          "content": "Sim. Muitas espécies são sociáveis e se beneficiam da companhia de outros pássaros ou humanos."
-        },
-        {
-          "title": "Como saber se o pássaro está doente?",
-          "content": "Penas eriçadas, apatia, alterações nas fezes ou perda de apetite são sinais preocupantes."
-        },
-        {
-          "title": "Posso ensinar truques ao meu pássaro?",
-          "content": "Sim. Paciência e reforço positivo funcionam muito bem com aves como calopsitas e papagaios."
-        },
-        {
-          "title": "Eles fazem muita sujeira?",
-          "content": "Sim, exigem limpeza frequente da gaiola e do ambiente ao redor."
-        },
-        {
-          "title": "Pássaros precisam de banho?",
-          "content": "Sim. Ofereça um recipiente com água ou borrife levemente para que eles se banhem."
-        },
-        {
-          "title": "É preciso cortar as asas?",
-          "content": "Isso depende. O corte pode ser feito para segurança, mas sempre com orientação de um veterinário."
-        },
-        {
-          "title": "Qual o maior erro com pássaros em casa?",
-          "content": "Falta de estímulo. Eles precisam de brinquedos, interação e enriquecimento ambiental."
+            "id": "b72860fc-1baf-4632-992e-8081e99fc2c0",
+            "appraiser_id": "userTestId",
+            "pet_id": "petTest",
+            "created_at": "2025-05-21T00:24:55.277Z"
         }
-      ]
+    ],
+    "address": [
+        {
+            "id": "someId",
+            "entity_type": "pet / user / enterprise",
+            "entity_id": "someId",
+            "street": "Flower Street",
+            "number": "123",
+            "complement": "Apartment 45",
+            "neighborhood": "Spring Garden",
+            "city": "Belo Horizonte",
+            "state": "MG",
+            "zipCode": "30123-456",
+            "country": "Brazil",
+            "latitude": -19.9245,
+            "longitude": -43.9352,
+            "created_at": "someDate",
+            "updated_at": "someDate"
+        }
+    ],
+    "user": [
+        {
+            "id": "userTestId",
+            "cpf": "12312312312",
+            "phone_number": "553340028922",
+            "name": "Benadete",
+            "description": "Meu nome é rircadão",
+            "born_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
+            "img_url": "someoneUrl",
+            "email": "someone@gmail.com",
+            "password": "somePassword",
+            "created_at": "someDate",
+            "updated_at": "someDate"
+        }
+    ],
+    "donor": [
+        {
+            "id": "donorTestId",
+            "donor_type": "enterprise / user",
+            "donor_id": "someId",
+            "adoption_amount": 0,
+            "created_at": "someDate",
+            "updated_at": "someDate"
+        }
+    ],
+    "adoption": [
+        {
+            "id": "someId",
+            "user_id": "someId",
+            "donor_id": "someId",
+            "pet_id": "someId",
+            "created_at": "someDate"
+        },
+        {
+            "created_at": "2025-05-05T12:09:53.711Z",
+            "id": "f525483c-b905-48ed-89a6-35685ffbc718",
+            "user_id": "userTestId",
+            "donor_id": "donorTestId",
+            "pet_id": "petTest"
+        },
+        {
+            "created_at": "2025-05-05T21:05:19.493Z",
+            "id": "9a6cc17d-5ff1-4f4b-a6a4-f3008a412a9c",
+            "user_id": "userTestId",
+            "donor_id": "donorTestId",
+            "pet_id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673"
+        }
+    ],
+    "enterprise": [
+        {
+            "id": "uuid",
+            "cnpj": "12312312312",
+            "phone_number": "553340028922",
+            "name": "Petshop do Ricardão",
+            "description": "PetShop do ricardão",
+            "founded_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
+            "img_url": "someoneUrl",
+            "email": "someone@gmail.com",
+            "password": "somePassword",
+            "created_at": "someDate",
+            "updated_at": "someDate"
+        }
+    ],
+    "adopter_history": [
+        {
+            "id": "uuid",
+            "adopter_id": "uuid",
+            "action": "adoption",
+            "created_at": "someDate"
+        }
+    ],
+    "donor_history": [
+        {
+            "id": "uuid",
+            "donor_id": "uuid",
+            "action": "adoption",
+            "created_at": "someDate"
+        }
+    ],
+    "message_session": [
+        {
+            "id": "someId",
+            "adopter_id": "someAdopterId",
+            "donor_id": "someDonorId",
+            "created_at": "someDate"
+        }
+    ],
+    "message": [
+        {
+            "id": "someId",
+            "from_id": "someId",
+            "to_id": "someId",
+            "message_session_id": "someId",
+            "type": "text / image / url",
+            "content": "someContent / url",
+            "created_at": "someDate",
+            "updated_at": "someDate"
+        }
+    ],
+    "notification": [
+        {
+            "id": "someId",
+            "user_id": "someId",
+            "type": "content / approved / refused",
+            "title": "Titulo da notificação",
+            "content": "Conteudo da notificação",
+            "created_at": "someDate",
+            "updated_at": "someDate"
+        }
+    ],
+    "tip": [
+        {
+            "id": "b68e3c70-a4e2-4c4d-8b47-376a5f8f2c01",
+            "animal_type_id": "Cachorro",
+            "img_url": "someurl",
+            "created_at": "2025-05-03T14:17:59.909Z",
+            "tips": [
+                {
+                    "title": "Qual é a melhor idade para adotar um cachorro?",
+                    "content": "Filhotes exigem mais tempo e paciência, enquanto adultos geralmente já têm hábitos formados e podem se adaptar mais facilmente à rotina da casa."
+                },
+                {
+                    "title": "O que devo comprar antes de trazer um cachorro para casa?",
+                    "content": "Compre cama, comedouro, bebedouro, ração apropriada, coleira com identificação, brinquedos e produtos de higiene."
+                },
+                {
+                    "title": "Preciso adestrar meu cachorro?",
+                    "content": "Sim, o adestramento básico ajuda no comportamento e convivência, além de fortalecer o vínculo entre tutor e pet."
+                },
+                {
+                    "title": "Cachorros precisam de companhia constante?",
+                    "content": "A maioria sim. Eles são animais sociais e podem desenvolver ansiedade se ficarem muito tempo sozinhos."
+                },
+                {
+                    "title": "Com que frequência devo levar ao veterinário?",
+                    "content": "Consultas anuais são recomendadas, além de visitas extras em caso de sintomas anormais."
+                },
+                {
+                    "title": "É obrigatório vacinar meu cachorro?",
+                    "content": "Sim. Vacinas são essenciais para a saúde do animal e de todos ao redor."
+                },
+                {
+                    "title": "Qual tipo de alimentação é ideal?",
+                    "content": "Rações de qualidade são a base, podendo ser complementadas com orientação veterinária."
+                },
+                {
+                    "title": "Posso adotar se moro em apartamento?",
+                    "content": "Sim, desde que o cachorro tenha espaço suficiente e passeios diários para gastar energia."
+                },
+                {
+                    "title": "Como evitar que ele destrua objetos?",
+                    "content": "Dê brinquedos apropriados e estimule atividades físicas e mentais regularmente."
+                },
+                {
+                    "title": "Adotar é melhor que comprar?",
+                    "content": "Adotar salva vidas e dá uma chance a animais que precisam de um lar."
+                }
+            ]
+        },
+        {
+            "id": "4fbcfd2d-768a-42ad-b82c-1e5f2a176b75",
+            "animal_type_id": "Gato",
+            "img_url": "someurl",
+            "created_at": "2025-05-03T14:17:59.909Z",
+            "tips": [
+                {
+                    "title": "Gatos se adaptam bem em apartamentos?",
+                    "content": "Sim, desde que o ambiente seja seguro e enriquecido com arranhadores e brinquedos."
+                },
+                {
+                    "title": "Gatos precisam de vacinas?",
+                    "content": "Sim. Vacinas protegem contra doenças sérias e devem ser aplicadas anualmente."
+                },
+                {
+                    "title": "Como montar um ambiente ideal para um gato?",
+                    "content": "Proporcione locais para subir, arranhar, esconder e descansar, além de uma caixinha de areia limpa."
+                },
+                {
+                    "title": "Gatos são independentes demais?",
+                    "content": "Eles são independentes, mas também afetuosos e precisam de atenção e carinho diário."
+                },
+                {
+                    "title": "É necessário castrar um gato?",
+                    "content": "Sim. A castração previne doenças e comportamentos indesejados como a marcação de território."
+                },
+                {
+                    "title": "Posso deixar meu gato sair sozinho?",
+                    "content": "Não é recomendado. Gatos soltos estão sujeitos a acidentes, doenças e envenenamento."
+                },
+                {
+                    "title": "Gatos se dão bem com crianças?",
+                    "content": "Sim, desde que a criança respeite o espaço do animal."
+                },
+                {
+                    "title": "Como saber se meu gato está doente?",
+                    "content": "Mudança de comportamento, apatia ou alteração no apetite são sinais importantes."
+                },
+                {
+                    "title": "Qual o melhor tipo de ração?",
+                    "content": "Rações específicas para idade e condição de saúde, recomendadas por veterinários."
+                },
+                {
+                    "title": "Como evitar que arranhem móveis?",
+                    "content": "Ofereça arranhadores e use atrativos próprios para eles usarem esses objetos."
+                }
+            ]
+        },
+        {
+            "id": "95dc1d2e-8a7a-423b-9d19-f4378bd00d3f",
+            "animal_type_id": "Coelho",
+            "img_url": "someurl",
+            "created_at": "2025-05-03T14:17:59.909Z",
+            "tips": [
+                {
+                    "title": "Coelhos podem viver soltos em casa?",
+                    "content": "Sim, mas é necessário 'prova de coelho': esconder fios, produtos tóxicos e objetos pequenos."
+                },
+                {
+                    "title": "O que coelhos comem?",
+                    "content": "Feno é a base, além de ração específica e verduras frescas recomendadas pelo veterinário."
+                },
+                {
+                    "title": "Eles precisam de companhia?",
+                    "content": "São sociáveis e gostam de companhia, humana ou de outro coelho, se introduzido corretamente."
+                },
+                {
+                    "title": "É necessário castrar coelhos?",
+                    "content": "Sim. Isso evita doenças e reduz comportamentos agressivos ou territoriais."
+                },
+                {
+                    "title": "Coelhos tomam banho?",
+                    "content": "Não. Banhos podem ser perigosos. Eles se limpam sozinhos e só precisam de limpeza localizada se necessário."
+                },
+                {
+                    "title": "Qual o espaço ideal para um coelho?",
+                    "content": "Um cercado espaçoso ou ambiente seguro com liberdade diária para se movimentar."
+                },
+                {
+                    "title": "Coelhos são bons para crianças?",
+                    "content": "Podem ser, mas requerem cuidados delicados. Crianças devem ser supervisionadas."
+                },
+                {
+                    "title": "Eles fazem barulho?",
+                    "content": "São silenciosos, mas se comunicam com o corpo e podem emitir sons leves em certas situações."
+                },
+                {
+                    "title": "Coelhos roem tudo?",
+                    "content": "Sim, por isso brinquedos e madeira segura são importantes para distração e desgaste dentário."
+                },
+                {
+                    "title": "Com que frequência visitar o veterinário?",
+                    "content": "Ao menos uma vez por ano, além de emergências ou sinais de doença."
+                }
+            ]
+        },
+        {
+            "id": "c23a7de5-1093-45b9-951d-d3b9e9a62c7a",
+            "animal_type_id": "Pássaro",
+            "img_url": "someurl",
+            "created_at": "2025-05-03T14:17:59.909Z",
+            "tips": [
+                {
+                    "title": "Qual o melhor tipo de gaiola?",
+                    "content": "Espaçosa o suficiente para abrir as asas, com poleiros variados e espaço para voar."
+                },
+                {
+                    "title": "Pássaros precisam sair da gaiola?",
+                    "content": "Sim. Voos supervisionados fora da gaiola estimulam o bem-estar físico e mental."
+                },
+                {
+                    "title": "O que devo oferecer na alimentação?",
+                    "content": "Mistura de sementes, frutas, verduras e rações específicas, conforme espécie e orientação veterinária."
+                },
+                {
+                    "title": "Eles precisam de companhia?",
+                    "content": "Sim. Muitas espécies são sociáveis e se beneficiam da companhia de outros pássaros ou humanos."
+                },
+                {
+                    "title": "Como saber se o pássaro está doente?",
+                    "content": "Penas eriçadas, apatia, alterações nas fezes ou perda de apetite são sinais preocupantes."
+                },
+                {
+                    "title": "Posso ensinar truques ao meu pássaro?",
+                    "content": "Sim. Paciência e reforço positivo funcionam muito bem com aves como calopsitas e papagaios."
+                },
+                {
+                    "title": "Eles fazem muita sujeira?",
+                    "content": "Sim, exigem limpeza frequente da gaiola e do ambiente ao redor."
+                },
+                {
+                    "title": "Pássaros precisam de banho?",
+                    "content": "Sim. Ofereça um recipiente com água ou borrife levemente para que eles se banhem."
+                },
+                {
+                    "title": "É preciso cortar as asas?",
+                    "content": "Isso depende. O corte pode ser feito para segurança, mas sempre com orientação de um veterinário."
+                },
+                {
+                    "title": "Qual o maior erro com pássaros em casa?",
+                    "content": "Falta de estímulo. Eles precisam de brinquedos, interação e enriquecimento ambiental."
+                }
+            ]
+        }
+    ],
+    "wizard": [
+        {
+            "id": 1,
+            "question": "Qual dessas opções descreve melhor o lugar onde você mora?",
+            "type": "single-choice",
+            "options": [
+                "Casa/apartamento grande",
+                "Casa com quintal/fazenda",
+                "Apartamento pequeno",
+                "Studio/Kitnet"
+            ]
+        },
+        {
+            "id": 2,
+            "question": "Você tem filhos pequenos ou mora com crianças?",
+            "type": "single-choice",
+            "options": [
+                "Sim",
+                "Não"
+            ]
+        },
+        {
+            "id": 3,
+            "question": "Você prefere um animal brincalhão e com muita energia ou mais tranquilo?",
+            "type": "single-choice",
+            "options": [
+                "Brincalhão",
+                "Tranquilo"
+            ]
+        },
+        {
+            "id": 4,
+            "question": "Você se incomoda com barulho em casa?",
+            "type": "single-choice",
+            "options": [
+                "Sim, prefiro silêncio",
+                "Não me incomoda"
+            ]
+        },
+        {
+            "id": 5,
+            "question": "Você busca um companheiro afetuoso ou mais independente?",
+            "type": "single-choice",
+            "options": [
+                "Afetuoso",
+                "Independente"
+            ]
+        },
+        {
+            "id": 6,
+            "question": "Você costuma passar muito tempo em casa?",
+            "type": "single-choice",
+            "options": [
+                "Sim",
+                "Não"
+            ]
+        },
+        {
+            "id": 7,
+            "question": "Você quer um pet que interaja com todos ou seja mais reservado?",
+            "type": "single-choice",
+            "options": [
+                "Interativo",
+                "Reservado"
+            ]
+        },
+        {
+            "id": 8,
+            "question": "Você pratica atividades físicas ao ar livre com frequência?",
+            "type": "single-choice",
+            "options": [
+                "Sim",
+                "Raramente"
+            ]
+        }
+    ],
+    "noticias": [
+        {
+            "id": 1,
+            "titulo": "Campanha nacional promove adoção de cães resgatados",
+            "resumo": "ONGs se unem para incentivar a adoção de animais em situação de rua. A campanha inclui feiras presenciais e ações online.",
+            "data": "2025-05-10",
+            "categoria": "Adoção",
+            "imagem": "https://exemplo.com/imagens/adocao.jpg",
+            "conteudo": "Diversas organizações de proteção animal lançaram uma campanha nacional com o objetivo de incentivar a adoção responsável de cães resgatados das ruas ou vítimas de maus-tratos. A campanha, chamada 'Lares com Amor', contará com feiras de adoção em mais de 30 cidades brasileiras durante o mês de maio, além de uma forte presença digital com perfis nas redes sociais divulgando histórias emocionantes de cães que aguardam um novo lar.\n\nSegundo os organizadores, a expectativa é encontrar lares para pelo menos 5 mil cães até o final da campanha. Os animais são previamente castrados, vacinados e vermifugados. Voluntários e veterinários estarão presentes nos eventos para orientar os futuros tutores sobre guarda responsável, alimentação, vacinação e comportamento canino.\n\nA campanha também visa combater o preconceito contra animais sem raça definida (SRD) e cães mais velhos, que muitas vezes são deixados de lado nas feiras de adoção. A iniciativa já conta com o apoio de celebridades e influenciadores digitais que se comprometeram a divulgar a causa."
+        },
+        {
+            "id": 2,
+            "titulo": "Estudo mostra que cães ajudam a reduzir o estresse em humanos",
+            "resumo": "Pesquisadores destacam os benefícios emocionais da convivência com cachorros, especialmente em tempos de crise.",
+            "data": "2025-05-08",
+            "categoria": "Saúde",
+            "imagem": "https://exemplo.com/imagens/estudo-estresse.jpg",
+            "conteudo": "Um estudo realizado pela Universidade de São Paulo (USP), em parceria com a Faculdade de Psicologia de Toronto, revelou que a convivência com cães tem impacto direto na redução dos níveis de estresse, ansiedade e até sintomas leves de depressão. A pesquisa acompanhou 100 famílias durante três meses, sendo metade delas com cães e a outra metade sem nenhum pet em casa.\n\nOs resultados mostraram que os participantes que conviviam com cães apresentaram níveis mais baixos de cortisol (hormônio do estresse) e relataram maior sensação de bem-estar. Além disso, os momentos de interação, como brincadeiras ou caminhadas com os cães, foram apontados como os mais relaxantes do dia.\n\nOs pesquisadores destacam ainda que a presença de um cão estimula a prática de atividades físicas, o contato social com outras pessoas e uma rotina mais estruturada, todos fatores que contribuem para a saúde mental. Os dados reforçam o potencial terapêutico dos cães, inclusive em tratamentos complementares para pacientes com ansiedade crônica e transtornos do humor."
+        },
+        {
+            "id": 3,
+            "titulo": "Novas leis ampliam proteção legal para animais de estimação",
+            "resumo": "Legislação aprovada aumenta penas para maus-tratos e reconhece animais como seres sencientes.",
+            "data": "2025-05-01",
+            "categoria": "Direitos dos Animais",
+            "imagem": "https://exemplo.com/imagens/leis-animais.jpg",
+            "conteudo": "Foi sancionada este mês uma nova legislação que marca um avanço significativo na proteção jurídica de animais de estimação no Brasil. A Lei Federal nº 14.872/2025 reconhece os animais domésticos como seres sencientes, ou seja, dotados de sensibilidade, consciência e capazes de sentir dor e emoções.\n\nCom a nova lei, os crimes de maus-tratos passam a ter penas mais rigorosas, com reclusão de até cinco anos, multa e proibição da guarda de novos animais. A legislação também exige que os municípios desenvolvam programas de educação sobre bem-estar animal nas escolas e campanhas de conscientização em bairros com maior índice de abandono.\n\nAlém disso, o texto estabelece diretrizes para a obrigatoriedade da castração e da identificação eletrônica (microchip) dos animais em áreas urbanas. Cidades que já adotaram a política de chipagem relatam uma queda expressiva nos casos de abandono e mais facilidade na devolução de animais perdidos aos seus tutores.\n\nO projeto de lei contou com o apoio de diversas ONGs, protetores independentes e da população, que pressionaram parlamentares por mudanças nas leis de proteção animal. A expectativa é de que a nova legislação sirva como modelo para outros países da América Latina."
+        },
+        {
+            "id": 4,
+            "titulo": "Cães de terapia auxiliam na recuperação de pacientes em hospitais",
+            "resumo": "Programas de cinoterapia se expandem em hospitais públicos e privados, promovendo benefícios físicos e emocionais.",
+            "data": "2025-04-27",
+            "categoria": "Terapia Animal",
+            "imagem": "https://exemplo.com/imagens/terapia-cao.jpg",
+            "conteudo": "Hospitais de todo o Brasil estão aderindo a programas de cinoterapia — uso de cães em sessões terapêuticas — com resultados animadores. Pacientes internados relatam melhora no humor, redução da dor percebida e maior disposição após as visitas dos chamados 'cães terapeutas'.\n\nOs cães passam por treinamento específico e são acompanhados por profissionais da saúde e adestradores durante as visitas. O contato com os animais promove estímulos sensoriais e emocionais, especialmente importantes em pacientes com quadros de depressão, autismo e doenças neurodegenerativas.\n\nSegundo especialistas, a interação com os cães estimula a liberação de ocitocina e serotonina, hormônios relacionados ao bem-estar. Em hospitais oncológicos, os resultados têm sido tão positivos que há planos para tornar os programas permanentes em diversas unidades de saúde."
+        },
+        {
+            "id": 5,
+            "titulo": "Alimentos proibidos para cães: saiba o que evitar",
+            "resumo": "Veterinários alertam sobre os principais alimentos tóxicos para cães, como chocolate, uvas e cebola.",
+            "data": "2025-04-22",
+            "categoria": "Cuidados",
+            "imagem": "https://exemplo.com/imagens/alimentos-proibidos.jpg",
+            "conteudo": "Muitos tutores bem-intencionados acabam oferecendo alimentos perigosos aos seus cães por desconhecimento. Segundo veterinários, itens como chocolate, uvas, cebola, alho, café e massas fermentadas podem causar intoxicações graves e até levar o animal à morte.\n\nA ingestão de chocolate, por exemplo, pode causar vômitos, tremores e arritmias cardíacas. Já as uvas podem levar à insuficiência renal aguda, mesmo em pequenas quantidades. Outro alerta importante é sobre ossos cozidos, que podem lascar e causar perfurações no trato digestivo.\n\nVeterinários recomendam uma dieta baseada em ração de qualidade ou alimentação natural orientada por profissionais. Em caso de ingestão acidental, é fundamental procurar atendimento emergencial. Compartilhar esses cuidados é essencial para promover a saúde e o bem-estar dos cães."
+        },
+        {
+            "id": 6,
+            "titulo": "Aplicativo ajuda a reunir cães perdidos com seus tutores",
+            "resumo": "Nova plataforma usa geolocalização e fotos para localizar cães desaparecidos com rapidez e eficiência.",
+            "data": "2025-04-18",
+            "categoria": "Tecnologia e Bem-Estar",
+            "imagem": "https://exemplo.com/imagens/app-cao-perdido.jpg",
+            "conteudo": "Uma startup brasileira desenvolveu um aplicativo inovador que ajuda a localizar cães perdidos usando inteligência artificial e geolocalização. O app, chamado *EncontraPet*, permite que o tutor registre a perda com uma foto e a última localização conhecida do animal. Usuários na região recebem alertas e podem enviar fotos de cães encontrados para comparação automática com os animais desaparecidos.\n\nO sistema utiliza reconhecimento facial canino — baseado em padrões únicos do focinho e olhos — para fazer a identificação. Em fase de testes em São Paulo e Curitiba, o aplicativo já conseguiu reunir mais de 400 cães com seus tutores em menos de dois meses.\n\nA ferramenta também permite cadastrar animais encontrados nas ruas, servindo de ponte entre protetores independentes e donos em busca. A previsão é de que o *EncontraPet* seja lançado nacionalmente até o fim de 2025, com integração a abrigos e clínicas veterinárias."
+        }
+    ],
+    "evento": [
+            {
+                "id": "evento_1",
+                "titulo": "Vem aí! EVENTO DE ADOÇÃO PET",
+                "data": "01 de fevereiro",
+                "horario": "13h às 18h",
+                "localizacao": "Belo Horizonte | MG",
+                "descricao": "Vários animais para adoção",
+                "img_url": "URL_DO_BANNER_EVENTO_1",
+                "link_detalhes": "/evento/1"
+            },
+            {
+                "id": "evento_2",
+                "titulo": "Evento ONG",
+                "data": "01 / 01 / 2001",
+                "localizacao": "Belo Horizonte | MG",
+                "descricao": null,
+                "img_url": null,
+                "link_detalhes": "/evento/2"
+            },
+            {
+                "id": "evento_3",
+                "titulo": "Evento PetMatch",
+                "data": "01 / 01 / 2001",
+                "localizacao": "Belo Horizonte | MG",
+                "descricao": "Descrição do evento, eu não sei o que colocar então escreverei qualquer coisa, beleza.",
+                "img_url": "URL_DO_BANNER_EVENTO_3",
+                "link_detalhes": "/evento/3"
+            },
+            {
+                "id": "evento_4",
+                "titulo": "Evento PetMatch",
+                "data": "01 / 01 / 2001",
+                "localizacao": "Belo Horizonte | MG",
+                "descricao": "Descrição do evento, eu não sei o que colocar então escreverei qualquer coisa, beleza.",
+                "img_url": "URL_DO_BANNER_EVENTO_4",
+                "link_detalhes": "/evento/4"
+            }
+        ],
+    "avaliacoes_gerais": {
+            "media": 4.8,
+            "total_avaliacoes": 10000,
+            "distribuicao_estrelas": {
+                "5": 7000,
+                "4": 1500,
+                "3": 700,
+                "2": 300,
+                "1": 500
+            }
+        },
+    "avaliacoes_resenhas": [
+            {
+                "id": 1,
+                "usuario": {
+                    "nome": "Larissa Albuquerque",
+                    "foto": "https://link/larissa.png"
+                },
+                "nota": 5,
+                "comentario": "Adotamos o max há um ano e ele trouxe muita alegria para a casa!",
+                "data": "17/03/2023"
+            },
+            {
+                "id": 2,
+                "usuario": {
+                    "nome": "Marcos Siqueira",
+                    "foto": "https://link/marcos.png"
+                },
+                "nota": 5,
+                "comentario": "Bob é um cão maravilhoso! Estou muito feliz com a adoção.",
+                "data": "17/09/2022"
+            },
+            {
+                "id": 3,
+                "usuario": {
+                    "nome": "Guilherme Sant’ana",
+                    "foto": "https://link/guilherme.png"
+                },
+                "nota": 4,
+                "comentario": "Após fazer meu PetFinder encontrei o Jason na aba de recomendados da minha página, foi amor a primeira vista!.",
+                "data": "16/06/2024"
+            }
+        ]
     }
-  ]
-}

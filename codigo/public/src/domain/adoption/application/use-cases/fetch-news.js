@@ -1,6 +1,4 @@
 import { right, left } from '../../../../../core/Either.js';
-import { ResourceNotFoundError } from '../../../../../core/errors/resource-not-found-error.js';
-
 /*
     INPUT {
         NONE

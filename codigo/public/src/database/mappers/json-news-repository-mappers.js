@@ -1,4 +1,4 @@
-import { News } from "../../domain/adoption/News.js";
+import { News } from "../../domain/adoption/enterprise/entities/News.js";
 
 export class JsonNewsRepositoryMapper {
     static toJson(news) {
