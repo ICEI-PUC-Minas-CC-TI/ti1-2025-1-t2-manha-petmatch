@@ -999,34 +999,19 @@
   ],
   "address": [
     {
-      "id": "419af288-6dc0-446a-b1cf-de022292bd25",
+      "id": "28804f1d-d54f-43e6-a415-86d5da279c28",
       "entity_type": "pet",
       "entity_id": "petTest2",
-      "street": "asdasd",
-      "number": "asd",
-      "complement": "asd",
-      "neighborhood": "asd",
-      "city": "asd",
-      "state": "asd",
-      "zipCode": "asd",
-      "country": "asd",
-      "latitude": "asd",
-      "longitude": "asd"
-    },
-    {
-      "id": "e92669ab-dfc4-4c27-bdb3-74ba4fef324e",
-      "entity_type": "pet",
-      "entity_id": "petTest",
-      "street": "asdasd",
-      "number": "asd",
-      "complement": "asd",
-      "neighborhood": "asd",
-      "city": "asd",
-      "state": "asd",
-      "zipCode": "asd",
-      "country": "asd",
-      "latitude": "asd",
-      "longitude": "asd"
+      "street": "Av. Dom José Gaspar",
+      "number": "500",
+      "complement": "",
+      "neighborhood": "",
+      "city": "Belo Horizonte",
+      "state": "Minas Gerais",
+      "zipCode": "30535-901",
+      "country": "Brasil",
+      "latitude": -19.9225371,
+      "longitude": -43.9956955
     }
   ],
   "user": [

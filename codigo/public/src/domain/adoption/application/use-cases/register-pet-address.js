@@ -3,14 +3,17 @@ import { EntityAlredyHasAddressError } from "../errors/entity-alredy-has-address
 import { RequestMissingDataError } from "../errors/request-missing-data-error.js";
 import {Address} from '../../enterprise/entities/Address.js'
 import { right, left } from "../../../../../core/Either.js";
+import { AddressNotFoundedError } from "../errors/address-not-founded-error.js";
 
 export class RegisterPetAddressUseCase {
     petRepository;
     addressRepository;
+    geoCodeService;
 
-    constructor(petRepository, addressRepository) {
+    constructor(petRepository, addressRepository, geoCodeService) {
         this.petRepository = petRepository
         this.addressRepository = addressRepository
+        this.geoCodeService = geoCodeService
     } 
 
     async execute({
@@ -23,18 +26,13 @@ export class RegisterPetAddressUseCase {
         state,
         zipCode,
         country,
-        latitude,
-        longitude
     }) { 
         if(!entityId || !street ||  !number ||
-        !complement ||
-        !neighborhood ||
         !city ||
         !state ||
         !zipCode ||
-        !country ||
-        !latitude ||
-        !longitude) {
+        !country 
+    ) {
             return left(new RequestMissingDataError())
         }
 
@@ -52,6 +50,19 @@ export class RegisterPetAddressUseCase {
             return left(new EntityAlredyHasAddressError())
         }
 
+        const {coordinates} = await this.geoCodeService.addressToCoordinates({
+                street,
+                number,
+                city,
+                state,
+                zipCode,
+                country,
+        })
+
+        if(!coordinates) {
+            return left(new AddressNotFoundedError())
+        }
+
         const address = new Address({
                entityId,
                 street,
@@ -62,8 +73,8 @@ export class RegisterPetAddressUseCase {
                 state,
                 zipCode,
                 country,
-                latitude,
-                longitude,
+                latitude: coordinates.lat,
+                longitude: coordinates.lon,
                 entityType: 'pet'
         })
 
