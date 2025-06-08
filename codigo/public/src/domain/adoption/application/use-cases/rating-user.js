@@ -1,3 +1,4 @@
+import { left, right } from "../../../../../core/Either.js";
 import { ResourceNotFoundError } from "../../../../../core/errors/resource-not-found-error.js";
 import { RequestMissingDataError } from "../errors/request-missing-data-error.js";
 
@@ -30,5 +31,17 @@ export class RatingUserUseCase {
         if(!user) {
             return left(new ResourceNotFoundError());
         }
+
+        const ratingUser = RatingUser.create({
+                    appraiserId: ratedIdRepository,
+                    contentRepository,
+                    rateRepository
+                })
+                
+                await this.ratingUserRepository.create(ratingUser);
+        
+                return right({
+                    ratingUser
+                })
  }
  }
