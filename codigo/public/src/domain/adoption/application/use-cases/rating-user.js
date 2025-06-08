@@ -1,47 +1,34 @@
 import { left, right } from "../../../../../core/Either.js";
 import { ResourceNotFoundError } from "../../../../../core/errors/resource-not-found-error.js";
 import { RequestMissingDataError } from "../errors/request-missing-data-error.js";
-
+import { RatingProfile } from "../entities/ratingProfile.js";
 
 export class RatingUserUseCase {
-    appraiserIdRepository;
-    ratedIdRepository;
-    contentRepository;
-    rateRepository;
-
-    constructor(appraiserIdRepository, ratedIdRepository, contentRepository, rateRepository) {
-        this.appraiserIdRepository = appraiserIdRepository;
-        this.ratedIdRepository = ratedIdRepository;
-        this.contentRepository = contentRepository;
-        this.rateRepository = rateRepository;
+    constructor(userRepository, ratingUserRepository) {
+        this.userRepository = userRepository;
+        this.ratingUserRepository = ratingUserRepository;
     }
 
-    async execute({
-        appraiserId,
-        ratedIdRepository,
-        contentRepository,
-        rateRepository
-    }) {
-        if( appraiserId == undefined || ratedIdRepository == undefined || contentRepository == undefined || rateRepository == undefined) {
+    async execute({ appraiserId, ratedId, content, rate }) {
+        if (!appraiserId || !ratedId || !content || !rate) {
             return left(new RequestMissingDataError());
-        } 
+        }
 
-        const {user} = await this.userRepository.findById(userId);
+        const { user } = await this.userRepository.findById(appraiserId);
 
-        if(!user) {
+        if (!user) {
             return left(new ResourceNotFoundError());
         }
 
-        const ratingUser = RatingUser.create({
-                    appraiserId: ratedIdRepository,
-                    contentRepository,
-                    rateRepository
-                })
-                
-                await this.ratingUserRepository.create(ratingUser);
-        
-                return right({
-                    ratingUser
-                })
- }
- }
+        const ratingUser = RatingProfile.create({
+            appraiserId,
+            ratedId,
+            content,
+            rate,
+        });
+
+        await this.ratingUserRepository.create(ratingUser);
+
+        return right({ ratingUser });
+    }
+}
