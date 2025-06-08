@@ -16,21 +16,25 @@ function createNewsCard(news) {
     article.className = 'news-card';
 
     article.innerHTML = `
-        <div class="news-header">
-            <h2 class="news-title">${titulo}</h2>
-            <span class="news-date">${formatDate(data)}</span>
-        </div>
-        <div class="news-content">
+        <div class="news-horizontal">
+            <div class="news-image-wrapper">
+                ${imagem ? `<img src="${imagem}" alt="${titulo}" class="news-image" />` : ''}
+            </div>
+            <div class="news-text-wrapper">
+                <div class="news-header">
+                    <h2 class="news-title">${titulo}</h2>
+                    <span class="news-date">${formatDate(data)}</span>
+                </div>
             <p class="news-summary">${resumo}</p>
-            ${imagem ? `<img src="${imagem}" alt="${titulo}" class="news-image" />` : ''}
-        </div>
-        <div class="news-footer">
-            <button class="btn-read-more" data-news-id="${newsId}">Ler mais</button>
-            <div class="news-tags">
+            <div class="news-footer">
+                <button class="btn-read-more" data-news-id="${newsId}">Ler mais</button>
                 ${categoria ? `<span class="tag">${categoria}</span>` : ''}
             </div>
         </div>
-    `;
+    </div>
+`;
+
+
 
     const container = getOrCreateNewsContainer();
     container.appendChild(article);
@@ -38,7 +42,7 @@ function createNewsCard(news) {
     const readMoreButton = article.querySelector('.btn-read-more');
     readMoreButton.addEventListener('click', (e) => {
         const newsId = e.currentTarget.getAttribute('data-news-id');
-        
+
         if (newsId && newsId !== 'undefined' && newsId !== 'null') {
             window.location.href = `detalhes.html?id=${newsId}`;
         } else {
@@ -93,10 +97,10 @@ async function loadNews() {
 
 function renderNews(newsArray) {
     const container = getOrCreateNewsContainer();
-    container.innerHTML = ''; 
+    container.innerHTML = '';
 
     newsArray.forEach(news => {
-        createNewsCard(news); 
+        createNewsCard(news);
     });
 }
 
@@ -139,7 +143,7 @@ function filterNews(searchTerm) {
 
 function setupSearch() {
     const searchInput = document.querySelector('.search input');
-    
+
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.trim();
