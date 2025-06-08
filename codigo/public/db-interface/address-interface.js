@@ -1,19 +1,22 @@
 import { JsonPetRepository } from '../src/database/repositories/adoption/json-pet-repository.js'
 import { JsonAddressRepository } from '../src/database/repositories/adoption/json-address-repository.js'
+import { JsonDonorRepository } from '../src/database/repositories/adoption/json-donor-repository.js'
 import { RegisterPetAddressUseCase } from '../src/domain/adoption/application/use-cases/register-pet-address.js'
 import { GeoCodeService } from '../src/services/geocode/geocode-service.js'
 
 
 export class AddressInterface {
     // Database
-    petRepository = new JsonPetRepository()
     addressRepository = new JsonAddressRepository()
+    petRepository = new JsonPetRepository(addressRepository)
+    donorRepository = new JsonDonorRepository()
 
     // Services
     geocodeService = new GeoCodeService()
 
     // props -> {
     //     entityId,
+    //     donorId,
     //     street,
     //     number,
     //     complement,
@@ -28,6 +31,7 @@ export class AddressInterface {
     async registerPetAddress(props) {
         const registerPetAddress = new RegisterPetAddressUseCase(
             this.petRepository,
+            this.donorRepository,
             this.addressRepository,
             this.geocodeService
         )

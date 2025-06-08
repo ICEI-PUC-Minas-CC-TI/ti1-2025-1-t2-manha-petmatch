@@ -3,7 +3,10 @@ import { JsonPetRepositoryMapper } from "../../mappers/json-pet-repository-mappe
 export class JsonPetRepository {
     url=`${window.location.origin}/pet`;
 
-    constructor() {}
+    addressRepository;
+    constructor(addressRepository) {
+        this.addressRepository = addressRepository
+    }
 
     async create(pet) {
         try {
@@ -108,6 +111,10 @@ export class JsonPetRepository {
             await fetch(newUrl, {
                 method: "DELETE"
             })
+
+             const {address} = await this.addressRepository.findAddressByEntityId(pet.id)
+
+            await this.addressRepository.delete(address.id)
         } catch(err) {
             console.err(err)
         }

@@ -1,6 +1,6 @@
 import { right, left } from '../../../../../core/Either.js';
 import { NotAllowedError } from '../../../../../core/errors/not-allowed-error.js';
-import {Pet} from '../../enterprise/entities/Pet.js'
+import { ResourceNotFoundError } from '../../../../../core/errors/resource-not-found-error.js';
 import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 
 
@@ -27,8 +27,10 @@ import { RequestMissingDataError } from '../errors/request-missing-data-error.js
 
 export class EditPetUseCase {
     petRepository;
-    constructor(petRepository) {
+    donorRepository;
+    constructor(petRepository, donorRepository) {
         this.petRepository = petRepository;
+        this.donorRepository = donorRepository
     }
 
     async execute({
@@ -58,7 +60,9 @@ export class EditPetUseCase {
             return left(new ResourceNotFoundError());
         }
 
-        if(pet.donorId != donorId) {
+         const {donor} = await this.donorRepository.findById(donorId)
+
+        if(!donor || pet.donorId != donorId) {
             return left(new NotAllowedError())
         }
 
@@ -75,8 +79,6 @@ export class EditPetUseCase {
         pet.personality = personality;
         pet.breed = breed;
 
-        pet.updatedAt = new Date();
-    
 
         await this.petRepository.save(pet);
 

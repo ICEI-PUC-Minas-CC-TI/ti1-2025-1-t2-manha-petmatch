@@ -4,20 +4,24 @@ import { RequestMissingDataError } from "../errors/request-missing-data-error.js
 import {Address} from '../../enterprise/entities/Address.js'
 import { right, left } from "../../../../../core/Either.js";
 import { AddressNotFoundedError } from "../errors/address-not-founded-error.js";
+import { NotAllowedError } from "../../../../../core/errors/not-allowed-error.js";
 
 export class RegisterPetAddressUseCase {
     petRepository;
+    donorRepository;
     addressRepository;
     geoCodeService;
 
-    constructor(petRepository, addressRepository, geoCodeService) {
-        this.petRepository = petRepository
-        this.addressRepository = addressRepository
-        this.geoCodeService = geoCodeService
+    constructor(petRepository, donorRepository, addressRepository, geoCodeService) {
+        this.petRepository = petRepository;
+        this.donorRepository = donorRepository;
+        this.addressRepository = addressRepository;
+        this.geoCodeService = geoCodeService;
     } 
 
     async execute({
         entityId,
+        donorId,
         street,
         number,
         complement,
@@ -31,7 +35,8 @@ export class RegisterPetAddressUseCase {
         !city ||
         !state ||
         !zipCode ||
-        !country 
+        !country ||
+        !neighborhood
     ) {
             return left(new RequestMissingDataError())
         }
@@ -42,6 +47,12 @@ export class RegisterPetAddressUseCase {
             return left(new ResourceNotFoundError());
         }
 
+        const {donor} = await this.donorRepository.findById(donorId)
+
+        if(!donor || donor.id !== pet.donorId) {
+            return left(new NotAllowedError())
+        }
+        
         const petAlredyHasAddress = await this.addressRepository.findAddressByEntityId(entityId)
 
         console.log(petAlredyHasAddress)
