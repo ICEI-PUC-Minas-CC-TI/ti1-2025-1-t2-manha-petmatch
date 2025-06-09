@@ -50,14 +50,35 @@ export class EditPetUseCase {
         id
     }) {
 
-          if(!entityId || !street ||  !number ||
-        !city ||
-        !state ||
-        !zipCode ||
-        !country ||
-        !neighborhood||
-        !donorId
+          if(  name === undefined ||
+        animalTypeId === undefined ||
+        size === undefined ||
+        animalSex === undefined ||
+        descriptions === undefined ||
+        imgUrls === undefined ||
+        bornAt === undefined ||
+        breed === undefined ||
+        vaccinated === undefined ||
+        castrated === undefined ||
+        availableForAdoption === undefined ||
+        personality === undefined ||
+        donorId === undefined ||
+        id === undefined
     ) {
+        console.log({name,
+        animalTypeId,
+        size,
+        animalSex,
+        descriptions,
+        imgUrls,
+        bornAt,
+        breed,
+        vaccinated,
+        castrated,
+        availableForAdoption,
+        personality,
+        donorId,
+        id})
             return left(new RequestMissingDataError())
         }
 

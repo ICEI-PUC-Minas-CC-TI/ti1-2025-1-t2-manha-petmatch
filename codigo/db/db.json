@@ -919,26 +919,6 @@
       "donor_id": "donorTestId",
       "created_at": "2025-05-20T23:30:42.012Z",
       "updated_at": "2025-05-20T23:30:42.012Z"
-    },
-    {
-      "id": "7be41cb1-8972-4378-a71a-c0daa24f48a2",
-      "name": "ads",
-      "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
-      "size": "Pequeno",
-      "animal_sex": "Male",
-      "description": "das",
-      "img_urls": [],
-      "born_at": "das",
-      "breed": [
-        "das"
-      ],
-      "vaccinated": false,
-      "castrated": false,
-      "available_for_adoption": true,
-      "personality": [],
-      "donor_id": "donorTestId",
-      "created_at": "2025-05-21T00:05:31.868Z",
-      "updated_at": "2025-05-21T00:05:31.868Z"
     }
   ],
   "animal_type": [
@@ -1031,6 +1011,74 @@
       "longitude": -44.024237,
       "created_at": "2025-06-09T01:09:15.708Z",
       "updated_at": "2025-06-09T01:09:15.708Z"
+    },
+    {
+      "id": "5ffe383c-859d-4d7c-bfab-fd47ad4f2e00",
+      "entity_type": "pet",
+      "entity_id": "petTest3",
+      "street": "Rua Talco",
+      "number": "46",
+      "complement": "Canil",
+      "neighborhood": "Bairro X",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "30880-370",
+      "country": "Brasil",
+      "latitude": -19.905963,
+      "longitude": -44.018144,
+      "created_at": "2025-06-09T09:56:01.820Z",
+      "updated_at": "2025-06-09T09:56:01.820Z"
+    },
+    {
+      "id": "beebbd6e-12b9-4b6e-b67a-ba2cbcb17c28",
+      "entity_type": "pet",
+      "entity_id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673",
+      "street": "Rua Dom João Pimenta",
+      "number": "247",
+      "complement": "Clínica Veterinária Animais do CoraçãoClínica Veterinária Animais do Coração",
+      "neighborhood": "Bairro Y",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "30535-440",
+      "country": "Brasil",
+      "latitude": -19.926881,
+      "longitude": -43.993256,
+      "created_at": "2025-06-09T09:57:19.964Z",
+      "updated_at": "2025-06-09T09:57:19.964Z"
+    },
+    {
+      "id": "ba4d6780-55b1-4076-8445-7e1e78fdd683",
+      "entity_type": "pet",
+      "entity_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
+      "street": "Rua Pedra Bonita",
+      "number": "899",
+      "complement": "Central Pet",
+      "neighborhood": "Bairro Z",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "30431-065",
+      "country": "Brasil",
+      "latitude": -19.931523,
+      "longitude": -43.96463,
+      "created_at": "2025-06-09T10:00:22.874Z",
+      "updated_at": "2025-06-09T10:00:22.874Z"
+    },
+    {
+      "id": "f33d8e99-9c17-4f08-b52e-0bcf041bcbea",
+      "entity_type": "pet",
+      "entity_id": "7be41cb1-8972-4378-a71a-c0daa24f48a2",
+      "street": "Rua Lindolfo de Azevedo",
+      "number": "1690",
+      "complement": "Educãodo - Centro de Bem Estar Canino",
+      "neighborhood": "Jardim América",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "30421-428",
+      "country": "Brasil",
+      "latitude": -19.946985,
+      "longitude": -43.972111,
+      "created_at": "2025-06-09T10:01:11.573Z",
+      "updated_at": "2025-06-09T10:01:11.573Z"
     }
   ],
   "user": [
