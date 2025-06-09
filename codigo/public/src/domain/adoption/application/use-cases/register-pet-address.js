@@ -36,7 +36,8 @@ export class RegisterPetAddressUseCase {
         !state ||
         !zipCode ||
         !country ||
-        !neighborhood
+        !neighborhood ||
+        !donorId
     ) {
             return left(new RequestMissingDataError())
         }
@@ -74,8 +75,8 @@ export class RegisterPetAddressUseCase {
             return left(new AddressNotFoundedError())
         }
 
-        const address = new Address({
-               entityId,
+        const address = Address.create({
+                entityId,
                 street,
                 number,
                 complement,
@@ -90,6 +91,8 @@ export class RegisterPetAddressUseCase {
         })
 
         await this.addressRepository.create(address)
+
+        console.log(address)
 
         return right(address);
     }

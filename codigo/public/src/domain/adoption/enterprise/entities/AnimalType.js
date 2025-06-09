@@ -9,10 +9,6 @@ export class AnimalType extends Entity {
         return this.props.imgUrlReference;
     }
 
-    set imgUrlReference(newUrl) {
-        this.props.imgUrlReference = newUrl;
-    }
-
     get createdAt() {
         return this.props.createdAt;
     }
@@ -20,7 +16,7 @@ export class AnimalType extends Entity {
     static create(props, id) {
         const adoption = new AnimalType({
             ...props,
-            createdAt: props.createdAt ?? new Date(),
+            createdAt: props.createdAt ?? new Date()
         }, id);
 
         return adoption;

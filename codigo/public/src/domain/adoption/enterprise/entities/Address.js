@@ -110,15 +110,15 @@ export class Address extends Entity {
     }
 
     get createdAt() {
-        return this.props.created_at;
+        return this.props.createdAt;
     }
 
     get updatedAt() {
-        return this.props.updated_at;
+        return this.props.updatedAt;
     }
    
     touch() {
-        this.props.updated_at = new Date();
+        this.props.updatedAt = new Date();
     }
 
     static create(props, id) {

@@ -137,7 +137,7 @@ export class Pet extends Entity {
     }
 
     touch() {
-        this.props.updated_at = new Date();
+        this.props.updatedAt = new Date();
     }
 
     static create(props, id) {

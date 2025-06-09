@@ -15,11 +15,14 @@ export class GetPetAddressByPetUseCase {
     async execute({
        petId
     }) { 
+
         if(!petId) {
             return left(new RequestMissingDataError())
         }
 
         const {pet} = await this.petRepository.findById(petId)
+
+        console.log(pet)
 
         if(!pet) {
             return left(new ResourceNotFoundError());

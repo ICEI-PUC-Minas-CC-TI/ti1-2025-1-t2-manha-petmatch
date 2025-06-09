@@ -50,7 +50,14 @@ export class EditPetUseCase {
         id
     }) {
 
-        if(!id || !donorId) {
+          if(!entityId || !street ||  !number ||
+        !city ||
+        !state ||
+        !zipCode ||
+        !country ||
+        !neighborhood||
+        !donorId
+    ) {
             return left(new RequestMissingDataError())
         }
 

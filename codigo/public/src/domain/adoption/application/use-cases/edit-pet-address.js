@@ -9,21 +9,16 @@ import { RequestMissingDataError } from '../errors/request-missing-data-error.js
 /*
     INPUT {
         NOT OPTIONAL
-        name: string,
-        animalTypeId: string,
-        size: string,
-        animalSex: string,
-        descriptions: string,
-        imgUrls: string[],
-        bornAt: Date
-        breed: string[]
-        vaccinated: boolean,
-        castrated: boolean,
-        availableForAdoption: boolean,
-        personality: string[]
-        donorId: someId,
-        donorType: null,
-        id: someId
+         street,
+        number,
+        complement,
+        neighborhood,
+        city,
+        state,
+        zipCode,
+        country,
+        donorId,
+        addressId
     }
 */
 
@@ -52,9 +47,17 @@ export class EditPetAddressUseCase {
         addressId
     }) {
 
-        if(!addressId || !donorId) {
+         if(!entityId || !street ||  !number ||
+        !city ||
+        !state ||
+        !zipCode ||
+        !country ||
+        !neighborhood ||
+        !donorId
+    ) {
             return left(new RequestMissingDataError())
         }
+
 
         const {address} = await this.addressRepository.findById(addressId);
 
@@ -90,7 +93,6 @@ export class EditPetAddressUseCase {
             return left(new AddressNotFoundedError())
         }
 
-        address.entityType = entityType;
         address.street = street;
         address.number = number;
         address.complement = complement;
@@ -103,6 +105,9 @@ export class EditPetAddressUseCase {
         address.longitude = coordinates.lon;    
 
         await this.addressRepository.save(address);
+
+        console.log(address)
+
 
         return right({
             address

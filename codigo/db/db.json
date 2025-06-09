@@ -999,19 +999,38 @@
   ],
   "address": [
     {
-      "id": "28804f1d-d54f-43e6-a415-86d5da279c28",
+      "id": "5490d532-02c5-471f-ba61-ca079469e641",
       "entity_type": "pet",
       "entity_id": "petTest2",
-      "street": "Av. Dom José Gaspar",
+      "street": "Avenida Dom José Gaspar",
       "number": "500",
-      "complement": "",
-      "neighborhood": "",
+      "complement": "Prédio 34",
+      "neighborhood": "Coração Eucarístico",
       "city": "Belo Horizonte",
-      "state": "Minas Gerais",
+      "state": "MG",
       "zipCode": "30535-901",
       "country": "Brasil",
-      "latitude": -19.9225371,
-      "longitude": -43.9956955
+      "latitude": -19.9233425,
+      "longitude": -43.9937703,
+      "created_at": "2025-06-09T01:08:27.685Z",
+      "updated_at": "2025-06-09T01:08:56.361Z"
+    },
+    {
+      "id": "3ea2e3c3-29f9-42bc-b726-1ed0e1c875de",
+      "entity_type": "pet",
+      "entity_id": "petTest",
+      "street": "Rua das Flores",
+      "number": "123",
+      "complement": "Casa",
+      "neighborhood": "Centro",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "30123-456",
+      "country": "Brasil",
+      "latitude": -19.915145,
+      "longitude": -44.024237,
+      "created_at": "2025-06-09T01:09:15.708Z",
+      "updated_at": "2025-06-09T01:09:15.708Z"
     }
   ],
   "user": [

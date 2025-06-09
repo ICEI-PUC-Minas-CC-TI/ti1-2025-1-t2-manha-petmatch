@@ -45,6 +45,8 @@ export class JsonAddressRepository {
                 return address.entity_id === entityId; 
              })
 
+             console.log("ugauga",addressRaw)
+
              const address = !addressRaw ? {address: null} : {address: JsonAddressRepositoryMapper.toDomain(addressRaw)}  
 
              return address
