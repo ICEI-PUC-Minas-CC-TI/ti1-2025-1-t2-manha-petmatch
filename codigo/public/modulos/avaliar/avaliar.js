@@ -1,39 +1,20 @@
-
 import { JsonRatingUserRepository } from "../../src/database/repositories/adoption/json-rating-user-repository.js";
 import { RatingUserUseCase } from "../../src/domain/adoption/application/use-cases/rating-user.js";
+import { JsonUserRepository } from "../../src/database/repositories/adoption/json-user-repository.js";
+import { JsonDonorRepository } from "../../src/database/repositories/adoption/json-donor-repository.js";
 
-class UserRepository {
-  async findById(id) {
-    return { user: { id } };
-  }
-}
-
-const ratingRepository = new JsonRatingUserRepository();
-const userRepository = new UserRepository();
-const useCase = new RatingUserUseCase(userRepository, ratingRepository);
-
-// Captura do ratedId da URL (ex: avaliar.html?userId=abcd1234)
+// Captura do ratedId da URL (ex: avaliar.html?ratedId=abcd1234)
 const urlParams = new URLSearchParams(window.location.search);
-const ratedId = urlParams.get("userId");
+const ratedId = urlParams.get("ratedId"); // O ID do perfil que está sendo avaliado
 
 if (!ratedId) {
-  alert("Erro: Nenhum usuário foi definido para avaliação.");
+  alert("Erro: Nenhum usuário foi definido para avaliação. Por favor, forneça um 'ratedId' na URL.");
+  // Redirecionar ou desabilitar o formulário se ratedId for nulo
+  window.location.href = '/'; // Exemplo: volta para a página inicial
 }
-
-// -------------------- Avaliação UI --------------------
-let searchBarValue = '';
-
-function onSearchBar(event) {
-  searchBarValue = event.target.value;
-}
-$("#searchBar").on("propertychange input", onSearchBar);
-$("#searchButton").click(() => {
-  window.location.href = `../explore/index.html?search=${searchBarValue}`;
-});
 
 const stars = document.querySelectorAll('.star');
 const ratingValue = document.getElementById('rating-value');
-const nameInput = document.getElementById('name');
 const commentInput = document.getElementById('comment');
 const submitBtn = document.getElementById('submitBtn');
 const commentDisplay = document.getElementById('submitted-comment');
@@ -45,11 +26,11 @@ stars.forEach(star => {
     const value = +star.getAttribute('data-value');
     highlightStars(value);
   });
-
+  
   star.addEventListener('mouseout', () => {
     highlightStars(currentRating);
   });
-
+  
   star.addEventListener('click', () => {
     currentRating = +star.getAttribute('data-value');
     ratingValue.textContent = `Nota: ${currentRating}/5`;
@@ -57,48 +38,71 @@ stars.forEach(star => {
   });
 });
 
-function highlightStars(rating) {
+function highlightStars(value) {
   stars.forEach(star => {
-    star.classList.remove('hover', 'selected');
-    const value = +star.getAttribute('data-value');
-    if (value <= rating) {
-      star.classList.add('selected');
+    const starValue = +star.getAttribute('data-value');
+    if (starValue <= value) {
+      star.classList.add('active');
+    } else {
+      star.classList.remove('active');
     }
   });
 }
 
-// Evento de envio de avaliação
+// Instancia os repositórios
+const userRepository = new JsonUserRepository();
+const ratingUserRepository = new JsonRatingUserRepository();
+const donorRepository = new JsonDonorRepository();
+
+// Instancia o UseCase
+const useCase = new RatingUserUseCase(userRepository, ratingUserRepository, donorRepository);
+
 submitBtn.addEventListener('click', async () => {
-  const name = nameInput.value.trim();
   const comment = commentInput.value.trim();
 
-  if (!name || !comment || currentRating === 0) {
-    alert("Por favor, preencha o nome, o comentário e a avaliação.");
+  if (!comment || currentRating === 0) {
+    alert("Por favor, preencha o comentário e a avaliação.");
     return;
   }
-
-  // Simulação de quem está logado
-  const appraiserId = "userTestId";
+  
+  
+  // Em uma aplicação real, este ID viria da sessão do usuário logado.
+  const appraiserId = "userTestId"; 
 
   const result = await useCase.execute({
     appraiserId,
-    ratedId,
+    ratedId, // O ID do perfil sendo avaliado, vindo da URL
     content: comment,
     rate: currentRating
   });
-
+  
   if (result.isRight()) {
     commentDisplay.innerHTML = `
-      <strong>${name}</strong> avaliou com <strong>${currentRating}/5</strong><br/>
-      <p>${comment}</p>
+    <strong>Você</strong> avaliou com <strong>${currentRating}/5</strong><br/>
+    <p>${comment}</p>
     `;
-
-    nameInput.value = '';
+    
     commentInput.value = '';
     currentRating = 0;
     highlightStars(0);
     ratingValue.textContent = "Nota: 0/5";
+    alert("Avaliação enviada com sucesso!");
   } else {
     alert("Erro ao salvar avaliação: " + result.value.message);
   }
 });
+
+
+let searchBarValue = '';
+document.getElementById('searchButton').addEventListener('click', handleSeachButton);
+document.getElementById('searchBar').addEventListener('input', onSearchBar);
+
+async function handleSeachButton() {
+  window.location.href = `../explore/index.html?search=${encodeURIComponent(searchBarValue)}`;
+}
+
+function onSearchBar(event) {
+  searchBarValue = event.target.value;
+  console.log(searchBarValue);
+}
+

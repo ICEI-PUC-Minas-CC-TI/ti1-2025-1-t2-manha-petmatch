@@ -1,6 +1,6 @@
 import { Entity } from "../../../../../core/entities/entity";
 
-export class RatingProfile extends Entity {
+export class RatingUser extends Entity {
     get appraiserId() {
         return this.props.appraiserId;
     }
@@ -18,11 +18,11 @@ export class RatingProfile extends Entity {
     }
 
     static create(props, id) {
-        const ratingProfile = new RatingProfile({
+        const ratingUser = new RatingUser({
             ...props,
             createdAt: props.createdAt ?? new Date(),
         }, id);
 
-        return ratingProfile;
+        return ratingUser;
     }
 }

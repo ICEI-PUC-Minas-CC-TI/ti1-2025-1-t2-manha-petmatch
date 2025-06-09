@@ -1,12 +1,17 @@
 import { left, right } from "../../../../../core/Either.js";
 import { ResourceNotFoundError } from "../../../../../core/errors/resource-not-found-error.js";
 import { RequestMissingDataError } from "../errors/request-missing-data-error.js";
-import { RatingProfile } from "../entities/ratingProfile.js";
+import { RatingUser } from "../../enterprise/entities/RatingUser.js";
 
 export class RatingUserUseCase {
-    constructor(userRepository, ratingUserRepository) {
+    userRepository;
+    ratingUserRepository;
+    donorRepository;
+
+    constructor(userRepository, ratingUserRepository, donorRepository) {
         this.userRepository = userRepository;
         this.ratingUserRepository = ratingUserRepository;
+        this.donorRepository = donorRepository;
     }
 
     async execute({ appraiserId, ratedId, content, rate }) {
@@ -14,13 +19,20 @@ export class RatingUserUseCase {
             return left(new RequestMissingDataError());
         }
 
+    
         const { user } = await this.userRepository.findById(appraiserId);
+        const { donor } = await this.donorRepository.findById(ratedId);
+
 
         if (!user) {
-            return left(new ResourceNotFoundError());
+            return left(new ResourceNotFoundError('Appraiser user not found.'));
         }
 
-        const ratingUser = RatingProfile.create({
+        if (!donor){
+            return left(new ResourceNotFoundError('Rated donor not found.'));
+        }
+
+        const ratingUser = RatingUser.create({
             appraiserId,
             ratedId,
             content,

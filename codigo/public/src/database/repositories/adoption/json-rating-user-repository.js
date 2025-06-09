@@ -21,7 +21,7 @@ export class JsonRatingUserRepository {
         }
     }
 
-    async findByPetId(petId) {
+   async findByPetId(petId) {
         try {
             const newUrl = `${this.url}?pet_id=${petId}`;
             const response = await fetch(newUrl);
@@ -32,6 +32,20 @@ export class JsonRatingUserRepository {
                 : { ratingUser: RatingUserRepositoryMapper.toDomain(jsonFormat[0]) };
         } catch (err) {
             console.error("Erro ao buscar avaliação por petId:", err);
+        }
+    }
+
+    async findByDonorId(donorId) {
+        try {
+            const newUrl = `${this.url}?donor_id=${donorId}`;
+            const response = await fetch(newUrl);
+            const jsonFormat = await response.json();
+
+            return { ratingUser:jsonFormat.map((avaliacao) =>{
+            return RatingUserRepositoryMapper.toDomain(avaliacao);
+        }) };
+        } catch (err) {
+            console.error("Erro ao buscar avaliação por donorId:", err);
         }
     }
 

@@ -1,16 +1,22 @@
 import { RatingUserUseCase } from "../use-cases/rating-user.js";
 import { JsonRatingUserRepository } from "../repositories/json-rating-user-repository.js";
-import { UserRepository } from "../repositories/user-repository.js"; 
+import { JsonUserRepository } from "../src/database/repositories/adoption/json-user-repository.js";
+import { JsonDonorRepository } from "../src/database/repositories/adoption/json-donor-repository.js";
 
 
-export class RatingUserInterface {
+export class RatingUserInterface {  
+    userRepository = new JsonUserRepository();
+    ratingUserRepository = new JsonRatingUserRepository();
+    donorRepository = new JsonDonorRepository();
+    // gemini mandou ter esse constructor aqui
     constructor() {
-        this.userRepository = new UserRepository();
-        this.ratingUserRepository = new JsonRatingUserRepository();
-        this.ratingUserUseCase = new RatingUserUseCase(this.userRepository, this.ratingUserRepository);
+        this.ratingUserUseCase = new RatingUserUseCase(
+            this.userRepository,
+            this.ratingUserRepository,
+            this.donorRepository
+        );
     }
 
-    
     async rateUser({ appraiserId, ratedId, content, rate }) {
         const result = await this.ratingUserUseCase.execute({
             appraiserId,
