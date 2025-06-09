@@ -614,7 +614,7 @@
             "resumo": "ONGs se unem para incentivar a adoção de animais em situação de rua. A campanha inclui feiras presenciais e ações online.",
             "data": "2025-05-10",
             "categoria": "Adoção",
-            "imagem": "/modulos/noticias/animaisresgatados.png",
+            "imagem": "/modulos/noticias/img/animaisresgatados.png",
             "conteudo": "Diversas organizações de proteção animal lançaram uma campanha nacional com o objetivo de incentivar a adoção responsável de cães resgatados das ruas ou vítimas de maus-tratos. A campanha, chamada 'Lares com Amor', contará com feiras de adoção em mais de 30 cidades brasileiras durante o mês de maio, além de uma forte presença digital com perfis nas redes sociais divulgando histórias emocionantes de cães que aguardam um novo lar.\n\nSegundo os organizadores, a expectativa é encontrar lares para pelo menos 5 mil cães até o final da campanha. Os animais são previamente castrados, vacinados e vermifugados. Voluntários e veterinários estarão presentes nos eventos para orientar os futuros tutores sobre guarda responsável, alimentação, vacinação e comportamento canino.\n\nA campanha também visa combater o preconceito contra animais sem raça definida (SRD) e cães mais velhos, que muitas vezes são deixados de lado nas feiras de adoção. A iniciativa já conta com o apoio de celebridades e influenciadores digitais que se comprometeram a divulgar a causa."
         },
         {
@@ -623,7 +623,7 @@
             "resumo": "Pesquisadores destacam os benefícios emocionais da convivência com cachorros, especialmente em tempos de crise.",
             "data": "2025-05-08",
             "categoria": "Saúde",
-            "imagem": "https://exemplo.com/imagens/estudo-estresse.jpg",
+            "imagem": "/modulos/noticias/img/abracocao.png",
             "conteudo": "Um estudo realizado pela Universidade de São Paulo (USP), em parceria com a Faculdade de Psicologia de Toronto, revelou que a convivência com cães tem impacto direto na redução dos níveis de estresse, ansiedade e até sintomas leves de depressão. A pesquisa acompanhou 100 famílias durante três meses, sendo metade delas com cães e a outra metade sem nenhum pet em casa.\n\nOs resultados mostraram que os participantes que conviviam com cães apresentaram níveis mais baixos de cortisol (hormônio do estresse) e relataram maior sensação de bem-estar. Além disso, os momentos de interação, como brincadeiras ou caminhadas com os cães, foram apontados como os mais relaxantes do dia.\n\nOs pesquisadores destacam ainda que a presença de um cão estimula a prática de atividades físicas, o contato social com outras pessoas e uma rotina mais estruturada, todos fatores que contribuem para a saúde mental. Os dados reforçam o potencial terapêutico dos cães, inclusive em tratamentos complementares para pacientes com ansiedade crônica e transtornos do humor."
         },
         {
@@ -632,7 +632,7 @@
             "resumo": "Legislação aprovada aumenta penas para maus-tratos e reconhece animais como seres sencientes.",
             "data": "2025-05-01",
             "categoria": "Direitos dos Animais",
-            "imagem": "https://exemplo.com/imagens/leis-animais.jpg",
+            "imagem": "/modulos/noticias/img/petslivre.png",
             "conteudo": "Foi sancionada este mês uma nova legislação que marca um avanço significativo na proteção jurídica de animais de estimação no Brasil. A Lei Federal nº 14.872/2025 reconhece os animais domésticos como seres sencientes, ou seja, dotados de sensibilidade, consciência e capazes de sentir dor e emoções.\n\nCom a nova lei, os crimes de maus-tratos passam a ter penas mais rigorosas, com reclusão de até cinco anos, multa e proibição da guarda de novos animais. A legislação também exige que os municípios desenvolvam programas de educação sobre bem-estar animal nas escolas e campanhas de conscientização em bairros com maior índice de abandono.\n\nAlém disso, o texto estabelece diretrizes para a obrigatoriedade da castração e da identificação eletrônica (microchip) dos animais em áreas urbanas. Cidades que já adotaram a política de chipagem relatam uma queda expressiva nos casos de abandono e mais facilidade na devolução de animais perdidos aos seus tutores.\n\nO projeto de lei contou com o apoio de diversas ONGs, protetores independentes e da população, que pressionaram parlamentares por mudanças nas leis de proteção animal. A expectativa é de que a nova legislação sirva como modelo para outros países da América Latina."
         },
         {
@@ -641,7 +641,7 @@
             "resumo": "Programas de cinoterapia se expandem em hospitais públicos e privados, promovendo benefícios físicos e emocionais.",
             "data": "2025-04-27",
             "categoria": "Terapia Animal",
-            "imagem": "https://exemplo.com/imagens/terapia-cao.jpg",
+            "imagem": "/modulos/noticias/img/caoterapeuta.png",
             "conteudo": "Hospitais de todo o Brasil estão aderindo a programas de cinoterapia — uso de cães em sessões terapêuticas — com resultados animadores. Pacientes internados relatam melhora no humor, redução da dor percebida e maior disposição após as visitas dos chamados 'cães terapeutas'.\n\nOs cães passam por treinamento específico e são acompanhados por profissionais da saúde e adestradores durante as visitas. O contato com os animais promove estímulos sensoriais e emocionais, especialmente importantes em pacientes com quadros de depressão, autismo e doenças neurodegenerativas.\n\nSegundo especialistas, a interação com os cães estimula a liberação de ocitocina e serotonina, hormônios relacionados ao bem-estar. Em hospitais oncológicos, os resultados têm sido tão positivos que há planos para tornar os programas permanentes em diversas unidades de saúde."
         },
         {
@@ -650,7 +650,7 @@
             "resumo": "Veterinários alertam sobre os principais alimentos tóxicos para cães, como chocolate, uvas e cebola.",
             "data": "2025-04-22",
             "categoria": "Cuidados",
-            "imagem": "https://exemplo.com/imagens/alimentos-proibidos.jpg",
+            "imagem": "/modulos/noticias/img/fooddog.png",
             "conteudo": "Muitos tutores bem-intencionados acabam oferecendo alimentos perigosos aos seus cães por desconhecimento. Segundo veterinários, itens como chocolate, uvas, cebola, alho, café e massas fermentadas podem causar intoxicações graves e até levar o animal à morte.\n\nA ingestão de chocolate, por exemplo, pode causar vômitos, tremores e arritmias cardíacas. Já as uvas podem levar à insuficiência renal aguda, mesmo em pequenas quantidades. Outro alerta importante é sobre ossos cozidos, que podem lascar e causar perfurações no trato digestivo.\n\nVeterinários recomendam uma dieta baseada em ração de qualidade ou alimentação natural orientada por profissionais. Em caso de ingestão acidental, é fundamental procurar atendimento emergencial. Compartilhar esses cuidados é essencial para promover a saúde e o bem-estar dos cães."
         },
         {
@@ -659,8 +659,62 @@
             "resumo": "Nova plataforma usa geolocalização e fotos para localizar cães desaparecidos com rapidez e eficiência.",
             "data": "2025-04-18",
             "categoria": "Tecnologia e Bem-Estar",
-            "imagem": "https://exemplo.com/imagens/app-cao-perdido.jpg",
+            "imagem": "/modulos/noticias/img/petdono.png",
             "conteudo": "Uma startup brasileira desenvolveu um aplicativo inovador que ajuda a localizar cães perdidos usando inteligência artificial e geolocalização. O app, chamado *EncontraPet*, permite que o tutor registre a perda com uma foto e a última localização conhecida do animal. Usuários na região recebem alertas e podem enviar fotos de cães encontrados para comparação automática com os animais desaparecidos.\n\nO sistema utiliza reconhecimento facial canino — baseado em padrões únicos do focinho e olhos — para fazer a identificação. Em fase de testes em São Paulo e Curitiba, o aplicativo já conseguiu reunir mais de 400 cães com seus tutores em menos de dois meses.\n\nA ferramenta também permite cadastrar animais encontrados nas ruas, servindo de ponte entre protetores independentes e donos em busca. A previsão é de que o *EncontraPet* seja lançado nacionalmente até o fim de 2025, com integração a abrigos e clínicas veterinárias."
+        },
+         {
+            "id": 7,
+            "titulo": "Cães farejadores ajudam a detectar doenças precocemente",
+            "resumo": "Pesquisa comprova que cães treinados conseguem identificar câncer e outras doenças através do olfato com alta precisão.",
+            "data": "2025-06-05",
+            "categoria": "Saúde",
+            "imagem": "/modulos/noticias/img/farejador.png",
+            "conteudo": "Um estudo revolucionário conduzido pelo Instituto Nacional de Pesquisas Médicas demonstrou que cães especialmente treinados conseguem detectar diversos tipos de câncer com precisão de até 97%. Os animais são capazes de identificar compostos orgânicos voláteis liberados por células cancerígenas através do olfato, milhares de vezes mais sensível que o humano.\n\nO programa piloto, realizado em cinco hospitais de referência, treinou 15 cães de diferentes raças para reconhecer amostras de sangue, urina e hálito de pacientes com suspeita de câncer de mama, próstata e pulmão. Os resultados superaram as expectativas, com os cães conseguindo identificar a doença mesmo em estágios iniciais.\n\nAlém do câncer, os cães também demonstraram capacidade para detectar diabetes, epilepsia e até mesmo infecções por COVID-19. A técnica, conhecida como 'diagnóstico canino', promete revolucionar a medicina preventiva e pode se tornar uma ferramenta complementar aos exames tradicionais nos próximos anos."
+        },
+        {
+            "id": 8,
+            "titulo": "Programa de exercícios para cães idosos ganha popularidade",
+            "resumo": "Fisioterapeutas veterinários desenvolvem rotinas específicas para manter a mobilidade e qualidade de vida de cães seniores.",
+            "data": "2025-06-02",
+            "categoria": "Cuidados",
+            "imagem": "/modulos/noticias/img/caoidoso.png",
+            "conteudo": "Com o aumento da expectativa de vida dos cães domésticos, cresce a demanda por cuidados especializados para animais idosos. Clínicas veterinárias de todo o país estão oferecendo programas de fisioterapia e exercícios adaptados para cães seniores, visando manter sua mobilidade e retardar o processo de envelhecimento.\n\nOs programas incluem hidroterapia, massagens terapêuticas, exercícios de baixo impacto e uso de equipamentos como esteiras aquáticas. Segundo veterinários especializados, cães que participam dessas atividades apresentam menos dores articulares, melhor disposição e maior qualidade de vida.\n\nA fisioterapeuta veterinária Dra. Marina Santos explica que 'assim como os humanos, os cães precisam manter-se ativos na terceira idade, mas com exercícios adequados à sua condição física'. O programa já atende mais de 200 cães em São Paulo e está sendo expandido para outras capitais."
+        },
+        {
+            "id": 9,
+            "titulo": "Escolas públicas implementam programa de educação com cães",
+            "resumo": "Projeto inovador usa cães treinados para ensinar responsabilidade e empatia a crianças em idade escolar.",
+            "data": "2025-05-28",
+            "categoria": "Educação",
+            "imagem": "/modulos/noticias/img/caoescola.png",
+            "conteudo": "A Secretaria de Educação de várias cidades brasileiras aprovou um projeto piloto que leva cães treinados para salas de aula, com o objetivo de ensinar valores como responsabilidade, empatia e respeito aos animais. O programa 'Amigos de Quatro Patas na Escola' já está sendo testado em 50 escolas públicas.\n\nAs atividades incluem cuidados básicos com os animais, como alimentação e escovação, além de aulas sobre comportamento canino e guarda responsável. Os cães passam por rigorosa seleção e treinamento, sendo acompanhados por educadores especializados durante todas as atividades.\n\nSegundo pesquisadores, crianças que participam do programa demonstram maior desenvolvimento emocional, redução da agressividade e melhora no relacionamento com colegas. O projeto também tem impacto positivo no desempenho escolar, já que as crianças ficam mais motivadas a frequentar as aulas."
+        },
+        {
+            "id": 10,
+            "titulo": "Cães de busca e salvamento recebem tecnologia de ponta",
+            "resumo": "Equipamentos high-tech aumentam eficiência de cães de resgate em desastres naturais e emergências urbanas.",
+            "data": "2025-05-25",
+            "categoria": "Tecnologia e Bem-Estar",
+            "imagem": "/modulos/noticias/img/caorescue.png",
+            "conteudo": "O Corpo de Bombeiros brasileiro está implementando tecnologia de última geração para potencializar o trabalho dos cães de busca e salvamento. Os animais agora contam com coleiras inteligentes equipadas com GPS, câmeras de alta resolução e sensores que monitoram sinais vitais em tempo real.\n\nOs novos equipamentos permitem que os cães trabalhem de forma mais autônoma em áreas de difícil acesso, transmitindo imagens e localização exata para as equipes de resgate. Em situações de desabamentos ou deslizamentos, essa tecnologia pode ser crucial para localizar vítimas com rapidez.\n\nDurante os testes realizados em simulações de desastres, a eficiência das operações aumentou em 40%. Os cães também receberam óculos de proteção especiais e botinhas antiderrapantes para trabalhar em terrenos perigosos. A tecnologia deve ser expandida para todas as unidades de resgate do país até o final de 2025."
+        },
+        {
+            "id": 11,
+            "titulo": "Nutrição personalizada para cães ganha espaço no mercado pet",
+            "resumo": "Startups desenvolvem rações customizadas baseadas no perfil genético e necessidades específicas de cada animal.",
+            "data": "2025-05-20",
+            "categoria": "Alimentação",
+            "imagem": "/modulos/noticias/img/racaopersonalizada.png",
+            "conteudo": "O mercado de alimentação para pets está passando por uma revolução com o surgimento de empresas que oferecem nutrição personalizada para cães. Através de exames genéticos e análise do histórico de saúde, é possível criar dietas específicas para cada animal, considerando idade, porte, nível de atividade e predisposições genéticas.\n\nA startup PetGenome, pioneira no segmento, já atende mais de 5 mil cães em todo o Brasil. O processo começa com a coleta de saliva do animal, que é analisada em laboratório para identificar possíveis sensibilidades alimentares, tendências a doenças e necessidades nutricionais específicas.\n\nSegundo veterinários, a alimentação personalizada pode prevenir doenças como obesidade, diabetes e problemas renais, além de melhorar a pelagem e disposição dos animais. Embora o custo seja superior ao da ração tradicional, muitos tutores consideram o investimento válido pela melhoria na qualidade de vida de seus pets."
+        },
+        {
+            "id": 12,
+            "titulo": "Hotéis para cães oferecem serviços de luxo durante as férias",
+            "resumo": "Mercado de hospedagem pet cresce com opções que incluem spa, personal trainer e até serviços de psicologia animal.",
+            "data": "2025-05-15",
+            "categoria": "Turismo Pet",
+            "imagem": "/modulos/noticias/img/hoteldog.png",
+            "conteudo": "O setor de turismo pet está em expansão no Brasil, com hotéis especializados oferecendo serviços de luxo para cães cujos tutores precisam viajar. Esses estabelecimentos vão muito além da hospedagem tradicional, proporcionando experiências completas de bem-estar para os animais.\n\nOs serviços incluem suítes climatizadas com camas ortopédicas, sessões de spa com banhos aromáticos e massagens relaxantes, personal trainers caninos, e até mesmo sessões com psicólogos especializados em comportamento animal. Alguns hotéis oferecem ainda aulas de natação, agility e socialização com outros cães.\n\nO segmento registrou crescimento de 150% nos últimos dois anos, impulsionado pela mudança no relacionamento entre tutores e pets, que cada vez mais são considerados membros da família. Os preços variam entre R$ 80 e R$ 300 por diária, dependendo dos serviços contratados."
         }
     ],
     "evento": [

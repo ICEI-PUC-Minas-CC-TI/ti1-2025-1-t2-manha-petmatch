@@ -27,28 +27,35 @@ async function showNewsDetails() {
             mainContent.innerHTML = `
                     <div class="detail-container">
                         <h1 class="detail-title">${titulo}</h1>
-                        <div class="detail-meta">
-                            <p><strong>Data:</strong> ${data}</p>
-                            <p><strong>Categoria:</strong> ${categoria}</p>
+                        <div class="detail-info">
+                            <div class="detail-meta">
+                                <p><strong>Data:</strong> ${data}</p>
+                            </div>
+                            <div class="detail-tag">
+                                <p><strong>Categoria:</strong> ${categoria}</p>
+                            </div>
                         </div>
                         <div class="detail-summary">
-                            <p><strong>Resumo:</strong> ${resumo}</p>
+                            <p>${resumo}</p>
                         </div>
                         ${imagem ? `<img src="${imagem}" alt="Imagem da notícia" class="detail-image">` : ''}
-                        <div class="news-content">
+                        <div class="detail-content">
                             <p>${conteudo}</p>
                         </div>
-                        <button onclick="location.href='./noticias.html'" class="back-button">Voltar</button>
+                        <div class="button-wrapper">
+                            <button onclick="location.href='./noticias.html'" class="back-button">Voltar</button>
+                        </div>
                     </div>
             `;
 
         } else {
             const mainContent = document.querySelector('main');
             mainContent.innerHTML = `
-                    <div style="padding: 20px; text-align: center;">
+                    <div class="no-news-wrapper">
                         <h1>Notícia não encontrada</h1>
-                        <p>Debug: newsData structure: ${JSON.stringify(newsData, null, 2)}</p>
-                        <button onclick="history.back()" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Voltar</button>
+                    </div>
+                    <div class="button-nn-wrapper">
+                        <button onclick="location.href='./noticias.html'" class="back-button">Voltar</button>
                     </div>
                 `;
         }
