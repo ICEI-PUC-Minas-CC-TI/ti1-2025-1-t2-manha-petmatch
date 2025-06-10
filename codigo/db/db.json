@@ -119,46 +119,6 @@
       "donor_id": "donorTestId",
       "created_at": "2025-05-20T22:11:45.087Z",
       "updated_at": "2025-05-20T22:11:45.087Z"
-    },
-    {
-      "id": "09aef7ea-9550-4e14-9862-579ca795b4db",
-      "name": "Lindão",
-      "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
-      "size": "Pequeno",
-      "animal_sex": "Male",
-      "description": "das",
-      "img_urls": [],
-      "born_at": "das",
-      "breed": [
-        "das"
-      ],
-      "vaccinated": true,
-      "castrated": true,
-      "available_for_adoption": true,
-      "personality": [],
-      "donor_id": "donorTestId",
-      "created_at": "2025-05-21T00:05:31.868Z",
-      "updated_at": "2025-05-21T00:05:31.868Z"
-    },
-    {
-      "id": "032a57ba-d703-4226-a801-9a9dda3d7e28",
-      "name": "Baianinho",
-      "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
-      "size": "",
-      "animal_sex": "Male",
-      "description": "O mais fofo",
-      "img_urls": [],
-      "born_at": "",
-      "breed": [
-        ""
-      ],
-      "vaccinated": true,
-      "castrated": false,
-      "available_for_adoption": true,
-      "personality": [],
-      "donor_id": "donorTestId",
-      "created_at": "2025-06-07T13:17:16.888Z",
-      "updated_at": "2025-06-07T13:17:16.888Z"
     }
   ],
   "animal_type": [
@@ -215,6 +175,18 @@
       "appraiser_id": "userTestId",
       "pet_id": "petTest3",
       "created_at": "2025-06-10T21:59:32.344Z"
+    },
+    {
+      "id": "5770af18-4222-4a75-a823-8eb0e4cceef1",
+      "appraiser_id": "userTestId",
+      "pet_id": "petTest",
+      "created_at": "2025-06-10T22:29:47.776Z"
+    },
+    {
+      "id": "56c5efb3-2c42-4b10-921e-dfed6729f286",
+      "appraiser_id": "userTestId",
+      "pet_id": "032a57ba-d703-4226-a801-9a9dda3d7e28",
+      "created_at": "2025-06-10T22:29:54.184Z"
     }
   ],
   "address": [
@@ -665,6 +637,14 @@
       "content": "Teste final antes do envio",
       "rate": 5,
       "created_at": "2025-06-10T18:53:03.431Z"
+    },
+    {
+      "id": "53627dd9-6f2c-40e2-a227-4d701c4c7f6a",
+      "appraiserID": "userTestId",
+      "ratedId": "donorTestId",
+      "content": "Oi beninos",
+      "rate": 5,
+      "created_at": "2025-06-10T22:25:07.221Z"
     }
   ]
 }
