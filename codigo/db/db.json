@@ -630,9 +630,41 @@
       "id": "someId",
       "appraiserID": "someId",
       "ratedId": "someId",
-      "content" : "string",
+      "content": "string",
       "rate": "5",
       "createdAt": "someDate"
+    },
+    {
+      "id": "67c8866b-dd61-486a-a12f-7ba742adfa92",
+      "appraiserID": "userTestId",
+      "ratedId": "donorTestId",
+      "content": "asdadas",
+      "rate": 5,
+      "created_at": "2025-06-10T18:34:21.361Z"
+    },
+    {
+      "id": "1e400d92-8381-46c4-a09d-c1ede459de49",
+      "appraiserID": "userTestId",
+      "ratedId": "donorTestId",
+      "content": "FUNCIONOU GRAÇAS A DEUS",
+      "rate": 5,
+      "created_at": "2025-06-10T18:37:52.508Z"
+    },
+    {
+      "id": "674bf15a-def0-4971-a627-ddb971641146",
+      "appraiserID": "userTestId",
+      "ratedId": "donorTestId",
+      "content": "asdasdsa",
+      "rate": 5,
+      "created_at": "2025-06-10T18:47:00.327Z"
+    },
+    {
+      "id": "a9a8f1c0-246b-4a34-9736-20287afab2e9",
+      "appraiserID": "userTestId",
+      "ratedId": "donorTestId",
+      "content": "Teste final antes do envio",
+      "rate": 5,
+      "created_at": "2025-06-10T18:53:03.431Z"
     }
   ]
 }

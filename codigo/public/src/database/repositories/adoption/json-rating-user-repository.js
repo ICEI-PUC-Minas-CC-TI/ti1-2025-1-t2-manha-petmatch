@@ -1,4 +1,4 @@
-import { RatingUserRepositoryMapper } from './json-rating-user-repository-mapper.js';
+import { RatingUserRepositoryMapper } from '../../mappers/json-rating-user-repository-mapper.js';
 
 export class JsonRatingUserRepository {
     url = `${window.location.origin}/profile_rating`;
@@ -49,6 +49,21 @@ export class JsonRatingUserRepository {
         }
     }
 
+    
+    async findByRatedId(ratedId) {
+        try {
+            const newUrl = `${this.url}?ratedId=${ratedId}`; 
+            const response = await fetch(newUrl);
+            const jsonFormat = await response.json();
+
+            return { ratingUser: jsonFormat.map((avaliacao) => {
+                return RatingUserRepositoryMapper.toDomain(avaliacao);
+            }) };
+        } catch (err) {
+            console.error("Erro ao buscar avaliação por ratedId:", err);
+        }
+    }
+
     async findById(id) {
         try {
             const newUrl = `${this.url}/${id}`;
@@ -71,6 +86,23 @@ export class JsonRatingUserRepository {
             });
         } catch (err) {
             console.error("Erro ao deletar avaliação:", err);
+        }
+    }
+
+    async save(ratingUser) {
+        try {
+            const dbRatingUser = RatingUserRepositoryMapper.toJson(ratingUser);
+            const newUrl = `${this.url}/${ratingUser.id}`;
+
+            await fetch(newUrl, {
+                method: "PUT",
+                body: JSON.stringify(dbRatingUser),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+        } catch (err) {
+            console.error("Erro ao salvar avaliação:", err);
         }
     }
 }

@@ -199,13 +199,14 @@
 
 .star {
   font-size: 30px;
-  color: #ccc;
+  color: gold;
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .star.hover,
-.star.selected {
+.star.selected
+.star.active {
   color: gold;
 }
 input, textarea {
@@ -227,7 +228,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+button#submitBtn:hover {
   background-color:black;
 }
 

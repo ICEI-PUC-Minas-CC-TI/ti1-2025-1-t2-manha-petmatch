@@ -1,14 +1,14 @@
-import { RatingUserUseCase } from "../use-cases/rating-user.js";
-import { JsonRatingUserRepository } from "../repositories/json-rating-user-repository.js";
+import { RatingUserUseCase } from "../src/domain/adoption/application/use-cases/rating-user.js";
+import { JsonRatingUserRepository } from "../src/database/repositories/adoption/json-rating-user-repository.js";
 import { JsonUserRepository } from "../src/database/repositories/adoption/json-user-repository.js";
 import { JsonDonorRepository } from "../src/database/repositories/adoption/json-donor-repository.js";
 
 
-export class RatingUserInterface {  
+export class RatingUserInterface {
     userRepository = new JsonUserRepository();
     ratingUserRepository = new JsonRatingUserRepository();
     donorRepository = new JsonDonorRepository();
-    // gemini mandou ter esse constructor aqui
+
     constructor() {
         this.ratingUserUseCase = new RatingUserUseCase(
             this.userRepository,

@@ -1,31 +1,36 @@
-import { left, right } from "../../../../../core/Either.js"; // Adicionar import do left/right
-import { ResourceNotFoundError } from "../../../../../core/errors/resource-not-found-error.js";
+import { left, right } from "/core/Either.js"; // Caminho absoluto
+import { ResourceNotFoundError } from "/core/errors/resource-not-found-error.js"; // Caminho absoluto
 import { RequestMissingDataError } from "../errors/request-missing-data-error.js";
 
 export class FetchRatingUserUseCase {
     ratingUserRepository;
     donorRepository;
 
-    constructor(ratingUserRepository, donorRepository) {
+    constructor(ratingUserRepository, donorRepository) { //classes já instânciadas
         this.ratingUserRepository = ratingUserRepository;
         this.donorRepository = donorRepository;
+
     }
 
-    async execute({ ratedId }) {
-        if (!ratedId) {
-            return left(new RequestMissingDataError());
-        }
+     async execute({
+           ratedId
+        }) {
 
-        const { donor } = await this.donorRepository.findById(ratedId);
+            if( !ratedId ) {
+                return left(new RequestMissingDataError());
+            }
 
-        if (!donor) {
+            const { donor } = await this.donorRepository.findById(ratedId); // Certifique-se que seu DonorRepository tem findById
+
+            if(!donor) {
             return left(new ResourceNotFoundError("Rated donor not found."));
-        }
-        
-        const { ratingUser } = await this.ratingUserRepository.findByRatedId(ratedId);
+            }
 
-        return right({
-           ratingUser
-        });
+            // O seu repository deve ter um método findByRatedId (ou você pode criar um)
+            const { ratingUser } = await this.ratingUserRepository.findByRatedId(ratedId);
+
+            return right({
+               ratingUser
+            });
+        }
     }
-}

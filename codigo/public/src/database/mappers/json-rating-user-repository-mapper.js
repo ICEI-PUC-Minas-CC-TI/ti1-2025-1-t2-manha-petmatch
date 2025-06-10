@@ -1,12 +1,12 @@
-import { RatingUser } from "../../../src/domain/adoption/enterprise/entities/RatingUser.js";
+import { RatingUser } from "../../domain/adoption/enterprise/entities/RatingUser.js";
 
 export class RatingUserRepositoryMapper {
     static toDomain(raw) {
         return RatingUser.create({
-            appraiserId: raw.appraiserID, 
-            ratedId: raw.ratedId,       
-            content: raw.content,       
-            rate: raw.rate,             
+            appraiserId: raw.appraiserID, // Ajustado para 'appraiserID' conforme db.json
+            ratedId: raw.ratedId,         // Ajustado para 'ratedId' conforme db.json
+            content: raw.content,
+            rate: raw.rate,
             createdAt: raw.created_at,
         }, raw.id);
     }
@@ -14,10 +14,10 @@ export class RatingUserRepositoryMapper {
     static toJson(ratingUser) {
         return {
             id: ratingUser.id,
-            appraiserID: ratingUser.appraiserId, 
-            ratedId: ratingUser.ratedId,      
-            content: ratingUser.content,       
-            rate: ratingUser.rate,             
+            appraiserID: ratingUser.appraiserId, // Ajustado para 'appraiserID'
+            ratedId: ratingUser.ratedId,          // Ajustado para 'ratedId'
+            content: ratingUser.content,
+            rate: ratingUser.rate,
             created_at: ratingUser.createdAt,
         };
     }

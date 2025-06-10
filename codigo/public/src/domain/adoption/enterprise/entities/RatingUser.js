@@ -1,8 +1,12 @@
-import { Entity } from "../../../../../core/entities/entity";
+import { Entity } from "/core/entities/entity.js"; // Caminho absoluto assumindo codigo/core/entities/entity.js
 
 export class RatingUser extends Entity {
     get appraiserId() {
         return this.props.appraiserId;
+    }
+
+    get ratedId() { // Adicionado o getter para ratedId
+        return this.props.ratedId;
     }
 
     get content() {
