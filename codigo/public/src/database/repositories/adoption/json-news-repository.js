@@ -47,7 +47,6 @@ export class JsonNewsRepository {
 
             const jsonFormat = await response.json()
 
-            // Verificação mínima para evitar erro de .map()
             if (!Array.isArray(jsonFormat)) {
                 return [];
             }

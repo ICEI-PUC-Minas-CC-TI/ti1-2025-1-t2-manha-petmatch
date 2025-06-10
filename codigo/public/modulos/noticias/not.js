@@ -1,4 +1,4 @@
-import { NewsInterface } from "../../db-interface/news-interface";
+import { NewsInterface } from "../../db-interface/news-interface.js";
 
 const newsInterface = new NewsInterface();
 
