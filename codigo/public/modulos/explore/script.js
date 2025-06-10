@@ -104,6 +104,10 @@ async function handleSeachButton() {
   await fetchPets(searchBarValue)
 }
 
+function onSearchBar(event) {
+  searchBarValue = event.target.value;
+}
+
 function verifySeachBarValue() {
         animalTypeList.forEach(animalType => {
         if(animalType.props.type.toLowerCase() === searchBarValue.toLowerCase()) {
@@ -112,8 +116,17 @@ function verifySeachBarValue() {
       })
 }
 
-function onSearchBar(event) {
-  searchBarValue = event.target.value;
+function separatePetsByType(petList) {
+  let petObject = {}
+  animalTypeList.forEach((animalType) => {
+    const areTherePetsWithType = petList.some((pet) => pet.animal_type_id === animalType._id)   
+    
+    if(areTherePetsWithType) {
+      petObject[animalType.props.type] = petList.filter(pet => pet.animal_type_id === animalType._id)
+    }
+  }) 
+
+  return petObject
 }
 
 async function fetchAnimalTypes() {
@@ -125,6 +138,8 @@ async function fetchAnimalTypes() {
     console.error(err)
   }
 }
+
+
 
 async function fetchPets(search) {
     try {   
@@ -141,26 +156,6 @@ async function fetchPets(search) {
         console.error(err)
     }
 }
-
-function separatePetsByType(petList) {
-  let petObject = {}
-  animalTypeList.forEach((animalType) => {
-    const areTherePetsWithType = petList.some((pet) => pet.animal_type_id === animalType._id)   
-    
-    if(areTherePetsWithType) {
-      petObject[animalType.props.type] = petList.filter(pet => pet.animal_type_id === animalType._id)
-    }
-  }) 
-
-  return petObject
-}
-
-
-
-
-
-
-
 window.addEventListener("load", async () => {
   $("#searchBar").val(searchBarValue);
   await fetchAnimalTypes()

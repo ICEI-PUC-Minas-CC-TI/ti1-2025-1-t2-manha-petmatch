@@ -12,9 +12,11 @@ import { FavoritePetUseCase } from '../src/domain/adoption/application/use-cases
 import { FetchFavoritePetUseCase } from '../src/domain/adoption/application/use-cases/fetch-favorite-pet.js'
 import { EditPetUseCase } from '../src/domain/adoption/application/use-cases/edit-pet.js'
 import { UnfavoritePetUseCase } from '../src/domain/adoption/application/use-cases/unfavorite-pet.js'
+import {JsonAddressRepository} from '../src/database/repositories/adoption/json-address-repository.js'
 
 export class PetInterface {
-    petRepository = new JsonPetRepository()
+    addressRepository = new JsonAddressRepository()
+    petRepository = new JsonPetRepository(this.addressRepository)
     donorRepository = new JsonDonorRepository();
     userRepository = new JsonUserRepository()
     favoritePetRepository = new JsonFavoritePetRepository()

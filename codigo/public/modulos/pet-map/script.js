@@ -19,15 +19,33 @@ let petAddressesList = []
 let searchBarValue = ''
 
 let petMarkes = []
+let selectedAside = 'pets' // 'pets' | 'favorited' 
+
+let currentPosition = [-44.192577, -19.945789]
+
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        function(position) {
+
+          currentPosition = [position.coords.longitude, position.coords.latitude]
+        },
+        function(error) {
+            console.error("Erro ao obter localização: ", error);
+        }
+    );
+} else {
+    console.error("Geolocalização não é suportada pelo navegador.");
+}
 
 
 const map = new mapboxgl.Map({
         container: 'map',
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/mapbox/streets-v12',
-        center: [-65.017, -16.457],
-        zoom: 5
+        center: currentPosition,
+        zoom: 10
 });
+
 
 
 function splitSearchParamsWords(search) {
@@ -60,66 +78,94 @@ function drawElements(listOfPets) {
     });
 }
 
+function drawFavoritedElements(listOfPets) {
+    $("#pet-card-list-container").empty();
+
+    const favoritedList = listOfPets.filter(pet => favoritedPetsList.some((fav) => {
+    console.log(fav)
+      return pet.id === fav.props.petId }))
+
+
+    favoritedList.forEach(pet => {
+        VerifyImage.doesImageExists(pet.img_urls[0], (doesImgExists) => {
+            const petImg = doesImgExists ? pet.img_urls[0] : "../../assets/images/dog_phatom.png";
+
+            $('#pet-card-list-container').append(`
+                <li>
+                    <button class="pet-list-btn" id="${pet.id}">
+                        <img src="${petImg}" alt="Image of ${pet.name}">
+                        <div class="petListCardContent">
+                            <div><h3>${pet.name}</h3> <span>2 Anos</span></div>
+                            <p>${pet.breed}</p>
+                        </div>
+                    </button>
+                </li>
+            `);
+        });
+    });
+}
+
 function drawPinsOnMap(pets, addresses) {
-  petMarkes.forEach(marker => marker.remove())
-  const petWithAddressList = pets.reduce((acc, cur) => {
-  const address = addresses.find(address => address.props.entityId === cur.id)
-  acc.push({
-    pet: cur,
-    address: {
-      'type': 'Feature',
-      'properties': {
-          'message': cur.name,
-          'imageId': cur.id,
-          'iconSize': [60, 60]
+  petMarkes.forEach(marker => marker.remove());
+
+  const features = pets.map(pet => {
+    const address = addresses.find(addr => addr.props.entityId === pet.id);
+    if (!address) return null;
+
+    return {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [address.props.longitude, address.props.latitude]
       },
-      'geometry': {
-          'type': 'Point',
-          'coordinates': [ address.props.longitude, address.props.latitude]
+      properties: {
+        message: pet.name,
+        imageId: pet.id,
+        iconSize: [60, 60],
+        imgUrl: pet.img_urls[0],
+        pet: pet
       }
-  },
-  });
-  return acc; 
-}, []);
+    };
+  }).filter(Boolean); // remove nulls
 
-
-const geojson = {
-        'type': 'FeatureCollection',
-        'features': petWithAddressList
+  const geojson = {
+    type: 'FeatureCollection',
+    features: features
   };
 
-  for (const marker of geojson.features) {
-
+  for (const feature of geojson.features) {
     const el = document.createElement('div');
-    const width = marker.address.properties.iconSize[0];
-    const height = marker.address.properties.iconSize[1];
+    const { iconSize, imgUrl, pet } = feature.properties;
+    const width = iconSize[0];
+    const height = iconSize[1];
+
     el.className = 'marker';
-    el.style.backgroundRepeat = `no-repeat`;
+    el.style.backgroundRepeat = 'no-repeat';
     el.style.width = `${width}px`;
     el.style.height = `${height}px`;
     el.style.border = `1px solid yellow`;
     el.style.backgroundSize = 'cover';
     el.style.backgroundColor = '#fff';
-    el.onclick = () => handleDrawCard(marker.pet.id);
+    el.onclick = () => handleDrawCard(pet.id);
 
-    VerifyImage.doesImageExists(marker.pet.img_urls[0], (doesImgExists) => {
-    el.style.backgroundImage = doesImgExists ? `url("${marker.pet.img_urls[0]}")` : `url("../../assets/images/dog_phatom.png")`
-    })
-    
+    VerifyImage.doesImageExists(imgUrl, (exists) => {
+      el.style.backgroundImage = exists
+        ? `url("${imgUrl}")`
+        : `url("../../assets/images/dog_phatom.png")`;
+    });
+
     el.addEventListener('mouseover', () => {
-      alert(marker.pet.name)
-    })
+      alert(pet.name);
+    });
 
+    const marker = new mapboxgl.Marker(el)
+      .setLngLat(feature.geometry.coordinates)
+      .addTo(map);
 
-    // Add markers to the map.
-    petMarkes.push(new mapboxgl.Marker(el)
-        .setLngLat(marker.address.geometry.coordinates)
-        .addTo(map))
+    petMarkes.push(marker);
   }
-
-  console.log(petWithAddressList)
-
 }
+
 
 function handleDrawCard(id) {
   handleClosePetCard()
@@ -225,9 +271,19 @@ async function fetchPets(search) {
         
         petsList = pets;
         favoritedPetsList = favoritePets;
+
+        console.log(petsList, favoritedPetsList)
         petAddressesList = addresses;
 
-        drawElements(pets, favoritePets)
+      switch(selectedAside) {
+        case 'pets': 
+          drawElements(pets)
+        break;
+        case 'favorite':
+          drawFavoritedElements(pets)
+        break;
+      } 
+
         drawPinsOnMap(pets, petAddressesList)
     }catch(err) {
         console.error(err)
@@ -257,11 +313,57 @@ function handleToggleDinamicBar() {
 }
 
 function handleClickAsideButton(e) {
-     const elementId = e.currentTarget.id;
+     selectedAside = e.currentTarget.id;
     
     $(".asideButtonSelected").removeClass('asideButtonSelected')
 
-    $(`#${elementId}`).addClass('asideButtonSelected')
+    $(`#${selectedAside}`).addClass('asideButtonSelected')
+
+    $('#dinamic_aside').show();
+    $('#toggle-aside-close').attr('id', 'toggle-aside-open'); 
+
+
+    switch(selectedAside) {
+      case 'pets': 
+        $('.search').show()
+
+        $('#petListContainer').html(`
+                    <h2>Pets</h2>
+
+                    <ul id="pet-card-list-container" class="petList">
+                 
+                    </ul>
+        `);
+        drawElements(petsList)
+
+      break;
+      case 'favorite':
+         $('.search').show()
+
+         $('#petListContainer').html(`
+              
+                    <h2>Pets</h2>
+
+                    <ul id="pet-card-list-container" class="petList">
+                 
+                    </ul>
+        `);
+
+        drawFavoritedElements(petsList)
+
+      break;
+
+      $('.search').hide()
+       $('#petListContainer').html(`
+                    <h2>Pets</h2>
+
+                    <ul id="pet-card-list-container" class="petList">
+                 
+                    </ul>
+                
+        `);
+      ;
+    }
 }
 
 function goBack() {
