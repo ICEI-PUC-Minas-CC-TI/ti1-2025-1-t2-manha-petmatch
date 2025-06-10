@@ -4,7 +4,6 @@ const petService = new PetInterface();
 
 async function petRegister(params) {
   try {
-    console.log("Enviando para registerPetInterface:", params); // log de depuração
     const registerPetInterface = await petService.registerPetInterface(params);
     return registerPetInterface;
   } catch (error) {
@@ -78,28 +77,6 @@ document.querySelector('.submit').addEventListener('click', async () => {
       availableForAdoption: true,
       animalSex: "Male",
     };
-
-    console.log("===== Console: petInfo =====");
-    console.log("Nome:", nome);
-    console.log("Descrição:", descricao);
-    console.log("Classificação:", classificacao);
-    console.log("Vacinado:", vacinado);
-    console.log("Vacinas:", vacinas);
-    console.log("Data de Encontro:", dataEncontro);
-    console.log("Tamanho:", tamanho);
-    console.log("Raça:", breed);
-    console.log("Castrado:", castrado);
-    console.log("Foi ao Veterinário:", foiVeterinario);
-    console.log("Descrição da consulta:", consultaDescricao);
-    console.log("Imagens (base64):", imagens);
-    console.log("Endereço:", {
-      estado,
-      cep,
-      cidade,
-      complemento,
-      rua,
-      bairro
-    });
 
     const resultado = await petRegister({ petInfo });
 

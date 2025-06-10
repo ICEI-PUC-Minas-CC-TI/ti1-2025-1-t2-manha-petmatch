@@ -59,7 +59,6 @@ export class JsonFavoritePetRepository {
     
             const response = await fetch(newUrl);
 
-            console.log(response)
             const jsonFormat = await response.json();
     
             return jsonFormat.length > 0 ? JsonFavoritePetRepositoryMapper.toDomain(jsonFormat[0]) : null;

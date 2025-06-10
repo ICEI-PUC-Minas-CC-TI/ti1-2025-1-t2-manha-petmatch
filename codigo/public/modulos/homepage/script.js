@@ -14,19 +14,15 @@ function onSearchBar(event) {
 }
 
 function drawElements(listOfPets, favoritedPetList) {
-  console.log(listOfPets)
   
 
 
   $("#pet-card-list").empty()
   
     listOfPets.forEach(pet => {
-      console.log(pet)
       const favoritePetClassName = favoritedPetList.some(element => element.props.petId === pet._id) ? "favorited" : "unFavorited"
-      console.log(favoritedPetList)
       
 
-      console.log(pet._id)
      $(`#cachorro`).append(` <li class="pet-card" }>
         <img src="${pet.props.imgUrls[0]}" alt="">
         <div class="pet-card-container">
@@ -90,7 +86,6 @@ async function fetchPets() {
         const {pets} = await petInterface.fetchPets();
         const {favoritePets} = await favoritePetInterface.fetchFavoritePet({userId: "userTestId"});
         petsList = pets
-        console.log(favoritePets)
         
 
         drawElements(petsList, favoritePets)

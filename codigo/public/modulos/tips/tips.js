@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const result = await tipinterface.getTip({ id });
-            console.log("Resultado da API:", result);
 
             const dicas = result.tip?.tip?.props?.tips;
 

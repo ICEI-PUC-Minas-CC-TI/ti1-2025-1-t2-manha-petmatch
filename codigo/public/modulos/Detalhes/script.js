@@ -34,10 +34,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   let loadedPetName = 'este PET';
 
   if (currentPetId) {
-    console.log('ID do PET encontrado:', currentPetId);
 
     const result = await gerenciamentopets.getPetById(currentPetId);
-    console.log('Resultado getPetById:', result);
 
     if (result.success && result.pet) {
       const pet = result.pet;
@@ -85,7 +83,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
       }
       alert(`Você demonstrou interesse em adotar o ${loadedPetName}! Um formulário de adoção ou próximos passos seriam exibidos aqui.`);
-      console.log(`Interesse em adotar o ${loadedPetName} (ID: ${currentPetId}) registrado.`);
     });
   }
 
@@ -106,7 +103,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         result = await gerenciamentopets.unfavoritePet(currentUserId, currentPetId);
         if (result.success) {
           favoriteIcon.classList.remove('favorited');
-          console.log(`${loadedPetName} removido dos favoritos!`);
         } else {
           alert(`Erro ao remover ${loadedPetName} dos favoritos: ${result.error}`);
           console.error('Erro ao desfavoritar:', result.error);
@@ -115,7 +111,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         result = await gerenciamentopets.favoritePet(currentUserId, currentPetId);
         if (result.success) {
           favoriteIcon.classList.add('favorited');
-          console.log(`${loadedPetName} adicionado aos favoritos!`);
         } else {
           alert(`Erro ao adicionar ${loadedPetName} aos favoritos: ${result.error}`);
           console.error('Erro ao favoritar:', result.error);

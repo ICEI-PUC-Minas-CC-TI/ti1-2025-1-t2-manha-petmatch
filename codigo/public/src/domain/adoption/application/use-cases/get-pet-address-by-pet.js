@@ -22,7 +22,6 @@ export class GetPetAddressByPetUseCase {
 
         const {pet} = await this.petRepository.findById(petId)
 
-        console.log(pet)
 
         if(!pet) {
             return left(new ResourceNotFoundError());

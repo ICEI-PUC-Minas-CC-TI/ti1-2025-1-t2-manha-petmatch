@@ -65,20 +65,6 @@ export class EditPetUseCase {
         donorId === undefined ||
         id === undefined
     ) {
-        console.log({name,
-        animalTypeId,
-        size,
-        animalSex,
-        descriptions,
-        imgUrls,
-        bornAt,
-        breed,
-        vaccinated,
-        castrated,
-        availableForAdoption,
-        personality,
-        donorId,
-        id})
             return left(new RequestMissingDataError())
         }
 

@@ -8,7 +8,6 @@ export class JsonAddressRepository {
         try {
 
             const dbAddress = JsonAddressRepositoryMapper.toJson(address);
-            console.log(dbAddress)
             
             await fetch(this.url, {
                 method: "POST",
@@ -44,8 +43,6 @@ export class JsonAddressRepository {
              const addressRaw = jsonFormat.find((address) => {
                 return address.entity_id === entityId; 
              })
-
-             console.log("ugauga",addressRaw)
 
              const address = !addressRaw ? {address: null} : {address: JsonAddressRepositoryMapper.toDomain(addressRaw)}  
 

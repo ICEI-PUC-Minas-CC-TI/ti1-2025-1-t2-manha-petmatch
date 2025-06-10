@@ -803,24 +803,25 @@
   "pet": [
     {
       "id": "petTest2",
-      "name": "Chitãozinho",
+      "name": "Anne Juca",
       "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
-      "size": "Médio",
+      "size": "grande",
       "animal_sex": "male",
-      "description": "Um cão amigável e brincalhão.",
+      "description": "loirinha",
       "img_urls": [
-        "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
+        "https://cavalus.com.br/wp-content/uploads/2025/01/Burro-que-inspirou-personagem-do-filme-Shrek-da-adeus-a-vida-real.png"
       ],
-      "born_at": "2022-03-15",
+      "born_at": "2007-02-22",
       "breed": [
-        "Pastor Alemão"
+        "Betinence"
       ],
       "vaccinated": true,
       "castrated": true,
       "available_for_adoption": true,
       "personality": [
-        "brincalhão",
-        "carinhoso"
+        "Burra",
+        "Rica",
+        "Loira"
       ],
       "donor_id": "donorTestId",
       "created_at": "2025-05-02T12:07:43.749Z",
@@ -982,18 +983,18 @@
       "id": "5490d532-02c5-471f-ba61-ca079469e641",
       "entity_type": "pet",
       "entity_id": "petTest2",
-      "street": "Avenida Dom José Gaspar",
-      "number": "500",
-      "complement": "Prédio 34",
-      "neighborhood": "Coração Eucarístico",
-      "city": "Belo Horizonte",
+      "street": "Benedito Pereira da fonseca",
+      "number": "258",
+      "complement": "Curral ",
+      "neighborhood": "Inga",
+      "city": "Betim",
       "state": "MG",
-      "zipCode": "30535-901",
+      "zipCode": "32632-120",
       "country": "Brasil",
-      "latitude": -19.9233425,
-      "longitude": -43.9937703,
+      "latitude": -19.945789,
+      "longitude": -44.192577,
       "created_at": "2025-06-09T01:08:27.685Z",
-      "updated_at": "2025-06-09T01:08:56.361Z"
+      "updated_at": "2025-06-10T14:30:41.734Z"
     },
     {
       "id": "3ea2e3c3-29f9-42bc-b726-1ed0e1c875de",

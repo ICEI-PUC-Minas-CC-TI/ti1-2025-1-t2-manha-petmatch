@@ -24,8 +24,6 @@ export class AnimalTypeInterface {
                 animaltypes: response.value.animalTypes || response.value.animaltypes || []
             };
 
-            console.log("Resultado fetchAnimalType():", resultado); // Debug 
-
             return resultado;
         } catch (e) {
             console.error("Erro inesperado:", e);

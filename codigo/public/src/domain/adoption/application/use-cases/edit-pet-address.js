@@ -106,9 +106,6 @@ export class EditPetAddressUseCase {
 
         await this.addressRepository.save(address);
 
-        console.log(address)
-
-
         return right({
             address
         })

@@ -47,7 +47,6 @@ export class RegisterPetUseCase {
         donorId,
     }) {
 
-        console.log("O name é ", name);
 
         if (name == undefined ||
             animalTypeId == undefined ||

@@ -1,15 +1,33 @@
 import {PetInterface} from "../../db-interface/pet-interface.js"
 import {AnimalTypeInterface} from  "../../db-interface/animal-type-interface.js"
 import {FavoritePetInterface} from '../../db-interface/favorite-pet-interface.js'
+import {AddressInterface} from '../../db-interface/address-interface.js'
+import { VerifyImage } from "../../utils/verify-image.js"
 
 const petInterface = new PetInterface();
 const animalTypeInterface = new AnimalTypeInterface();
 const favoritePetInterface = new FavoritePetInterface();
+const addressInterface = new AddressInterface() 
+
+mapboxgl.accessToken = 'pk.eyJ1IjoicGVkcm9pdGFsbyIsImEiOiJjbWI2cmFidnAwMms5MmpvaGlnbGR6anhqIn0.xUp4xQ1ncpQf8G_5pabccw';
+
 
 let animalTypeList = []
 let petsList = []
+let favoritedPetsList = []
+let petAddressesList = []
 let searchBarValue = ''
 
+let petMarkes = []
+
+
+const map = new mapboxgl.Map({
+        container: 'map',
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/mapbox/streets-v12',
+        center: [-65.017, -16.457],
+        zoom: 5
+});
 
 
 function splitSearchParamsWords(search) {
@@ -20,24 +38,86 @@ function splitSearchParamsWords(search) {
   }
 }
 
-
 function drawElements(listOfPets) {
-        $("#pet-card-list-container").empty()
-          listOfPets.forEach(pet => {
+    $("#pet-card-list-container").empty();
 
-              console.log(pet)
-              $('#pet-card-list-container').append(`
-                  <li>
-                     <button class="pet-list-btn" id="${pet.id}">
-                          <img src="${pet.img_urls[0]}" alt="Image of  ${pet.name}">
-                          <div class="petListCardContent">
-                              <div><h3>${pet.name}</h3> <span>2 Anos</span></div>
-                              <p>${pet.breed}</p>
-                          </div>
-                      </button>
-                  </li>
-              `)
+    listOfPets.forEach(pet => {
+        VerifyImage.doesImageExists(pet.img_urls[0], (doesImgExists) => {
+            const petImg = doesImgExists ? pet.img_urls[0] : "../../assets/images/dog_phatom.png";
+
+            $('#pet-card-list-container').append(`
+                <li>
+                    <button class="pet-list-btn" id="${pet.id}">
+                        <img src="${petImg}" alt="Image of ${pet.name}">
+                        <div class="petListCardContent">
+                            <div><h3>${pet.name}</h3> <span>2 Anos</span></div>
+                            <p>${pet.breed}</p>
+                        </div>
+                    </button>
+                </li>
+            `);
         });
+    });
+}
+
+function drawPinsOnMap(pets, addresses) {
+  petMarkes.forEach(marker => marker.remove())
+  const petWithAddressList = pets.reduce((acc, cur) => {
+  const address = addresses.find(address => address.props.entityId === cur.id)
+  acc.push({
+    pet: cur,
+    address: {
+      'type': 'Feature',
+      'properties': {
+          'message': cur.name,
+          'imageId': cur.id,
+          'iconSize': [60, 60]
+      },
+      'geometry': {
+          'type': 'Point',
+          'coordinates': [ address.props.longitude, address.props.latitude]
+      }
+  },
+  });
+  return acc; 
+}, []);
+
+
+const geojson = {
+        'type': 'FeatureCollection',
+        'features': petWithAddressList
+  };
+
+  for (const marker of geojson.features) {
+
+    const el = document.createElement('div');
+    const width = marker.address.properties.iconSize[0];
+    const height = marker.address.properties.iconSize[1];
+    el.className = 'marker';
+    el.style.backgroundRepeat = `no-repeat`;
+    el.style.width = `${width}px`;
+    el.style.height = `${height}px`;
+    el.style.border = `1px solid yellow`;
+    el.style.backgroundSize = 'cover';
+    el.style.backgroundColor = '#fff';
+    el.onclick = () => handleDrawCard(marker.pet.id);
+
+    VerifyImage.doesImageExists(marker.pet.img_urls[0], (doesImgExists) => {
+    el.style.backgroundImage = doesImgExists ? `url("${marker.pet.img_urls[0]}")` : `url("../../assets/images/dog_phatom.png")`
+    })
+    
+    el.addEventListener('mouseover', () => {
+      alert(marker.pet.name)
+    })
+
+
+    // Add markers to the map.
+    petMarkes.push(new mapboxgl.Marker(el)
+        .setLngLat(marker.address.geometry.coordinates)
+        .addTo(map))
+  }
+
+  console.log(petWithAddressList)
 
 }
 
@@ -45,12 +125,16 @@ function handleDrawCard(id) {
   handleClosePetCard()
   const pet = petsList.find((pet) => pet.id === id)
 
-  $('#mainContainer').append(`
+  VerifyImage.doesImageExists(pet.img_urls[0], (doesImgExists) => {
+    
+  const petImg = doesImgExists ? `${pet.img_urls[0]}` : "../../assets/images/dog_phatom.png"
+
+    $('#mainContainer').append(`
        <div class="pet-card">
               <button id="closeCard">
                 <i class="material-icons">close</i>
               </button>
-              <img src="${pet.img_urls[0]}" alt="">
+              <img src="${petImg}" alt="">
               <div class="pet-card-container">
                 <div class="pet-card-content">
                   <header class="pet-card-content-header">
@@ -69,6 +153,8 @@ function handleDrawCard(id) {
                 </div>
         </div>
     `)
+  })
+  
 }
 
 async function handleFavoritePet(petId) {
@@ -135,10 +221,14 @@ async function fetchPets(search) {
         const searchValues = splitSearchParamsWords(search) 
         const {pets} = await petInterface.fetchPetsBySearch({search: searchValues});
         const {favoritePets} = await favoritePetInterface.fetchFavoritePet({userId: "userTestId"});
-
-        petsList = pets
+        const {addresses} = await addressInterface.fetchPetsAddresses();
+        
+        petsList = pets;
+        favoritedPetsList = favoritePets;
+        petAddressesList = addresses;
 
         drawElements(pets, favoritePets)
+        drawPinsOnMap(pets, petAddressesList)
     }catch(err) {
         console.error(err)
     }
@@ -169,7 +259,6 @@ function handleToggleDinamicBar() {
 function handleClickAsideButton(e) {
      const elementId = e.currentTarget.id;
     
-     console.log(elementId)
     $(".asideButtonSelected").removeClass('asideButtonSelected')
 
     $(`#${elementId}`).addClass('asideButtonSelected')
@@ -199,108 +288,3 @@ $(document).on("click", ".pet-list-btn", function (e) {
 $(document).on("click", "#closeCard", handleClosePetCard);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-mapboxgl.accessToken = 'pk.eyJ1IjoicGVkcm9pdGFsbyIsImEiOiJjbWI2cmFidnAwMms5MmpvaGlnbGR6anhqIn0.xUp4xQ1ncpQf8G_5pabccw';
-    const geojson = {
-        'type': 'FeatureCollection',
-        'features': [
-            {
-                'type': 'Feature',
-                'properties': {
-                    'message': 'Foo',
-                    'imageId': 1011,
-                    'iconSize': [60, 60]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-66.324462, -16.024695]
-                }
-            },
-            {
-                'type': 'Feature',
-                'properties': {
-                    'message': 'Bar',
-                    'imageId': 870,
-                    'iconSize': [50, 50]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-61.21582, -15.971891]
-                }
-            },
-            {
-                'type': 'Feature',
-                'properties': {
-                    'message': 'Baz',
-                    'imageId': 837,
-                    'iconSize': [40, 40]
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-63.292236, -18.281518]
-                }
-            }
-        ]
-    };
-
-    const map = new mapboxgl.Map({
-        container: 'map',
-        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/mapbox/streets-v12',
-        center: [-65.017, -16.457],
-        zoom: 5
-    });
-
-    // Add markers to the map.
-    for (const marker of geojson.features) {
-        // Create a DOM element for each marker.
-        const el = document.createElement('div');
-        const width = marker.properties.iconSize[0];
-        const height = marker.properties.iconSize[1];
-        el.className = 'marker';
-        el.style.backgroundImage = `url(https://picsum.photos/id/${marker.properties.imageId}/${width}/${height})`;
-        el.style.width = `${width}px`;
-        el.style.height = `${height}px`;
-        el.style.backgroundSize = '100%';
-
-        el.addEventListener('click', () => {
-            window.alert(marker.properties.message);
-        });
-
-        // Add markers to the map.
-        new mapboxgl.Marker(el)
-            .setLngLat(marker.geometry.coordinates)
-            .addTo(map);
-    }

@@ -7,9 +7,6 @@ async function buscaCategoria() {
   try {
     const response = await animalTypeInterface.fetchAnimalType();
 
-
-    console.log("Resposta completa de fetchAnimalType:", response);
-
     const animaltypes = response?.animaltypes || response?.animalTypes;
 
     if (!Array.isArray(animaltypes)) {
@@ -17,12 +14,8 @@ async function buscaCategoria() {
       return;
     }
 
-    console.log("Lista de tipos de animal (array):", animaltypes);
-
     let textoHTML = "";
     animaltypes.forEach((animal) => {
-      console.log("Animal type individual:", animal);
-
     
       const id = animal?.id || animal?._id || animal?.props?.id;
       const nome = animal?.type || animal?.props?.type;
@@ -36,7 +29,6 @@ async function buscaCategoria() {
     });
 
     classificando.innerHTML = textoHTML;
-    console.log("HTML final do <select>:", textoHTML);
 
   } catch (error) {
     console.error("Erro ao buscar categorias de animal:", error);

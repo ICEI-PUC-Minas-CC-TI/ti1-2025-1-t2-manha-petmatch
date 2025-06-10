@@ -9,6 +9,6 @@ export class FetchPetAddressUseCase {
     async execute() { 
         const {addresses} = await this.addressRepository.findManyAddress()
 
-        return right(addresses);
+        return right({addresses: addresses});
     }
 }

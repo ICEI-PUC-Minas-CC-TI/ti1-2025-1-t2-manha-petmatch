@@ -56,7 +56,6 @@ export class RegisterPetAddressUseCase {
         
         const petAlredyHasAddress = await this.addressRepository.findAddressByEntityId(entityId)
 
-        console.log(petAlredyHasAddress)
 
         if(petAlredyHasAddress.address !== null) {
             return left(new EntityAlredyHasAddressError())
@@ -92,7 +91,6 @@ export class RegisterPetAddressUseCase {
 
         await this.addressRepository.create(address)
 
-        console.log(address)
 
         return right(address);
     }

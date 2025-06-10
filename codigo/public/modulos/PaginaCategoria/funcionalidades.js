@@ -7,14 +7,12 @@ async function handleSeachButton() {
 
 function onSearchBar(event) {
   searchBarValue = event.target.value;
-  console.log(searchBarValue)
 }
 const animaltypeinterface = new AnimalTypeInterface()
 async function puxabicho(){
     var bichos = await animaltypeinterface.fetchAnimalType();
     const {animaltypes} = bichos;
     animaltypes.forEach((element)=>{ 
-        console.log(element);
         $('#animal-type-container').append(`<a href="../explore/index.html?search=${element.props.type}" id="" class="tipos">
         <img class="imagem-categorias" src="${element.props.imgUrlReference}" alt="Foto cachorro">
 
