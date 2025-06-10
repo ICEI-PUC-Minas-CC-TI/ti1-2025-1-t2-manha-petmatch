@@ -1,64 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-  <title>Apadrinhar um Pet - PETMATCH</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="preload" href="https://fonts.gstatic.com/s/notosans/v34/xxxxxxxx.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/outfit/v11/xxxxxxxx.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <title>Apadrinhar um Pet - PETMATCH</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <aside id="sidebar">
-    <div id="logo"><img src="../../application-assets/logo.png" alt="Logo PETMATCH" /></div>
-    <div>
-      <div id="profile">
-        <div>
-          <img src="https://picsum.photos/id/1025/200/200" alt="User Avatar" id="avatar" /> 
-          <div id="profile-info">
-            <h3>Ricardão</h3>
-            <span><i class="material-icons">stars</i>5.0</span>
-          </div>
+    <aside id="sidebar">
+        <div id="logo">
+            <img src="../../application-assets/logo.png" alt="Logo PETMATCH" />
         </div>
-        <button class="btn-style" id="btn-perfil">Perfil <i class="material-icons" style="font-size: 1em; vertical-align: middle;">launch</i></button>
-      </div>
-      <nav id="menu">
-        <a href="../homepage/homepage.html"><i class="material-icons">home</i> Home</a>
-        <a href="../explore/index.html"><i class="material-icons">explore</i> Explorar</a>
-        <a href="../PaginaCategoria/Categorias.html"><i class="material-icons">category</i> Categorias</a>
-        <a href="../favoritos/pets/index.html"><i class="material-icons">favorite</i> Favoritos</a>
-        <a href="como-apadrinhar.html" class="active"><i class="material-icons">volunteer_activism</i> Apadrinhar</a>
-        <a href="../historico/historico.html"><i class="material-icons">history</i>Histórico</a>
-        <a href="#"><i class="material-icons">pets</i> Meus Pets</a>
-        <a href="#"><i class="material-icons">map</i> Petmap</a>
-        <a href="../tips/tips.html"><i class="material-icons">lightbulb</i> Pet Tips</a>
-      </nav>
+        <div>
+            <div id="profile">
+                <div>
+                    <img src="https://picsum.photos/id/1025/100/100" alt="Avatar do usuário" id="avatar" />
+                    <div id="profile-info">
+                        <h3>Ricardão</h3>
+                        <span><i class="material-icons">stars</i>5.0</span>
+                    </div>
+                </div>
+                <a href="../perfil/perfil.html" class="btn-style" id="btn-perfil" aria-label="Acessar página de perfil">
+                    Perfil <i class="material-icons" style="font-size: 1em; vertical-align: middle;">launch</i>
+                </a>
+            </div>
+            <nav id="menu">
+                <a href="../homepage/homepage.html"><i class="material-icons">home</i> Home</a>
+                <a href="../explore/index.html"><i class="material-icons">explore</i> Explorar</a>
+                <a href="../PaginaCategoria/Categorias.html"><i class="material-icons">category</i> Categorias</a>
+                <a href="../favoritos/pets/index.html"><i class="material-icons">favorite</i> Favoritos</a>
+                <a href="como-apadrinhar.html" class="active"><i class="material-icons">volunteer_activism</i> Apadrinhar</a>
+                <a href="../historico/historico.html"><i class="material-icons">history</i>Histórico</a>
+                <a href="#"><i class="material-icons">pets</i> Meus Pets</a>
+                <a href="#"><i class="material-icons">map</i> Petmap</a>
+                <a href="../tips/tips.html"><i class="material-icons">lightbulb</i> Pet Tips</a>
+            </nav>
+        </div>
+        <div id="aside-footer">
+            <a href="../cadastro-pets/cadastro-pets.html" class="btn-style btn-adocao">Colocar para Adoção</a>
+            <button class="btn-logout btn-style" id="btn-sair">Sair</button>
+        </div>
+    </aside>
+
+    <div id="screen-container">
+        <header class="topbar">
+            <h1 class="topbar-logo">PETMATCH</h1>
+            <div class="search">
+                <label for="searchBar" class="sr-only">Pesquisar por nome do pet</label>
+                <input type="text" placeholder="Pesquisar por nome..." id="searchBar"/>
+                <button id="searchButton" aria-label="Botão de pesquisa"><i class="material-icons">search</i></button>
+            </div>
+        </header>
+
+        <main>
+            <h1 class="page-title">Apadrinhar um Pet</h1>
+            <div id="pet-card-list-container">
+                </div>
+        </main>
     </div>
-    <div id="aside-footer">
-      <a href="../cadastro-pets/cadastro-pets.html" class="btn-style btn-adocao">Colocar para Adoção</a>
-      <button class="btn-logout btn-style" id="btn-sair">Sair</button>
-    </div>
-  </aside>
 
-  <div id="screen-container">
-    <header class="topbar">
-      <h1 class="topbar-logo">PETMATCH</h1>
-      <div class="search">
-        <input type="text" placeholder="Pesquisar por nome..." id="searchBar"/>
-        <button id="searchButton"><i class="material-icons">search</i></button>
-      </div>
-    </header>
-
-    <main>
-      <h1 class="page-title">Apadrinhar um Pet</h1>
-      <div id="pet-card-list-container"> 
-      </div>
-    </main>
-  </div>
-
-  <script src="../../jquery/jquery.js"></script>
-  <script type="module" src="apadrinhar.js"></script>
-  </body>
+    <script src="../../jquery/jquery.js"></script>
+    <script type="module" src="apadrinhar.js"></script>
+</body>
 </html>
