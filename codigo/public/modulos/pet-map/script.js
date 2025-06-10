@@ -5,7 +5,6 @@ import {AddressInterface} from '../../db-interface/address-interface.js'
 import { VerifyImage } from "../../utils/verify-image.js"
 
 const petInterface = new PetInterface();
-const animalTypeInterface = new AnimalTypeInterface();
 const favoritePetInterface = new FavoritePetInterface();
 const addressInterface = new AddressInterface() 
 
@@ -45,7 +44,6 @@ const map = new mapboxgl.Map({
         center: currentPosition,
         zoom: 10
 });
-
 
 
 function splitSearchParamsWords(search) {
@@ -104,9 +102,14 @@ function drawFavoritedElements(listOfPets) {
         });
     });
 }
+function formatAddress(address) {
+    return `${address.street}, ${address.number}${address.complement ? ` - ${address.complement}` : ''}, ${address.neighborhood}, ${address.city} - ${address.state}, ${address.country}, CEP: ${address.zipCode}`;
+}
+
 
 function drawPinsOnMap(pets, addresses) {
   petMarkes.forEach(marker => marker.remove());
+  petMarkes = [];
 
   const features = pets.map(pet => {
     const address = addresses.find(addr => addr.props.entityId === pet.id);
@@ -123,10 +126,11 @@ function drawPinsOnMap(pets, addresses) {
         imageId: pet.id,
         iconSize: [60, 60],
         imgUrl: pet.img_urls[0],
-        pet: pet
+        pet: pet,
+        address: address.props
       }
     };
-  }).filter(Boolean); // remove nulls
+  }).filter(Boolean);
 
   const geojson = {
     type: 'FeatureCollection',
@@ -135,7 +139,7 @@ function drawPinsOnMap(pets, addresses) {
 
   for (const feature of geojson.features) {
     const el = document.createElement('div');
-    const { iconSize, imgUrl, pet } = feature.properties;
+    const { iconSize, imgUrl, pet, address } = feature.properties;
     const width = iconSize[0];
     const height = iconSize[1];
 
@@ -149,13 +153,22 @@ function drawPinsOnMap(pets, addresses) {
     el.onclick = () => handleDrawCard(pet.id);
 
     VerifyImage.doesImageExists(imgUrl, (exists) => {
-      el.style.backgroundImage = exists
-        ? `url("${imgUrl}")`
-        : `url("../../assets/images/dog_phatom.png")`;
+      setTimeout(() => {
+        el.style.backgroundImage = exists
+          ? `url("${imgUrl}")`
+          : `url("../../assets/images/dog_phatom.png")`;
+      }, 50); 
     });
 
     el.addEventListener('mouseover', () => {
-      alert(pet.name);
+      $('#address-dialog').css('display', 'flex');
+      $('#address-dialog p').text(formatAddress(address));
+    });
+
+    console.log(address)
+
+    el.addEventListener('mouseout', () => {
+      $('#address-dialog').hide();
     });
 
     const marker = new mapboxgl.Marker(el)
@@ -170,10 +183,15 @@ function drawPinsOnMap(pets, addresses) {
 function handleDrawCard(id) {
   handleClosePetCard()
   const pet = petsList.find((pet) => pet.id === id)
+  const address = petAddressesList.find((address) => address.props.entityId
+ === id)
 
   VerifyImage.doesImageExists(pet.img_urls[0], (doesImgExists) => {
     
   const petImg = doesImgExists ? `${pet.img_urls[0]}` : "../../assets/images/dog_phatom.png"
+
+   const favoritePetClassName = favoritedPetsList.some(element => element.props.petId === pet.id) ? "favorited" : "unFavorited"
+
 
     $('#mainContainer').append(`
        <div class="pet-card">
@@ -186,15 +204,17 @@ function handleDrawCard(id) {
                   <header class="pet-card-content-header">
                     <div class="pet-card-main-info"><h3>${pet.name}</h3> <span>3 meses</span></div>
                     <p class="pet-card-category">${pet.breed[0]}</p>
-                  </header>
+                    <div class="card-address-container"><i class="material-icons">pin_drop</i>  <a target="_blank" href="https://www.google.com/maps/search/?api=1&query=${address.props.latitude},${address.props.longitude}" class="card-address">${formatAddress(address.props)}</a></div>
+                   
+                    </header>
+                    <p  class="pet-card-info">${pet.description}</p>
 
-                  <p class="pet-card-info">${pet.description}</p>
                 </div>
 
 
                   <div class="pet-card-button-container">
                     <button class="pet-card-see-pet-button" value="${pet.id}">Ver Pet</button> 
-                    <button class="pet-card-favorite-pet-button " value="${pet.id}" id="favorite-${pet.id}"><i class="material-icons" style="color: white;">favorite</i></button>
+                     <button class="pet-card-favorite-pet-button ${favoritePetClassName}" value="${pet.id}" id="favorite-${pet.id}"><i class="material-icons" style="color: white;">favorite</i></button>
                   </div>
                 </div>
         </div>
@@ -213,6 +233,7 @@ async function handleFavoritePet(petId) {
       try{
         $(`#favorite-${pet.id}`).prop('disable', true)
         await favoritePetInterface.unfavoritePet({petId, userId: "userTestId"})
+        await fetchFavoritePet()
       } catch(err) {
         console.error(err)
       } finally {
@@ -224,6 +245,7 @@ async function handleFavoritePet(petId) {
      try{
         $(`#favorite-${pet.id}`).prop('disable', true)
         await favoritePetInterface.favoritePet({petId, userId: "userTestId"})
+        await fetchFavoritePet()
       } catch(err) {
         console.error(err)
       } finally {
@@ -252,39 +274,44 @@ function onSearchBar(event) {
   searchBarValue = event.target.value;
 }
 
-async function fetchAnimalTypes() {
-  try {
-      const response = await animalTypeInterface.fetchAnimalType();
-      animalTypeList = response.animaltypes;
-      verifySeachBarValue()
-  } catch(err) {
-    console.error(err)
-  }
+async function fetchFavoritePet() {
+    const {favoritePets} = await favoritePetInterface.fetchFavoritePet({userId: "userTestId"});
+
+    favoritedPetsList = favoritePets ? favoritePets : [];
+    console.log(favoritedPetsList)
+
+    if(selectedAside === "favorite" ) {
+        drawFavoritedElements(petsList)
+        const favoritedList = petsList.filter(pet => favoritedPetsList.some((fav) => {
+        return pet.id === fav.props.petId }))
+        drawPinsOnMap(favoritedList, petAddressesList)
+    }
 }
 
 async function fetchPets(search) {
     try {   
         const searchValues = splitSearchParamsWords(search) 
         const {pets} = await petInterface.fetchPetsBySearch({search: searchValues});
-        const {favoritePets} = await favoritePetInterface.fetchFavoritePet({userId: "userTestId"});
         const {addresses} = await addressInterface.fetchPetsAddresses();
-        
         petsList = pets;
-        favoritedPetsList = favoritePets;
 
-        console.log(petsList, favoritedPetsList)
+        fetchFavoritePet()
         petAddressesList = addresses;
 
-      switch(selectedAside) {
-        case 'pets': 
-          drawElements(pets)
-        break;
-        case 'favorite':
-          drawFavoritedElements(pets)
-        break;
-      } 
+        switch(selectedAside) {
+          case 'pets': 
+           drawElements(pets)
+           drawPinsOnMap(pets, petAddressesList)
 
-        drawPinsOnMap(pets, petAddressesList)
+          break;
+          case 'favorite':
+              drawFavoritedElements(pets)
+              const favoritedList = pets.filter(pet => favoritedPetsList.some((fav) => {
+              return pet.id === fav.props.petId }))
+              drawPinsOnMap(favoritedList, petAddressesList)
+          break;
+        } 
+
     }catch(err) {
         console.error(err)
     }
@@ -335,7 +362,7 @@ function handleClickAsideButton(e) {
                     </ul>
         `);
         drawElements(petsList)
-
+        drawPinsOnMap(petsList, petAddressesList)
       break;
       case 'favorite':
          $('.search').show()
@@ -350,19 +377,11 @@ function handleClickAsideButton(e) {
         `);
 
         drawFavoritedElements(petsList)
+        const favoritedList = petsList.filter(pet => favoritedPetsList.some((fav) => {
+        return pet.id === fav.props.petId }))
+        drawPinsOnMap(favoritedList, petAddressesList)
 
       break;
-
-      $('.search').hide()
-       $('#petListContainer').html(`
-                    <h2>Pets</h2>
-
-                    <ul id="pet-card-list-container" class="petList">
-                 
-                    </ul>
-                
-        `);
-      ;
     }
 }
 
@@ -389,4 +408,14 @@ $(document).on("click", ".pet-list-btn", function (e) {
 
 $(document).on("click", "#closeCard", handleClosePetCard);
 
+$(document).on("click", ".pet-card-favorite-pet-button", async function (e) {
+  e.preventDefault();
+  const value = e.currentTarget.value;
+  await handleFavoritePet(value);
+});
 
+$(document).on("click", ".pet-card-see-pet-button", function (e) {
+  e.preventDefault();
+  const value = e.currentTarget.value;
+  window.location.href = `../Detalhes/index.html?petId=${value}`
+});

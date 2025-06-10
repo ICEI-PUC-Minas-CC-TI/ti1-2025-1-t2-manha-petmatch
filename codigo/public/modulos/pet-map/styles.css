@@ -358,3 +358,46 @@ aside {
 .asideButtonSelected > i, .asideButtonSelected > p {
     color: var(--white);
 }
+
+#address-dialog {
+    position: absolute;
+    display: none;
+    justify-content: center ;
+    align-items: center ;
+    z-index: 10000;
+    padding: 20px;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    gap: 10px;
+    min-width: 200px;
+
+    background: var(--white);
+    border: 1px solid var(--yellow);
+    border-radius: 12px;
+
+}
+
+.card-address-container {
+ display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 6px ;
+    margin-bottom: 6px ;
+}
+
+.card-address{
+    display: block; 
+    width: 100%; 
+    color: var(--black); 
+    text-decoration: none; 
+    overflow: hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: color .3s;
+}
+
+.card-address:hover{
+   color: var(--gray);
+
+}

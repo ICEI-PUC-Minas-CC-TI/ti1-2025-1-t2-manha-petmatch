@@ -970,14 +970,7 @@
       "updated_at": "someDate"
     }
   ],
-  "favorite_pet": [
-    {
-      "id": "07637cd7-70b8-4c21-9dac-db8636f8e073",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest3",
-      "created_at": "2025-05-20T21:46:05.595Z"
-    }
-  ],
+  "favorite_pet": [],
   "address": [
     {
       "id": "5490d532-02c5-471f-ba61-ca079469e641",
