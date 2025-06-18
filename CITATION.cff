@@ -2,30 +2,39 @@ cff-version: 1.0.1
 message: Please cite this software using these metadata.
 title: 
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: Telles Martins da Costa
+    given-names: Artur 
+  - family-names: Mendes Rocha​
+    given-names: Bernardo
+  - family-names: Mesquita Bicalho
+    given-names: Bruno ​
+  - family-names: Oliveira Maro​
+    given-names: Maria Fernanda
+  - family-names: Gomes Beliene Vila​
+    given-names: Maria Luiza 
+  - family-names: Borges Cardoso​
+    given-names: Pedro Italo 
+  - family-names: ​de Abreu Botelho Romualdo​
+    given-names: Sofia 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Nepomuceno Curto
+    given-names: Hayala 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Mara Freitas Diniz
+    given-names: Luciana 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Dias Maciel
+    given-names: Wesley
 keywords:
-  - 
-  - 
-repository-code: 
+  - Adoção
+  - Pets
+  - Animais
+  - Desenvolvimento WEB
+  - JSON-SERVER
+repository-code: git@github.com:ICEI-PUC-Minas-CC-TI/ti1-2025-1-t2-manha-petmatch.git
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2022-07-14
+date-released: 2025-06-22
