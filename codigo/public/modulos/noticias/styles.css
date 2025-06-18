@@ -143,14 +143,6 @@ body {
     color: #FFE066;
 }
 
-#menu a.tips-icon:hover {
-    color: #000000;
-}
-
-#menu a.tips-icon {
-    color: #ffcc00;
-}
-
 #sidebar-sections {
     width: 100%;
     margin-top: 20px;
