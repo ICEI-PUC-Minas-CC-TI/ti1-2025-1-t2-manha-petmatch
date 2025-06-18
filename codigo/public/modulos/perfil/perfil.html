@@ -10,27 +10,26 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
     rel="stylesheet">
-  <title>Pet News</title>
+  <title>Pet tips</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <header class="topbar">
     <h1 class="logo">PETMATCH</h1>
-
     <div class="search">
-      <input type="text" placeholder="Pesquisa" />
-      <button><i class="material-icons">search</i></button>
+      <input type="text" placeholder="Pesquisa" id="searchBar"/>
+      <button id="searchButton"><i class="material-icons">search</i></button>
     </div>
   </header>
-  <aside id="sidebar">
 
-    <div id="logo"><img src="./img/image.png" alt="Logo" /></div>
+  <aside id="sidebar">
+    <div id="logo"><img src="../tips/image.png" alt="Logo"></div>
     <div>
 
       <div id="profile">
         <div>
-          <img src="../../Images/someone.jpg" alt="User Avatar" id="avatar" />
+          <img src="../../images/someone.jpg" alt="user avatar" id="avatar" />
           <div id="profile-info">
             <h3>Ricardão</h3>
             <span><i class="material-icons">stars</i>5.0</span>
@@ -53,11 +52,13 @@
     </div>
 
     <div id="aside-footer">
-      <button class="btn-style">Colocar para Adoção</button>
+      <a href="../cadastro-pets/cadastro-pets.html" class="btn-style" style="color: black; text-decoration: none;" >Colocar para Adoção</a>
       <button class="btn-logout btn-style">Sair</button>
     </div>
   </aside>
-  <script type="module" src="not.js"></script>
-</body>
+
+  <script src="../../jquery/jquery.js"></script>
+  <script type="module" src="tips.js"></script>
+  </body>
 
 </html>
