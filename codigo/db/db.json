@@ -8,7 +8,7 @@
       "animal_sex": "male",
       "description": "loirinha",
       "img_urls": [
-        "https://cavalus.com.br/wp-content/uploads/2025/01/Burro-que-inspirou-personagem-do-filme-Shrek-da-adeus-a-vida-real.png"
+        "https://i.pinimg.com/222x/28/f3/4f/28f34fc6fb1e3e6ae2ba395cbeb17ac2.jpg"
       ],
       "born_at": "2007-02-22",
       "breed": [
@@ -107,7 +107,9 @@
       "size": "Pequeno",
       "animal_sex": "Male",
       "description": "Fofo",
-      "img_urls": [],
+      "img_urls": [
+        "https://i.pinimg.com/736x/72/85/40/728540a65d7b9f52d264251ac3845392.jpg"
+      ],
       "born_at": "",
       "breed": [
         "vira-lata"
@@ -119,6 +121,28 @@
       "donor_id": "donorTestId",
       "created_at": "2025-05-20T22:11:45.087Z",
       "updated_at": "2025-05-20T22:11:45.087Z"
+    },
+    {
+      "id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
+      "name": "Baianinho",
+      "animal_type_id": "22f23a90-b097-4056-81a7-373f7af5f8a2",
+      "size": "Pequeno",
+      "animal_sex": "Male",
+      "description": "é baiano brabo.",
+      "img_urls": [
+        "https://i.pinimg.com/474x/98/af/ec/98afecb9c5049ca695aed55c398b7ffe.jpg"
+      ],
+      "born_at": "26/11/2023",
+      "breed": [
+        "Baiano"
+      ],
+      "vaccinated": false,
+      "castrated": true,
+      "available_for_adoption": true,
+      "personality": [],
+      "donor_id": "donorTestId",
+      "created_at": "2025-06-17T14:39:16.683Z",
+      "updated_at": "2025-06-17T14:39:16.683Z"
     }
   ],
   "animal_type": [
@@ -187,6 +211,12 @@
       "appraiser_id": "userTestId",
       "pet_id": "032a57ba-d703-4226-a801-9a9dda3d7e28",
       "created_at": "2025-06-10T22:29:54.184Z"
+    },
+    {
+      "id": "d69fb6fc-600d-4bd8-8c81-3ce4c9832569",
+      "appraiser_id": "userTestId",
+      "pet_id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
+      "created_at": "2025-06-17T14:45:55.334Z"
     }
   ],
   "address": [
@@ -262,18 +292,18 @@
       "id": "ba4d6780-55b1-4076-8445-7e1e78fdd683",
       "entity_type": "pet",
       "entity_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
-      "street": "Rua Pedra Bonita",
-      "number": "899",
-      "complement": "Central Pet",
-      "neighborhood": "Bairro Z",
-      "city": "Belo Horizonte",
+      "street": "Rua do Rosário",
+      "number": "1081",
+      "complement": "Prédio",
+      "neighborhood": "Angola",
+      "city": "Betim",
       "state": "MG",
-      "zipCode": "30431-065",
+      "zipCode": "3053532604-115",
       "country": "Brasil",
-      "latitude": -19.931523,
-      "longitude": -43.96463,
+      "latitude": -19.953923,
+      "longitude": -44.197372,
       "created_at": "2025-06-09T10:00:22.874Z",
-      "updated_at": "2025-06-09T10:00:22.874Z"
+      "updated_at": "2025-06-17T14:33:54.914Z"
     },
     {
       "id": "f33d8e99-9c17-4f08-b52e-0bcf041bcbea",
@@ -291,6 +321,23 @@
       "longitude": -43.972111,
       "created_at": "2025-06-09T10:01:11.573Z",
       "updated_at": "2025-06-09T10:01:11.573Z"
+    },
+    {
+      "id": "00d97617-5667-4f0e-9d3d-2296a5cafd03",
+      "entity_type": "pet",
+      "entity_id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
+      "street": "Avenida Antônio Carlos Magalhões",
+      "number": "108",
+      "complement": "Casa do baiano",
+      "neighborhood": "pedrinhas",
+      "city": "Xique-Xique",
+      "state": "BA",
+      "zipCode": "47404386",
+      "country": "Brasil",
+      "latitude": -10.8217193,
+      "longitude": -42.7265689,
+      "created_at": "2025-06-17T14:44:11.208Z",
+      "updated_at": "2025-06-17T14:44:11.208Z"
     }
   ],
   "user": [

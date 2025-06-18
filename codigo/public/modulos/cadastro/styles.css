@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+  }
+ 
+:root {
+    --white: #f8f8f8;
+    --yellow: #FFD02F;
+    --gray-yellow: #e5e3e0;
+    --red: #F60000;
+    --gray: #A4A4A4;
+    --black: #000;
+
+}
+
+html, body, main {
+font-family: Arial, sans-serif;
+background-color: var(--white);
+height: 100%;
+overflow-y: hidden;
+}
+
+main {
+    display: flex;
+    height: 100%;
+}
+
+#login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    flex: 1;
+    overflow-y: scroll;
+    padding: 2rem 0;
+}
+
+#image-container {
+    flex: 1;
+  
+    background-color: var(--yellow);
+}
+
+#login-content {
+    width: 60%;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#login-content > div {
+    text-align: center;
+}
+
+#login-content > form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    padding: 2px;
+}
+
+.input-container {
+    width: 100%;
+    background-color: var(--gray-yellow);
+    display: flex;
+    align-items: center;
+    padding: .6rem;
+    gap: 10px;
+    border-radius: 12px;
+
+}
+
+.input-container input {
+    all: unset;
+    flex: 1;
+}
+
+.input-container input::placeholder {
+  color: var(--black);
+}
+
+form button {
+    all: unset;
+    background-color: var(--yellow);
+    color: var(--black);
+    font-size: medium;
+    font-weight: bolder;
+
+    border: 2px solid var(--yellow);
+    padding: 1rem;
+    border-radius: 13px;
+
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .3s;
+}
+
+form button:hover {
+    background-color: var(--white);
+    color: var(--black);
+    border: 2px solid var(--yellow);
+    cursor: pointer;
+}
+
+#image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#image-container img {
+   width: 42.75rem; 
+   height: 37.5rem; 
+   bottom: -50px; 
+   left: 0; 
+   position: absolute;
+}
+
+#bg-div {
+    height: 80%;
+    width: 80%;
+    backdrop-filter: blur(15px) saturate(200%);
+    -webkit-backdrop-filter: blur(15px) saturate(200%);
+    background-color: rgba(248, 222, 129, 0.59);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+#login-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#register-link {
+    color: #000;
+}
+
+#register-link:hover {
+    color: var(--yellow);
+}
+
+@media (max-width: 1154px) {
+    html {
+        font-size: 14px ;
+    }
+}
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 12px ;
+    }
+}
+
+@media (max-width: 900px) {
+   main {
+    flex-direction: column;
+    }
+
+    #image-container {
+        display: none;
+    }
+}
