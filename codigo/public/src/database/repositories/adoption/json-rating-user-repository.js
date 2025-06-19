@@ -1,4 +1,4 @@
-import { RatingUserRepositoryMapper } from '../../mappers/json-rating-user-repository-mapper.js';
+import { JsonRatingUserRepositoryMapper } from '../../mappers/json-rating-user-repository-mapper.js';
 
 export class JsonRatingUserRepository {
     url = `${window.location.origin}/profile_rating`;
@@ -7,7 +7,7 @@ export class JsonRatingUserRepository {
 
     async create(ratingUser) {
         try {
-            const dbRatingUser = RatingUserRepositoryMapper.toJson(ratingUser);
+            const dbRatingUser = JsonRatingUserRepositoryMapper.toJson(ratingUser);
 
             await fetch(this.url, {
                 method: "POST",
@@ -29,7 +29,7 @@ export class JsonRatingUserRepository {
 
             return jsonFormat.length === 0
                 ? null
-                : { ratingUser: RatingUserRepositoryMapper.toDomain(jsonFormat[0]) };
+                : { ratingUser: JsonRatingUserRepositoryMapper.toDomain(jsonFormat[0]) };
         } catch (err) {
             console.error("Erro ao buscar avaliação por petId:", err);
         }
@@ -42,7 +42,7 @@ export class JsonRatingUserRepository {
             const jsonFormat = await response.json();
 
             return { ratingUser:jsonFormat.map((avaliacao) =>{
-            return RatingUserRepositoryMapper.toDomain(avaliacao);
+            return JsonRatingUserRepositoryMapper.toDomain(avaliacao);
         }) };
         } catch (err) {
             console.error("Erro ao buscar avaliação por donorId:", err);
@@ -57,7 +57,7 @@ export class JsonRatingUserRepository {
             const jsonFormat = await response.json();
 
             return { ratingUser: jsonFormat.map((avaliacao) => {
-                return RatingUserRepositoryMapper.toDomain(avaliacao);
+                return JsonRatingUserRepositoryMapper.toDomain(avaliacao);
             }) };
         } catch (err) {
             console.error("Erro ao buscar avaliação por ratedId:", err);
@@ -72,7 +72,7 @@ export class JsonRatingUserRepository {
 
             return Object.keys(jsonFormat).length === 0
                 ? { ratingUser: null }
-                : { ratingUser: RatingUserRepositoryMapper.toDomain(jsonFormat) };
+                : { ratingUser: JsonRatingUserRepositoryMapper.toDomain(jsonFormat) };
         } catch (err) {
             console.error("Erro ao buscar avaliação por ID:", err);
         }
@@ -91,7 +91,7 @@ export class JsonRatingUserRepository {
 
     async save(ratingUser) {
         try {
-            const dbRatingUser = RatingUserRepositoryMapper.toJson(ratingUser);
+            const dbRatingUser = JsonRatingUserRepositoryMapper.toJson(ratingUser);
             const newUrl = `${this.url}/${ratingUser.id}`;
 
             await fetch(newUrl, {

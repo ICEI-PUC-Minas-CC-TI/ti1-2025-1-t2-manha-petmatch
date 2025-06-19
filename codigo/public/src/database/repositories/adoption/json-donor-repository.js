@@ -38,15 +38,15 @@ export class JsonDonorRepository {
         }
     }
 
-    async findByCpf(cpf) {
+    async findByUserId(userId) {
         try{
-            const newUrl = `${this.url}?cpf=${cpf}`
+            const newUrl = `${this.url}?user_id=${userId}`
 
             const response = await fetch(newUrl);
 
             const jsonFormat = await response.json()
 
-            const donor = jsonFormat.length === 0 ? null : {donor: JsonDonorRepositoryMapper.toDomain(jsonFormat[0])}
+            const donor = jsonFormat.length === 0 ? {donor: null} : {donor: JsonDonorRepositoryMapper.toDomain(jsonFormat[0])}
 
             return donor
         } catch(err) {
@@ -54,18 +54,19 @@ export class JsonDonorRepository {
         }
     }
 
-    async findByEmail(email) {
-        try{
-            const newUrl = `${this.url}?email=${email}`
+    async save(donor) {
+        try {
+            const newUrl = `${this.url}/${donor.id}`;
+            const dbDonor = JsonDonorRepositoryMapper.toJson(donor);
 
-            const response = await fetch(newUrl);
-
-            const jsonFormat = await response.json()
-            
-            const donor = jsonFormat.length === 0 ? null : {donor: JsonDonorRepositoryMapper.toDomain(jsonFormat[0])}
-            
-            return donor
-        } catch(err) {
+            await fetch(newUrl, {
+                method: "PUT",
+                body: JSON.stringify(dbDonor),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+        } catch (err) {
             console.error(err);
         }
     }

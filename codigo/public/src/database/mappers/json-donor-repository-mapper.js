@@ -7,7 +7,7 @@ export class JsonDonorRepositoryMapper {
                 updatedAt: raw.updated_at,
                 donorType: raw.donor_type,
                 adoptionAmount: raw.adoption_amount,
-                donorId: raw.donor_id,
+                userId: raw.user_id,
         }, raw.id)
         
         return domainDonor
@@ -18,7 +18,7 @@ export class JsonDonorRepositoryMapper {
            created_at: donor.createdAt,
            updated_at: donor.updatedAt,
            id: donor.id,
-           donor_id: donor.donorId,
+           user_id: donor.userId,
            adoption_amount: donor.adoptionAmount,
         }
 

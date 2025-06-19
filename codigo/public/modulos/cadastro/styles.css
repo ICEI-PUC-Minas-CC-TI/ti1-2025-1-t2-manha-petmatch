@@ -150,6 +150,43 @@ form button:hover {
     color: var(--yellow);
 }
 
+#label-input-container { 
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+#label-input-container input { 
+    display: none;
+}
+
+#label-input-container label { 
+     all: unset;
+    background-color: var(--white);
+    color: var(--black);
+    font-size: medium;
+    font-weight: bolder;
+
+    border: 2px solid var(--yellow);
+    padding: 1rem;
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .3s;
+}
+
+#label-input-container input[type="radio"]:checked + label {
+  font-weight: bold;
+  background-color: var(--yellow);
+
+}
+
 @media (max-width: 1154px) {
     html {
         font-size: 14px ;
