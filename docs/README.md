@@ -118,22 +118,40 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-ID     | Descrição do Requisito                                     | Prioridade 
--------|-----------------------------------------------------------|------------
-RF-001 | Site precisa ter descrição e fotos dos pets                | ALTA       
-RF-002 | O site deve ter filtros para busca dos animais             | ALTA       
-RF-003 | Site deve permitir favoritar animais para fácil busca      | MÉDIA      
-RF-004 | Sistema de doações para auxílio dos adotantes (ração etc.) | MÉDIA      
-RF-005 | Site precisa ter integração com os maps                    | BAIXA
+| ID     | Descrição do Requisito                                                 | Prioridade |
+| ------ | ---------------------------------------------------------------------- | ---------- |
+| RF-001 | Site precisa ter descrição e fotos dos pets                            | ALTA       |
+| RF-002 | O site deve ter filtros para busca dos animais                         | ALTA       |
+| RF-003 | Site deve permitir favoritar animais para fácil busca                  | ALTA       |
+| RF-006 | Cadastro de pets para adoção                                           | ALTA       |
+| RF-008 | Página de explorar animais                                             | ALTA       |
+| RF-009 | Listagem de pets favoritados com botão para "ver pet" e "desfavoritar" | ALTA       |
+| RF-010 | Página de gerenciamento dos pets (visualizar, contatar, adotar, etc.)  | ALTA       |
+| RF-012 | Tela de gerenciamento e edição dos pets cadastrados                    | ALTA       |
+| RF-007 | Página de dicas de cuidado para cada tipo de animal                    | MÉDIA      |
+| RF-011 | Página de histórico do usuário (adoções, favoritos, ações, etc.)       | MÉDIA      |
+| RF-013 | API de mapa com localização dos pets                                   | MÉDIA      |
+| RF-014 | Wizard para recomendação de perfis de pets (quiz de compatibilidade)   | MÉDIA      |
+| RF-015 | Página de notícias sobre adoção                                        | MÉDIA      |
+| RF-016 | Página de eventos relacionados à adoção                                | MÉDIA      |
+| RF-017 | Sistema de avaliações e comentários sobre a experiência na plataforma  | MÉDIA      |
+| RF-018 | Funcionalidade de apadrinhamento de pets                               | MÉDIA      |
+| RF-004 | Sistema de doações para auxílio dos adotantes (ração etc.)             | BAIXA      |
+
+
 
 ### Requisitos não Funcionais
 
-ID      | Descrição do Requisito                                                               | Prioridade 
---------|--------------------------------------------------------------------------------------|------------
-RNF-001 | O site deve ser publicado em um ambiente acessível publicamente na Internet         | ALTA       
-RNF-002 | Desenvolvimento em CSS/HTML/JS                                                      | ALTA       
-RNF-003 | Sistema deve funcionar 24h por dia                                                  | ALTA      
-RNF-004 | O site deverá ser responsivo permitindo a visualização em celular de forma adequada | MÉDIA
+| ID      | Descrição do Requisito                                                                | Prioridade |
+| ------- | ------------------------------------------------------------------------------------- | ---------- |
+| RNF-001 | O site deve ser publicado em um ambiente acessível publicamente na Internet           | ALTA       |
+| RNF-002 | Desenvolvimento em CSS/HTML/JS                                                        | ALTA       |
+| RNF-003 | O sistema deve funcionar 24h por dia                                                  | ALTA       |
+| RNF-005 | A interface deve utilizar linguagem clara, acessível e inclusiva para o público geral | ALTA       |
+| RNF-007 | O sistema deve armazenar dados em formato estruturado e compatível com JSON Server    | ALTA       |
+| RNF-004 | O site deverá ser responsivo, permitindo a visualização em celular de forma adequada  | MÉDIA      |
+
+
 
 ## Projeto de Interface
 
@@ -176,31 +194,38 @@ User Flow do site
  * [Link do Figma](https://www.figma.com/file/A3Rsq52VzIq736pNw0g71G?node-id=0:1&locale=en&type=design)
 
 # Metodologia
+
+A equipe adotou uma metodologia ágil baseada no framework Scrum, estruturada em etapas que nos ajudaram a organizar o projeto com foco na experiência do usuário e na entrega contínua de valor.
+
 Etapas da metodologia:
  * Levantamento de requisitos - Identificamos as necessidades dos usuários por meio de entrevistas, análise de problemas reais enfrentados no processo de adoção e definição das personas.
 
  *  Product Discovery - Validamos hipóteses e entendemos o valor que o produto deveria entregar, buscando evitar retrabalho e garantir foco no usuário da aplicação.
 
- * Planejamento - Definimos as funcionalidades do produto e tecnologias a serem utilizadas (Figma, Miro, entre outras).
+ * Planejamento - Definimos as funcionalidades do sistema, as tecnologias envolvidas e a distribuição de tarefas, utilizando ferramentas como o [Figma](https://www.figma.com/design/A3Rsq52VzIq736pNw0g71G/Pet-Match?node-id=0-1&p=f), [Miro](https://miro.com/app/board/uXjVIT5kwgQ=/) e o [Trello](https://trello.com/b/prnh2BZR/petmatch-kanban).
 
- * Design de interface - Criamos o protótipo da aplicação utilizando o Figma, pensando na usabilidade e na acessibilidade.
+ * Design de interface - Desenvolvemos os protótipos de alta fidelidade no Figma, priorizando usabilidade, acessibilidade e identidade visual coerente com o público-alvo.
+   
+ * Validação - Os protótipos foram apresentados a professores e usuários-alvo, e os feedbacks foram incorporados antes do início da codificação, com ajustes em cores, logotipo e estrutura da interface.
 
- * Validação - Apresentamos o protótipo para os professores e usuários alvos, afim de coletar feedback e realizar ajustes antes do desenvolvimento, como cor, logo da marca e interface.
+### Acompanhamento das tarefas
 
-A metodologia utilizada ajudou a conduzir o projeto de forma clara e organizada. As etapas de levantamento de requisitos,  product discovery, planejamento, design e validação permitiram entender melhor as necessidades dos usuários e ajustar a solução antes do desenvolvimento, evitando retrabalho e garantindo mais eficiência no processo.
+Para o controle e acompanhamento das entregas, utilizamos o [quadro Kanban no Trello](https://trello.com/b/prnh2BZR/petmatch-kanban) e um grupo no Discord, ambos mantidos atualizados ao longo do projeto. As tarefas foram distribuídas entre os membros do grupo, seguindo o planejamento das sprints e permitindo o monitoramento contínuo do progresso.
 
-Product Owner: Maria Fernanda Oliveira Maro
+### Papéis na equipe Scrum
 
-Scrum Master: Bruno Mesquita Bicalho
+- Product Owner: Maria Fernanda Oliveira Maro
 
-Time de Desenvolvimento: 
-Artur Telles Martins da Costa
-Bernardo Mendes Rocha​
-Bruno Mesquita Bicalho
-Maria Fernanda Oliveira Maro​
-Maria Luiza Gomes Beliene Vira
-Pedro Italo Borges Cardoso​
-Sofia de Abreu Botelho Romualdo​
+- Scrum Master: Bruno Mesquita Bicalho
+
+- Time de Desenvolvimento: 
+ - Artur Telles Martins da Costa
+ - Bernardo Mendes Rocha​
+ - Bruno Mesquita Bicalho
+ - Maria Fernanda Oliveira Maro​
+ - Maria Luiza Gomes Beliene Vira
+ - Pedro Italo Borges Cardoso​
+ - Sofia de Abreu Botelho Romualdo​
 
 # Solução Implementada
 Esta seção apresenta todos os detalhes da solução criada no projeto.
@@ -212,7 +237,7 @@ O vídeo a seguir traz uma apresentação do problema que a equipe está tratand
 
 ⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
 
-O video de apresentação é voltado para que o público externo possa conhecer a solução. O formato é livre, sendo importante que seja apresentado o problema e a solução numa linguagem descomplicada e direta.
+O video de apresentação é voltado para que o público externo possa conhecer a solução. O formato é livre, sendo importante que seja apresentado o problema e a solução numa linguagem complicada e direta.
 
 Inclua um link para o vídeo do projeto.
 
