@@ -10,9 +10,9 @@ Informações básicas do projeto.
   * [Bernardo Mendes Rocha​](https://github.com/bmrocha00)
   * [Bruno Mesquita Bicalho​](https://github.com/BrunoBicalho13)
   * [Maria Fernanda Oliveira Maro](https://github.com/mafemaro)
-  * [Maria Luiza Gomes Beliene Vira​](https://github.com/cicrano)
-  * [Pedro Italo Borges Cardoso​](https://github.com/cicrano)
-  * [Sofia de Abreu Botelho Romualdo​](https://github.com/cicrano)
+  * [Maria Luiza Gomes Beliene Vira​](https://github.com/marialuizabeliene)
+  * [Pedro Italo Borges Cardoso​](https://github.com/Pedro-Italo-BC)
+  * [Sofia de Abreu Botelho Romualdo​](https://github.com/sofiamasha)
 
 A documentação do projeto é estruturada da seguinte forma:
 
