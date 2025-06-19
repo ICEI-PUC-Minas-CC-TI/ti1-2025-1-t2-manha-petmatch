@@ -340,6 +340,11 @@
       "updated_at": "2025-06-17T14:44:11.208Z"
     }
   ],
+
+  "session": [
+
+  ],
+
   "user": [
     {
       "id": "userTestId",
@@ -359,7 +364,7 @@
     {
       "id": "donorTestId",
       "donor_type": "enterprise / user",
-      "donor_id": "someId",
+      "user_id": "someId",
       "adoption_amount": 0,
       "created_at": "someDate",
       "updated_at": "someDate"
