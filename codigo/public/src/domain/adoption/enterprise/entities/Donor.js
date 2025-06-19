@@ -1,22 +1,18 @@
 import { Entity } from "../../../../../core/entities/entity.js";
 
 export class Donor extends Entity {
-
-    get registeredAt() {
-        return this.props.createdAt;
-    }
-
     get adoptionAmount() {
         return this.props.adoptionAmount;
     }
 
-    get donorId() {
-        return this.props.donorId;
-    }
-
+    
     set adoptionAmount(value) {
         this.props.adoptionAmount = value;
         this.touch();
+    }
+    
+    get userId() {
+        return this.props.userId;
     }
 
     get donorType() {

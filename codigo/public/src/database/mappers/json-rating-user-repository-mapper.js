@@ -1,6 +1,6 @@
 import { RatingUser } from "../../domain/adoption/enterprise/entities/RatingUser.js";
 
-export class RatingUserRepositoryMapper {
+export class JsonRatingUserRepositoryMapper {
     static toDomain(raw) {
         return RatingUser.create({
             appraiserId: raw.appraiserID, // Ajustado para 'appraiserID' conforme db.json

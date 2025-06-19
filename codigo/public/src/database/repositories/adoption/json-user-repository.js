@@ -46,7 +46,7 @@ export class JsonUserRepository {
 
             const jsonFormat = await response.json()
 
-            const user = jsonFormat.length === 0 ? null : {user: JsonUserRepositoryMapper.toDomain(jsonFormat[0])}
+            const user = jsonFormat.length === 0 ?  {user: null} : {user: JsonUserRepositoryMapper.toDomain(jsonFormat[0])}
 
             return user
         } catch(err) {
@@ -62,7 +62,7 @@ export class JsonUserRepository {
 
             const jsonFormat = await response.json()
             
-            const user = jsonFormat.length === 0 ? null : {user: JsonUserRepositoryMapper.toDomain(jsonFormat[0])}
+            const user = jsonFormat.length === 0 ? {user: null} : {user: JsonUserRepositoryMapper.toDomain(jsonFormat[0])}
             
             return user
         } catch(err) {

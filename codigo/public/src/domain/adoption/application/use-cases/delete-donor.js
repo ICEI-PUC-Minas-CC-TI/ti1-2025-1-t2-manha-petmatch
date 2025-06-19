@@ -1,36 +1,38 @@
 import { left, right } from '../../../../../core/Either.js';
 import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 import { ResourceNotFoundError } from '../../../../../core/errors/resource-not-found-error.js';
+import { NotAllowedError } from '../../../../../core/errors/not-allowed-error.js';
+
 
 /*
     INPUT {
         NOT OPTIONAL
-        userId: "uuid"
+        donorId: "uuid"
     }
 */
 
-export class DeleteUserUseCase {
-    userRepository;3
-    constructor(userRepository) {
-        this.userRepository = userRepository;
+export class DeleteDonorUseCase {
+    donorRepository;
+    constructor(donorRepository) {
+        this.donorRepository = donorRepository;
     }
 
     async execute({
-       userId
+       donorId
     }) {
 
-        if(!userId) {
+        if(!donorId) {
             return left(new RequestMissingDataError())
         }
 
-        const {user} = await this.userRepository.findById(userId);
+        const {donor} = await this.donorRepository.findById(donorId);
 
-        if(!user) {
+        if(!donor) {
             return left(new ResourceNotFoundError());
         }
 
-        await this.userRepository.delete(user);
+        await this.donorRepository.delete(donor);
 
-        return right("User Deleted");
+        return right("Donor Deleted");
     }
 }
