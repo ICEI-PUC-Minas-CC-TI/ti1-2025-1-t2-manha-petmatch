@@ -295,3 +295,9 @@ CNN BRASIL. 80% dos pets nos lares brasileiros foram adotados, indica pesquisa. 
 EXAME. Maior programa de adoção de pets do Brasil ajudou cães a encontrar um lar. Disponível em: https://exame.com/negocios/maior-programa-de-adocao-de-pets-do-brasil-ajudou-caes-a-encontrar-um-lar/. Acesso em: 20 mar. 2025.
 
 GALILEU. Número de pets nos lares brasileiros cresce 30% durante pandemia. 18 ago. 2021. Disponível em: https://revistagalileu.globo.com/Sociedade/Comportamento/noticia/2021/08/numero-de-pets-nos-lares-brasileiros-cresce-30-durante-pandemia.html. Acesso em: 19 mar. 2025.
+
+INSTITUTO PET BRASIL. Quase 185 mil animais estão sob cuidados de ONGs no Brasil. 2023. Disponível em: https://www.institutopetbrasil.com/noticias/ong-abrigam-quase-185-mil-animais/. Acesso em: 15 maio 2025.
+
+G1. OMS estima que existam mais de 30 milhões de animais abandonados no Brasil. Disponível em: https://g1.globo.com/bemestar/noticia/2019/08/08/oms-estima-30-milhoes-de-animais-abandonados-no-brasil.ghtml. Acesso em: 15 maio 2025.
+
+WORLD ANIMAL PROTECTION. Censo Pet Brasil 2024: mais de 50% dos pets em lares brasileiros são resgatados. Disponível em: https://www.worldanimalprotection.org.br/noticias/censo-pet-brasil-2024/. Acesso em: 15 maio 2025.
