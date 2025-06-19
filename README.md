@@ -2,7 +2,8 @@
 # Nome do projeto
 PetMatch
 
-Nosso aplicativo foi criado para tornar mais fácil e humano o processo de adoção de animais resgatados, tanto para quem quer adotar quanto para ONGs ou pessoas que disponibilizam os pets para adoção. A plataforma oferece recursos como dicas de cuidados, filtros de busca, fotos, e descrições detalhadas sobre a saúde e a personalidade de cada animal. Além disso, conta com um chat direto entre o adotante e quem está oferecendo o animal, e fóruns de discussão onde adotantes podem trocar experiências, dúvidas e conselhos.
+O PetMatch é uma plataforma web que simplifica e amplia o acesso à adoção de animais resgatados. Voltada a adotantes, ONGs e protetores, ela oferece filtros de busca, perfis detalhados dos pets, dicas de cuidados, visualização em mapa e um quiz de compatibilidade que indica quais características do animal mais se adequam ao estilo de vida do usuário, contribuindo para uma adoção mais consciente e segura.
+
 ## Alunos integrantes da equipe
 
 * Artur Telles Martins da Costa
