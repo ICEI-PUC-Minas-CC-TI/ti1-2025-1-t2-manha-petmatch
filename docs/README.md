@@ -30,26 +30,42 @@ Detalhes sobre o espaço de problema, os objetivos do projeto, sua justificativa
 
 ## Problema
 
-No Brasil atualmente, a demanda por animais de estimação tem aumentado cada vez mais. No entanto, o processo de adoção ainda é caracterizado por etapas burocráticas e demoradas, o que acaba desestimulando grande parte da população interessada. Enquanto isso, milhares de animais permanecem sem a oportunidade de serem acolhidos.
+No Brasil, estima-se que existam mais de 30 milhões de animais abandonados, entre cães e gatos, segundo dados da Organização Mundial da Saúde (OMS). Apesar do aumento do interesse da população pela adoção, o processo ainda é burocrático, com etapas extensas e falta de padronização entre instituições. Esses obstáculos dificultam a adoção responsável, especialmente para pessoas que possuem menos tempo ou conhecimento sobre como adotar de forma segura e legal. 
+
+Além disso, muitas ONGs relatam dificuldades em divulgar os animais resgatados e em manter uma comunicação eficaz com possíveis adotantes, agravando a situação de milhares de animais que permanecem sem lar.
 
 ## Objetivos
 
-O PetMatch foi criado para tornar mais fácil e humano o processo de adoção de animais resgatados,  tanto para quem quer adotar quanto para ONGs ou pessoas que disponibilizam os pets para adoção. A plataforma oferece recursos como dicas de cuidados, filtros de busca, fotos, e descrições detalhadas sobre a saúde e a personalidade de cada animal. Além disso, conta com um chat direto entre o adotante e quem está oferecendo o animal, e fóruns de discussão onde adotantes podem trocar experiências, dúvidas e conselhos.
+O PetMatch foi desenvolvido com o objetivo geral de facilitar, humanizar e tornar mais eficiente o processo de adoção de animais no Brasil. A plataforma conecta adotantes com ONGs e tutores de forma simples, intuitiva e acessível.
+
+Objetivos específicos:
+
+1. Reduzir a burocracia do processo de adoção, oferecendo uma experiência digital intuitiva e segura.
+2. Fornecer informações completas sobre cada animal (saúde, comportamento e histórico), para auxiliar em uma decisão consciente.
+3. Promover a educação sobre adoção responsável por meio de conteúdos informativos e dicas de cuidados com os animais.
+4. Auxiliar ONGs na triagem de adotantes, por meio de um quiz interativo implementado, que analisa o perfil e estilo de vida do usuário, sugerindo o tipo de animal mais adequado ao seu contexto.
+5. Planejar a futura implementação de recursos de comunicação direta, como chats e fóruns.
 
 
 ## Justificativa
 
-A motivação para desenvolver o PetMatch está ligada à necessidade de facilitar o processo de adoção de animais abandonados ou vítimas de maus-tratos. Diante das dificuldades enfrentadas por ONGs e pessoas que resgatam animais para assegurar um lar seguro e acolhedor, o site visa ser uma ponte que conecte adotantes e responsáveis, disponibilizando informações claras e acessíveis para ambos os lados do processo.
+Segundo o Instituto Pet Brasil (IPB), mais de 170 mil animais foram resgatados em apenas 2023 por ONGs e abrigos no país, com uma taxa de adoção abaixo da capacidade de acolhimento. Muitas dessas instituições enfrentam limitações estruturais e tecnológicas, o que dificulta a divulgação dos animais e a gestão dos adotantes.
 
-Recursos como filtros de busca e descrições detalhadas dos animais têm como objetivo tornar a compatibilidade entre adotante e pet mais assertiva, aumentando as chances de uma adoção bem-sucedida. Outras funcionalidades importantes são o chat entre adotante e ONG, além dos fóruns de adotantes, que buscam fortalecer a conexão da comunidade e promover o engajamento entre os usuários.
+Diante desse cenário, o PetMatch surge como uma solução prática e empática para a adoção de pets, conectando adotantes e responsáveis por meio de uma plataforma digital eficiente. A proposta é reduzir o tempo de adoção, aumentar a taxa de sucesso nas compatibilizações e oferecer suporte informativo para ambos os lados. 
+
+Com recursos como filtros de busca, descrições detalhadas, e um quiz de compatibilidade disponível na plataforma, o PetMatch busca criar uma rede colaborativa que incentive a adoção consciente e proporcione melhor qualidade de vida aos animais resgatados. O sistema também prevê a implementação de funcionalidades futuras, como chats e fóruns comunitários.
+
+Essa abordagem se baseia em dados de pesquisas de instituições como OMS, IPB e diversas ONGs nacionais que evidenciam a necessidade de inovação nos canais de adoção no Brasil.
 
 ## Público-Alvo
 
-O PetMatch é voltado para pessoas interessadas em adotar animais de estimação, abrangendo desde adotantes iniciantes até os mais experientes. A plataforma foi pensada para ser acessível a usuários com diferentes níveis de familiaridade com tecnologia e com o processo de adoção.
+O PetMatch é voltado para diferentes perfis de usuários que participam do processo de adoção de animais de estimação, considerando níveis variados de experiência, necessidades e envolvimento com a causa animal. 
 
-Para os adotantes iniciantes, a aplicação oferece filtros intuitivos, descrições detalhadas dos animais e uma área com dicas e fóruns, contribuindo para uma escolha mais consciente e auxiliando nos primeiros meses de adaptação. Já para os adotantes experientes, a plataforma torna o processo mais ágil e direto, permitindo o contato facilitado com ONGs ou tutores por meio de chats.
+Entre os principais públicos estão os adotantes em potencial, que podem ser pessoas que nunca adotaram um animal antes ou aquelas com experiências prévias. Os adotantes iniciantes, em geral, buscam informações claras e apoio durante todo o processo. Esse grupo costuma valorizar recursos como dicas de cuidados, descrições detalhadas dos animais e fóruns de discussão com outras pessoas que passaram por experiências semelhantes. A plataforma é projetada para ser acessível, mesmo para quem tem pouca familiaridade com ferramentas digitais ou com o tema da adoção. 
 
-As ONGs e pessoas que desejam disponibilizar animais para adoção também fazem parte do público da plataforma. Para elas, o PetMatch oferece ferramentas que ajudam a identificar o perfil do adotante, incluindo seu estilo de vida e preferências, aumentando a segurança de que o animal será encaminhado para um lar responsável e acolhedor.
+Já os adotantes mais experientes demonstram maior domínio  dos desafios e responsabilidades da guarda responsável e costumam buscar eficiência e praticidade no processo. Para esse perfil, o PetMatch oferece funcionalidades que agilizam a busca e o contato com os responsáveis pelos animais, promovendo adoções mais rápidas e bem direcionadas.
+
+Além dos adotantes, o público-alvo da plataforma inclui ONGs, protetores independentes e tutores temporários, que atuam no resgate e na oferta de animais para adoção. Essas instituições frequentemente enfrentam desafios como a escassez de recursos e dificuldades em encontrar adotantes comprometidos. Para contribuir nesse processo, o PetMatch oferece recursos como um quiz direcionado aos adotantes, que ajuda a identificar seu estilo de vida, preferências e ambiente domiciliar. Essas informações auxiliam as ONGs na análise de compatibilidade entre o perfil do adotante e as necessidades dos animais, visto que o adotante passa a ter uma base mais clara sobre qual tipo de animal melhor se adequa à sua rotina, promovendo, assim, adoções mais seguras e responsáveis.
 
 # Product Discovery
 
@@ -111,17 +127,6 @@ RF-004 | Sistema de doações para auxílio dos adotantes (ração etc.) | MÉDI
 RF-005 | Site precisa ter integração com os maps                    | BAIXA
 
 ### Requisitos não Funcionais
-## Requisitos Funcionais
-
-ID     | Descrição do Requisito                                     | Prioridade 
--------|------------------------------------------------------------|------------
-RF-001 | Site precisa ter descrição e fotos dos pets                | ALTA       
-RF-002 | O site deve ter filtros para busca dos animais             | ALTA       
-RF-003 | Site deve permitir favoritar animais para fácil busca      | MÉDIA      
-RF-004 | Sistema de doações para auxílio dos adotantes (ração etc.) | MÉDIA      
-RF-005 | Site precisa ter integração com os maps                    | BAIXA      
-
-## Requisitos Não Funcionais
 
 ID      | Descrição do Requisito                                                               | Prioridade 
 --------|--------------------------------------------------------------------------------------|------------
