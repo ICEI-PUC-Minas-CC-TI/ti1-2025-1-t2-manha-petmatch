@@ -2,8 +2,20 @@ import { PetInterface } from '../../db-interface/pet-interface.js';
 
 const gerenciamentopets = new PetInterface();
 
+const animalTypes = {
+  'ea5dc213-d45d-4a9c-b2cd-612c2de42564': 'Cachorro',
+  'faccdc3f-00ea-4f6e-9b60-ebd09afb8891': 'Gato',
+  '22f23a90-b097-4056-81a7-373f7af5f8a2': 'Hamster',
+  '23485b50-a18d-4a3a-a9f0-6e1002cb0eff': 'Coelho',
+  'd70ddae5-7cdc-46c9-b03d-62120d5e9215': 'Peixe',
+  '7422243c-8a72-4998-9bd2-a480652acbbd': 'Pássaro'
+};
+
+function getAnimalTypeName(animalTypeId) {
+  return animalTypes[animalTypeId] || 'Animal';
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
-  // A url q deve ficar no meu parametro
   const params = new URLSearchParams(window.location.search);
   if (!params.has('petId')) {
     params.set('petId', '52cbc36c-bd71-420e-a1f9-f284c9cc9673');
@@ -11,9 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     history.replaceState(null, '', newUrl);
   }
 
-  const contactButton = document.getElementById('contactButton');
-  const adoptButton = document.getElementById('adoptButton');
-  const favoriteIcon = document.getElementById('favoriteIcon');
+  const currentPetId = params.get('petId');
 
   const petNameElement = document.getElementById('petName');
   const petDescriptionElement = document.getElementById('petDescription');
@@ -23,148 +33,159 @@ document.addEventListener('DOMContentLoaded', async () => {
   const petAgeElement = document.getElementById('petAge');
   const petVaccinatedElement = document.getElementById('petVaccinated');
   const petImageElement = document.getElementById('petImage');
+  const contactButton = document.getElementById('contactButton');
+  const adoptButton = document.getElementById('adoptButton');
 
-  const searchInput = document.getElementById('searchInput');
-  const searchButton = document.getElementById('searchButton');
-  const petListContainer = document.getElementById('petListContainer');
+  if (petImageElement) {
+    petImageElement.style.display = 'none';
+  }
 
-  const currentPetId = params.get('petId');
-  const currentUserId = 'current-user-id-abc'; // eu fui arrumar pra por sua url mas agr nem aparece mais a opcao
+  function calculateAge(bornAt) {
+    if (!bornAt) return 'Não informado';
+    
+    const birthDate = new Date(bornAt);
+    const today = new Date();
+    
+    if (isNaN(birthDate.getTime())) {
+      return 'Data inválida';
+    }
+    
+    const ageInMonths = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24 * 30.44));
+    const years = Math.floor(ageInMonths / 12);
+    const months = ageInMonths % 12;
+    
+    if (years > 0) {
+      return `${years} ano(s) e ${months} mês(es)`;
+    } else if (months > 0) {
+      return `${months} mês(es)`;
+    } else if (ageInMonths >= 0) {
+      return 'Filhote (menos de 1 mês)';
+    } else {
+      return 'Data de nascimento inválida';
+    }
+  }
 
-  let loadedPetName = 'este PET';
+  function formatBreed(breed) {
+    if (Array.isArray(breed) && breed.length > 0) {
+      return breed.join(', ');
+    } else if (typeof breed === 'string' && breed.trim()) {
+      return breed;
+    }
+    return 'Não informado';
+  }
+
+  function updateElement(element, value) {
+    if (element) {
+      element.textContent = value || 'Não informado';
+    }
+  }
+
+  function loadPetImage(imgUrls, petName) {
+    if (!petImageElement) return;
+
+    if (imgUrls && Array.isArray(imgUrls) && imgUrls.length > 0 && imgUrls[0]) {
+      const testImg = new Image();
+      
+      testImg.onload = function() {
+        petImageElement.src = imgUrls[0];
+        petImageElement.alt = `Foto de ${petName}`;
+        petImageElement.style.display = 'block';
+      };
+      
+      testImg.onerror = function() {
+        petImageElement.style.display = 'none';
+      };
+      
+      testImg.src = imgUrls[0];
+    } else {
+      petImageElement.style.display = 'none';
+    }
+  }
 
   if (currentPetId) {
+    try {
+      const result = await gerenciamentopets.getPetById({ id: currentPetId });
 
-    const result = await gerenciamentopets.getPetById(currentPetId);
+      if (result && result.pet) {
+        const pet = result.pet;
 
-    if (result.success && result.pet) {
-      const pet = result.pet;
-      loadedPetName = pet.name || loadedPetName;
+        updateElement(petNameElement, pet.pet?.props?.name);
+        updateElement(petDescriptionElement, pet.pet?.props?.description);
+        
+        if (petSpeciesElement) {
+          const animalTypeId = pet.pet?.props?.animalTypeId;
+          petSpeciesElement.textContent = getAnimalTypeName(animalTypeId);
+        }
 
-      if (petNameElement) petNameElement.textContent = pet.name || 'Nome indisponível';
-      if (petDescriptionElement) petDescriptionElement.textContent = pet.description || 'Descrição indisponível';
-      if (petSpeciesElement) petSpeciesElement.textContent = pet.species || '-';
-      if (petBreedElement) petBreedElement.textContent = pet.breed || '-';
-      if (petGenderElement) petGenderElement.textContent = pet.gender || '-';
-      if (petAgeElement) petAgeElement.textContent = pet.age || '-';
-      if (petVaccinatedElement) petVaccinatedElement.textContent = pet.vaccinated ? 'Sim' : 'Não';
+        if (petBreedElement) {
+          const breed = pet.pet?.props?.breed;
+          petBreedElement.textContent = formatBreed(breed);
+        }
 
-      if (petImageElement && pet.imageUrl) petImageElement.src = pet.imageUrl;
-    } else {
-      console.error('Erro ao carregar detalhes do PET:', result.error);
-      alert('Não foi possível carregar os detalhes do PET. Tente novamente mais tarde.');
+        updateElement(petGenderElement, pet.pet?.props?.animalSex);
+
+        if (petAgeElement) {
+          const bornAt = pet.pet?.props?.bornAt;
+          petAgeElement.textContent = calculateAge(bornAt);
+        }
+
+        if (petVaccinatedElement) {
+          const vaccinated = pet.pet?.props?.vaccinated;
+          petVaccinatedElement.textContent = vaccinated === true ? 'Sim' : 
+                                           vaccinated === false ? 'Não' : 'Não informado';
+        }
+
+        const imgUrls = pet.pet?.props?.imgUrls;
+        const petName = pet.pet?.props?.name || 'pet';
+        loadPetImage(imgUrls, petName);
+
+      } else {
+        if (result && result.message) {
+          alert(`Erro: ${result.message}`);
+        } else {
+          alert('Pet não encontrado. Verifique se o ID está correto.');
+        }
+        
+        const elements = [petNameElement, petDescriptionElement, petSpeciesElement, 
+                         petBreedElement, petGenderElement, petAgeElement, petVaccinatedElement];
+        elements.forEach(el => updateElement(el, 'Pet não encontrado'));
+        
+        if (petImageElement) {
+          petImageElement.style.display = 'none';
+        }
+      }
+      
+    } catch (error) {
+      console.error('Erro ao carregar o pet:', error);
+      alert('Erro ao carregar as informações do pet. Verifique a conexão e tente novamente.');
+      
+      const elements = [petNameElement, petDescriptionElement, petSpeciesElement, 
+                       petBreedElement, petGenderElement, petAgeElement, petVaccinatedElement];
+      elements.forEach(el => updateElement(el, 'Erro ao carregar'));
+      
+      if (petImageElement) {
+        petImageElement.style.display = 'none';
+      }
     }
   } else {
-    console.warn('ID do PET não encontrado na URL.');
+    alert('ID do pet não encontrado na URL.');
   }
 
   if (contactButton) {
-    contactButton.addEventListener('click', async () => {
-      if (!currentPetId) {
-        alert('Não foi possível contatar. ID do PET não disponível.');
-        return;
-      }
-      const result = await gerenciamentopets.getDonorContactInfo(currentPetId);
-      if (result.success && result.donor) {
-        const donor = result.donor;
-        alert(`Informações de contato de ${donor.name}:\nTelefone: ${donor.phone || 'Não informado'}\nEmail: ${
-          donor.email || 'Não informado'
-        }`);
-      } else {
-        alert(`Não foi possível obter informações de contato do doador para ${loadedPetName}.`);
-        console.error('Erro ao obter informações do doador:', result.error);
+    contactButton.addEventListener('click', () => {
+      const confirmed = confirm('Deseja entrar em contato com o responsável pelo pet?');
+      if (confirmed) {
+        window.location.href = '../perfil/perfil.html';
       }
     });
   }
 
   if (adoptButton) {
-    adoptButton.addEventListener('click', (event) => {
-      if (event.target === favoriteIcon || favoriteIcon.contains(event.target)) {
-        return;
-      }
-      alert(`Você demonstrou interesse em adotar o ${loadedPetName}! Um formulário de adoção ou próximos passos seriam exibidos aqui.`);
-    });
-  }
-
-  if (favoriteIcon) {
-    favoriteIcon.addEventListener('click', async (event) => {
-      event.stopPropagation();
-
-      if (!currentUserId || !currentPetId) {
-        alert('Para favoritar, você precisa estar logado e ter um PET selecionado.');
-        console.error('ID do usuário ou do PET ausente para a ação de favoritar.');
-        return;
-      }
-
-      const isCurrentlyFavorited = favoriteIcon.classList.contains('favorited');
-      let result;
-
-      if (isCurrentlyFavorited) {
-        result = await gerenciamentopets.unfavoritePet(currentUserId, currentPetId);
-        if (result.success) {
-          favoriteIcon.classList.remove('favorited');
-        } else {
-          alert(`Erro ao remover ${loadedPetName} dos favoritos: ${result.error}`);
-          console.error('Erro ao desfavoritar:', result.error);
-        }
-      } else {
-        result = await gerenciamentopets.favoritePet(currentUserId, currentPetId);
-        if (result.success) {
-          favoriteIcon.classList.add('favorited');
-        } else {
-          alert(`Erro ao adicionar ${loadedPetName} aos favoritos: ${result.error}`);
-          console.error('Erro ao favoritar:', result.error);
-        }
-      }
-    });
-  }
-
-  if (searchButton && searchInput && petListContainer) {
-    searchButton.addEventListener('click', async () => {
-      const searchTerm = searchInput.value.trim();
-      const petsResult = await gerenciamentopets.fetchPets(searchTerm);
-
-      petListContainer.innerHTML = ''; // limpa
-
-      if (petsResult.success && Array.isArray(petsResult.pets) && petsResult.pets.length > 0) {
-        petsResult.pets.forEach((pet) => {
-          const petCard = createPetCard(pet);
-          petListContainer.appendChild(petCard);
-        });
-      } else {
-        petListContainer.innerHTML = '<p>Nenhum pet encontrado para a pesquisa.</p>';
+    adoptButton.addEventListener('click', () => {
+      const confirmed = confirm('Confirma o interesse em adotar este pet?');
+      if (confirmed) {
+        alert('Interesse registrado! O responsável pelo pet irá analisar seu perfil e entrar em contato.');
       }
     });
   }
 });
-
-function createPetCard(pet) {
-  const card = document.createElement('article');
-  card.classList.add('pet-card');
-
-  const img = document.createElement('img');
-  img.src = pet.imageUrl || 'https://via.placeholder.com/150';
-  img.alt = pet.name ? `Foto do pet ${pet.name}` : 'Foto do pet';
-
-  const name = document.createElement('h3');
-  name.textContent = pet.name || 'Pet sem nome';
-
-  const species = document.createElement('p');
-  species.textContent = pet.species || 'Espécie desconhecida';
-
-  const breed = document.createElement('p');
-  breed.textContent = pet.breed || 'Raça desconhecida';
-
-  const detailsButton = document.createElement('a');
-  detailsButton.textContent = 'Ver Detalhes';
-  detailsButton.classList.add('details-button');
-  detailsButton.href = `detalhes.html?petId=${encodeURIComponent(pet.id)}`;
-
-  card.appendChild(img);
-  card.appendChild(name);
-  card.appendChild(species);
-  card.appendChild(breed);
-  card.appendChild(detailsButton);
-
-  return card;
-}
