@@ -95,11 +95,18 @@ Nesse momento, vamos transformar os insights e validações obtidos em soluçõe
 
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
-| EU COMO...                                    | QUERO/PRECISO ...                                            | PARA ...                                                   |
-| --------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| Ana Paula                                     | Uma descrição e foto do pet                                   | Encontrar um pet pra vida                                                |
-| Ricardo                                       | Método seguro e confiável para garantir um dono responsável   | Garantir que os pets resgatados encontrem lares responsáveis             |
-| Joana                                         | Apoio/dicas de como fazer a adaptação do pet pós adoção       | Facilitar a criação responsável do pet como um membro da família         |
+| EU COMO...            | QUERO/PRECISO ...                                              | PARA ...                                                         |
+| --------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Ana Paula             | Uma descrição e foto do pet                                    | Encontrar um pet pra vida                                        |
+| Ricardo               | Um método seguro e confiável para garantir um dono responsável | Garantir que os pets resgatados encontrem lares responsáveis     |
+| Joana                 | Apoio/dicas de como fazer a adaptação do pet pós-adoção        | Facilitar a criação responsável do pet como um membro da família |
+| Visitante do site     | Explorar os animais disponíveis para adoção                    | Encontrar um pet que combine com meu estilo de vida              |
+| Adotante interessado  | Ver detalhes sobre saúde, comportamento e histórico do animal  | Fazer uma escolha consciente e segura                            |
+| Novo usuário          | Responder um quiz com base no meu estilo de vida               | Receber sugestões de animais compatíveis comigo                  |
+| Adotante frequente    | Favoritar animais                                              | Poder voltar e escolher com calma aquele que me interessar mais  |
+| Representante de ONG  | Cadastrar novos animais com fotos e descrição                  | Aumentar as chances de adoção e agilizar o processo              |
+| Usuário da plataforma | Visualizar onde o animal está localizado no mapa               | Avaliar se consigo ir até o local para buscar o pet pessoalmente |
+
 
 ## Proposta de Valor
 
