@@ -253,13 +253,13 @@ Para o controle e acompanhamento das entregas, utilizamos o [quadro Kanban no Tr
 - Scrum Master: Bruno Mesquita Bicalho
 
 - Time de Desenvolvimento: 
- - Artur Telles Martins da Costa
- - Bernardo Mendes Rocha​
- - Bruno Mesquita Bicalho
- - Maria Fernanda Oliveira Maro​
- - Maria Luiza Gomes Beliene Vira
- - Pedro Italo Borges Cardoso​
- - Sofia de Abreu Botelho Romualdo​
+  Artur Telles Martins da Costa
+  Bernardo Mendes Rocha​
+  Bruno Mesquita Bicalho
+  Maria Fernanda Oliveira Maro​
+  Maria Luiza Gomes Beliene Vira
+  Pedro Italo Borges Cardoso​
+  Sofia de Abreu Botelho Romualdo​
 
 # Solução Implementada
 Esta seção apresenta todos os detalhes da solução criada no projeto.
