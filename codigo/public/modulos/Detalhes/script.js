@@ -16,6 +16,7 @@ function getAnimalTypeName(animalTypeId) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  let pet = null;
   const params = new URLSearchParams(window.location.search);
   if (!params.has('petId')) {
     params.set('petId', '52cbc36c-bd71-420e-a1f9-f284c9cc9673');
@@ -42,42 +43,30 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   function calculateAge(bornAt) {
     if (!bornAt) return 'Não informado';
-    
+
     const birthDate = new Date(bornAt);
     const today = new Date();
-    
-    if (isNaN(birthDate.getTime())) {
-      return 'Data inválida';
-    }
-    
+
+    if (isNaN(birthDate.getTime())) return 'Data inválida';
+
     const ageInMonths = Math.floor((today - birthDate) / (1000 * 60 * 60 * 24 * 30.44));
     const years = Math.floor(ageInMonths / 12);
     const months = ageInMonths % 12;
-    
-    if (years > 0) {
-      return `${years} ano(s) e ${months} mês(es)`;
-    } else if (months > 0) {
-      return `${months} mês(es)`;
-    } else if (ageInMonths >= 0) {
-      return 'Filhote (menos de 1 mês)';
-    } else {
-      return 'Data de nascimento inválida';
-    }
+
+    if (years > 0) return `${years} ano(s) e ${months} mês(es)`;
+    if (months > 0) return `${months} mês(es)`;
+    if (ageInMonths >= 0) return 'Filhote (menos de 1 mês)';
+    return 'Data de nascimento inválida';
   }
 
   function formatBreed(breed) {
-    if (Array.isArray(breed) && breed.length > 0) {
-      return breed.join(', ');
-    } else if (typeof breed === 'string' && breed.trim()) {
-      return breed;
-    }
+    if (Array.isArray(breed) && breed.length > 0) return breed.join(', ');
+    if (typeof breed === 'string' && breed.trim()) return breed;
     return 'Não informado';
   }
 
   function updateElement(element, value) {
-    if (element) {
-      element.textContent = value || 'Não informado';
-    }
+    if (element) element.textContent = value || 'Não informado';
   }
 
   function loadPetImage(imgUrls, petName) {
@@ -85,17 +74,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (imgUrls && Array.isArray(imgUrls) && imgUrls.length > 0 && imgUrls[0]) {
       const testImg = new Image();
-      
-      testImg.onload = function() {
+
+      testImg.onload = function () {
         petImageElement.src = imgUrls[0];
         petImageElement.alt = `Foto de ${petName}`;
         petImageElement.style.display = 'block';
       };
-      
-      testImg.onerror = function() {
+
+      testImg.onerror = function () {
         petImageElement.style.display = 'none';
       };
-      
+
       testImg.src = imgUrls[0];
     } else {
       petImageElement.style.display = 'none';
@@ -107,11 +96,11 @@ document.addEventListener('DOMContentLoaded', async () => {
       const result = await gerenciamentopets.getPetById({ id: currentPetId });
 
       if (result && result.pet) {
-        const pet = result.pet;
+        pet = result.pet;
 
         updateElement(petNameElement, pet.pet?.props?.name);
         updateElement(petDescriptionElement, pet.pet?.props?.description);
-        
+
         if (petSpeciesElement) {
           const animalTypeId = pet.pet?.props?.animalTypeId;
           petSpeciesElement.textContent = getAnimalTypeName(animalTypeId);
@@ -131,8 +120,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (petVaccinatedElement) {
           const vaccinated = pet.pet?.props?.vaccinated;
-          petVaccinatedElement.textContent = vaccinated === true ? 'Sim' : 
-                                           vaccinated === false ? 'Não' : 'Não informado';
+          petVaccinatedElement.textContent = vaccinated === true ? 'Sim' :
+            vaccinated === false ? 'Não' : 'Não informado';
         }
 
         const imgUrls = pet.pet?.props?.imgUrls;
@@ -140,32 +129,24 @@ document.addEventListener('DOMContentLoaded', async () => {
         loadPetImage(imgUrls, petName);
 
       } else {
-        if (result && result.message) {
-          alert(`Erro: ${result.message}`);
-        } else {
-          alert('Pet não encontrado. Verifique se o ID está correto.');
-        }
-        
-        const elements = [petNameElement, petDescriptionElement, petSpeciesElement, 
-                         petBreedElement, petGenderElement, petAgeElement, petVaccinatedElement];
+        alert('Pet não encontrado.');
+        const elements = [
+          petNameElement, petDescriptionElement, petSpeciesElement,
+          petBreedElement, petGenderElement, petAgeElement, petVaccinatedElement
+        ];
         elements.forEach(el => updateElement(el, 'Pet não encontrado'));
-        
-        if (petImageElement) {
-          petImageElement.style.display = 'none';
-        }
+        if (petImageElement) petImageElement.style.display = 'none';
       }
-      
+
     } catch (error) {
       console.error('Erro ao carregar o pet:', error);
-      alert('Erro ao carregar as informações do pet. Verifique a conexão e tente novamente.');
-      
-      const elements = [petNameElement, petDescriptionElement, petSpeciesElement, 
-                       petBreedElement, petGenderElement, petAgeElement, petVaccinatedElement];
+      alert('Erro ao carregar as informações do pet.');
+      const elements = [
+        petNameElement, petDescriptionElement, petSpeciesElement,
+        petBreedElement, petGenderElement, petAgeElement, petVaccinatedElement
+      ];
       elements.forEach(el => updateElement(el, 'Erro ao carregar'));
-      
-      if (petImageElement) {
-        petImageElement.style.display = 'none';
-      }
+      if (petImageElement) petImageElement.style.display = 'none';
     }
   } else {
     alert('ID do pet não encontrado na URL.');
@@ -175,7 +156,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     contactButton.addEventListener('click', () => {
       const confirmed = confirm('Deseja entrar em contato com o responsável pelo pet?');
       if (confirmed) {
-        window.location.href = '../perfil/perfil.html';
+        const donorId = pet?.pet?.props?.donorId;
+        if (donorId) {
+          window.location.href = `../perfil/perfil.html?id=${donorId}`;
+        } else {
+          alert("ID do doador não encontrado.");
+        }
       }
     });
   }

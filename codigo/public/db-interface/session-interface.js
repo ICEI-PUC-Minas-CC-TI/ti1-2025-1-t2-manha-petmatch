@@ -61,7 +61,6 @@ export class SessionInterface {
             }
 
             localStorage.setItem("session", JSON.stringify(response.value));
-            window.location.href = `${window.location.origin}/modulos/homepage/homepage.html`;
             return response;
         } catch (error) {
             console.error("Erro ao verificar sessão:", error);

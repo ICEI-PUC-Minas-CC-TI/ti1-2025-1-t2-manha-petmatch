@@ -1,6 +1,15 @@
+import { SessionInterface } from "../../db-interface/session-interface.js";
 import { NewsInterface } from "../../db-interface/news-interface.js";
 
+const session = new SessionInterface();
 const newsInterface = new NewsInterface();
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await session.checkSession();
+
+    setupSearch();
+    loadNews();
+});
 
 function createNewsCard(news) {
     const titulo = news.props?.titulo || '';
@@ -9,8 +18,6 @@ function createNewsCard(news) {
     const categoria = news.props?.categoria;
     const imagem = news.props?.imagem;
     const newsId = news.id || news.props?.id || news._id || news.props?._id;
-
-
 
     const article = document.createElement('article');
     article.className = 'news-card';
@@ -32,9 +39,7 @@ function createNewsCard(news) {
             </div>
         </div>
     </div>
-`;
-
-
+    `;
 
     const container = getOrCreateNewsContainer();
     container.appendChild(article);
@@ -42,7 +47,6 @@ function createNewsCard(news) {
     const readMoreButton = article.querySelector('.btn-read-more');
     readMoreButton.addEventListener('click', (e) => {
         const newsId = e.currentTarget.getAttribute('data-news-id');
-
         if (newsId && newsId !== 'undefined' && newsId !== 'null') {
             window.location.href = `detalhes.html?id=${newsId}`;
         } else {
@@ -68,28 +72,14 @@ function formatDate(dateString) {
 async function loadNews() {
     try {
         const newsData = await newsInterface.fetchNews();
+        if (!newsData) return;
 
+        let finalNewsData = newsData.news && Array.isArray(newsData.news)
+            ? newsData.news
+            : newsData;
 
-
-        if (!newsData) {
-            console.log('Nenhuma notícia encontrada');
-            return;
-        }
-
-        let finalNewsData = newsData;
-        if (newsData.news && Array.isArray(newsData.news)) {
-            finalNewsData = newsData.news;
-        }
-
-        if (!Array.isArray(finalNewsData)) {
-            console.log('Formato de dados inválido');
-            return;
-        }
-
-
-
+        if (!Array.isArray(finalNewsData)) return;
         renderNews(finalNewsData);
-
     } catch (error) {
         alert('Erro ao carregar notícias. Tente novamente mais tarde.');
     }
@@ -106,7 +96,6 @@ function renderNews(newsArray) {
 
 function getOrCreateNewsContainer() {
     let container = document.getElementById('news-container');
-
     if (!container) {
         container = document.createElement('main');
         container.id = 'news-container';
@@ -118,11 +107,8 @@ function getOrCreateNewsContainer() {
             document.body.appendChild(container);
         }
     }
-
     return container;
 }
-
-
 
 function filterNews(searchTerm) {
     const newsCards = document.querySelectorAll('.news-card');
@@ -131,7 +117,7 @@ function filterNews(searchTerm) {
     newsCards.forEach(card => {
         const title = card.querySelector('.news-title').textContent.toLowerCase();
         const summary = card.querySelector('.news-summary').textContent.toLowerCase();
-        const tag = card.querySelector('.tag').textContent.toLowerCase();
+        const tag = card.querySelector('.tag')?.textContent.toLowerCase() || '';
 
         if (title.includes(searchLower) || summary.includes(searchLower) || tag.includes(searchLower)) {
             card.style.display = 'block';
@@ -143,7 +129,6 @@ function filterNews(searchTerm) {
 
 function setupSearch() {
     const searchInput = document.querySelector('.search input');
-
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             const searchTerm = e.target.value.trim();
@@ -151,8 +136,3 @@ function setupSearch() {
         });
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    setupSearch();
-    loadNews();
-});
