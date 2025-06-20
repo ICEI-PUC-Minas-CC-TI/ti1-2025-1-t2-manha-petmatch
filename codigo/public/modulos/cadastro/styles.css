@@ -102,13 +102,19 @@ form button {
     justify-content: center;
     align-items: center;
     transition: background-color .3s;
+    cursor: pointer;
+
 }
 
 form button:hover {
     background-color: var(--white);
     color: var(--black);
     border: 2px solid var(--yellow);
-    cursor: pointer;
+}
+
+form button.loading{
+    cursor: not-allowed;
+    filter: brightness(.8);
 }
 
 #image-container {
@@ -185,11 +191,6 @@ form button:hover {
   font-weight: bold;
   background-color: var(--yellow);
 
-}
-
-.loading{
-    cursor: not-allowed;
-    filter: brightness(.8);
 }
 
 @media (max-width: 1154px) {

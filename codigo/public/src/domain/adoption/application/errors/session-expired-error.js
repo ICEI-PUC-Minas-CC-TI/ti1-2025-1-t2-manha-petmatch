@@ -1,5 +1,5 @@
 export class SessionExpiredError extends Error {
     constructor() {
-        super("Sessin has expired.");
+        super("Session has expired.");
     }
 }

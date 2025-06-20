@@ -182,4 +182,4 @@ $(document).on("click", ".pet-card-favorite-pet-button", async function (e) {
   await handleFavoritePet(value);
 });
 
-$(".btn-logout").click(sessionInterface.logOut)
+$(".btn-logout").click(() => sessionInterface.logOut());
