@@ -1,7 +1,6 @@
 import { left, right } from '../../../../../core/Either.js';
 import { RequestMissingDataError } from '../errors/request-missing-data-error.js';
 import { ResourceNotFoundError } from '../../../../../core/errors/resource-not-found-error.js';
-import { NotAllowedError } from '../../../../../core/errors/not-allowed-error.js';
 
 
 /*
