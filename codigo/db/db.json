@@ -217,6 +217,12 @@
       "appraiser_id": "userTestId",
       "pet_id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
       "created_at": "2025-06-17T14:45:55.334Z"
+    },
+    {
+      "id": "ef6fdf5b-f3ef-4ce1-ab65-c5ac26ac2648",
+      "appraiser_id": "userTestId",
+      "pet_id": "petTest2",
+      "created_at": "2025-06-20T00:11:37.835Z"
     }
   ],
   "address": [
@@ -338,13 +344,75 @@
       "longitude": -42.7265689,
       "created_at": "2025-06-17T14:44:11.208Z",
       "updated_at": "2025-06-17T14:44:11.208Z"
+    },
+    {
+      "id": "bc7ec489-3bd0-4d61-bca8-9fa63364e091",
+      "entity_type": "user",
+      "entity_id": "5e1f3f17-4da1-4c92-af1a-445be673ef7f",
+      "street": "Rua das Flores",
+      "number": "39",
+      "complement": "Casa",
+      "neighborhood": "Santa Rita",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "32600065",
+      "country": "Brasil",
+      "latitude": -19.827765,
+      "longitude": -44.008315,
+      "created_at": "2025-06-19T23:59:17.512Z",
+      "updated_at": "2025-06-19T23:59:17.512Z"
     }
   ],
-
   "session": [
-
+    {
+      "id": "0222ccb9-3acb-4b3c-af73-74583c795270",
+      "user_id": "5e1f3f17-4da1-4c92-af1a-445be673ef7f",
+      "donor_id": "8e1f352c-812e-47d1-bc87-86c4f595aef8",
+      "expires_at": "2025-06-22T23:59:17.692Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-19T23:59:17.692Z"
+    },
+    {
+      "id": "2a48041f-a5bb-46c0-aeb9-0c2d795976d1",
+      "user_id": "5e1f3f17-4da1-4c92-af1a-445be673ef7f",
+      "donor_id": "8e1f352c-812e-47d1-bc87-86c4f595aef8",
+      "expires_at": "2025-06-23T00:00:59.406Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-20T00:00:59.406Z"
+    },
+    {
+      "id": "c221e46d-1464-4dbf-b1d3-3bb83acc352c",
+      "user_id": "5e1f3f17-4da1-4c92-af1a-445be673ef7f",
+      "donor_id": "8e1f352c-812e-47d1-bc87-86c4f595aef8",
+      "expires_at": "2025-06-23T00:04:55.525Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-20T00:04:55.525Z"
+    },
+    {
+      "id": "0a9923dc-2ae1-40ec-ab5b-f82b87705dd8",
+      "user_id": "5e1f3f17-4da1-4c92-af1a-445be673ef7f",
+      "donor_id": "8e1f352c-812e-47d1-bc87-86c4f595aef8",
+      "expires_at": "2025-06-23T00:05:05.852Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-20T00:05:05.852Z"
+    },
+    {
+      "id": "fa8f81be-c8ed-48b2-8ec1-693e7824e066",
+      "user_id": "5e1f3f17-4da1-4c92-af1a-445be673ef7f",
+      "donor_id": "8e1f352c-812e-47d1-bc87-86c4f595aef8",
+      "expires_at": "2025-06-23T00:09:33.846Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-20T00:09:33.846Z"
+    },
+    {
+      "id": "b48ab8af-3401-48da-bd8f-93162f6611ab",
+      "user_id": "5e1f3f17-4da1-4c92-af1a-445be673ef7f",
+      "donor_id": "8e1f352c-812e-47d1-bc87-86c4f595aef8",
+      "expires_at": "2025-06-23T00:19:53.947Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-20T00:19:53.948Z"
+    }
   ],
-
   "user": [
     {
       "id": "userTestId",
@@ -358,6 +426,18 @@
       "password": "somePassword",
       "created_at": "someDate",
       "updated_at": "someDate"
+    },
+    {
+      "id": "5e1f3f17-4da1-4c92-af1a-445be673ef7f",
+      "cpf": "00047683135",
+      "phone_number": "3340028922",
+      "name": "Pedro",
+      "born_at": "2004-07-04",
+      "img_url": null,
+      "email": "a@gmail.com",
+      "password": "Cala",
+      "created_at": "2025-06-19T23:59:10.373Z",
+      "updated_at": "2025-06-19T23:59:10.373Z"
     }
   ],
   "donor": [
@@ -368,6 +448,14 @@
       "adoption_amount": 0,
       "created_at": "someDate",
       "updated_at": "someDate"
+    },
+    {
+      "created_at": "2025-06-19T23:59:17.596Z",
+      "updated_at": "2025-06-19T23:59:17.596Z",
+      "id": "8e1f352c-812e-47d1-bc87-86c4f595aef8",
+      "user_id": "5e1f3f17-4da1-4c92-af1a-445be673ef7f",
+      "donor_type": "USER",
+      "adoption_amount": 0
     }
   ],
   "adoption": [

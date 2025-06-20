@@ -32,91 +32,88 @@
                     <h2 style="align-self: flex-start;">Informações pessoais</h2>
                     <div class="input-container">
                         <i class="material-icons">person</i>
-                        <input type="text" name="" id="" placeholder="Nome" required>
+                        <input type="text" id="name" placeholder="Nome" required>
                     </div>
 
                     <div class="input-container">
                         <i class="material-icons">badge</i>
-                        <input type="text" name="" id="" placeholder="Cpf" required>
+                        <input type="text" id="cpf" placeholder="Cpf" required>
                     </div>
 
                     <div class="input-container">
                         <i class="material-icons">mail</i>
-                        <input type="email" name="" id=""
-                        placeholder="Email" required>
+                        <input type="email" id="email" placeholder="Email" required>
                     </div>
 
                     <div class="input-container">
                         <i class="material-icons">lock</i>
-                        <input type="password" name="" id="" placeholder="Senha" required>
+                        <input type="password" id="password" placeholder="Senha" required>
                     </div>
-                 
+
                     <div class="input-container">
                         <i class="material-icons">calendar_month</i>
-                        <input type="date" name="" id="" placeholder="Nascimento" required>
+                        <input type="date" id="birthdate" placeholder="Nascimento" required>
                     </div>
 
                     <div class="input-container">
                         <i class="material-icons">phone_in_talk</i>
-                        <input type="tel" name="" id="" placeholder="Numero de telefone" required>
+                        <input type="tel" id="phone" placeholder="Numero de telefone" required>
                     </div>
-                    
+
                     <div id="label-input-container">
-                    <input type="radio" id="user" name="role" value="user" required />
-                    <label for="user">Adotante</label>
-                    
-                    <input type="radio" id="donor" name="role" value="donor" required/>
-                    <label for="donor">Doador</label>
+                        <input type="radio" id="user" name="role" value="USER" required />
+                        <label for="user">Adotante</label>
+                        <input type="radio" id="donor" name="role" value="DONOR" required/>
+                        <label for="donor">Doador</label>
                     </div>
 
                     <h2 style="align-self: flex-start;">Endereço</h2>
 
-
-                     <div class="input-container">
+                    <div class="input-container">
                         <i class="material-icons">signpost</i>
-                        <input type="text" name="" id="" placeholder="Rua" required>
+                        <input type="text" id="street" placeholder="Rua" required>
                     </div>
 
                     <div class="input-container">
                         <i class="material-icons">pin</i>
-                        <input type="text" name="" id="" placeholder="Número" required>
+                        <input type="text" id="number" placeholder="Número" required>
                     </div>
 
                     <div class="input-container">
                         <i class="material-icons">domain</i>
-                        <input type="text" name="" id=""
-                        placeholder="Complemento" required>
+                        <input type="text" id="complement" placeholder="Complemento" required>
                     </div>
 
                     <div class="input-container">
                         <i class="material-icons">home_work</i>
-                        <input type="text" name="" id="" placeholder="Bairro" required>
+                        <input type="text" id="neighborhood" placeholder="Bairro" required>
                     </div>
-                 
+
                     <div class="input-container">
                         <i class="material-icons">location_city</i>
-                        <input type="text" name="" id="" placeholder="Cidade" required>
+                        <input type="text" id="city" placeholder="Cidade" required>
                     </div>
 
                     <div class="input-container">
                         <i class="material-icons">travel_explore</i>
-                        <input type="text" name="" id="" placeholder="Estado" required>
+                        <input type="text" id="state" placeholder="Estado" required>
                     </div>
 
                     <div class="input-container">
                         <i class="material-icons">share_location</i>
-                        <input type="text" name="" id="" placeholder="CEP" required>
+                        <input type="text" id="cep" placeholder="CEP" required>
                     </div>
 
-
-                    <button>
+                    <button id="btn-form">
                         Fazer Cadastro
                     </button>
                     <a id="register-link" href="../login/index.html">Já tenho uma conta.</a>
                 </form>
             </div>
         </div>
-       
+
     </main>
+    <script src="../../jquery/jquery.js"></script>
+    <script src="script.js" type="module"></script>
 </body>
 </html>

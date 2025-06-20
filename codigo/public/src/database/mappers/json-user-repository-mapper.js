@@ -10,7 +10,7 @@ export class JsonUserRepositoryMapper {
             bornAt: raw.born_at,
             imgUrl: raw.img_url,
             email: raw.email,
-            passoword: raw.passoword,
+            password: raw.password,
             createdAt: raw.created_at,
             updatedAt: raw.updated_at
         }, raw.id)
@@ -28,13 +28,11 @@ export class JsonUserRepositoryMapper {
             "born_at": user.bornAt,
             "img_url": user.imgUrl,
             "email": user.email,
-            "password": user.passoword,
+            "password": user.password,
             "created_at": user.createdAt,
             "updated_at": user.updatedAt,
         }
-
-
-
+        
         return jsonUser
     }
 }

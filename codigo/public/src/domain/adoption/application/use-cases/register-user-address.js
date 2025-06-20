@@ -4,24 +4,20 @@ import { RequestMissingDataError } from "../errors/request-missing-data-error.js
 import {Address} from '../../enterprise/entities/Address.js'
 import { right, left } from "../../../../../core/Either.js";
 import { AddressNotFoundedError } from "../errors/address-not-founded-error.js";
-import { NotAllowedError } from "../../../../../core/errors/not-allowed-error.js";
 
-export class RegisterPetAddressUseCase {
-    petRepository;
-    donorRepository;
+export class RegisterUserAddressUseCase {
+    userRepository;
     addressRepository;
     geoCodeService;
 
-    constructor(petRepository, donorRepository, addressRepository, geoCodeService) {
-        this.petRepository = petRepository;
-        this.donorRepository = donorRepository;
+    constructor(userRepository, addressRepository, geoCodeService) {
+        this.userRepository = userRepository;
         this.addressRepository = addressRepository;
         this.geoCodeService = geoCodeService;
     } 
 
     async execute({
         entityId,
-        donorId,
         street,
         number,
         complement,
@@ -34,28 +30,20 @@ export class RegisterPetAddressUseCase {
         !city ||
         !state ||
         !zipCode ||
-        !neighborhood ||
-        !donorId
+        !neighborhood
     ) {
             return left(new RequestMissingDataError())
         }
 
-        const {pet} = await this.petRepository.findById(entityId)
+        const {user} = await this.userRepository.findById(entityId)
 
-        if(!pet) {
+        if(!user) {
             return left(new ResourceNotFoundError());
         }
-
-        const {donor} = await this.donorRepository.findById(donorId)
-
-        if(!donor || donor.id !== pet.donorId) {
-            return left(new NotAllowedError())
-        }
         
-        const petAlredyHasAddress = await this.addressRepository.findAddressByEntityId(entityId)
+        const userAlredyHasAddress = await this.addressRepository.findAddressByEntityId(entityId)
 
-
-        if(petAlredyHasAddress.address !== null) {
+        if(userAlredyHasAddress.address !== null) {
             return left(new EntityAlredyHasAddressError())
         }
 
@@ -84,11 +72,10 @@ export class RegisterPetAddressUseCase {
                 country: 'Brasil',
                 latitude: coordinates.lat,
                 longitude: coordinates.lon,
-                entityType: 'pet'
+                entityType: 'user'
         })
 
         await this.addressRepository.create(address)
-
 
         return right(address);
     }
