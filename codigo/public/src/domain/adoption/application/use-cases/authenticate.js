@@ -1,10 +1,10 @@
 import { left, right } from "../../../../../core/Either.js";
-import { ResourceNotFoundError } from "../../../../../core/errors/resource-not-found-error";
-import { RequestMissingDataError } from "../errors/request-missing-data-error";
+import { ResourceNotFoundError } from "../../../../../core/errors/resource-not-found-error.js";
+import { RequestMissingDataError } from "../errors/request-missing-data-error.js";
 import {NotAllowedError} from '../../../../../core/errors/not-allowed-error.js'
 import { Session } from "../../enterprise/entities/Session.js";
 
-export class AuthenticateDonorUseCase {
+export class AuthenticateUseCase {
     sessionRepository;
     userRepository;
     donorRepository;
@@ -29,12 +29,12 @@ export class AuthenticateDonorUseCase {
             return left(new ResourceNotFoundError())
         }
 
-        if(user.password !== password) {
+
+        if(user.props.password !== password) {
             return left(new NotAllowedError())
         } 
 
         const {donor} = await this.donorRepository.findByUserId(user.id)
-
 
         const sessionTime = 3 * 24 * 60 * 60 * 1000 // 3 days
         const now = new Date()

@@ -6,21 +6,54 @@ import { GetDonorUseCase } from '../src/domain/adoption/application/use-cases/ge
 import { GetDonorByUserUseCase } from '../src/domain/adoption/application/use-cases/get-donor-by-user.js'
 import { DeleteDonorUseCase } from '../src/domain/adoption/application/use-cases/delete-donor.js'
 
+import {UserInterface} from './user-interface.js'
+
 export class DonorInterface {
+    // Repository
     donorRepository = new JsonDonorRepository();
     userRepository = new JsonUserRepository()
+
+    // Interface
+    userInterface = new UserInterface()
 
    /*
     INPUT {
         NOT OPTIONAL
-        userId: someValue 
+        userData: {
+            email,
+            cpf, 
+            password,
+            name, 
+            bornAt,
+            phoneNumber,
+
+            description, 
+            img_url,
+       }
+
+       address {
+       
+       }
     }
     */
-    async registerDonor({donor}) {
-        const registerPetUseCase = new RegisterDonorUseCase(this.donorRepository, this.userRepository)
+    async registerDonor({ 
+       userData,
+       address
+    }) {
+        const userResponse = await this.userInterface.registerUser({ userData, address });
 
-        const response = await registerPetUseCase.execute(donor);
-        
+        if(userResponse.isLeft() === true) {
+            return userResponse
+        }
+
+        console.log('ola')
+
+        const registerDonorUseCase = new RegisterDonorUseCase(this.donorRepository, this.userRepository)
+
+        const response = await registerDonorUseCase.execute({
+            userId: userResponse.value.user.id
+        });
+
         if(response.isLeft() === true) {
             console.error(response);
             return response;

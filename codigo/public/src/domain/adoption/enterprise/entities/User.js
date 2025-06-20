@@ -50,12 +50,12 @@ export class User extends Entity {
         return this.props.email;
     }
 
-    get passoword() {
-        return this.props.passoword;
+    get password() {
+        return this.props.password;
     }
 
-    set passoword(value) {
-        this.props.passoword = value;
+    set password(value) {
+        this.props.password = value;
         this.touch()   
     }
 

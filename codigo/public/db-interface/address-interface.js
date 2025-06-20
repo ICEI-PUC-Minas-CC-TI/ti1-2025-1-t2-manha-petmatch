@@ -8,12 +8,15 @@ import { GetPetAddressUseCase } from '../src/domain/adoption/application/use-cas
 import { GetPetAddressByPetUseCase } from '../src/domain/adoption/application/use-cases/get-pet-address-by-pet.js'
 import { FetchPetAddressUseCase } from '../src/domain/adoption/application/use-cases/fetch-pet-address.js'
 import { DeletePetAddressUseCase } from '../src/domain/adoption/application/use-cases/delete-pet-address.js'
+import { RegisterUserAddressUseCase } from '../src/domain/adoption/application/use-cases/register-user-address.js'
+import { JsonUserRepository } from '../src/database/repositories/adoption/json-user-repository.js'
 
 
 export class AddressInterface {
     // Database
     addressRepository = new JsonAddressRepository()
     petRepository = new JsonPetRepository(this.addressRepository)
+    userReposiotory = new JsonUserRepository()
     donorRepository = new JsonDonorRepository()
 
     // Services
@@ -43,6 +46,39 @@ export class AddressInterface {
         )
 
         const response = await registerPetAddress.execute(props)
+
+        if (response.isLeft() === true) {
+            console.error(response)
+            return response
+        }
+
+        return response.value
+    }
+
+    
+    // props -> {
+    //     entityId,
+    //     donorId,
+    //     street,
+    //     number,
+    //     complement,
+    //     neighborhood,
+    //     city,
+    //     state,
+    //     zipCode,
+    //     country,
+    //     latitude,
+    //     longitude
+    // }
+
+    async registerUserAddress(props) {
+        const registerUserAddressUseCase = new RegisterUserAddressUseCase(
+            this.userReposiotory,
+            this.addressRepository,
+            this.geocodeService
+        )
+
+        const response = await registerUserAddressUseCase.execute(props)
 
         if (response.isLeft() === true) {
             console.error(response)
