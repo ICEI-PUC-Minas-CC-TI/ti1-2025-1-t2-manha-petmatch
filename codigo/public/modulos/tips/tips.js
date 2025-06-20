@@ -1,6 +1,9 @@
 import { TipInterface } from "../../db-interface/tip-interface.js";
+import { SessionInterface } from "../../db-interface/session-interface.js";
 
 const tipinterface = new TipInterface();
+
+const session = new SessionInterface();
 
 const animalId = {
     "Cachorro": "b68e3c70-a4e2-4c4d-8b47-376a5f8f2c01",
@@ -9,66 +12,37 @@ const animalId = {
     "Pássaro": "c23a7de5-1093-45b9-951d-d3b9e9a62c7a"
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    await session.checkSession(); 
     document.querySelectorAll('.container').forEach(container => {
         container.addEventListener('click', async (event) => {
             const animal = event.currentTarget.dataset.animal;
             const id = animalId[animal];
-            if (!id) {
-                console.warn("ID não encontrado para o animal:", animal);
-                return;
-            }
+            if (!id) return;
 
             const existingTips = container.nextElementSibling;
-            if (existingTips && existingTips.classList.contains('container-dicas')) {
+            if (existingTips?.classList.contains('container-dicas')) {
                 existingTips.remove();
                 return;
             }
 
             const result = await tipinterface.getTip({ id });
-
             const dicas = result.tip?.tip?.props?.tips;
-
-            if (!Array.isArray(dicas)) {
-                console.warn("Nenhuma dica foi retornada.");
-                return;
-            }
+            if (!Array.isArray(dicas)) return;
 
             const tipsContainer = document.createElement('div');
             tipsContainer.classList.add('container-dicas');
+
             let cont = 1;
             dicas.forEach(dica => {
                 const card = document.createElement('div');
                 card.classList.add('card-dica');
-                card.innerHTML = `
-                <h3>${cont}. ${dica.title}</h3>
-                <p>${dica.content}</p>
-                `;
+                card.innerHTML = `<h3>${cont}. ${dica.title}</h3><p>${dica.content}</p>`;
                 cont++;
                 tipsContainer.appendChild(card);
             });
 
             container.insertAdjacentElement('afterend', tipsContainer);
-
-
         });
     });
 });
-
-let searchBarValue = '';
-
-function onSearchBar(event) {
-  searchBarValue = event.target.value;
-}
-
-async function handleSearchButton() {
-  if (searchBarValue.trim() === "") {
-    window.location.href = "../explore/index.html";
-  } else {
-    window.location.href = `../explore/index.html?search=${searchBarValue}`;
-  }
-}
-
-$("#searchBar").on("propertychange input", onSearchBar);
-
-$("#searchButton").click(handleSearchButton);
