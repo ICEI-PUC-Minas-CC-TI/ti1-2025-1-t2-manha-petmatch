@@ -1,9 +1,12 @@
 import {PetInterface} from "../../db-interface/pet-interface.js"
 import {AnimalTypeInterface} from  "../../db-interface/animal-type-interface.js"
 import {FavoritePetInterface} from '../../db-interface/favorite-pet-interface.js'
+import {SessionInterface} from '../../db-interface/session-interface.js'
+
 const petInterface = new PetInterface();
 const animalTypeInterface = new AnimalTypeInterface();
 const favoritePetInterface = new FavoritePetInterface();
+const sessionInterface = new SessionInterface();
 const urlParams = new URL(window.location)
 
 const searchParam = urlParams.searchParams.get('search');
@@ -70,7 +73,7 @@ function drawElements(listOfPets, favoritedPetList) {
 async function handleFavoritePet(petId) {
 
   const pet = petsList.find(pet => pet.id === petId)
-
+  
   if(pet.id) {
     const {favoritePet} = await favoritePetInterface.getFavoritePet({appraiserId: "userTestId", petId})
     if(favoritePet) {
@@ -178,3 +181,5 @@ $(document).on("click", ".pet-card-favorite-pet-button", async function (e) {
   const value = e.currentTarget.value;
   await handleFavoritePet(value);
 });
+
+$(".btn-logout").click(sessionInterface.logOut)

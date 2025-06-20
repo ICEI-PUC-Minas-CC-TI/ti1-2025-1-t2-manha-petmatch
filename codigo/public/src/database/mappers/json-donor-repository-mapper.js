@@ -19,6 +19,7 @@ export class JsonDonorRepositoryMapper {
            updated_at: donor.updatedAt,
            id: donor.id,
            user_id: donor.userId,
+           donor_type: donor.donorType,
            adoption_amount: donor.adoptionAmount,
         }
 

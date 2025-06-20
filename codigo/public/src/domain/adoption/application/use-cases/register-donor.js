@@ -44,11 +44,11 @@ export class RegisterDonorUseCase {
             {
                 adoptionAmount: 0,
                 userId: userId,
-                donorType: 'user'
+                donorType: 'USER'
             }
         )
 
-        await this.donorRepository.create(donor);
+        await this.donorRepository.create(donorObject);
 
         return right({
             donor: donorObject
