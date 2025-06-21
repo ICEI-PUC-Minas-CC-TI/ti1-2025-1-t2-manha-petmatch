@@ -420,7 +420,7 @@ Permite que o usuário acompanhe as notícias mais recentes relacionadas ao mund
 Estrutura de dados: noticias
 Instruções de acesso:
 
-Clicar em "Notpicias".
+Clicar em "Noticias".
 Decidir qual notícia o usuário quer ler.
 Clicar em "Ler mais".
 Para voltar, vá ao final da notícia e clique em "Voltar".
@@ -567,30 +567,61 @@ Registro das dicas disponíveis no site.
       ]
 }
 
-⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
+## Plano de Testes de Software
 
-Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração
+| Caso  | Funcionalidade                   | Objetivo do Teste                              | Passos                                                                                       | Resultado Esperado                              |
+|-------|----------------------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------|
+| CT-01 | Cadastro de Usuário              | Validar registro de novo usuário                | 1. Acessar página de cadastro<br>2. Preencher todos os campos válidos<br>3. Enviar formulário | Usuário criado e redirecionado à homepage         |
+| CT-02 | Login de Usuário                 | Validar autenticação com credenciais válidas     | 1. Acessar página de login<br>2. Informar e-mail e senha válidos<br>3. Clicar em Entrar       | Usuário autenticado e direcionado à homepage  |
+| CT-03 | Cadastro de Pets                 | Verificar inclusão de pet na lista de adoção     | 1. Fazer cadastro como doador<br>2. Acessar “Colocar para adoção”<br>3. Preencher dados do pet<br>4. Salvar | Pet listado em “Meus Pets”                   |
+| CT-04 | Exploração de Pets com Filtros   | Garantir que o filtro retorna apenas pets válidos| 1. Acessar “Categorias”<br>2. Selecionar filtro “Pequeno”<br>3. Aplicar                         | Apenas pets de porte pequeno aparecem           |
+| CT-05 | Favoritar Pets                   | Checar marcação de favorito                      | 1. Acessar lista de pets<br>2. Clicar no ícone de coração em um pet                           | Pet aparece na lista “Favoritos”                |
+| CT-06 | Quiz de Compatibilidade          | Validar resultado do quiz                        | 1. Acessar “Pet Ideal”<br>2. Responder todas as perguntas<br>                        | Exibe caracteríscas do animal condizente com respostas     |
+| CT-07 | Mapa (Mapbox)                    | Verificar exibição de marcadores                | 1. Acessar “PetMap”<br>2. Visualizar mapa                                                     | Todos os pets com localização aparecem          |
+| CT-08 | Edição de Pets                   | Garantir atualização de dados de um pet          | 1. Acessar “Meus Pets”<br>2. Clicar em “Editar” em um pet<br>3. Alterar campo e salvar         | Alterações refletidas na lista                  |
+| CT-09 | Exclusão de Pets                 | Validar remoção de pet                           | 1. Acessar “Meus Pets”<br>2. Clicar em “Excluir” em um pet<br>3. Confirmar                     | Pet não aparece mais em “Meus Pets”             |
+| CT-10 | Disponibilidade 24h              | Verificar acesso contínuo ao site                | 1. Configurar monitor de uptime (UptimeRobot)<br>2. Aguardar 24 h de coleta de dados          | Uptime 100 % no período monitorado              |
 
-Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.
+---
 
-Orientações:
+## Registro de Testes de Software
 
-JSON Introduction
-Trabalhando com JSON - Aprendendo desenvolvimento web | MDN
-Módulos e APIs
-Esta seção apresenta os módulos e APIs utilizados na solução
+- **CT-01 – Cadastro de Usuário:**  
+- **CT-02 – Login de Usuário:**   
+- **CT-03 – Cadastro de Pets:**   
+- **CT-04 – Exploração com Filtros:**  
+- **CT-05 – Favoritar Pets:**   
+- **CT-06 – Quiz de Compatibilidade:**  
+- **CT-07 – Mapa (Mapbox):**   
+- **CT-08 – Edição de Pets:**   
+- **CT-09 – Exclusão de Pets:**   
+- **CT-10 – Disponibilidade 24h:**
+  - Ferramenta: UptimeRobot  
+  - Período: 21/06/2025 15:30 → 22/06/2025 15:30  
+  - Disponibilidade registrada: 
 
-Images:
 
-Unsplash - https://unsplash.com/ ⚠️ EXEMPLO ⚠️
-Fonts:
+# Módulos e APIs
 
-Icons Font Face - https://fontawesome.com/ ⚠️ EXEMPLO ⚠️
-Scripts:
+## Frameworks e Bibliotecas
 
-jQuery - http://www.jquery.com/ ⚠️ EXEMPLO ⚠️
-Bootstrap 4 - http://getbootstrap.com/ ⚠️ EXEMPLO ⚠️
-⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
+- **HTML, CSS e JavaScript (Vanilla):** Base da estrutura, estilo e lógica.  
+- **jQuery (v3.x):** Manipulação de DOM, tratamento de eventos e chamadas AJAX ao JSON Server.  
+- **JSON Server:** Simula API REST local para CRUD de usuários, pets, favoritos, avaliações e notícias.  
+- **Mapbox GL JS:** Renderização de mapas interativos e geocoding para localização de pets.  
+- **Font Awesome:** Ícones para botões e elementos visuais.
+
+## APIs e Serviços Externos
+
+- **Mapbox API:** Mapas e coordenadas de geolocalização.  
+- **LocalStorage (Browser):** Armazenamento de token de sessão e preferências do usuário.
+
+## Ferramentas de Design e Gestão
+
+- **Figma:** Protótipos de alta fidelidade.  
+- **Miro:** Design Thinking (personas, jornadas).  
+- **Trello:** Planejamento ágil com Kanban.  
+
 
 # Módulos e APIs
 Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1) Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas para acesso a dados, serviços, etc.
