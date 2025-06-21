@@ -14,12 +14,16 @@ import { EditPetUseCase } from '../src/domain/adoption/application/use-cases/edi
 import { UnfavoritePetUseCase } from '../src/domain/adoption/application/use-cases/unfavorite-pet.js'
 import {JsonAddressRepository} from '../src/database/repositories/adoption/json-address-repository.js'
 
+import {CurrentSession} from '../utils/current-session.js'
+
 export class PetInterface {
     addressRepository = new JsonAddressRepository()
     petRepository = new JsonPetRepository(this.addressRepository)
     donorRepository = new JsonDonorRepository();
     userRepository = new JsonUserRepository()
     favoritePetRepository = new JsonFavoritePetRepository()
+
+    session = new CurrentSession()
 
     /*
     INPUT {
@@ -128,10 +132,10 @@ export class PetInterface {
     }
     */
 
-    async fetchFavoritePet({userId}) {
+    async fetchFavoritePet() {
         const fetchFavoritePet = new FetchFavoritePetUseCase(this.favoritePetRepository,this.userRepository)
 
-        const response = await fetchFavoritePet.execute({appraiserId: userId});
+        const response = await fetchFavoritePet.execute({appraiserId: this.session.userId});
 
         if(response.isLeft() === true) {
             console.error(response);
@@ -152,13 +156,12 @@ export class PetInterface {
         favoritedPet: FavoritePet
     }
     */
-    async favoritePet({petId, userId}) {
+    async favoritePet({petId}) {
         const favoritePetUseCase = new FavoritePetUseCase(this.favoritePetRepository, this.userRepository)
-
 
         const response = await favoritePetUseCase.execute({
             petId,
-            userId
+            userId: this.session.userId
         });
 
         if(response.isLeft() === true) {
@@ -175,12 +178,12 @@ export class PetInterface {
     //     userId: string
     // }
 
-    async unfavoritePet({petId, userId}) {
+    async unfavoritePet({petId}) {
         const unfavoritePetUseCase = new UnfavoritePetUseCase(this.favoritePetRepository, this.userRepository)
 
         const response = await unfavoritePetUseCase.execute({
             petId,
-            appraiserId: userId
+            appraiserId: this.session.userId
         });
 
         if(response.isLeft() === true) {
@@ -201,11 +204,11 @@ export class PetInterface {
         }
     */
 
-    async deletePet({petId, donorId}) {
+    async deletePet({petId}) {
         const deletePetUserCase = new DeletePetUseCase(this.petRepository, this.donorRepository)
 
         const response = await deletePetUserCase.execute({
-            donorId, 
+            donorId: this.session.donorId, 
             petId
         });
 
@@ -242,10 +245,10 @@ export class PetInterface {
     }
     */
    // ATENÇÃO, OS DADOS DEVEM SER REEVIADOS, CAMPOS NÃO PREECHIDOS SERÃO INTERPRETADOS COMO UNDEFINED E ESTARÃO NULOS NO BANCO DE DADOS
-    async editPet({pet, petId, donorId}) {
+    async editPet({pet, petId}) {
         const editPetUseCase = new EditPetUseCase(this.petRepository, this.donorRepository)
 
-        const response = await editPetUseCase.execute({...pet, donorId, id: petId});
+        const response = await editPetUseCase.execute({...pet, donorId: this.session.donorId, id: petId});
 
         if(response.isLeft() === true) {
             console.error(response);

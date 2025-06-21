@@ -8,12 +8,14 @@ import { FavoritePetUseCase } from '../src/domain/adoption/application/use-cases
 import { FetchFavoritePetUseCase } from '../src/domain/adoption/application/use-cases/fetch-favorite-pet.js'
 import { GetFavoritePetUseCase } from '../src/domain/adoption/application/use-cases/get-favorite-pet.js'
 import { UnfavoritePetUseCase } from '../src/domain/adoption/application/use-cases/unfavorite-pet.js'
+import { CurrentSession } from '../utils/current-session.js'
 
 export class FavoritePetInterface {
     petRepository = new JsonPetRepository()
     donorRepository = new JsonDonorRepository();
     userRepository = new JsonUserRepository()
     favoritePetRepository = new JsonFavoritePetRepository()
+    session = new CurrentSession()
 
 
       /*
@@ -27,10 +29,10 @@ export class FavoritePetInterface {
     }
     */
 
-    async fetchFavoritePet({userId}) {
+    async fetchFavoritePet() {
         const fetchFavoritePet = new FetchFavoritePetUseCase(this.favoritePetRepository,this.userRepository)
 
-        const response = await fetchFavoritePet.execute({appraiserId: userId});
+        const response = await fetchFavoritePet.execute({appraiserId: this.session.userId});
 
         if(response.isLeft() === true) {
             console.error(response);
@@ -40,10 +42,10 @@ export class FavoritePetInterface {
         return response.value;
     }
 
-    async getFavoritePet({petId, appraiserId}) {
+    async getFavoritePet({petId}) {
         const getFavoritePet = new GetFavoritePetUseCase(this.favoritePetRepository, this.userRepository)
         
-        const response = await getFavoritePet.execute({appraiserId, petId})
+        const response = await getFavoritePet.execute({appraiserId: this.session.userId, petId})
 
            if(response.isLeft() === true) {
             console.error(response);
@@ -64,14 +66,12 @@ export class FavoritePetInterface {
         favoritedPet: FavoritePet
     }
     */
-    async favoritePet({petId, userId}) {
+    async favoritePet({petId}) {
         const favoritePetUseCase = new FavoritePetUseCase(this.favoritePetRepository, this.userRepository)
-
-        console.log("p u ", petId, userId)
 
         const response = await favoritePetUseCase.execute({
             petId,
-            userId
+            userId: this.session.userId
         });
 
         if(response.isLeft() === true) {
@@ -88,12 +88,12 @@ export class FavoritePetInterface {
     //     userId: string
     // }
 
-    async unfavoritePet({petId, userId}) {
+    async unfavoritePet({petId}) {
         const unfavoritePetUseCase = new UnfavoritePetUseCase(this.favoritePetRepository, this.userRepository)
 
         const response = await unfavoritePetUseCase.execute({
             petId,
-            appraiserId: userId
+            appraiserId: this.session.userId
         });
 
         if(response.isLeft() === true) {
