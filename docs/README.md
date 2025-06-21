@@ -83,9 +83,11 @@ Entrevistas e Highlights de pesquisa:
 Persona 1(Ana Paula):
 
 ![TI1-Pets (5)-1](https://github.com/user-attachments/assets/503cc8fa-9ad4-4b09-a1ad-1c108754d2d5)
+
 Persona 2(Joana): 
 
 ![TI1-Pets (6)-1](https://github.com/user-attachments/assets/e97bece3-bf3c-49fb-a676-63cb350cb536)
+
 Persona 3(Ricardo):
 
 ![TI1-Pets (7)-1](https://github.com/user-attachments/assets/e72ef470-d188-45c9-a401-ec5173bf5124)
