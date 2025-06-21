@@ -12,6 +12,7 @@
     rel="stylesheet">
   <title>Pet tips</title>
   <link rel="stylesheet" href="styles.css" />
+   <link rel="stylesheet" href="../../components/sidebar/styles.css">
 </head>
 
 <body>
@@ -31,42 +32,13 @@
 
     <div id="container-dicas"></div>
   </main>
-  <aside id="sidebar">
-    <div id="logo"><img src="../tips/image.png" alt="Logo"></div>
-    <div>
 
-      <div id="profile">
-        <div>
-          <img src="../../images/someone.jpg" alt="user avatar" id="avatar" />
-          <div id="profile-info">
-            <h3>Ricardão</h3>
-            <span><i class="material-icons">stars</i>5.0</span>
+  <script type="module" src="../../components/sidebar/sidebar.js"></script>
 
-          </div>
-        </div>
-        <button class="btn-style">Perfil</button>
-      </div>
-      <nav id="menu">
-
-        <a href="../homepage/homepage.html" id="active"><i class="material-icons">home</i> Home</a>
-        <a href="../explore/index.html"><i class="material-icons">explore</i> Explorar</a>
-        <a href="../PaginaCategoria/Categorias.html"><i class="material-icons">category</i> Categorias</a>
-        <a href="../favoritos/pets/index.html"><i class="material-icons">favorite</i> Favoritos</a>
-        <a href="../historico/historico.html"><i class="material-icons">history</i>Histórico</a>
-        <a href="#"><i class="material-icons">pets</i> Meus Pets</a>
-        <a href="#"><i class="material-icons">map</i> Petmap</a>
-        <a href="../tips/tips.html" class="tips-icon"><i class="material-icons">lightbulb</i>Pet Tips</a>
-      </nav>
-    </div>
-
-    <div id="aside-footer">
-      <a href="../cadastro-pets/cadastro-pets.html" class="btn-style" style="color: black; text-decoration: none;" >Colocar para Adoção</a>
-      <button class="btn-logout btn-style">Sair</button>
-    </div>
-  </aside>
-
+  <script type="module" src="../../utils/verify-login.js"></script>
   <script src="../../jquery/jquery.js"></script>
   <script type="module" src="tips.js"></script>
+
 </body>
 
 </html>

@@ -217,34 +217,28 @@
   ],
   "favorite_pet": [
     {
-      "id": "9c9d5e57-b33d-4888-8563-b552187f3d1d",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest3",
-      "created_at": "2025-06-10T21:59:32.344Z"
-    },
-    {
-      "id": "5770af18-4222-4a75-a823-8eb0e4cceef1",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest",
-      "created_at": "2025-06-10T22:29:47.776Z"
-    },
-    {
       "id": "56c5efb3-2c42-4b10-921e-dfed6729f286",
       "appraiser_id": "userTestId",
       "pet_id": "032a57ba-d703-4226-a801-9a9dda3d7e28",
       "created_at": "2025-06-10T22:29:54.184Z"
     },
     {
-      "id": "d69fb6fc-600d-4bd8-8c81-3ce4c9832569",
-      "appraiser_id": "userTestId",
-      "pet_id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
-      "created_at": "2025-06-17T14:45:55.334Z"
+      "id": "60ae8f67-599c-40e1-b805-00bffdd86ede",
+      "appraiser_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "pet_id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673",
+      "created_at": "2025-06-21T00:27:15.926Z"
     },
     {
-      "id": "ef6fdf5b-f3ef-4ce1-ab65-c5ac26ac2648",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest2",
-      "created_at": "2025-06-20T00:11:37.835Z"
+      "id": "96cda772-386d-4b1e-aa72-82d739f68363",
+      "appraiser_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "pet_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
+      "created_at": "2025-06-21T00:27:18.922Z"
+    },
+    {
+      "id": "f5dfd2da-f5b5-403b-a8d1-7b0806686ecc",
+      "appraiser_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "pet_id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
+      "created_at": "2025-06-21T11:27:21.369Z"
     }
   ],
   "address": [
@@ -493,6 +487,78 @@
       "expires_at": "2025-06-23T19:30:32.905Z",
       "entity_type": "DONOR",
       "created_at": "2025-06-20T19:30:32.905Z"
+    },
+    {
+      "id": "959579e0-6a19-4d8c-b095-92245e568219",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-23T23:43:38.115Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-20T23:43:38.115Z"
+    },
+    {
+      "id": "ad07c873-3951-4790-a1a2-a19128553943",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-23T23:59:44.657Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-20T23:59:44.658Z"
+    },
+    {
+      "id": "01c11be2-be40-44ff-aec5-6dca9df339e1",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-24T00:27:09.688Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-21T00:27:09.688Z"
+    },
+    {
+      "id": "01190091-3b71-49b2-8358-38f34fc1f72a",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-24T00:27:28.477Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-21T00:27:28.477Z"
+    },
+    {
+      "id": "c3022a62-f135-4c8e-a168-951c6649a5e1",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-24T00:33:24.136Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-21T00:33:24.136Z"
+    },
+    {
+      "id": "be7d829f-1ec8-4395-87b7-b2617c9f59e9",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-24T10:50:36.132Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-21T10:50:36.133Z"
+    },
+    {
+      "id": "aec9e758-d1e2-4b11-9b9d-996083361e65",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-24T11:01:24.707Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-21T11:01:24.707Z"
+    },
+    {
+      "id": "206cb80a-ec5a-45f5-8974-de99a9c2e043",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-24T11:27:30.176Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-21T11:27:30.176Z"
+    },
+    {
+      "id": "e2a8e3ca-18a2-4c6b-ae3c-28af1255f384",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-24T11:27:41.856Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-21T11:27:41.856Z"
     }
   ],
   "user": [

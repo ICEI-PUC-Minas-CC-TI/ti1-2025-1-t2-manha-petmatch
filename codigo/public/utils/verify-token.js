@@ -7,4 +7,5 @@ export class VerifyToken {
 
         return isValid
     }
+
 }
