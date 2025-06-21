@@ -175,6 +175,7 @@ Artefatos relacionados com a interface e a interacão do usuário na proposta de
 ### Wireframes
 
 Estes são os protótipos de telas do sistema.
+
 ![Favoritos](https://github.com/user-attachments/assets/ec5e630c-854d-4331-94c8-6aae97d709de)
 
 Tela mostra a parte de favoritos de um usuário
