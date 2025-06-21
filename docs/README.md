@@ -594,7 +594,24 @@ Bootstrap 4 - http://getbootstrap.com/ ⚠️ EXEMPLO ⚠️
 
 # Módulos e APIs
 Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1) Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas para acesso a dados, serviços, etc.
+## Frameworks e Bibliotecas
 
+- **HTML, CSS e JavaScript (Vanilla):** Base da estrutura, estilo e lógica de interação.  
+- **jQuery (v3.x):** Facilita manipulação do DOM, tratamento de eventos e chamadas AJAX ao JSON Server.  
+- **JSON Server:** Simula uma API REST local para CRUD de usuários, pets, favoritos, avaliações, notícias etc.  
+- **Mapbox GL JS:** Renderização de mapas interativos e geocoding para exibir a localização dos pets.  
+- **Font Awesome:** Conjunto de ícones utilizado em botões e elementos visuais.
+
+## APIs e Serviços Externos
+
+- **Mapbox API:** Obtenção de mapas, marcadores e coordenadas de geolocalização.  
+- **LocalStorage (Browser):** Armazenamento local de token de sessão e preferências do usuário.
+
+## Ferramentas de Design e Gestão
+
+- **Figma:** Protótipos de alta fidelidade das interfaces.  
+- **Miro:** Atividades de Design Thinking (personas, jornadas, alinhamento).  
+- **Trello:** Planejamento ágil com quadro Kanban e acompanhamento de tarefas.
 # Referências
 
 As referências utilizadas no trabalho foram:
