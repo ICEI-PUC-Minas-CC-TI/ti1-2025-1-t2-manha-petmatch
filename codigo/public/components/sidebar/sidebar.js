@@ -1,15 +1,11 @@
 import { CurrentSession } from '../../utils/current-session.js';
 import {SessionInterface} from '../../db-interface/session-interface.js'
-// ... importações ...
 
 function createSidebar() {
   const session = new CurrentSession();
   const sessionInterface = new SessionInterface();
   const sessionType = session.type;
   const isDonor = sessionType === 'DONOR';
-
-  const userName = session.sessionData?.session?.props?.name || 'Usuário';
-  const userRating = session.sessionData?.session?.props?.rating?.toFixed(1) || 'N/A';
 
   const basePath = `${window.location.origin}/modulos`;
 
@@ -21,9 +17,9 @@ function createSidebar() {
     <div>
       <div id="sidebar-user">
         <div>
-          <img src="../../Images/someone.jpg" alt="User Avatar" id="user-avatar" />
+          <img src="${session.currentUser.imgUrl}" alt="User Avatar" id="user-avatar" />
           <div id="user-info">
-            <h3>${userName}</h3>
+            <h3>${session.currentUser.name}</h3>
           </div>
         </div>
         <button class="sidebar-btn" id="btn-profile">Perfil</button>
@@ -48,7 +44,7 @@ function createSidebar() {
   document.body.prepend(sidebar);
 
   document.getElementById('btn-profile').addEventListener('click', () => {
-    window.location.href = `${basePath}/perfil/perfil.html`;
+    window.location.href = `${basePath}/profile/index.html`;
   });
 
   document.querySelectorAll('.sidebar-menu-btn').forEach(btn => {

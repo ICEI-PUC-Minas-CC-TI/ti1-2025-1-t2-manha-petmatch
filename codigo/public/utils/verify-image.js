@@ -1,11 +1,12 @@
 export class VerifyImage {
     static doesImageExists(url, callback) {
+       return new Promise((resolve) => {
+            const img = new Image();
+            img.src = url;
 
-        const img = new Image();
-        img.src = url;
-        
-        img.onload = () => callback(true)
-        img.onerror = () => callback(false)
-        console.log(url, img.onload, img.onerror)
+            img.onload = () => resolve(url);
+            img.onerror = () => resolve("../../Images/someone.jpg");
+        });
+
     }
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>PetMatch</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../../components/sidebar/styles.css">
+    <link rel="stylesheet" href="../../components/header/styles.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <h1 class="logo">PETMATCH</h1>
+        <div class="search">
+            <input type="text" placeholder="Pesquisa" id="searchBar" />
+            <button id="searchButton"><i class="material-icons">search</i></button>
+        </div>
+    </header>
+
+
+    <main>
+        <div id="profile-container">
+            <header id="profile-header">
+                <button>Edit</button>
+            </header>
+
+            <div id="profile-content">
+                <img src="" alt="Imagem do perfil" id="user-img">
+
+                <div id="profile-header">
+                    <h2 id="name">Nome</h2>
+                <div>
+                    <p id="age">idade</p>
+                    <p id="descrição">descrição</p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pets">
+            <header id="pets-header">
+                <h2>Meus Pets</h2>
+            </header>
+
+            <ul id="pets-content">
+                <li>
+                    <div>
+                        <img src="" alt="PetProfile" class="pet-img">
+                        <div></div>
+                    </div>
+
+                    <button>P</button>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <script type="module" src="../../components/sidebar/sidebar.js"></script>
+    <script type="module" src="../../utils/verify-login.js"></script>
+    <script src="../../jquery/jquery.js"></script>
+    <script type="module" src="perfil.js"></script>
+</body>
+
+</html>

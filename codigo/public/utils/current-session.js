@@ -20,4 +20,9 @@ export class CurrentSession {
     get type() {
         return this.sessionData.session.props.entityType
     }
+
+    get currentUser() {
+        return this.sessionData.user.props
+
+    }
 }
