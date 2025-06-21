@@ -285,16 +285,158 @@ Inclua um link para o vídeo do projeto.
 # Funcionalidades
 Esta seção apresenta as funcionalidades da solução.Info
 
-Funcionalidade 1 - Cadastro de Contatos ⚠️ EXEMPLO ⚠️
-Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
+Funcionalidade 1 - Cadastro de Usuário
+Permite que novos usuários se registrem para acessar as funcionalidades do sistema.
 
-Estrutura de dados: Contatos
+Estrutura de dados: user
 Instruções de acesso:
-Abra o site e efetue o login
-Acesse o menu principal e escolha a opção Cadastros
-Em seguida, escolha a opção Contatos
+Abrir o site sem conta.
+Clicar em "Criar nova conta".
+Escolher entre ser adotante ou doador.
+Informar seu endereço.
+Clicar em "Fazer cadastro". 
+Utilizar o site.
+Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/471c5e7c-5bb8-45c4-89d4-be6767cb7c1f)
+![image](https://github.com/user-attachments/assets/503bd703-8024-44ec-8335-5b863d464ab3)
+
+Funcionalidade 2 - Login de Usuário
+Permite que novos usuários se registrem para acessar as funcionalidades do sistema.
+
+Estrutura de dados: user
+Instruções de acesso:
+Abrir o site sem estar logado em uma conta.
+Preencher suas informações de usuário.
+Clicar em "Fazer login". 
+Utilizar o site.
+Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/03b66823-40d6-402f-b97a-3e44593d3e01)
+
+Funcionalidade 3 - Cadastro de Pets
+ONGs ou tutores podem registrar novos animais no sistema.
+
+Estrutura de dados: pet
+Instruções de acesso:
+
+Efetue login como doador.
+Clique no botão “Colocar para adoção”.
+Preencha o formulário e clique em “Colocar para adoção”.
+Clique em "Meus pets".
+Os pets são listados com opções de editar ou excluir.
+
 Tela da funcionalidade:
 Tela de Funcionalidade
+
+Funcionalidade 4 - Edição e remoção de Pets
+Permite alterar ou excluir um pet previamente cadastrado.
+
+Estrutura de dados: pet
+Instruções de acesso:
+
+Efetue login como doador.
+Clique em "Meus pets".
+Os pets são listados com opções de editar ou excluir.
+Clique na opção desejada.
+Caso tenha clicado em "editar":
+Preencha todas as informações do Pet, até as que não irão sofrer alterações.
+Clique em "Salvar".
+
+Tela da funcionalidade:
+Tela de Funcionalidade
+
+Funcionalidade 5 – Exploração de Pets sem Filtros
+Permite aos usuários navegar por todos os pets.
+Estrutura de dados: pet
+Instruções de acesso:
+
+Clicar em home.
+Ver todos os animais disponíveis no site.
+
+Tela da funcionalidade:
+
+
+Funcionalidade 6 – Exploração de Pets com Filtros
+Permite aos usuários navegar por todos os pets utilizando filtros.
+Estrutura de dados: pet
+Instruções de acesso:
+
+Clicar em categorias.
+Selecionar os filtros desejados (Animal , Tamanho).
+Ver todos os animais que se encaixam no filtro.
+
+Tela da funcionalidade:
+
+Funcionalidade 7 – Favoritar Pets
+Usuários logados podem favoritar pets para consulta posterior.
+Estrutura de dados: pet e favorite_pet
+Instruções de acesso:
+
+Clicar em explorar ou home.
+Selecionar um pet.
+Clicar no coração do pet selecionado.
+Clicar em Favoritos para ver todos os pets favoritados.
+
+Tela da funcionalidade:
+
+Funcionalidade 8 – Quiz de Compatibilidade
+Sugere pets com base em respostas sobre o perfil do usuário.
+Estrutura de dados: wizard
+Instruções de acesso:
+
+Clicar em "pet ideal".
+Responder o Quiz de acordo com seu estilo de vida.
+Receber a recomendação do tipo de animal mais adequado.
+
+Tela da funcionalidade:
+
+Funcionalidade 9 – Visualização dos Pets no Mapa (Mapbox)
+Mostra a localização dos pets em um mapa interativo
+Estrutura de dados: address
+Instruções de acesso:
+
+Clicar em "Petmap".
+Visualizar a localização dos pets presentes no site.
+Clicar em um dos animais.
+Ver informações dele.
+
+Tela da funcionalidade:
+
+Funcionalidade 10 – Avaliações do doador
+Permite que o usuário deixe seu feedback sobre diferentes doadores.
+Estrutura de dados: profile_rating
+Instruções de acesso:
+
+Ir para a homepage ou explorar.
+Clicar no botão "Ver pet".
+Clicar em "Contatar".
+Definir quantas estrelas você quer dar para o doador.
+Adicionar um comentário.
+Clicar em "enviar".
+
+Tela da funcionalidade:
+
+Funcionalidade 11 – Seção de Notícias
+Permite que o usuário acompanhe as notícias mais recentes relacionadas ao mundo animal
+Estrutura de dados: noticias
+Instruções de acesso:
+
+Clicar em "Notpicias".
+Decidir qual notícia o usuário quer ler.
+Clicar em "Ler mais".
+Para voltar, vá ao final da notícia e clique em "Voltar".
+
+Tela da funcionalidade:
+
+Funcionalidade 12 – Dicas de Cuidados com os Pets
+Permite que o usuário aprenda a como cuidar de seus animais.
+Estrutura de dados: tips
+Instruções de acesso:
+
+Clicar em "Pet Tips".
+Decidir sobre qual animal o usuário quer receber dicas sobre.
+Clicar no nome do animal.
+
+Tela da funcionalidade:
 
 ⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
 
@@ -305,30 +447,126 @@ Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funci
 # Estruturas de Dados
 Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info
 
-Estrutura de Dados - Contatos ⚠️ EXEMPLO ⚠️
-Contatos da aplicação
-
-  {
-    "id": 1,
-    "nome": "Leanne Graham",
-    "cidade": "Belo Horizonte",
-    "categoria": "amigos",
-    "email": "Sincere@april.biz",
-    "telefone": "1-770-736-8031",
-    "website": "hildegard.org"
-  }
-  
-Estrutura de Dados - Usuários ⚠️ EXEMPLO ⚠️
+Estrutura de Dados - user 
 Registro dos usuários do sistema utilizados para login e para o perfil do sistema
 
-  {
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    email: "admin@abc.com",
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    login: "admin",
-    nome: "Administrador do Sistema",
-    senha: "123"
-  }
+{
+      "id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "cpf": "00047683135",
+      "phone_number": "3340028922",
+      "name": "Pedro",
+      "born_at": "2000-06-18",
+      "img_url": null,
+      "email": "a@gmail.com",
+      "password": "Cala",
+      "created_at": "2025-06-20T13:58:50.088Z",
+      "updated_at": "2025-06-20T13:58:50.088Z"
+}
+  
+Estrutura de Dados - pet 
+Registro dos animais cadastrados para adoção na aplicação 
+
+ {
+  "id": "petTest3",
+  "name": "Chitãozinho",
+  "animal_type_id": "faccdc3f-00ea-4f6e-9b60-ebd09afb8891",
+  "size": "Grande",
+  "animal_sex": "male",
+  "description": "Um cão amigável e brincalhão.",
+  "img_urls": ["https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"],
+  "born_at": "2022-03-15",
+  "breed": ["Pastor Alemão"],
+  "vaccinated": true,
+  "castrated": true,
+  "available_for_adoption": true,
+  "personality": ["brincalhão", "carinhoso"],
+  "donor_id": "donorTestId"
+}
+
+Estrutura de Dados - favorite_pet
+Registro dos animais favoritados pelos usuários
+
+{
+      "id": "9c9d5e57-b33d-4888-8563-b552187f3d1d",
+      "appraiser_id": "userTestId",
+      "pet_id": "petTest3",
+      "created_at": "2025-06-10T21:59:32.344Z"
+},
+
+Estrutura de Dados - wizard
+Registro das perguntas do quiz de compatibilidade
+{
+      "id": 1,
+      "question": "Qual dessas opções descreve melhor o lugar onde você mora?",
+      "type": "single-choice",
+      "options": [
+      "Casa/apartamento grande",
+        "Casa com quintal/fazenda",
+        "Apartamento pequeno",
+        "Studio/Kitnet"
+      ]
+}
+
+Estrutura de Dados - address
+Registro da localização dos pets cadastrados no site
+{
+      "id": "5490d532-02c5-471f-ba61-ca079469e641",
+      "entity_type": "pet",
+      "entity_id": "petTest2",
+      "street": "Benedito Pereira da fonseca",
+      "number": "258",
+      "complement": "Curral ",
+      "neighborhood": "Inga",
+      "city": "Betim",
+      "state": "MG",
+      "zipCode": "32632-120",
+      "country": "Brasil",
+      "latitude": -19.945789,
+      "longitude": -44.192577,
+      "created_at": "2025-06-09T01:08:27.685Z",
+      "updated_at": "2025-06-10T14:30:41.734Z"
+}
+
+Estrutura de Dados - profile_rating
+Registro das avaliações de cada usuário.
+{
+      "id": "someId",
+      "appraiserID": "someId",
+      "ratedId": "someId",
+      "content": "string",
+      "rate": "5",
+      "createdAt": "someDate"
+}
+
+Estrutura de Dados - noticias
+Registro das noticias disponíveis no site.
+
+{
+      "id": 7,
+      "titulo": "Cães farejadores ajudam a detectar doenças precocemente",
+      "resumo": "Pesquisa comprova que cães treinados conseguem identificar câncer e outras doenças através do olfato com alta precisão.",
+      "data": "2025-06-05",
+      "categoria": "Saúde",
+      "imagem": "/modulos/noticias/img/farejador.png",
+      "conteudo": "Um estudo revolucionário conduzido pelo Instituto Nacional de Pesquisas Médicas demonstrou que...
+}
+
+Estrutura de Dados - tips
+Registro das dicas disponíveis no site.
+
+{
+      "id": "c23a7de5-1093-45b9-951d-d3b9e9a62c7a",
+      "animal_type_id": "Pássaro",
+      "img_url": "someurl",
+      "created_at": "2025-05-03T14:17:59.909Z",
+      "tips": [
+        {
+          "title": "Qual o melhor tipo de gaiola?",
+          "content": "Espaçosa o suficiente para abrir as asas, com poleiros variados e espaço para voar."
+        },
+      ]
+}
+
 ⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
 
 Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração
