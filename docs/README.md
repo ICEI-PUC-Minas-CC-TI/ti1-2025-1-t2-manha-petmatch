@@ -610,6 +610,7 @@ Registro das dicas disponíveis no site.
 | CT-08 | Edição de Pets                   | Garantir atualização de dados de um pet          | 1. Acessar “Meus Pets”<br>2. Clicar em “Editar” em um pet<br>3. Alterar campo e salvar         | Alterações refletidas na lista                  |
 | CT-09 | Exclusão de Pets                 | Validar remoção de pet                           | 1. Acessar “Meus Pets”<br>2. Clicar em “Excluir” em um pet<br>3. Confirmar                     | Pet não aparece mais em “Meus Pets”             |
 | CT-10 | Disponibilidade 24h              | Verificar acesso contínuo ao site                | 1. Configurar monitor de uptime (UptimeRobot)<br>2. Aguardar 24 h de coleta de dados          | Uptime 100 % no período monitorado              |
+| CT-11 | Dados salvos no JSON             | Verificar que os dados de cadastro de usuário e de pets estão no JSON | 1. Cadastrar usuários ou pets<br> 2. Preencher todos os dados corretamente<br> 3. Enviar  | Dados salvos no estilo JSON corretamente  | 
 
 ---
 
