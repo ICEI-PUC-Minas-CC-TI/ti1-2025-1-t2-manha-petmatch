@@ -81,10 +81,13 @@ Entrevistas e Highlights de pesquisa:
 
 ### Personas
 Persona 1(Ana Paula):
+
 ![TI1-Pets (5)-1](https://github.com/user-attachments/assets/503cc8fa-9ad4-4b09-a1ad-1c108754d2d5)
 Persona 2(Joana): 
+
 ![TI1-Pets (6)-1](https://github.com/user-attachments/assets/e97bece3-bf3c-49fb-a676-63cb350cb536)
 Persona 3(Ricardo):
+
 ![TI1-Pets (7)-1](https://github.com/user-attachments/assets/e72ef470-d188-45c9-a401-ec5173bf5124)
 
 # Product Design
@@ -112,10 +115,13 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 
 ##### Proposta para Persona 1(Ana Paula):
+
 ![TI1-Pets (5)-2](https://github.com/user-attachments/assets/31e5eb96-d06d-43fb-bffd-7a7d3d98c090)
 ##### Proposta para Persona 2(Joana):
+
 ![TI1-Pets (6)-1](https://github.com/user-attachments/assets/fa216fbb-e8a6-475d-bf3b-2585c0949dd5)
 ##### Proposta para Persona 3(Ricardo):
+
 ![TI1-Pets (7)-1](https://github.com/user-attachments/assets/3b5f2140-fd92-4569-9604-b3dc11e08527)
 
 
@@ -168,65 +174,85 @@ Artefatos relacionados com a interface e a interacão do usuário na proposta de
 
 Estes são os protótipos de telas do sistema.
 ![Favoritos](https://github.com/user-attachments/assets/ec5e630c-854d-4331-94c8-6aae97d709de)
+
 Tela mostra a parte de favoritos de um usuário
 
 ![ExplorarPM1](https://github.com/user-attachments/assets/de3cce99-1642-4560-9c54-cef8fe3fd2d7)
+
 Tela mostra o explorar de uma conta já logada
 
 ![FiltrosPM](https://github.com/user-attachments/assets/24a24de8-1482-43d5-a3b5-17b918355797)
+
 Tela mostra os filtros de busca do site
 
 ![PaginaPrincipalPM1](https://github.com/user-attachments/assets/a32c153c-a0f9-4214-87e0-3341391c58b4)
+
 Tela mostra a Página Principal do site quando não tem conta
 
 ![PrincipaLOGPM1](https://github.com/user-attachments/assets/043085fd-0e57-4f3a-8ebb-eca829e7d0a8)
+
 Tela mostra a Página Principal do site quando tem conta
 
 ![LOGPM](https://github.com/user-attachments/assets/9cb5a785-7596-43e1-86bb-ed98377ce586)
+
 Tela de Login/Sign up do site
 
 ![PetPM](https://github.com/user-attachments/assets/c4b4e1a2-31df-41fe-ab04-1d43d99640da)
+
 Tela quando se clica no pet
 
 ![Cadastro](https://github.com/user-attachments/assets/aa26010c-ab4a-4c69-b7b2-1d0ffe9826b3)
+
 Página de cadastro do usuario
 
 ![filtro](https://github.com/user-attachments/assets/29418fb1-9ba3-46be-bae3-bdfdfe58d4ec)
+
 Página onde aparece os animais de acordo com o filtro do usuário
 
 ![Eventos](https://github.com/user-attachments/assets/899a1593-81f1-4ae1-9719-c58d0156e842)
+
 Página de eventos 
 
 ![AvaSite](https://github.com/user-attachments/assets/e048bae4-9e61-43b4-9c16-2c42660f1ac8)
+
 Página de avaliações do site
 
 ![CadastroPet](https://github.com/user-attachments/assets/38911751-9e7c-4e4d-94df-4139aeecc37f)
+
 Página para cadastro de Pets
 
 ![Tutor](https://github.com/user-attachments/assets/58c5e2db-be3a-4dfa-8095-5b04d78eabd7)
+
 Página de Tutor/ONGs
 
 ![Mapa](https://github.com/user-attachments/assets/0361bd6d-18a7-4b13-8d51-a0c3ce7c1d74)
+
 Página dos mapas
 
 ![PetMapa](https://github.com/user-attachments/assets/629ccc4c-02e4-449c-b4f8-bcb6290a7be4)
+
 Aba das descrições do Pet quando na página de mapa
 
 ![apadrinhar](https://github.com/user-attachments/assets/9df39ba7-847e-4a91-b305-6e729e44019a)
+
 Página de apadrinhamento de pet
 
 ![Wizard](https://github.com/user-attachments/assets/b189833d-3223-4b69-a71a-9c49d8655a2d)
+
 Página do wizard (quiz de compatibilidade)
 
 ![News](https://github.com/user-attachments/assets/8ff950b6-74f1-4dda-8f6c-9a83445d4504)
+
 Página de notícias, com todas as notícias
 
 ![NewsDetail](https://github.com/user-attachments/assets/150da885-b7a0-431a-8a7a-58f2b92193c3)
+
 Página de detalhes das notícias
 
 ### User Flow
 
 ![User Flow](https://github.com/user-attachments/assets/45220f02-83af-4c24-bfc7-6e521aa17507)
+
 User Flow do site
 
 
