@@ -55,7 +55,7 @@ export class UserInterface {
     async getUserById({id}) {
         const getUserUseCase = new GetUserUseCase(this.userRepository)
 
-        const response = await getUserUseCase.execute({id});
+        const response = await getUserUseCase.execute({userId:id});
 
         if(response.isLeft() === true) {
             console.error(response);

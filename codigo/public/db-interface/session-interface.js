@@ -51,7 +51,7 @@ export class SessionInterface {
                 return this.#handleInvalidSession();
             }
 
-            const getSessionUseCase = new GetSessionUseCase(this.#sessionRepository);
+            const getSessionUseCase = new GetSessionUseCase(this.#sessionRepository, this.#userRepository);
             const response = await getSessionUseCase.execute({ sessionId: sessionData.session._id });
 
             if (response.isLeft()) {

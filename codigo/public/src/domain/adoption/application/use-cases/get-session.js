@@ -15,8 +15,10 @@ import {VerifyToken} from '../../../../../utils/verify-token.js'
 
 export class GetSessionUseCase {
     sessionRepository;
-    constructor(sessionRepository) {
+    userRepository;
+    constructor(sessionRepository, userRepository) {
         this.sessionRepository = sessionRepository;
+        this.userRepository = userRepository
     }
 
     async execute({
@@ -32,16 +34,23 @@ export class GetSessionUseCase {
             return left(new ResourceNotFoundError())
         } 
 
-        console.log('aa')
-
         const isSessionValid = VerifyToken.isTokenValid(session.expiresAt)
 
         if (!isSessionValid) {
             return left(new SessionExpiredError());
         }
 
+        const {user} = await this.userRepository.findById(session.userId);
+
+        if(!user) {
+            return left(new ResourceNotFoundError())
+        }
+
+        user.password = null
+
         return right({
-            session
+            session,
+            user
         })
     }
 }

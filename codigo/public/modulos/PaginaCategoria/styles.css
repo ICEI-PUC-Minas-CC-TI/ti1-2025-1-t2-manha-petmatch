@@ -266,10 +266,10 @@ h2.titulo {
 
 div.titulo-categoria {
   display: flex;
-  flex-direction: row;
-  gap: 2%;
+  flex-wrap: wrap;
   margin: 50px;
- 
+  gap: .5rem;
+  width: 90%;
 }
 
 /*Design dos Cards*/
@@ -278,20 +278,25 @@ a.tipos {
   color: var(--black);
   border: 2px solid var(--black);
   border-radius: 10px;
-  margin: 7px;
   cursor: pointer;
-  width: 100%;
-  width: 120px;
+  width: 180px;
   max-width: 1500px;
   text-decoration: none;
+  font-weight: bolder;
+
+  transition: transform .3s;
+}
+
+a.tipos:hover {
+  transform: scale(1.1);
 }
 
 .imagem-categorias {
-  height: 100px;
-  width: 120px;
+  height: 140px;
+  width: 100%;
   display: block;
-  border-radius: 7px;
-  border: solid var(--yellow);
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 p.escrito-card {

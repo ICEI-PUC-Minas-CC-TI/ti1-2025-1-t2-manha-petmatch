@@ -1,4 +1,3 @@
-
 import { left, right } from "../../../../../core/Either.js";
 import { ResourceNotFoundError } from "../../../../../core/errors/resource-not-found-error.js";
 import { RequestMissingDataError } from "../errors/request-missing-data-error.js";
@@ -20,6 +19,8 @@ export class AuthenticateUseCase {
         email,
         password
     }) {
+
+        console.log(email)
         if(!email || !password) {
             return left(new RequestMissingDataError())
         }
@@ -60,6 +61,8 @@ export class AuthenticateUseCase {
 
         await this.sessionRepository.create(session)
 
-        return right({session})
+        user.password = null
+
+        return right({session, user})
     }
 }

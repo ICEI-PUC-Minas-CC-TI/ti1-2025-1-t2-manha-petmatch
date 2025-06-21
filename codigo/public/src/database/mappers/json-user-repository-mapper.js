@@ -1,14 +1,19 @@
 import { User } from "../../domain/adoption/enterprise/entities/User.js";
+import {VerifyImage} from '../../../utils/verify-image.js'
 
 export class JsonUserRepositoryMapper {
-    static toDomain(raw) {
+    static async toDomain(raw) {
+        const image = await VerifyImage.doesImageExists(raw.img_url, (doesExists) => {
+                return doesExists ? raw.img_url : "../../Images/someone.jpg"
+            })
+
         const domainUser = User.create({
             cpf: raw.cpf,
             name: raw.name,
             phoneNumber: raw.phone_number,
             description: raw.description,
             bornAt: raw.born_at,
-            imgUrl: raw.img_url,
+            imgUrl: image,
             email: raw.email,
             password: raw.password,
             createdAt: raw.created_at,

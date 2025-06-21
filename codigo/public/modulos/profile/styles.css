@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+:root {
+    --white: #f8f8f8;
+    --yellow: #FFD02F;
+    --red: #F60000;
+    --gray: #A4A4A4;
+
+}
+
+body {
+    background-color: var(--white);
+    padding-top: 80px ;
+}
+
+main {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    gap: 1.5rem;
+}
+
+#profile-container {
+    width: 250px;
+    height: 400px;
+    background-color: #F60000;
+}
