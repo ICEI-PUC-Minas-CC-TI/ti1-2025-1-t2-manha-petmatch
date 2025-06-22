@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const petAgeElement = document.getElementById('petAge');
   const petVaccinatedElement = document.getElementById('petVaccinated');
   const petImageElement = document.getElementById('petImage');
-  const contactButton = document.getElementById('contactButton');
+  const contactButton = document.getElementById('donor-btn');
   const adoptButton = document.getElementById('adoptButton');
 
   if (petImageElement) {
@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         updateElement(petGenderElement, pet.pet?.props?.animalSex);
 
         if (petAgeElement) {
+          console.log(pet.pet?.props?.bornAt)
           const bornAt = pet.pet?.props?.bornAt;
           petAgeElement.textContent = calculateAge(bornAt);
         }
@@ -154,15 +155,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   if (contactButton) {
     contactButton.addEventListener('click', () => {
-      const confirmed = confirm('Deseja entrar em contato com o responsável pelo pet?');
-      if (confirmed) {
         const donorId = pet?.pet?.props?.donorId;
         if (donorId) {
-          window.location.href = `../perfil/perfil.html?id=${donorId}`;
+              window.location.href = `${window.location.origin}/modulos/donor-profile/index.html?donorId=${donorId}`;
         } else {
           alert("ID do doador não encontrado.");
         }
-      }
     });
   }
 

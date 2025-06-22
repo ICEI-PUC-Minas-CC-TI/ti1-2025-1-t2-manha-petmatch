@@ -3,6 +3,13 @@ import { RatingUserUseCase } from "../../src/domain/adoption/application/use-cas
 import { JsonUserRepository } from "../../src/database/repositories/adoption/json-user-repository.js";
 import { JsonDonorRepository } from "../../src/database/repositories/adoption/json-donor-repository.js";
 import {AnimalTypeInterface} from "../../db-interface/animal-type-interface.js"
+import { CurrentSession } from "../../utils/current-session.js";
+import { DonorInterface } from "../../db-interface/donor-interface.js";
+import { UserInterface } from "../../db-interface/user-interface.js";
+
+const userInterface = new UserInterface()
+const donorInterface = new DonorInterface()
+const session = new CurrentSession()
 
 // Captura do ratedId da URL (ex: avaliar.html?ratedId=abcd1234)
 const urlParams = new URLSearchParams(window.location.search);
@@ -10,6 +17,20 @@ const ratedId = urlParams.get("ratedId"); // O ID do perfil que está sendo aval
 
 if (!ratedId) {
   alert("Erro: Nenhum usuário foi definido para avaliação. Por favor, forneça um 'ratedId' na URL.");
+}
+
+async function fetchAndRenderDonorInfo() {
+    try {
+        const { donor } = await donorInterface.getDonorById({ id: ratedId })
+        console.log()
+        
+        const user = await userInterface.getUserById({ id: donor.props.userId })
+
+        $('#img').attr('src', user.user.props.imgUrl)
+        $('#name').text(user.user.props.name)
+    } catch (error) {
+        console.error('Erro ao carregar dados do doador:', error)
+    }
 }
 
 const stars = document.querySelectorAll('.star');
@@ -66,7 +87,7 @@ submitBtn.addEventListener('click', async () => {
   const appraiserId = "userTestId"; // Exemplo de ID fixo
 
   const result = await useCase.execute({
-    appraiserId,
+    appraiserId: session.userId,
     ratedId, // O ID do perfil sendo avaliado, vindo da URL
     content: comment,
     rate: currentRating
@@ -103,7 +124,7 @@ function onSearchBar(event) {
 }
 
 window.addEventListener("load", async () => {
-    await puxabicho();
+    await fetchAndRenderDonorInfo()
 })
 
 $("#searchBar").on("propertychange input", onSearchBar)

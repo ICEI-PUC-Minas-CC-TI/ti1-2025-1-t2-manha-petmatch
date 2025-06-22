@@ -2,7 +2,7 @@ import {PetInterface} from "../../db-interface/pet-interface.js"
 import {AnimalTypeInterface} from  "../../db-interface/animal-type-interface.js"
 import {FavoritePetInterface} from '../../db-interface/favorite-pet-interface.js'
 import {AddressInterface} from '../../db-interface/address-interface.js'
-import { VerifyImage } from "../../utils/verify-image.js"
+
 
 const petInterface = new PetInterface();
 const favoritePetInterface = new FavoritePetInterface();
@@ -58,13 +58,10 @@ function drawElements(listOfPets) {
     $("#pet-card-list-container").empty();
 
     listOfPets.forEach(pet => {
-        VerifyImage.doesImageExists(pet.img_urls[0], (doesImgExists) => {
-            const petImg = doesImgExists ? pet.img_urls[0] : "../../assets/images/dog_phatom.png";
-
             $('#pet-card-list-container').append(`
                 <li>
                     <button class="pet-list-btn" id="${pet.id}">
-                        <img src="${petImg}" alt="Image of ${pet.name}">
+                        <img src="${pet.img_urls[0]}" alt="Image of ${pet.name}">
                         <div class="petListCardContent">
                             <div><h3>${pet.name}</h3> <span>2 Anos</span></div>
                             <p>${pet.breed}</p>
@@ -72,7 +69,6 @@ function drawElements(listOfPets) {
                     </button>
                 </li>
             `);
-        });
     });
 }
 
@@ -85,13 +81,10 @@ function drawFavoritedElements(listOfPets) {
 
 
     favoritedList.forEach(pet => {
-        VerifyImage.doesImageExists(pet.img_urls[0], (doesImgExists) => {
-            const petImg = doesImgExists ? pet.img_urls[0] : "../../assets/images/dog_phatom.png";
-
             $('#pet-card-list-container').append(`
                 <li>
                     <button class="pet-list-btn" id="${pet.id}">
-                        <img src="${petImg}" alt="Image of ${pet.name}">
+                        <img src="${ pet.img_urls[0]}" alt="Image of ${pet.name}">
                         <div class="petListCardContent">
                             <div><h3>${pet.name}</h3> <span>2 Anos</span></div>
                             <p>${pet.breed}</p>
@@ -99,7 +92,6 @@ function drawFavoritedElements(listOfPets) {
                     </button>
                 </li>
             `);
-        });
     });
 }
 function formatAddress(address) {
@@ -151,14 +143,9 @@ function drawPinsOnMap(pets, addresses) {
     el.style.backgroundSize = 'cover';
     el.style.backgroundColor = '#fff';
     el.onclick = () => handleDrawCard(pet.id);
-
-    VerifyImage.doesImageExists(imgUrl, (exists) => {
-      setTimeout(() => {
-        el.style.backgroundImage = exists
-          ? `url("${imgUrl}")`
-          : `url("../../assets/images/dog_phatom.png")`;
-      }, 50); 
-    });
+    el.style.backgroundImage = `url("${imgUrl}")`
+        
+    
 
     el.addEventListener('mouseover', () => {
       $('#address-dialog').css('display', 'flex');
@@ -186,9 +173,7 @@ function handleDrawCard(id) {
   const address = petAddressesList.find((address) => address.props.entityId
  === id)
 
-  VerifyImage.doesImageExists(pet.img_urls[0], (doesImgExists) => {
-    
-  const petImg = doesImgExists ? `${pet.img_urls[0]}` : "../../assets/images/dog_phatom.png"
+  const petImg = `${pet.img_urls[0]}`
 
    const favoritePetClassName = favoritedPetsList.some(element => element.props.petId === pet.id) ? "favorited" : "unFavorited"
 
@@ -219,7 +204,7 @@ function handleDrawCard(id) {
                 </div>
         </div>
     `)
-  })
+
   
 }
 

@@ -2,67 +2,58 @@
   background-color: #fff;
   border: 1px solid #E0E0E0;
   border-radius: 10px;
-  padding: 25px;
+  padding: 18px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
 
 .owner-profile {
-  margin-bottom: 15px;
-}
-
-.owner-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #f0f0f0;
+  margin-bottom: 12px;
 }
 
 .owner-name {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   color: #333;
 }
 
 .rating-stars {
   color: #FFC107;
-  margin-bottom: 15px;
-  font-size: 1.1em;
+  margin-bottom: 12px;
+  font-size: 1em;
 }
 
 .rating-stars span {
   color: #555;
-  margin-left: 8px;
+  margin-left: 6px;
   font-weight: bold;
-  font-size: 1em;
+  font-size: 0.95em;
   vertical-align: middle;
 }
 
 .owner-description {
-  font-size: 0.9em;
+  font-size: 0.85em;
   color: #555;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   text-align: left;
   line-height: 1.5;
 }
 
 .owner-description p {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .contact-button {
   background-color: #FFD100;
   color: #333;
   border: none;
-  padding: 12px 25px;
-  border-radius: 20px;
+  padding: 10px 20px;
+  border-radius: 18px;
   font-weight: bold;
   cursor: pointer;
   width: 100%;
-  font-size: 1em;
+  font-size: 0.95em;
   transition: background-color 0.3s ease;
 }
 
@@ -73,59 +64,60 @@
 .pet-details-column {
   background-color: #fff;
   border-radius: 10px;
-  padding: 25px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
 
 .pet-image {
   width: 100%;
-  max-height: 450px;
-  object-fit: cover;
+  max-height: 350px;
+  object-fit: fill;
   border-radius: 8px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   display: block;
+  justify-self: center;
 }
 
 .pet-name {
-  font-size: 2.8em;
+  font-size: 2em;
   font-weight: bold;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-transform: uppercase;
 }
 
 .pet-info-grid {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 30px;
+  gap: 20px;
   align-items: start;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .pet-description p {
-  font-size: 1em;
+  font-size: 0.95em;
   color: #555;
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0;
 }
 
 .attributes-title {
-  font-size: 1.3em;
+  font-size: 1.15em;
   font-weight: bold;
   color: #333;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   border-top: 4px solid #FFD100;
-  padding-top: 10px;
+  padding-top: 8px;
 }
 
 .attributes-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.95em;
+  font-size: 0.9em;
 }
 
 .attributes-table td {
-  padding: 10px 5px;
+  padding: 8px 5px;
   border-bottom: 1px solid #eee;
   vertical-align: top;
 }
@@ -133,7 +125,7 @@
 .attributes-table td:first-child {
   font-weight: bold;
   color: #333;
-  width: 100px;
+  width: 90px;
 }
 
 .attributes-table td:last-child {
@@ -149,13 +141,13 @@
   background-color: #FFD100;
   color: #333;
   border: none;
-  padding: 15px 30px;
+  padding: 12px 25px;
   border-radius: 8px;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
   cursor: pointer;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -168,12 +160,27 @@
 
 .heart-icon {
   color: #FF5C5C;
-  margin-left: 15px;
-  font-size: 1.3em;
+  margin-left: 12px;
+  font-size: 1.2em;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .heart-icon.favorited {
   color: #E53935;
   transform: scale(1.1);
+}
+
+.button-cont {
+  display: flex;
+  gap: 10px;
+}
+
+#donor-btn {
+  width: fit-content;
+  background-color: gainsboro;
+  transition: filter .3s;
+}
+
+#donor-btn:hover {
+  filter: brightness(.9);
 }
