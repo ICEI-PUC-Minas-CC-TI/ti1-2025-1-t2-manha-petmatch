@@ -150,7 +150,7 @@ export class PetInterface {
 
     async fetchFavoritePet() {
         const fetchFavoritePet = new FetchFavoritePetUseCase(this.favoritePetRepository,this.userRepository)
-
+        console.log(this.session.userId)
         const response = await fetchFavoritePet.execute({appraiserId: this.session.userId});
 
         if(response.isLeft() === true) {

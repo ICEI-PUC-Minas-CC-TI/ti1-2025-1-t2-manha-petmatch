@@ -283,6 +283,24 @@
       "appraiser_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
       "pet_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
       "created_at": "2025-06-22T00:08:31.421Z"
+    },
+    {
+      "id": "cb8820ca-93f8-4ab4-bb94-0eaa62c288bd",
+      "appraiser_id": "bffcd96f-bc9f-4ae3-9287-60170500d1eb",
+      "pet_id": "5ab5c204-4269-40c3-805e-2bfb80ec7e42",
+      "created_at": "2025-06-22T23:30:21.118Z"
+    },
+    {
+      "id": "f79e2b7b-feba-4eb8-bc3c-a76516c3f42d",
+      "appraiser_id": "bffcd96f-bc9f-4ae3-9287-60170500d1eb",
+      "pet_id": "petTest2",
+      "created_at": "2025-06-22T23:30:23.262Z"
+    },
+    {
+      "id": "9c7b27e1-57e5-4402-b9da-8cddfc5b4918",
+      "appraiser_id": "bffcd96f-bc9f-4ae3-9287-60170500d1eb",
+      "pet_id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
+      "created_at": "2025-06-22T23:30:25.719Z"
     }
   ],
   "address": [
@@ -506,6 +524,23 @@
       "longitude": -44.023985,
       "created_at": "2025-06-22T15:01:39.181Z",
       "updated_at": "2025-06-22T15:01:39.181Z"
+    },
+    {
+      "id": "6df9c7c8-6301-45d8-9c1e-f9a30f24a46e",
+      "entity_type": "user",
+      "entity_id": "bffcd96f-bc9f-4ae3-9287-60170500d1eb",
+      "street": "Rua Zínia",
+      "number": "680",
+      "complement": "Casa",
+      "neighborhood": "Havai",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zipCode": "30555200",
+      "country": "Brasil",
+      "latitude": -19.951524,
+      "longitude": -43.97577,
+      "created_at": "2025-06-22T22:12:35.543Z",
+      "updated_at": "2025-06-22T22:12:35.543Z"
     }
   ],
   "session": [
@@ -1132,6 +1167,14 @@
       "expires_at": "2025-06-25T21:23:09.737Z",
       "entity_type": "DONOR",
       "created_at": "2025-06-22T21:23:09.737Z"
+    },
+    {
+      "id": "edbb2246-9571-4d34-b463-ca58b472357a",
+      "user_id": "bffcd96f-bc9f-4ae3-9287-60170500d1eb",
+      "donor_id": "3b8df1f8-8293-4881-b8fc-76d6fba69d32",
+      "expires_at": "2025-06-25T22:12:35.766Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-22T22:12:35.766Z"
     }
   ],
   "user": [
@@ -1210,6 +1253,18 @@
       "password": "lala",
       "created_at": "2025-06-22T15:01:34.052Z",
       "updated_at": "2025-06-22T18:46:29.028Z"
+    },
+    {
+      "id": "bffcd96f-bc9f-4ae3-9287-60170500d1eb",
+      "cpf": "12312313131",
+      "phone_number": "31970707070",
+      "name": "Bruninho",
+      "born_at": "1999-07-06",
+      "img_url": null,
+      "email": "bruninho@gmail.com",
+      "password": "bruninho",
+      "created_at": "2025-06-22T22:12:32.459Z",
+      "updated_at": "2025-06-22T22:12:32.459Z"
     }
   ],
   "donor": [
@@ -1254,6 +1309,14 @@
       "updated_at": "2025-06-22T15:01:39.282Z",
       "id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
       "user_id": "c8f9d7b2-f9cd-465a-ab7c-85fe5b5cf7e5",
+      "donor_type": "USER",
+      "adoption_amount": 0
+    },
+    {
+      "created_at": "2025-06-22T22:12:35.647Z",
+      "updated_at": "2025-06-22T22:12:35.647Z",
+      "id": "3b8df1f8-8293-4881-b8fc-76d6fba69d32",
+      "user_id": "bffcd96f-bc9f-4ae3-9287-60170500d1eb",
       "donor_type": "USER",
       "adoption_amount": 0
     }

@@ -72,13 +72,13 @@ export class JsonFavoritePetRepository {
             const newUrl = `${this.url}?appraiser_id=${appraiserId}`
 
             const response = await fetch(newUrl);
-
             const jsonFormat = await response.json()
+            
 
             const favoritePet = jsonFormat.map((element) => {
                 return  {...JsonFavoritePetRepositoryMapper.toDomain(element)}
             })
-
+            console.log(favoritePet)
             return favoritePet
         } catch(err) {
             console.error(err);

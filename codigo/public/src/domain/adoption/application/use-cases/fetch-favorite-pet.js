@@ -34,7 +34,6 @@ export class FetchFavoritePetUseCase {
             return left(new NotAllowedError());
         }
         const favoritePets = await this.favoritePetRepository.findManyFavoritePetByAppraiserId(appraiserId)
-        
         return right({
             favoritePets
         })
