@@ -25,7 +25,7 @@
     <div>
       <div id="profile">
         <div>
-         <img src="../../images/someone.jpg" alt="user avatar" id="avatar" />
+          <img src="../../images/someone.jpg" alt="user avatar" id="avatar" />
           <div id="profile-info">
             <h3>Ricardão</h3>
             <span><i class="material-icons">stars</i>5.0</span>
@@ -39,13 +39,16 @@
         <a href="../PaginaCategoria/Categorias.html"><i class="material-icons">category</i> Categorias</a>
         <a href="../favoritos/pets/index.html"><i class="material-icons">favorite</i> Favoritos</a>
         <a href="../historico/historico.html"><i class="material-icons">history</i>Histórico</a>
-        <a href="#"><i class="material-icons">pets</i> Meus Pets</a>
+        <a href="../apagar-pet/apagar-pet.html"><i class="material-icons">pets</i> Meus Pets</a>
         <a href="#"><i class="material-icons">map</i> Petmap</a>
         <a href="../tips/tips.html" class="tips-icon"><i class="material-icons">lightbulb</i>Pet Tips</a>
       </nav>
     </div>
     <div id="aside-footer">
-      <a href="../cadastro-pets/cadastro-pets.html" class="btn-style" style="color: black; text-decoration: none;" >Colocar para Adoção</a>
+      <a href="../cadastro-pets/cadastro-pets.html" class="btn-style"
+        style="color: black; text-decoration: none;">Colocar para Adoção</a>
+      <a href="../apagar-pet/apagar-pet.html" class="btn-style" style="color: black; text-decoration: none;">Meus Pets
+        em Adoção</a>
       <button class="btn-logout btn-style">Sair</button>
     </div>
   </aside>
@@ -128,7 +131,6 @@
         <label>Raça</label>
         <input type="text" placeholder="Shitsu, British Shorthair, Vira-Lata..." class="campo-de-digitar" />
         <br>
-        <!-- Campo é castrado? -->
         <div>
           <label>É castrado?</label><br />
           <div class="toggle-group" id="castrado-toggle">
@@ -136,7 +138,6 @@
             <button type="button" class="toggle-btn">Não</button>
           </div>
         </div>
-        <!-- Campo "Já foi ao veterinário?" -->
         <div style="margin-top: 20px;">
           <label>Seu pet já foi no veterinário?</label><br />
           <div class="toggle-group" id="veterinario-toggle">
@@ -229,7 +230,6 @@
         });
       });
 
-      // Adicionar novo campo de vacina (apenas para o botão "adicionar-vacina-btn")
       if (adicionarVacinaBtn && !adicionarVacinaBtn.hasOwnProperty('clickListenerAdicionado')) {
         adicionarVacinaBtn.addEventListener('click', function () {
           const novoCampoVacina = document.createElement('div');

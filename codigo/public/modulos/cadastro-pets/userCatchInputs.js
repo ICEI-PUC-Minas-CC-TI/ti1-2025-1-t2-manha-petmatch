@@ -2,93 +2,97 @@ import { PetInterface } from '../../db-interface/pet-interface.js';
 
 const petService = new PetInterface();
 
-async function petRegister(params) {
-  try {
-    const registerPetInterface = await petService.registerPetInterface(params);
-    return registerPetInterface;
-  } catch (error) {
-    console.error("Erro na interface de registro:", error);
+document.querySelector('.submit').addEventListener('click', async (event) => {
+  event.preventDefault();
+
+  const nomePet = document.querySelector('.adicionar-nome-e-imagem input[type="text"]').value;
+  const descricaoPet = document.querySelector('.campo-de-digitar input[type="text"]').value;
+  const classificacaoSelect = document.getElementById('classificacao');
+  const classificacaoId = classificacaoSelect.value;
+  // const classificacaoNome = classificacaoSelect.options[classificacaoSelect.selectedIndex].text; // Se precisar do nome
+
+  const vacinadoToggle = document.querySelector('#vacina-toggle .toggle-btn.active')?.textContent === 'Sim';
+  const tamanho = document.querySelector('#tamanho-toggle .toggle-btn.active')?.textContent;
+  const castradoToggle = document.querySelector('#castrado-toggle .toggle-btn.active')?.textContent === 'Sim';
+  const veterinarioToggle = document.querySelector('#veterinario-toggle .toggle-btn.active')?.textContent === 'Sim';
+
+  const vacinaInputs = document.querySelectorAll('#lista-de-vacinas .vacina-item input.campo-de-digitar');
+  const vacinas = vacinadoToggle ? Array.from(vacinaInputs).map(input => input.value.trim()).filter(v => v) : [];
+  const primeiraVacinaInput = document.querySelector('#campos-vacina input.campo-de-digitar');
+  if (vacinadoToggle && primeiraVacinaInput && primeiraVacinaInput.value.trim() !== '' && !vacinas.includes(primeiraVacinaInput.value.trim())) {
+    vacinas.unshift(primeiraVacinaInput.value.trim());
   }
-}
 
-document.querySelector('.submit').addEventListener('click', async () => {
+  const dataEncontro = document.querySelector('.form-group-horizontal input[type="text"]').value;
+  const raca = document.querySelector('.info-card input[placeholder="Shitsu, British Shorthair, Vira-Lata..."]').value;
+  const consultaVeterinario = veterinarioToggle ? document.querySelector('#campo-consulta input[type="text"]').value : '';
+
+  const estado = document.querySelector('.info-card input[placeholder="Minas Gerais, Bahia..."]').value;
+  const cep = document.querySelector('.info-card input[placeholder="Ex: 12.345-000..."]').value;
+  const cidade = document.querySelector('.info-card input[placeholder="Belo Horizonte, São Paulo..."]').value;
+  const complemento = document.querySelector('.info-card input[placeholder="Casa, apartamento..."]').value;
+  const rua = document.querySelector('.info-card input[placeholder="Rua São João..."]').value;
+  const bairro = document.querySelector('.info-card input[placeholder="Lourdes..."]').value;
+
+  const inputImagens = document.getElementById('file-button');
+  const arquivos = Array.from(inputImagens?.files || []);
+  const imagensBase64 = await Promise.all(
+    arquivos.map(arquivo => {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(arquivo);
+      });
+    })
+  );
+
+  // O donorId precisa vir de algum lugar (sessão do usuário logado, por exemplo)
+  // Por enquanto, vamos usar um valor fixo ou um placeholder para testes.
+  // Em um sistema real, isso viria da autenticação do usuário.
+  const donorId = "some-predefined-donor-id"; // <-- Mude isso para o ID real do doador/usuário logado
+
+  const petInfo = {
+    name: nomePet,
+    animalTypeId: classificacaoId, // Usamos o ID da classificação
+    size: tamanho,
+    // animalSex: "", // Não vi campo para sexo no seu HTML, adicione se precisar
+    descriptions: descricaoPet,
+    imgUrls: imagensBase64,
+    // bornAt: new Date(), // Ajuste conforme a data de nascimento real do pet
+    breed: [raca], // Assumindo que raça é um array de strings
+    vaccinated: vacinadoToggle,
+    castrated: castradoToggle,
+    availableForAdoption: true, // Ou baseie em um campo no HTML
+    personality: [], // Adicione campo para personalidade se precisar
+    donorId: donorId,
+    // Adicione as informações de endereço aqui, conforme a estrutura esperada pela sua `RegisterPetUseCase`
+    address: { // Supondo que a estrutura do endereço seja assim na sua PetInterface/Backend
+      state: estado,
+      zipCode: cep,
+      city: cidade,
+      complement: complemento,
+      street: rua,
+      neighborhood: bairro
+    },
+    hasVeterinaryConsultation: veterinarioToggle,
+    veterinaryConsultationDescription: consultaVeterinario,
+    vaccines: vacinas
+  };
+
   try {
-    // Imagens (base64)
-    const inputImagens = document.getElementById('file-button');
-    const arquivos = Array.from(inputImagens?.files || []);
-    const imagens = await Promise.all(
-      arquivos.map(arquivo => {
-        return new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result);
-          reader.onerror = reject;
-          reader.readAsDataURL(arquivo);
-        });
-      })
-    );
+    const response = await petService.registerPetInterface({ petInfo });
 
-    const getValue = (selector) => {
-      const el = document.querySelector(selector);
-      return el ? el.value.trim() : '';
-    };
-
-    const getToggle = (selector) => {
-      const el = document.querySelector(`${selector} .toggle-btn.active`);
-      return el ? el.innerText : '';
-    };
-
-    const nome = getValue('.campo-de-digitar-com-a-imagem input');
-    const descricao = document.querySelector('input[placeholder="Descrição do PET"]')?.value.trim() || '';
-
-    const classificacao = getValue('#classificacao');
-    const vacinado = getToggle('#vacina-toggle') === 'Sim';
-    const vacinas = vacinado
-      ? [getValue('#campos-vacina input')]
-        .concat([...document.querySelectorAll('#lista-de-vacinas input')].map(i => i.value.trim()))
-        .filter(v => v !== '')
-      : [];
-
-    const dataEncontro = getValue('.form-group-horizontal input[placeholder*="encontrou"]');
-    const tamanho = getToggle('#tamanho-toggle');
-    const breed = getValue('input[placeholder*="Shitsu"]');
-    const castrado = getToggle('#castrado-toggle') === 'Sim';
-    const foiVeterinario = getToggle('#veterinario-toggle') === 'Sim';
-    const consultaDescricao = foiVeterinario ? getValue('#campo-consulta input') : '';
-
-    const estado = getValue('input[placeholder*="Minas Gerais"]');
-    const cep = getValue('input[placeholder*="12.345"]');
-    const cidade = getValue('input[placeholder*="Belo Horizonte"]');
-    const complemento = getValue('input[placeholder*="Casa, apartamento"]');
-    const rua = getValue('input[placeholder*="Rua São João"]');
-    const bairro = getValue('input[placeholder*="Lourdes"]');
-
-    const petInfo = {
-      name: nome,
-      description: descricao,
-      animalTypeId: classificacao,
-      size: tamanho,
-      breed: [breed],
-      vaccinated: vacinado,
-      castrated: castrado,
-      personality: [],
-      imgUrls: imagens,
-      bornAt: dataEncontro,
-      donorId: "donorTestId",
-      availableForAdoption: true,
-      animalSex: "Male",
-    };
-
-    const resultado = await petRegister({ petInfo });
-
-
-    if (resultado?.erro) {
-      alert('Erro ao registrar pet: ' + resultado.erro);
+    if (response && response.isLeft && response.isLeft()) {
+      console.error("Erro ao cadastrar pet:", response.value);
+      alert('Erro ao cadastrar pet: ' + response.value.message || 'Erro desconhecido.');
     } else {
       alert('Pet cadastrado com sucesso!');
+      document.querySelector('form').reset();
+      // Você pode redirecionar ou atualizar a lista de pets após o cadastro
     }
-
-  } catch (err) {
-    console.error("Erro inesperado:", err);
-    alert('Erro inesperado ao cadastrar o pet.');
+  } catch (error) {
+    console.error("Erro inesperado ao registrar pet:", error);
+    alert('Ocorreu um erro ao cadastrar o pet. Verifique o console.');
   }
 });

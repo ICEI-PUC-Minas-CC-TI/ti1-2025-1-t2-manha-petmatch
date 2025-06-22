@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciar Meus Pets</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="sidebar.css" />
+  <link rel="stylesheet" href="apagar-pet.css" />
+</head>
+
+<body>
+  <aside id="sidebar">
+    <div id="logo"><img src="../../application-assets/image.png" alt="Logo"></div>
+    <div>
+      <div id="profile">
+        <div>
+          <img src="../../Images/someone.jpg" alt="user avatar" id="avatar" />
+          <div id="profile-info">
+            <h3>Ricardão</h3>
+            <span><i class="material-icons">stars</i>5.0</span>
+          </div>
+        </div>
+        <button class="btn-style">Perfil</button>
+      </div>
+      <nav id="menu">
+        <a href="../homepage/homepage.html"><i class="material-icons">home</i> Home</a>
+        <a href="../explore/index.html"><i class="material-icons">explore</i> Explorar</a>
+        <a href="../PaginaCategoria/Categorias.html"><i class="material-icons">category</i> Categorias</a>
+        <a href="../favoritos/pets/index.html"><i class="material-icons">favorite</i> Favoritos</a>
+        <a href="../historico/historico.html"><i class="material-icons">history</i>Histórico</a>
+        <a href="../apagar-pet/apagar-pet.html"><i class="material-icons">pets</i> Meus Pets</a>
+        <a href="#"><i class="material-icons">map</i> Petmap</a>
+        <a href="../tips/tips.html" class="tips-icon"><i class="material-icons">lightbulb</i>Pet Tips</a>
+      </nav>
+    </div>
+    <div id="aside-footer">
+      <a href="../cadastro-pets/cadastro-pets.html" class="btn-style"
+        style="color: black; text-decoration: none;">Colocar para Adoção</a>
+      <a href="../apagar-pet/apagar-pet.html" class="btn-style" style="color: black; text-decoration: none;">Meus Pets
+        em Adoção</a>
+      <button class="btn-logout btn-style">Sair</button>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <h1 class="logo">PETMATCH</h1>
+    <div class="search">
+      <input type="text" placeholder="Pesquisa" />
+      <button><i class="material-icons">search</i></button>
+    </div>
+  </header>
+
+  <main class="page-container">
+    <section class="content-section">
+      <h2>Gerenciar Pets Cadastrados</h2>
+      <div id="pets-list-container">
+        <p id="loading-message">Carregando seus pets...</p>
+        <p id="no-pets-message" style="display: none;">Você ainda não tem nenhum pet cadastrado.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="gerenciar-pets.js" type="module"></script>
+</body>
+
+</html>

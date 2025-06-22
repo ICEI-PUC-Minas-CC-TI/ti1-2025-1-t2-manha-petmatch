@@ -10,13 +10,10 @@
   --yellow: #FFD02F;
   --red: #F60000;
   --gray: #A4A4A4;
-
 }
-
 
 body {
   background-color: var(--white);
-
 }
 
 #sidebar {
@@ -85,11 +82,9 @@ body {
   border-radius: 5px;
   font-weight: bolder;
   border: 2px solid var(--yellow);
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   transition: filter .3s;
 }
 
@@ -137,7 +132,6 @@ body {
 #menu a#active {
   background-color: transparent;
 }
-
 
 #menu a:hover {
   color: #FFE066;
