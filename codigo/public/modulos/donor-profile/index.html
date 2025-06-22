@@ -13,70 +13,47 @@
     <title>PetMatch</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="../../components/sidebar/styles.css">
+    <link rel="stylesheet" href="../../components/header/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
     <header class="topbar">
         <h1 class="logo">PETMATCH</h1>
-        <div class="search">
-            <input type="text" placeholder="Pesquisa" id="searchBar" />
-            <button id="searchButton"><i class="material-icons">search</i></button>
-        </div>
     </header>
 
-    
-
     <main>
-        <div class="container">
-            <h1 class="doador">Perfil do Doador</h1>
-            <div class="foto">
-                <img src="image.png" alt="Foto de perfil">
-            </div>
-            <h2>Ricardão</h2>
-            <span class="star" data-value="5">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
-            <span class="star" data-value="5">&#9733;</span>
+        <div id="profile-container">
+            <header id="profile-header">
+            </header>
 
-            <a href="../avaliar/avaliar.html" class="btn-avaliar"
-                style="color: black; text-decoration: none;">Avaliar</a>
-        </div>
-        </div>
-        <div class="container-right">
-            <div class="top-section">
-                <div class="coluna-esquerda aba">
-                    Pets
+            <div id="profile-content">
+                <img src="../../Images/someone.jpg" alt="Imagem do perfil" id="user-img">
+
+                <div id="profile-content-header">
+                    <h2 id="name">Nome</h2>
+                <div>
+                    <p class="p-holder">Idade: <span id="age"></span></p>
+                    <p class="p-holder">Número: <span id="number"></span></p>
+                    <p class="p-holder">Descrição: <span id="description"></span></p>
                 </div>
-                <div class="coluna-direita aba">
-                    Avaliações
                 </div>
             </div>
-
-            <div class="bottom-section">
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-                ㅤ<br>
-            </div>
         </div>
 
+        <div id="pets">
+            <header id="pets-header">
+                <h2>Meus Pets</h2>
+            </header>
 
+           <ul id="pets-content">
+            </ul>
+        </div>
     </main>
+
     <script type="module" src="../../components/sidebar/sidebar.js"></script>
-  <script type="module" src="../../utils/verify-login.js"></script>
-    <script src="../../jquery/jquery.js"></script>
+    <script type="module" src="../../utils/verify-login.js"></script>
+    <!-- <script src="../../jquery/jquery.js"></script> -->
     <script type="module" src="perfil.js"></script>
 </body>
 

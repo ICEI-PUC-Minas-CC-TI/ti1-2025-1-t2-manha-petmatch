@@ -75,7 +75,7 @@ export class DonorInterface {
     async getDonorById({id}) {
         const getDonorUseCase = new GetDonorUseCase(this.donorRepository)
 
-        const response = await getDonorUseCase.execute({id});
+        const response = await getDonorUseCase.execute({donorId: id});
 
         if(response.isLeft() === true) {
             console.error(response);
