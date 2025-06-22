@@ -217,34 +217,40 @@
   ],
   "favorite_pet": [
     {
-      "id": "9c9d5e57-b33d-4888-8563-b552187f3d1d",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest3",
-      "created_at": "2025-06-10T21:59:32.344Z"
-    },
-    {
-      "id": "5770af18-4222-4a75-a823-8eb0e4cceef1",
-      "appraiser_id": "userTestId",
-      "pet_id": "petTest",
-      "created_at": "2025-06-10T22:29:47.776Z"
-    },
-    {
       "id": "56c5efb3-2c42-4b10-921e-dfed6729f286",
       "appraiser_id": "userTestId",
       "pet_id": "032a57ba-d703-4226-a801-9a9dda3d7e28",
       "created_at": "2025-06-10T22:29:54.184Z"
     },
     {
-      "id": "d69fb6fc-600d-4bd8-8c81-3ce4c9832569",
+      "id": "e60561b2-b7e2-4df1-8323-d527f4a1e5e1",
       "appraiser_id": "userTestId",
-      "pet_id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
-      "created_at": "2025-06-17T14:45:55.334Z"
+      "pet_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
+      "created_at": "2025-06-22T21:05:49.140Z"
     },
     {
-      "id": "ef6fdf5b-f3ef-4ce1-ab65-c5ac26ac2648",
+      "id": "f66024d4-09a6-432d-a83a-db5bbe4989c4",
+      "appraiser_id": "userTestId",
+      "pet_id": "52cbc36c-bd71-420e-a1f9-f284c9cc9673",
+      "created_at": "2025-06-22T21:05:53.358Z"
+    },
+    {
+      "id": "bf560168-40f7-4e03-9bb2-dcda77ad1565",
+      "appraiser_id": "userTestId",
+      "pet_id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
+      "created_at": "2025-06-22T21:07:42.719Z"
+    },
+    {
+      "id": "cf84a292-c4fe-4fa8-b90b-57a67b22d33a",
       "appraiser_id": "userTestId",
       "pet_id": "petTest2",
-      "created_at": "2025-06-20T00:11:37.835Z"
+      "created_at": "2025-06-22T21:22:52.651Z"
+    },
+    {
+      "id": "ee530683-4c8e-4c19-b196-b97bee343c30",
+      "appraiser_id": "userTestId",
+      "pet_id": "524f5fba-9178-4a22-935b-f7934594d348",
+      "created_at": "2025-06-22T21:22:58.598Z"
     }
   ],
   "address": [
@@ -451,6 +457,23 @@
       "longitude": -43.973314,
       "created_at": "2025-06-20T19:30:32.706Z",
       "updated_at": "2025-06-20T19:30:32.706Z"
+    },
+    {
+      "id": "0d937008-6b9b-4d58-959c-3ae7487b439a",
+      "entity_type": "user",
+      "entity_id": "6441c0de-fd66-402a-8888-bc733b6fe719",
+      "street": "Rua das Flores",
+      "number": "13",
+      "complement": "casa",
+      "neighborhood": "Jardins",
+      "city": "Belo Horizonte",
+      "state": "Minas Gerais",
+      "zipCode": "34006-074",
+      "country": "Brasil",
+      "latitude": -19.831265,
+      "longitude": -44.01142,
+      "created_at": "2025-06-22T21:05:45.232Z",
+      "updated_at": "2025-06-22T21:05:45.232Z"
     }
   ],
   "session": [
@@ -493,6 +516,46 @@
       "expires_at": "2025-06-23T19:30:32.905Z",
       "entity_type": "DONOR",
       "created_at": "2025-06-20T19:30:32.905Z"
+    },
+    {
+      "id": "5503a63f-ee32-4f50-bc3c-83f6da55ff7c",
+      "user_id": "e224146d-6d2c-4288-bde8-71459fec337a",
+      "donor_id": null,
+      "expires_at": "2025-06-24T15:56:23.681Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-21T15:56:23.681Z"
+    },
+    {
+      "id": "fbd273f7-55fb-4c9f-b327-028b2658b64c",
+      "user_id": "e224146d-6d2c-4288-bde8-71459fec337a",
+      "donor_id": null,
+      "expires_at": "2025-06-24T16:16:28.013Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-21T16:16:28.013Z"
+    },
+    {
+      "id": "21467f88-4cd9-4792-9608-b7fdbe19e9a7",
+      "user_id": "e224146d-6d2c-4288-bde8-71459fec337a",
+      "donor_id": null,
+      "expires_at": "2025-06-25T20:30:15.900Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-22T20:30:15.900Z"
+    },
+    {
+      "id": "b53c6fc4-f63f-422d-afe1-213c98ce2218",
+      "user_id": "6441c0de-fd66-402a-8888-bc733b6fe719",
+      "donor_id": null,
+      "expires_at": "2025-06-25T21:05:45.334Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-22T21:05:45.334Z"
+    },
+    {
+      "id": "57bc2170-6c1f-41ae-a9b9-c815c3da7cd5",
+      "user_id": "6441c0de-fd66-402a-8888-bc733b6fe719",
+      "donor_id": null,
+      "expires_at": "2025-06-25T21:22:46.236Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-22T21:22:46.237Z"
     }
   ],
   "user": [
@@ -556,6 +619,18 @@
       "password": "123456",
       "created_at": "2025-06-20T18:59:56.917Z",
       "updated_at": "2025-06-20T18:59:56.917Z"
+    },
+    {
+      "id": "6441c0de-fd66-402a-8888-bc733b6fe719",
+      "cpf": "3123213123",
+      "phone_number": "31 9999999999",
+      "name": "rea",
+      "born_at": "2006-12-01",
+      "img_url": null,
+      "email": "meuemail@gmail.com",
+      "password": "123456",
+      "created_at": "2025-06-22T21:05:40.517Z",
+      "updated_at": "2025-06-22T21:05:40.517Z"
     }
   ],
   "donor": [

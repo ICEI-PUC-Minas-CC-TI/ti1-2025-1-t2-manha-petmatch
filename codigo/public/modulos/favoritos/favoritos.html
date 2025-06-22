@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favoritos</title>
+
+  <!-- Ícones e fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../components/pet-card/style.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <h1 class="logo">PETMATCH</h1>
+    <div class="search">
+      <input type="text" placeholder="Pesquisa" id="searchBar" />
+      <button id="searchButton"><i class="material-icons">search</i></button>
+    </div>
+  </header>
+
+  <aside id="sidebar">
+    <div id="logo"><img src="../tips/image.png" alt="Logo"></div>
+
+    <div id="profile">
+      <div>
+        <img src="../../images/someone.jpg" alt="user avatar" id="avatar" />
+        <div id="profile-info">
+          <h3>Ricardão</h3>
+          <span><i class="material-icons">stars</i>5.0</span>
+        </div>
+      </div>
+      <button class="btn-style">Perfil</button>
+    </div>
+
+    <nav id="menu">
+      <a href="../homepage/homepage.html" id="active"><i class="material-icons">home</i> Home</a>
+      <a href="../explore/index.html"><i class="material-icons">explore</i> Explorar</a>
+      <a href="../PaginaCategoria/Categorias.html"><i class="material-icons">category</i> Categorias</a>
+      <a href="#"><i class="material-icons">favorite</i> Favoritos</a>
+      <a href="../historico/historico.html"><i class="material-icons">history</i>Histórico</a>
+      <a href="#"><i class="material-icons">pets</i> Meus Pets</a>
+      <a href="#"><i class="material-icons">map</i> Petmap</a>
+      <a href="../tips/tips.html"><i class="material-icons">lightbulb</i> Pet Tips</a>
+    </nav>
+
+    <div id="aside-footer">
+      <a href="../cadastro-pets/cadastro-pets.html" class="btn-style" style="color: black; text-decoration: none;">Colocar para Adoção</a>
+      <button class="btn-logout btn-style">Sair</button>
+    </div>
+  </aside>
+
+    <h2>Pets Favoritados</h2>
+    <div id="favoritos-container"></div>
+
+  <script src="../../jquery/jquery.js"></script>
+  <script type="module" src="fav.js"></script>
+</body>
+
+</html>
