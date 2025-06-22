@@ -17,7 +17,7 @@ import { NotAllowedError } from '../../../../../core/errors/not-allowed-error.js
     }
 */
 
-export class RegisterAdoptionUseCase {
+export class ApproveAdoptionRequestUseCase {
     adoptionRepository;
     userRepository;
     donorRepository;
@@ -30,22 +30,25 @@ export class RegisterAdoptionUseCase {
     }
 
     async execute({
-        userId,
-        donorId,
-        petId
+        adoptionId,
+        donorId
     }) {
-
-        if(!userId || !donorId || !petId) {
+        
+        if(!adoptionId || !donorId) {
             return left(new RequestMissingDataError());
         } 
 
-        const {user} = await this.userRepository.findById(userId)
-        
+        const {adoption} = await this.adoptionRepository.findById(adoptionId)
 
-        const {donor} = await this.donorRepository.findById(donorId)
+        if(!adoption) {
+            return left(new ResourceNotFoundError())
+        }
 
-        const {pet} =  await this.petRepository.findById(petId)
+        const {user} = await this.userRepository.findById(adoption.userId)
+    
+        const {donor} = await this.donorRepository.findById(adoption.donorId)
 
+        const {pet} =  await this.petRepository.findById(adoption.petId)
 
         if(!user || !donor || !pet ) {
             return left(new ResourceNotFoundError())
@@ -56,19 +59,13 @@ export class RegisterAdoptionUseCase {
             return left(new PetNotAvaiiableForAdoptionError())
         }
 
-        if(pet.donorId !== donorId) {
+        if(pet.donorId !== donorId || donor.id !== donorId || adoption.donorId !== donorId) {
             return left(new NotAllowedError())
         }
 
-        const adoption = Adoption.create(
-            {
-                petId,
-                donorId, 
-                userId
-            }
-        )
+        adoption.status = 'APPROVED'
 
-        await this.adoptionRepository.create(adoption);
+        await this.adoptionRepository.save(adoption);
 
         const newPetState = Pet.create({...pet, availableForAdoption: false});
 

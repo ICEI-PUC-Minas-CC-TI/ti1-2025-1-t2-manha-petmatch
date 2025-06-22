@@ -22,6 +22,66 @@ async function updateUserInfo({description,imgData,name,phoneNumber}) {
     })
 }
 
+async function handleAdoptionDecision(adoptionId, isApproved) {
+    try {
+
+        if(isApproved) {
+            await adoptionInterface.approveAdoptionRequest({
+                adoptionId,
+                donorId: session.donorId
+            })
+        } else {
+            await adoptionInterface.rejectAdoptionRequest({
+                adoptionId,
+                donorId: session.donorId
+            })
+        }
+        
+        $(`[data-id="${adoptionId}"]`).closest('li').fadeOut(300, function () {
+            $(this).remove();
+        });
+
+        console.log(`Adoção ${isApproved ? 'aprovada' : 'rejeitada'}: ${adoptionId}`);
+    } catch (error) {
+        console.error('Erro ao processar decisão:', error);
+        alert('Ocorreu um erro. Tente novamente.');
+    }
+}
+
+
+async function fetchRequestAdoption() { 
+    try {
+        const adoptionResponse = await adoptionInterface.fetchAdoptionByDonorId({ donorId: session.donorId });
+
+        const requestHtmlList = await Promise.all(
+            adoptionResponse.adoptions.map(async req => {
+                const { pet } = await petInterface.getPetById({ id: req.props.petId });
+                const { user } = await userInterface.getUserById({ id: req.props.userId });
+
+                return `
+                <li>
+                    <img src="${user.props.imgUrl}" alt="Adotante" class="request-img">
+                    <img src="${pet.pet.props.imgUrls[0]}" alt="Pet" class="request-img">
+                    <div class="request-info">
+                        <strong>${pet.pet.props.name}</strong>
+                        <span>Pedido de adoção por ${user.props.name}</span>
+                    </div>
+                    <div class="request-buttons">
+                        <button class="approve" data-id="${req._id}">Aprovar</button>
+                        <button class="reject" data-id="${req._id}">Rejeitar</button>
+                    </div>
+                </li>
+                `;
+            })
+        );
+
+        $('#request-list').html(requestHtmlList.join(''));
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 async function fetchAdoptions() {
     try {
         const petResponse = await petInterface.fetchAllPets()
@@ -84,6 +144,7 @@ function renderSessionData() {
 
 $(document).ready(async function () {
     await fetchAdoptions()
+    await fetchRequestAdoption()
     renderSessionData()
 
     $('#edit-btn').click(function () {
@@ -118,4 +179,25 @@ $(document).ready(async function () {
     $('.donorBtn').click((event) => {
         rediretToDonorPage(event.target.value)
     })
+
+    $('#request-list').on('click', '.approve', function () {
+        const adoptionId = $(this).data('id');
+        handleAdoptionDecision(adoptionId, true);
+    });
+
+    $('#request-list').on('click', '.reject', function () {
+        const adoptionId = $(this).data('id');
+        handleAdoptionDecision(adoptionId, false);
+    });
+
+});
+
+
+
+$('#request-btn').click(async function () {
+    $('#request-modal').css("display", "flex").hide().fadeIn();
+});
+
+$('#close-request-modal').click(function () {
+    $('#request-modal').fadeOut();
 });

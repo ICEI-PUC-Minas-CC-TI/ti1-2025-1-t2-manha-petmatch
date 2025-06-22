@@ -1,6 +1,10 @@
 import { PetInterface } from '../../db-interface/pet-interface.js';
+import {AdoptionInterface} from '../../db-interface/adoption-interface.js'
+import {CurrentSession} from '../../utils/current-session.js' 
 
 const gerenciamentopets = new PetInterface();
+const adoptionInterface = new AdoptionInterface();
+const session = new CurrentSession()
 
 const animalTypes = {
   'ea5dc213-d45d-4a9c-b2cd-612c2de42564': 'Cachorro',
@@ -165,10 +169,18 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   if (adoptButton) {
-    adoptButton.addEventListener('click', () => {
+    adoptButton.addEventListener('click', async () => {
       const confirmed = confirm('Confirma o interesse em adotar este pet?');
       if (confirmed) {
-        alert('Interesse registrado! O responsável pelo pet irá analisar seu perfil e entrar em contato.');
+        const donorId = pet?.pet?.props?.donorId;
+
+        const response = await adoptionInterface.registerAdoptionRequest({
+          donorId,
+          petId: pet?.pet?.id,
+          userId: session.userId
+        })
+
+        console.log(response )
       }
     });
   }
