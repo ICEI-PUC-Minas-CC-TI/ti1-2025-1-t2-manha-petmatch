@@ -7,6 +7,8 @@ export class JsonAdoptionRepositoryMapper {
                 petId: raw.pet_id,
                 userId: raw.user_id,
                 donorId: raw.donor_id,
+                status: raw.status,
+                updatedAt: raw.updated_at
         }, raw.id)
         
         return domainAdoption
@@ -18,7 +20,9 @@ export class JsonAdoptionRepositoryMapper {
            id: adoption.id,
            user_id: adoption.userId,
            donor_id: adoption.donorId,
-           pet_id: adoption.petId
+           pet_id: adoption.petId,
+           status: adoption.status,
+           updated_at: adoption.updatedAt
         }
 
         return jsonAdoption

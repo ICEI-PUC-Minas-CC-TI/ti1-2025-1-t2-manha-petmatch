@@ -3,9 +3,13 @@ import {JsonDonorRepository} from '../src/database/repositories/adoption/json-do
 import {JsonUserRepository} from '../src/database/repositories/adoption/json-user-repository.js'
 import {JsonAdoptionRepository} from '../src/database/repositories/adoption/json-adoption-repository.js'
 
-import {RegisterAdoptionUseCase} from '../src/domain/adoption/application/use-cases/register-adoption.js'
+import {RegisterAdoptionRequestUseCase} from '../src/domain/adoption/application/use-cases/register-adoption-request.js'
 import {FetchAdoptionByDonorUseCase} from '../src/domain/adoption/application/use-cases/fetch-adoption-by-donor.js'
 import {FetchAdoptionByUserUseCase} from '../src/domain/adoption/application/use-cases/fetch-adoption-by-user.js'
+import { ApproveAdoptionRequestUseCase } from '../src/domain/adoption/application/use-cases/approve-adoption-request.js'
+import { RejectAdoptionRequestUseCase } from '../src/domain/adoption/application/use-cases/reject-adoption-request.js'
+import { FetchAdoptionByPetUseCase } from '../src/domain/adoption/application/use-cases/fetch-adoption-by-pet.js'
+import { FetchPendingAdoptionByDonorUseCase } from '../src/domain/adoption/application/use-cases/fetch-pending-adoption-by-donor.js'
 
 
 
@@ -23,8 +27,8 @@ export class AdoptionInterface {
         donorId: string,
     }
     */
-    async registerAdoption({userId, petId, donorId}) {
-        const registerAdoptionUseCase = new RegisterAdoptionUseCase(this.adoptionRepository,this.userRepository, this.donorRepository, this.petRepository)
+    async registerAdoptionRequest({userId, petId, donorId}) {
+        const registerAdoptionUseCase = new RegisterAdoptionRequestUseCase(this.adoptionRepository,this.userRepository, this.donorRepository, this.petRepository)
 
         const response = await registerAdoptionUseCase.execute({donorId, petId, userId});
         
@@ -36,7 +40,42 @@ export class AdoptionInterface {
         return response.value;
     }
 
+    async approveAdoptionRequest({adoptionId, donorId}) {
+        const approveAdoptionRequestUseCase = new ApproveAdoptionRequestUseCase(this.adoptionRepository,this.userRepository, this.donorRepository, this.petRepository)
+
+        const fetchAdoptionByPetUseCase = new FetchAdoptionByPetUseCase(this.adoptionRepository, this.petRepository)
+
+        const response = await approveAdoptionRequestUseCase.execute({adoptionId, donorId});
         
+        if(response.isLeft() === true) {
+            console.error(response);
+            return response;
+        }
+
+        const data = await fetchAdoptionByPetUseCase.execute({petId: response.value.adoption.petId})
+
+        data.value.adoption.forEach(async (adoption) => {
+            const rejectAdoptionRequestUseCase = new RejectAdoptionRequestUseCase(this.adoptionRepository,this.userRepository, this.donorRepository, this.petRepository)
+
+            await rejectAdoptionRequestUseCase.execute({adoptionId: adoption.id, donorId});
+        })
+
+        return response.value;
+    }
+
+    async rejectAdoptionRequest({adoptionId, donorId}) {
+        const rejectAdoptionRequestUseCase = new RejectAdoptionRequestUseCase(this.adoptionRepository,this.userRepository, this.donorRepository, this.petRepository)
+
+        const response = await rejectAdoptionRequestUseCase.execute({adoptionId, donorId});
+        
+        if(response.isLeft() === true) {
+            console.error(response);
+            return response;
+        }
+
+        return response.value;
+    }
+
     /*
         INPUT {
             NOT OPTIONAL
@@ -44,7 +83,7 @@ export class AdoptionInterface {
         }
     */
     async fetchAdoptionByDonorId({donorId}) {
-        const fetchAdoptionByDonorUseCase = new FetchAdoptionByDonorUseCase(this.adoptionRepository,this.donorRepository)
+        const fetchAdoptionByDonorUseCase = new FetchPendingAdoptionByDonorUseCase(this.adoptionRepository,this.donorRepository)
 
         const response = await fetchAdoptionByDonorUseCase.execute({donorId});
 

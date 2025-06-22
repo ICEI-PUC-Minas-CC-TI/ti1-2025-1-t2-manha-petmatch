@@ -10,31 +10,29 @@ import { RequestMissingDataError } from '../errors/request-missing-data-error.js
     }
 */
 
-export class FetchAdoptionByDonorUseCase {
+export class FetchAdoptionByPetUseCase {
     adoptionRepository;
-    donorRepository;
-    constructor(adoptionRepository, donorRepository) {
+    petRepository;
+    constructor(adoptionRepository, petRepository) {
         this.adoptionRepository = adoptionRepository;
-        this.donorRepository = donorRepository;
+        this.petRepository = petRepository;
     }
 
     async execute({   
-        donorId
+        petId
     }) {
 
-        if(!donorId) {
-
-            console.log(donorId)
+        if( petId == undefined) {
             return left(new RequestMissingDataError());
         } 
 
-        const {donor} = await this.donorRepository.findById(donorId);
+        const {pet} = await this.petRepository.findById(petId);
 
-        if(!donor) {
+        if(!pet) {
             return left(new ResourceNotFoundError());
         }
 
-        const adoptions = await this.adoptionRepository.findManyAdoptionByDonorId(donorId)
+        const adoptions = await this.adoptionRepository.findManyAdoptionByPetId(petId)
 
         return right({
             adoptions
