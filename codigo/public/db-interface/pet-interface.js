@@ -15,6 +15,7 @@ import { UnfavoritePetUseCase } from '../src/domain/adoption/application/use-cas
 import {JsonAddressRepository} from '../src/database/repositories/adoption/json-address-repository.js'
 
 import {CurrentSession} from '../utils/current-session.js'
+import { FetchAllPetsUseCase } from '../src/domain/adoption/application/use-cases/fetch-all-pets.js'
 
 export class PetInterface {
     addressRepository = new JsonAddressRepository()
@@ -45,9 +46,11 @@ export class PetInterface {
     }
     */
     async registerPetInterface({petInfo}) {
-        const registerPetUseCase = new RegisterPetUseCase(this.petRepository,this.donorRepository)
 
-        const response = await registerPetUseCase.execute(petInfo);
+        const registerPetUseCase = new RegisterPetUseCase(this.petRepository, this.donorRepository)
+
+        
+        const response = await registerPetUseCase.execute({...petInfo, donorId: this.session.donorId});
         
         if(response.isLeft() === true) {
             console.error(response);
@@ -89,6 +92,19 @@ export class PetInterface {
         const fetchPetsUseCase = new FetchPetUseCase(this.petRepository)
 
         const response = await fetchPetsUseCase.execute();
+
+        if(response.isLeft() === true) {
+            console.error(response);
+            return response;
+        }
+
+        return response.value;
+    }
+
+    async fetchAllPets() {
+        const fetchAllPetsUseCase = new FetchAllPetsUseCase(this.petRepository)
+
+        const response = await fetchAllPetsUseCase.execute();
 
         if(response.isLeft() === true) {
             console.error(response);

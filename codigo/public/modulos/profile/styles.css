@@ -264,3 +264,8 @@ main {
 #cancel-button {
     background-color: var(--red);
 }
+
+#not-pets-message {
+    margin: 0 auto;
+    font-weight: bold;    
+}

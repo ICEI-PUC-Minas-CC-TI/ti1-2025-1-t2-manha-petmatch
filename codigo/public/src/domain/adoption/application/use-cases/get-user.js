@@ -27,6 +27,11 @@ export class GetUserUseCase {
 
         const {user} = await this.userRepository.findById(userId)
 
+        console.log({
+            user,
+            userId
+        })
+
         if(!user) {
             return left(new ResourceNotFoundError())
         } 
