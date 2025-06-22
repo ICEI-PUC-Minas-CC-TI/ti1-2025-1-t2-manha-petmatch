@@ -11,7 +11,6 @@ const petInterface = new PetInterface()
 const urlParams = new URLSearchParams(window.location.search)
 const donorId = urlParams.get('donorId')
 
-// Busca todos os pets doados por este doador
 async function fetchDonatedPets() {
     try {
         const petsResponse = await petInterface.fetchPets()
@@ -23,8 +22,8 @@ async function fetchDonatedPets() {
     }
 }
 
-function redirectToDonorPage(donorId) {
-    window.location.href = `/pages/donor-profile.html?donorId=${donorId}`
+function redirectToDonorPage(petId) {
+    window.location.href = `/modulos/Detalhes/index.html?petId=${petId}`
 }
 
 function renderPetList(petList) {
@@ -40,7 +39,7 @@ function renderPetList(petList) {
                     <p class="pet-name">${pet.props.name}</p>
                     <p class="pet-breed">${pet.props.breed[0]}</p>
                 </div>
-                <button class="donorBtn" value="${pet.props.donorId}">Ver Doador</button>
+                <button class="petBtn" value="${pet._id}">Ver Pet</button>
             </li>    
         `
     })
@@ -48,7 +47,6 @@ function renderPetList(petList) {
     $('#pets-content').html(elements)
 }
 
-// Carrega e exibe as informações do doador e do usuário vinculado
 async function fetchAndRenderDonorInfo() {
     try {
         const { donor } = await donorInterface.getDonorById({ id: donorId })
@@ -56,28 +54,27 @@ async function fetchAndRenderDonorInfo() {
         
         const user = await userInterface.getUserById({ id: donor.props.userId })
 
-        renderDonorData(user)
+        renderDonorData(user, donor.id)
     } catch (error) {
         console.error('Erro ao carregar dados do doador:', error)
     }
 }
 
-// Atualiza os campos da página com os dados do usuário vinculado ao doador
-function renderDonorData({user}) {
+function renderDonorData({user}, donorId) {
     $('#name').text(user.name)
     $('#description').text(user.description || 'Sem descrição')
     $('#age').text(DateElapsed.getYearsPassed(user.bornAt) + ' anos')
     $('#number').text(user.phoneNumber || 'Nenhum número')
     $('#user-img').attr('src', user.imgUrl)
+
+    $(".btn").attr('href', `/modulos/avaliar/avaliar.html?ratedId=${donorId}`)
 }
 
-// Eventos da página
 $(document).ready(async function () {
     await fetchAndRenderDonorInfo()
     await fetchDonatedPets()
 
-    // Botão de redirecionamento de doador
-    $(document).on('click', '.donorBtn', function (event) {
+    $(document).on('click', '.petBtn', function (event) {
         redirectToDonorPage(event.target.value)
     })
 })

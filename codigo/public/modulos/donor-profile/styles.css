@@ -38,6 +38,26 @@ main {
     overflow: hidden;
 }
 
+.btn {
+
+      background-color: var(--yellow);
+  border: none;
+  width: 100%;
+  padding: .5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bolder;
+  border: 2px solid var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: filter .3s;
+}
+
+.btn:hover {
+    filter: brightness(.9);
+}
+
 #profile-header {
     width: 100%;
     height: 35%;

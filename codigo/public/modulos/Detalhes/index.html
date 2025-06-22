@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PETMATCH - Adoção de Pets</title>
   <meta name="description" content="Adote o pet Scooby e descubra mais sobre seu perfil e o responsável por ele." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="header.css" />
   <link rel="stylesheet" href="pet-card.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+   <link rel="stylesheet" href="../../components/sidebar/styles.css">
 </head>
 <body>
   <header class="header">
@@ -28,27 +35,6 @@
   <main>
     <div class="container">
       <div class="pet-detail-layout">
-
-        <section class="owner-card" aria-label="Informações do responsável">
-          <div class="owner-profile">
-            <img
-              src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg"
-              alt="Foto do responsável Ricardão"
-              class="owner-image"
-            />
-            <h2 class="owner-name">Ricardão</h2>
-            <div class="rating-stars" aria-label="Avaliação do responsável: 5 estrelas">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
-              <span>5.0</span>
-            </div>
-          </div>
-          <div class="owner-description">
-            <p>Descrição do responsável pela publicação da adoção. Exemplo de texto descritivo sobre a pessoa.</p>
-          </div>
-          <button class="contact-button" id="contactButton" aria-label="Contatar o responsável">Contatar</button>
-        </section>
-
         <section class="pet-details-column" aria-label="Detalhes do pet">
           <img
             src="https://images.pexels.com/photos/1124002/pexels-photo-1124002.jpeg"
@@ -93,10 +79,15 @@
             </div>
           </div>
 
- <button class="adopt-button" id="adoptButton" aria-label="Quero adotar esse pet">
-  Quero adotar esse PET
-  <i class="fas fa-heart heart-icon" id="favoriteIcon" aria-hidden="true"></i>
-</button>
+          <div class="button-cont">
+
+            <button style="flex: 1;" class="adopt-button" id="adoptButton" aria-label="Quero adotar esse pet">
+              Quero adotar esse PET
+              <i class="fas fa-heart heart-icon" id="favoriteIcon" aria-hidden="true"></i>
+            </button>
+            
+            <button id="donor-btn" class="adopt-button"><i class="material-icons">person</i> Ver doador</button>
+          </div>
 
         </section>
       </div>
@@ -108,7 +99,9 @@
       </section>
     </div>
   </main>
-  <script type="module" src="../../utils/verify-login.js"></script>
+    <script type="module" src="../../utils/verify-login.js"></script>
+
+    <script type="module" src="../../components/sidebar/sidebar.js"></script>
 
   <script type="module" src="script.js"></script>
 </body>
