@@ -70,6 +70,23 @@ export class JsonUserRepository {
         }
     }
 
+     async save(user) {
+            try {
+                const dbUser = JsonUserRepositoryMapper.toJson(user);
+                const newUrl = `${this.url}/${user.id}`;
+    
+                await fetch(newUrl, {
+                    method: "PUT",
+                    body: JSON.stringify(dbUser),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+            } catch (err) {
+                console.error("Erro ao salvar avaliação:", err);
+            }
+        }
+
     async delete(user) {
 
         try {

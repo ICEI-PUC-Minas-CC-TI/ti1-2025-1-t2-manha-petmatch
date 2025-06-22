@@ -116,7 +116,7 @@
       ],
       "vaccinated": true,
       "castrated": false,
-      "available_for_adoption": true,
+      "available_for_adoption": false,
       "personality": [],
       "donor_id": "donorTestId",
       "created_at": "2025-05-20T22:11:45.087Z",
@@ -160,7 +160,7 @@
       ],
       "vaccinated": false,
       "castrated": false,
-      "available_for_adoption": true,
+      "available_for_adoption": false,
       "personality": [],
       "donor_id": "donorTestId",
       "created_at": "2025-06-20T19:34:05.535Z",
@@ -229,16 +229,16 @@
       "created_at": "2025-06-21T00:27:15.926Z"
     },
     {
-      "id": "96cda772-386d-4b1e-aa72-82d739f68363",
-      "appraiser_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
-      "pet_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
-      "created_at": "2025-06-21T00:27:18.922Z"
-    },
-    {
       "id": "f5dfd2da-f5b5-403b-a8d1-7b0806686ecc",
       "appraiser_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
       "pet_id": "9cf588f2-b7f5-4185-a450-a6f6a68be5c9",
       "created_at": "2025-06-21T11:27:21.369Z"
+    },
+    {
+      "id": "8b88afbc-54ae-49ed-ada7-ea24f4ffb89a",
+      "appraiser_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "pet_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
+      "created_at": "2025-06-22T00:08:31.421Z"
     }
   ],
   "address": [
@@ -887,6 +887,62 @@
       "expires_at": "2025-06-24T13:14:33.350Z",
       "entity_type": "DONOR",
       "created_at": "2025-06-21T13:14:33.350Z"
+    },
+    {
+      "id": "bf4983ca-c7f5-4492-9ef6-e59ba1c3f494",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-24T14:09:06.709Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-21T14:09:06.709Z"
+    },
+    {
+      "id": "4762d757-956a-4d15-b12c-8d7dbc7b0f92",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-24T14:40:31.328Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-21T14:40:31.328Z"
+    },
+    {
+      "id": "ae8db948-11f4-41c4-8a27-ec4a82990f63",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-24T19:33:24.729Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-21T19:33:24.729Z"
+    },
+    {
+      "id": "305b8c7b-60cb-435e-9546-b132234493dc",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-24T22:55:18.573Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-21T22:55:18.573Z"
+    },
+    {
+      "id": "7b90eb2c-d45d-46ec-90fb-1b3d30126fe0",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-24T23:02:10.593Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-21T23:02:10.593Z"
+    },
+    {
+      "id": "a9b0feae-69ec-424e-b62f-fa9fad870951",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-24T23:03:08.080Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-21T23:03:08.080Z"
+    },
+    {
+      "id": "8bd538a3-5d83-4df6-83ad-ecdea9a3b620",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-24T23:38:42.920Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-21T23:38:42.920Z"
     }
   ],
   "user": [
@@ -905,15 +961,16 @@
     },
     {
       "id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
-      "cpf": "00047683135",
-      "phone_number": "3340028922",
-      "name": "Pedro",
+      "cpf": "200476831352",
+      "phone_number": "23423423424",
+      "name": "Alvin",
+      "description": "descrição",
       "born_at": "2000-06-18",
-      "img_url": null,
+      "img_url": "https://res.cloudinary.com/dth1lxikr/image/upload/v1750549130/petmatch_cloudinary_1d0c5920-0f34-4aa8-ab8e-1383b90e14cb.png",
       "email": "a@gmail.com",
       "password": "Cala",
       "created_at": "2025-06-20T13:58:50.088Z",
-      "updated_at": "2025-06-20T13:58:50.088Z"
+      "updated_at": "2025-06-21T23:39:46.746Z"
     },
     {
       "id": "23b25295-632b-4e15-9387-191648fb5ce7",
@@ -929,15 +986,16 @@
     },
     {
       "id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
-      "cpf": "132131323",
-      "phone_number": "23423423424",
+      "cpf": "2004768312323",
+      "phone_number": "",
       "name": "Ana",
+      "description": "descrição",
       "born_at": "2006-06-11",
-      "img_url": null,
+      "img_url": "https://res.cloudinary.com/dth1lxikr/image/upload/v1750534466/petmatch_cloudinary_54bb47ea-4786-4440-9b94-4dbe8e7141b1.png",
       "email": "ana@gmail.com",
       "password": "caca",
       "created_at": "2025-06-20T14:13:11.333Z",
-      "updated_at": "2025-06-20T14:13:11.333Z"
+      "updated_at": "2025-06-21T23:38:05.411Z"
     },
     {
       "id": "e224146d-6d2c-4288-bde8-71459fec337a",
