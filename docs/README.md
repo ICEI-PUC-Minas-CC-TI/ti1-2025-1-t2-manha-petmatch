@@ -625,7 +625,7 @@ Registro das dicas disponíveis no site.
 - **CT-07 – Mapa (Mapbox):**   
 - **CT-08 – Edição de Pets:**   
 - **CT-09 – Exclusão de Pets:**   
-- **CT-10 – Disponibilidade 24h:**
+- **CT-10 – Disponibilidade 24h:** Passou
   - Ferramenta: UptimeRobot  
   - Período: 21/06/2025 15:30 → 22/06/2025 15:30  
   - Disponibilidade registrada: 100%
