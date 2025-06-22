@@ -204,11 +204,11 @@
       ],
       "vaccinated": false,
       "castrated": false,
-      "available_for_adoption": true,
+      "available_for_adoption": false,
       "personality": [],
       "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
       "created_at": "2025-06-22T15:18:23.262Z",
-      "updated_at": "2025-06-22T15:18:23.262Z"
+      "updated_at": "2025-06-22T22:22:55.767Z"
     }
   ],
   "animal_type": [
@@ -1132,6 +1132,38 @@
       "expires_at": "2025-06-25T21:23:09.737Z",
       "entity_type": "DONOR",
       "created_at": "2025-06-22T21:23:09.737Z"
+    },
+    {
+      "id": "0294496b-ba6c-4fcb-b2cb-7c92d58eff16",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-25T22:24:06.558Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-22T22:24:06.558Z"
+    },
+    {
+      "id": "aef3547b-ccf6-4bc6-8336-01a458ed50f6",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-25T22:25:39.729Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-22T22:25:39.729Z"
+    },
+    {
+      "id": "964463ad-78be-421d-baab-3b1f4be4187a",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-25T22:27:49.988Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-22T22:27:49.988Z"
+    },
+    {
+      "id": "0e47e253-65be-4abd-b3b2-fae2d0c3725d",
+      "user_id": "c8f9d7b2-f9cd-465a-ab7c-85fe5b5cf7e5",
+      "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "expires_at": "2025-06-25T22:35:57.238Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-22T22:35:57.238Z"
     }
   ],
   "user": [

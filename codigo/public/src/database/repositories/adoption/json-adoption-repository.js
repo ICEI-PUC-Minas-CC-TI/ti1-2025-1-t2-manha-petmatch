@@ -39,7 +39,7 @@ export class JsonAdoptionRepository {
 
     async findManyAdoptionByUserId(userId) {
         try{
-            const newUrl = `${this.url}?user_id=${userId}&status="APPROVED`
+            const newUrl = `${this.url}?user_id=${userId}&status=APPROVED`
 
             const response = await fetch(newUrl);
 
@@ -73,27 +73,28 @@ export class JsonAdoptionRepository {
         }
     }
 
-    async findManyAdoptionByPetId(petId) {
-         try{
-            const newUrl = `${this.url}?pet_id=${petId}&status="PENDING"`
+   async findManyAdoptionByPetId(petId) {
+    try {
+        const newUrl = `${this.url}?pet_id=${petId}&status=PENDING`;
 
-            const response = await fetch(newUrl);
+        const response = await fetch(newUrl);
+        const jsonFormat = await response.json();
 
-            const jsonFormat = await response.json()
+        const adoptions = jsonFormat.map((element) => {
+            return { ...JsonAdoptionRepositoryMapper.toDomain(element) };
+        });
 
-            const adoptions = jsonFormat.map((element) => {
-                return  {...JsonAdoptionRepositoryMapper.toDomain(element)}
-            })
-
-            return adoptions
-        } catch(err) {
-            console.error(err);
-        }
+        return adoptions;
+    } catch (err) {
+        console.error(err);
     }
+}
+
 
     async findManyPendingAdoptionByDonorId(donorId) {
         try{
-            const newUrl = `${this.url}?donor_id=${donorId}&status="PENDING"`
+            const newUrl = `${this.url}?donor_id=${donorId}&status=PENDING`
+
 
             const response = await fetch(newUrl);
 

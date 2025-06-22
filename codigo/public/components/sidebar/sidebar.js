@@ -32,6 +32,8 @@ function createSidebar() {
         ${isDonor ? `<button class="sidebar-menu-btn" data-href="/meus-pets/index.html"><i class="material-icons">pets</i> Meus Pets</button>` : ''}
         <button class="sidebar-menu-btn" data-href="/pet-map/index.html"><i class="material-icons">map</i> Petmap</button>
         <button class="sidebar-menu-btn" data-href="/tips/tips.html"><i class="material-icons">lightbulb</i> Pet Tips</button>
+        <button class="sidebar-menu-btn" data-href="/quiz/quiz-pet-finder.html"><i class="material-icons">assignment_turned_in</i>Pet ideal</button>
+        <button class="sidebar-menu-btn" data-href="/noticias/noticias.html"><i class="material-icons">article</i>Pet News</button>
       </nav>
     </div>
     <div id="sidebar-footer">

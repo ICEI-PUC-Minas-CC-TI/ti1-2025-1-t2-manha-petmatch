@@ -53,11 +53,13 @@ export class AdoptionInterface {
         }
 
         const data = await fetchAdoptionByPetUseCase.execute({petId: response.value.adoption.petId})
-
-        data.value.adoption.forEach(async (adoption) => {
-            const rejectAdoptionRequestUseCase = new RejectAdoptionRequestUseCase(this.adoptionRepository,this.userRepository, this.donorRepository, this.petRepository)
-
-            await rejectAdoptionRequestUseCase.execute({adoptionId: adoption.id, donorId});
+        console.log(data)
+        const rejectAdoptionRequestUseCase = new RejectAdoptionRequestUseCase(this.adoptionRepository,this.userRepository, this.donorRepository, this.petRepository)
+        
+        data.value.adoptions.forEach(async (adoption) => {
+            console.log(adoption._id)
+            const a = await rejectAdoptionRequestUseCase.execute({adoptionId: adoption._id, donorId});
+            console.log(a)
         })
 
         return response.value;
