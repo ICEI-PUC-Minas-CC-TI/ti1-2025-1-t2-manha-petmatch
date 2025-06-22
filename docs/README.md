@@ -628,7 +628,8 @@ Registro das dicas disponíveis no site.
 - **CT-10 – Disponibilidade 24h:**
   - Ferramenta: UptimeRobot  
   - Período: 21/06/2025 15:30 → 22/06/2025 15:30  
-  - Disponibilidade registrada: 
+  - Disponibilidade registrada: 100%
+![Registro de disponibilidade](https://github.com/user-attachments/assets/4f6f4b97-56db-4887-b13e-5e9ff39f79fb)
 
 
 # Módulos e APIs
