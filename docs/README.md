@@ -611,8 +611,15 @@ Registro das dicas disponíveis no site.
 
 ## Registro de Testes de Software
 
-- **CT-01 – Cadastro de Usuário:**  
-- **CT-02 – Login de Usuário:**   
+- **CT-01 – Cadastro de Usuário:**  Passou 
+![Cadastro preenchido](https://github.com/user-attachments/assets/2dd699a2-f9dd-414e-b98f-3e02be164f66)
+![Homepage apos cadastro](https://github.com/user-attachments/assets/9fd7f8bc-9ed9-4fee-8c0f-d5f6b11d0f57)
+![Cadastro no JSON](https://github.com/user-attachments/assets/9e396c18-0a76-4204-8a1d-68b0f1ee1d7c)
+
+- **CT-02 – Login de Usuário:**   Passou
+![Página de login](https://github.com/user-attachments/assets/c3ede94e-8a03-4fea-895d-778daa70ead0)
+![homepage apos login](https://github.com/user-attachments/assets/f1fdc536-feaf-4dbd-b9e7-d7e094409e02)
+
 - **CT-03 – Cadastro de Pets:**   
 - **CT-04 – Exploração com Filtros:**  
 - **CT-05 – Favoritar Pets:**   
@@ -620,7 +627,7 @@ Registro das dicas disponíveis no site.
 - **CT-07 – Mapa (Mapbox):**   
 - **CT-08 – Edição de Pets:**   
 - **CT-09 – Exclusão de Pets:**   
-- **CT-10 – Disponibilidade 24h:** Passou
+- **CT-10 – Disponibilidade 24h:**  Passou
   - Ferramenta: UptimeRobot  
   - Período: 21/06/2025 15:30 → 22/06/2025 15:30  
   - Disponibilidade registrada: 100%
