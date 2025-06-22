@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="../../components/sidebar/styles.css">
     <link rel="stylesheet" href="../../components/header/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -29,17 +30,19 @@
     <main>
         <div id="profile-container">
             <header id="profile-header">
-                <button>Edit</button>
+
+                <button id="edit-btn"><span class="material-icons">edit</span></button>
             </header>
 
             <div id="profile-content">
-                <img src="" alt="Imagem do perfil" id="user-img">
+                <img src="../../Images/someone.jpg" alt="Imagem do perfil" id="user-img">
 
-                <div id="profile-header">
+                <div id="profile-content-header">
                     <h2 id="name">Nome</h2>
                 <div>
-                    <p id="age">idade</p>
-                    <p id="descrição">descrição</p>
+                    <p class="p-holder">Idade: <span id="age"></span></p>
+                    <p class="p-holder">Número: <span id="number"></span></p>
+                    <p class="p-holder">Descrição: <span id="description"></span></p>
                 </div>
                 </div>
             </div>
@@ -50,21 +53,53 @@
                 <h2>Meus Pets</h2>
             </header>
 
-            <ul id="pets-content">
+           <ul id="pets-content">
                 <li>
-                    <div>
-                        <img src="" alt="PetProfile" class="pet-img">
-                        <div></div>
+                    <img src="../../Images/dog.jpg" alt="PetProfile" class="pet-img">
+                    <div class="pet-info">
+                        <p class="pet-name"></p>
+                        <p class="pet-breed"></p>
                     </div>
-
-                    <button>P</button>
+                    <button>Editar</button>
+                </li>
+                <li>
+                    <img src="../../Images/cat.jpg" alt="PetProfile" class="pet-img">
+                    <div class="pet-info">
+                        <p class="pet-name"></p>
+                        <p class="pet-breed"></p>
+                    </div>
+                    <button>Editar</button>
                 </li>
             </ul>
         </div>
     </main>
+
+    <div id="edit-modal" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Editar Perfil</h2>
+        <label>Nome:</label>
+        <input type="text" id="edit-name">
+
+        <label>Telefone:</label>
+        <input type="text" id="edit-phone">
+
+        <label>Descrição:</label>
+        <textarea id="edit-description"></textarea>
+
+        <label>Imagem (URL):</label>
+        <input type="file" id="edit-img" accept="image/*" />
+
+        <div class="modal-buttons">
+            <button id="cancel-button">Cancelar</button>
+            <button id="save-button">Salvar</button>
+        </div>
+    </div>
+</div>
+
+
     <script type="module" src="../../components/sidebar/sidebar.js"></script>
     <script type="module" src="../../utils/verify-login.js"></script>
-    <script src="../../jquery/jquery.js"></script>
+    <!-- <script src="../../jquery/jquery.js"></script> -->
     <script type="module" src="perfil.js"></script>
 </body>
 

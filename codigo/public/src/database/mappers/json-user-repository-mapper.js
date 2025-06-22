@@ -1,6 +1,6 @@
 import { User } from "../../domain/adoption/enterprise/entities/User.js";
 import {VerifyImage} from '../../../utils/verify-image.js'
-
+import { CPF } from "../../domain/adoption/enterprise/entities/value-objects/cpf.js";
 export class JsonUserRepositoryMapper {
     static async toDomain(raw) {
         const image = await VerifyImage.doesImageExists(raw.img_url, (doesExists) => {
@@ -8,7 +8,7 @@ export class JsonUserRepositoryMapper {
             })
 
         const domainUser = User.create({
-            cpf: raw.cpf,
+            cpf: CPF.create(raw.cpf),
             name: raw.name,
             phoneNumber: raw.phone_number,
             description: raw.description,

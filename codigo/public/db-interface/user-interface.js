@@ -6,6 +6,8 @@ import {GetUserUseCase} from '../src/domain/adoption/application/use-cases/get-u
 import { DeleteUserUseCase } from '../src/domain/adoption/application/use-cases/delete-user.js'
 
 import {AddressInterface} from './address-interface.js'
+import {EditUserUseCase} from '../src/domain/adoption/application/use-cases/edit-user.js'
+import {CloudinaryService} from '../src/services/cloudinary/cloudinary-service.js'
 
 export class UserInterface {
     // Repository
@@ -13,6 +15,9 @@ export class UserInterface {
 
     // Interface
     addressInterface = new AddressInterface()
+
+    // Service
+    cloudinaryService = new CloudinaryService()
 
    /*
     INPUT {
@@ -64,6 +69,33 @@ export class UserInterface {
 
         return response.value;
     }
+
+    async editUser({ 
+        userId,
+        name, 
+        phoneNumber,
+
+        description, 
+        imgData, 
+    }) {
+        const editUserUseCase = new EditUserUseCase(this.userRepository, this.cloudinaryService)
+
+        const response = await editUserUseCase.execute({ 
+            userId,
+            name, 
+            phoneNumber,
+
+            description, 
+            imgData 
+        });
+
+        if(response.isLeft() === true) {
+            console.error(response);
+            return response;
+        }
+
+        return response.value;
+    } 
 
     /*
     INPUT {

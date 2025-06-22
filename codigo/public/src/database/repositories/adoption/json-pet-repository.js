@@ -40,7 +40,28 @@ export class JsonPetRepository {
         }
     }
 
+  
     async findManyPets() {
+        try{
+            const newUrl = `${this.url}/`
+
+            const response = await fetch(newUrl);
+
+            const jsonFormat = await response.json()
+
+            const pet = jsonFormat.map((element) => {
+                return  {...JsonPetRepositoryMapper.toDomain(element)}
+            })
+
+            return pet.filter(cPet => {
+                return cPet.props.availableForAdoption === true})
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
+    
+    async findManyPetsAll() {
         try{
             const newUrl = `${this.url}/`
 
@@ -57,6 +78,7 @@ export class JsonPetRepository {
             console.error(err);
         }
     }
+    
 
     async findPetsByFilters(filters) {
         try {
@@ -79,7 +101,8 @@ export class JsonPetRepository {
             })
             
     
-            return pets;
+            return pets.filter(cPet => {
+                return cPet.available_for_adoption === true})
         } catch (err) {
             console.error(err);
         }

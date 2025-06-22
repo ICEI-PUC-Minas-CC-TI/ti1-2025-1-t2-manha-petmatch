@@ -21,8 +21,10 @@ import { RequestMissingDataError } from '../errors/request-missing-data-error.js
 
 export class EditUserUseCase {
     userRepository;
-    constructor(userRepository) {
+    uploadService
+    constructor(userRepository, uploadService) {
         this.userRepository = userRepository;
+        this.uploadService = uploadService
     }
 
     async execute({
@@ -31,7 +33,7 @@ export class EditUserUseCase {
         phoneNumber,
 
         description, 
-        imgUrl,
+        imgData,
     }) {
 
         if(!userId) {
@@ -44,7 +46,16 @@ export class EditUserUseCase {
             return left(new ResourceNotFoundError());
         }
 
-        user.imgUrl = imgUrl
+        if(imgData) {
+            const response = await this.uploadService.upload({
+                file: imgData,
+                entityId: userId
+            })
+
+            console.log(response)
+            user.imgUrl = response.url
+        }
+
         user.name = name
         user.phoneNumber = phoneNumber
         user.description = description
