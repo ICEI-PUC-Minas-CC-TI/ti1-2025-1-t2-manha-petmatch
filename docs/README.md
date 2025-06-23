@@ -439,6 +439,8 @@ Clicar em um dos animais.
 Ver informações dele.
 
 Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/7309c003-b0c3-4c23-b210-5d15ba619207)
+
 
 Funcionalidade 10 – Avaliações do doador
 Permite que o usuário deixe seu feedback sobre diferentes doadores.
