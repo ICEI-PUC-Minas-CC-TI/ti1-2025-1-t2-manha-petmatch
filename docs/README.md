@@ -354,6 +354,8 @@ Clique em "Meus pets".
 Os pets são listados com opções de editar ou excluir.
 
 Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/77cc574a-4110-461a-8761-9ff109dc7b34)
+
 
 Funcionalidade 4 - Edição e remoção de Pets
 Permite alterar ou excluir um pet previamente cadastrado.
@@ -370,6 +372,9 @@ Preencha todas as informações do Pet, até as que não irão sofrer alteraçõ
 Clique em "Salvar".
 
 Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/fc3310e5-f66c-458b-b690-90e657ce6c47)
+![image](https://github.com/user-attachments/assets/6ef33ae2-585e-4ea0-84d9-d8aeaf3d3fcb)
+
 
 Funcionalidade 5 – Exploração de Pets sem Filtros
 Permite aos usuários navegar por todos os pets.
@@ -380,6 +385,7 @@ Clicar em home.
 Ver todos os animais disponíveis no site.
 
 Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/5ce0c3fb-3c3d-430e-9aed-4fa2ac63b86e)
 
 
 Funcionalidade 6 – Exploração de Pets com Filtros
@@ -392,6 +398,7 @@ Selecionar os filtros desejados (Animal , Tamanho).
 Ver todos os animais que se encaixam no filtro.
 
 Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/2fb43098-7186-440a-88bd-0cbe8e48bc23)
 
 Funcionalidade 7 – Favoritar Pets
 Usuários logados podem favoritar pets para consulta posterior.
@@ -404,6 +411,8 @@ Clicar no coração do pet selecionado.
 Clicar em Favoritos para ver todos os pets favoritados.
 
 Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/a41e1276-f480-4c71-b06f-46a45ea75162)
+
 
 Funcionalidade 8 – Quiz de Compatibilidade
 Sugere pets com base em respostas sobre o perfil do usuário.
@@ -444,6 +453,7 @@ Adicionar um comentário.
 Clicar em "enviar".
 
 Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/6adf7b59-f129-4c44-95f5-711d82819868)
 
 Funcionalidade 11 – Seção de Notícias
 Permite que o usuário acompanhe as notícias mais recentes relacionadas ao mundo animal
@@ -629,16 +639,33 @@ Registro das dicas disponíveis no site.
 ![Página de login](https://github.com/user-attachments/assets/c3ede94e-8a03-4fea-895d-778daa70ead0)
 ![homepage apos login](https://github.com/user-attachments/assets/f1fdc536-feaf-4dbd-b9e7-d7e094409e02)
 
-- **CT-03 – Cadastro de Pets:**   
-- **CT-04 – Exploração com Filtros:**  
-- **CT-05 – Favoritar Pets:**   
+- **CT-03 – Cadastro de Pets:**  Passou
+![image](https://github.com/user-attachments/assets/345c17bd-2349-4a5b-ac10-c49c63e094f8)
+![image](https://github.com/user-attachments/assets/444a5393-a65f-403f-956b-81d86e595401)
+![image](https://github.com/user-attachments/assets/38c175a5-bbe1-4b46-b42f-f1b91584e143)
+
+ 
+- **CT-04 – Exploração com Filtros:**  Passou
+![image](https://github.com/user-attachments/assets/2fb43098-7186-440a-88bd-0cbe8e48bc23)
+
+
+- **CT-05 – Favoritar Pets:**   Passou
+![image](https://github.com/user-attachments/assets/a41e1276-f480-4c71-b06f-46a45ea75162)
+  
 - **CT-06 – Quiz de Compatibilidade:**  Passou
 ![image](https://github.com/user-attachments/assets/6148f75f-0b01-47b8-9bd0-241dd2eddefa)
 ![image](https://github.com/user-attachments/assets/df727cce-0a18-4db3-9ca9-e84067f3f3a7)
 
-- **CT-07 – Mapa (Mapbox):**   
-- **CT-08 – Edição de Pets:**   
-- **CT-09 – Exclusão de Pets:**   
+- **CT-07 – Mapa (Mapbox):**   Passou
+![image](https://github.com/user-attachments/assets/7309c003-b0c3-4c23-b210-5d15ba619207)
+
+- **CT-08 – Edição de Pets:**   Passou
+![image](https://github.com/user-attachments/assets/3476ff67-4cbb-4cac-9189-807100e7faed)
+![image](https://github.com/user-attachments/assets/0af0d7de-1a97-42d5-86e8-6d69f366bff8)
+
+- **CT-09 – Exclusão de Pets:**   Passou
+![image](https://github.com/user-attachments/assets/39c7a731-4aca-4f00-8a52-89df27715c2f)
+
 - **CT-10 – Disponibilidade 24h:**  Passou
   - Ferramenta: UptimeRobot  
   - Período: 21/06/2025 15:30 → 22/06/2025 15:30  
