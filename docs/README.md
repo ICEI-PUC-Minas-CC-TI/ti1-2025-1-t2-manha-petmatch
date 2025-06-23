@@ -354,6 +354,7 @@ Clique em "Meus pets".
 Os pets são listados com opções de editar ou excluir.
 
 Tela da funcionalidade:
+Tela de Funcionalidade
 
 Funcionalidade 4 - Edição e remoção de Pets
 Permite alterar ou excluir um pet previamente cadastrado.
@@ -370,6 +371,7 @@ Preencha todas as informações do Pet, até as que não irão sofrer alteraçõ
 Clique em "Salvar".
 
 Tela da funcionalidade:
+Tela de Funcionalidade
 
 Funcionalidade 5 – Exploração de Pets sem Filtros
 Permite aos usuários navegar por todos os pets.
@@ -447,7 +449,7 @@ Permite que o usuário acompanhe as notícias mais recentes relacionadas ao mund
 Estrutura de dados: noticias
 Instruções de acesso:
 
-Clicar em "Pet News".
+Clicar em "Noticias".
 Decidir qual notícia o usuário quer ler.
 Clicar em "Ler mais".
 Para voltar, vá ao final da notícia e clique em "Voltar".
@@ -464,12 +466,12 @@ Decidir sobre qual animal o usuário quer receber dicas sobre.
 Clicar no nome do animal.
 
 Tela da funcionalidade:
-![image](https://github.com/user-attachments/assets/06ecbbdb-b7f0-4a2a-91ad-3bd52c655ecc)
-![image](https://github.com/user-attachments/assets/2175da1c-7fc3-423b-8595-505d69c6a6c4)
-![image](https://github.com/user-attachments/assets/ade0f95b-4213-463b-be90-eb627024eaf3)
-![image](https://github.com/user-attachments/assets/51e26d39-b808-4fb9-b5c2-dafec06fda47)
-![image](https://github.com/user-attachments/assets/8a7ba3b5-f701-492a-b5e6-abc4396a434f)
 
+⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
+
+Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos administradores da solução.
+
+Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.
 
 # Estruturas de Dados
 Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info
@@ -614,15 +616,8 @@ Registro das dicas disponíveis no site.
 
 ## Registro de Testes de Software
 
-- **CT-01 – Cadastro de Usuário:**  Passou 
-![Cadastro preenchido](https://github.com/user-attachments/assets/2dd699a2-f9dd-414e-b98f-3e02be164f66)
-![Homepage apos cadastro](https://github.com/user-attachments/assets/9fd7f8bc-9ed9-4fee-8c0f-d5f6b11d0f57)
-![Cadastro no JSON](https://github.com/user-attachments/assets/9e396c18-0a76-4204-8a1d-68b0f1ee1d7c)
-
-- **CT-02 – Login de Usuário:**   Passou
-![Página de login](https://github.com/user-attachments/assets/c3ede94e-8a03-4fea-895d-778daa70ead0)
-![homepage apos login](https://github.com/user-attachments/assets/f1fdc536-feaf-4dbd-b9e7-d7e094409e02)
-
+- **CT-01 – Cadastro de Usuário:**  
+- **CT-02 – Login de Usuário:**   
 - **CT-03 – Cadastro de Pets:**   
 - **CT-04 – Exploração com Filtros:**  
 - **CT-05 – Favoritar Pets:**   
@@ -630,7 +625,7 @@ Registro das dicas disponíveis no site.
 - **CT-07 – Mapa (Mapbox):**   
 - **CT-08 – Edição de Pets:**   
 - **CT-09 – Exclusão de Pets:**   
-- **CT-10 – Disponibilidade 24h:**  Passou
+- **CT-10 – Disponibilidade 24h:** Passou
   - Ferramenta: UptimeRobot  
   - Período: 21/06/2025 15:30 → 22/06/2025 15:30  
   - Disponibilidade registrada: 100%

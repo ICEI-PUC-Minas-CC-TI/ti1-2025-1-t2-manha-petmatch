@@ -1,6 +1,5 @@
 {
   "pet": [],
-
   "animal_type": [
     {
       "id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
@@ -46,21 +45,7 @@
   "user": [],
   "donor": [],
   "adoption": [],
-  "enterprise": [
-    {
-      "id": "uuid",
-      "cnpj": "12312312312",
-      "phone_number": "553340028922",
-      "name": "Petshop do Ricardão",
-      "description": "PetShop do ricardão",
-      "founded_at": "Thu Apr 17 2025 21:20:23 GMT-0300 (Horário Padrão de Brasília)",
-      "img_url": "someoneUrl",
-      "email": "someone@gmail.com",
-      "password": "somePassword",
-      "created_at": "someDate",
-      "updated_at": "someDate"
-    }
-  ],
+  "enterprise": [],
   "adopter_history": [],
   "donor_history": [],
   "message_session": [],
