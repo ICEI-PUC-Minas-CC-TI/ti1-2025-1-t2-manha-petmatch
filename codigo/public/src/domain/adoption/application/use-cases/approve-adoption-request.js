@@ -67,15 +67,9 @@ export class ApproveAdoptionRequestUseCase {
 
         await this.adoptionRepository.save(adoption);
 
-<<<<<<< HEAD
         pet.availableForAdoption = false
 
         await this.petRepository.save(pet);
-=======
-        const newPetState = Pet.create({...pet, availableForAdoption: false});
-
-        await this.petRepository.save(newPetState);
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 
         return right({
             adoption

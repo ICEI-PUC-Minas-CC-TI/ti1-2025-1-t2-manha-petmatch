@@ -28,18 +28,11 @@ function createSidebar() {
         <button class="sidebar-menu-btn" data-href="/homepage/homepage.html"><i class="material-icons">home</i> Home</button>
         <button class="sidebar-menu-btn" data-href="/explore/index.html"><i class="material-icons">explore</i> Explorar</button>
         <button class="sidebar-menu-btn" data-href="/PaginaCategoria/Categorias.html"><i class="material-icons">category</i> Categorias</button>
-<<<<<<< HEAD
         <button class="sidebar-menu-btn" data-href="/favoritos/favoritos.html"><i class="material-icons">favorite</i> Favoritos</button>
         <button class="sidebar-menu-btn" data-href="/pet-map/index.html"><i class="material-icons">map</i> Petmap</button>
         <button class="sidebar-menu-btn" data-href="/tips/tips.html"><i class="material-icons">lightbulb</i> Pet Tips</button>
         <button class="sidebar-menu-btn" data-href="/quiz/quiz-pet-finder.html"><i class="material-icons">assignment_turned_in</i>Pet ideal</button>
         <button class="sidebar-menu-btn" data-href="/noticias/noticias.html"><i class="material-icons">article</i>Pet News</button>
-=======
-        <button class="sidebar-menu-btn" data-href="/favoritos/pets/index.html"><i class="material-icons">favorite</i> Favoritos</button>
-        ${isDonor ? `<button class="sidebar-menu-btn" data-href="/meus-pets/index.html"><i class="material-icons">pets</i> Meus Pets</button>` : ''}
-        <button class="sidebar-menu-btn" data-href="/pet-map/index.html"><i class="material-icons">map</i> Petmap</button>
-        <button class="sidebar-menu-btn" data-href="/tips/tips.html"><i class="material-icons">lightbulb</i> Pet Tips</button>
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
       </nav>
     </div>
     <div id="sidebar-footer">

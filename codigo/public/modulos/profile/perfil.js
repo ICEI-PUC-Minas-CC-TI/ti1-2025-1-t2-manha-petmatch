@@ -87,13 +87,6 @@ async function fetchAdoptions() {
         const petResponse = await petInterface.fetchAllPets()
         const adoptionResponse = await adoptionInterface.fetchAdoptionByUserId({userId: session.userId})
        
-<<<<<<< HEAD
-=======
-  console.log({
-            petResponse,
-            adoptionResponse
-        })
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
         const petsAdopted = petResponse.pets.filter(pet => {
             return adoptionResponse.adoptions.some(adoption => {
                 return pet._id == adoption.props.petId
@@ -107,7 +100,6 @@ async function fetchAdoptions() {
     }
 }
 
-<<<<<<< HEAD
 async function fetchAdoptionsDonor() {
     try {
         const petResponse = await petInterface.fetchAllPets()
@@ -124,8 +116,6 @@ async function fetchAdoptionsDonor() {
 }
 
 
-=======
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 function rediretToDonorPage(donorId) {
     window.location.href = `${window.location.origin}/modulos/donor-profile/index.html?donorId=${donorId}`;
 }
@@ -137,7 +127,6 @@ function renderPetList(petList) {
     petList.forEach(pet => {
 
         console.log(pet)
-<<<<<<< HEAD
 
     elements += session.donorId ? `
         <li>
@@ -152,9 +141,6 @@ function renderPetList(petList) {
             </div>
         </li>    
     ` : `
-=======
-        elements += `
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
                 <li>
                     <img src="${pet.props.imgUrls[0]}" alt="PetProfile" class="pet-img">
                     <div class="pet-info">
@@ -182,15 +168,11 @@ function renderSessionData() {
 }
 
 $(document).ready(async function () {
-<<<<<<< HEAD
     if(session.donorId) {
         await fetchAdoptionsDonor()
     }else {
         await fetchAdoptions()
     }
-=======
-    await fetchAdoptions()
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
     await fetchRequestAdoption()
     renderSessionData()
 
@@ -227,7 +209,6 @@ $(document).ready(async function () {
         rediretToDonorPage(event.target.value)
     })
 
-<<<<<<< HEAD
 $('#pets-content').on('click', '.deleteBtn', async function (event) {
     const button = $(event.target).closest('.deleteBtn');
     const petId = button.val();
@@ -251,8 +232,6 @@ $('#pets-content').on('click', '.editBtn', async function (event) {
     window.location.href = `${window.location.origin}/modulos/editar-pets/editar.html?petId=${event.target.value}`
 });
 
-=======
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
     $('#request-list').on('click', '.approve', function () {
         const adoptionId = $(this).data('id');
         handleAdoptionDecision(adoptionId, true);
@@ -266,13 +245,10 @@ $('#pets-content').on('click', '.editBtn', async function (event) {
 });
 
 
-<<<<<<< HEAD
 if(session.donorId) {
 $('#request-btn').show()    
 }
 
-=======
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 
 $('#request-btn').click(async function () {
     $('#request-modal').css("display", "flex").hide().fadeIn();

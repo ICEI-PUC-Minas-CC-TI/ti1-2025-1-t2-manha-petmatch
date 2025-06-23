@@ -147,7 +147,6 @@ main {
     position: absolute;
     bottom: 10px;
     right: 10px;
-<<<<<<< HEAD
      padding: 6px 12px;
     font-weight: bold;
     border: none;
@@ -160,8 +159,6 @@ main {
 
 #request-btn:hover {
     filter: brightness(.9);
-=======
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 }
 
 #pets-header h2 {

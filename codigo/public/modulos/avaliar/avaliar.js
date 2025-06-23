@@ -3,24 +3,14 @@ import { JsonRatingUserRepository } from "../../src/database/repositories/adopti
 import { RatingUserUseCase } from "../../src/domain/adoption/application/use-cases/rating-user.js";
 import { JsonUserRepository } from "../../src/database/repositories/adoption/json-user-repository.js";
 import { JsonDonorRepository } from "../../src/database/repositories/adoption/json-donor-repository.js";
-<<<<<<< HEAD
 import { AnimalTypeInterface } from "../../db-interface/animal-type-interface.js";
-=======
-import {AnimalTypeInterface} from "../../db-interface/animal-type-interface.js"
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 import { CurrentSession } from "../../utils/current-session.js";
 import { DonorInterface } from "../../db-interface/donor-interface.js";
 import { UserInterface } from "../../db-interface/user-interface.js";
 
-<<<<<<< HEAD
 const userInterface = new UserInterface();
 const donorInterface = new DonorInterface();
 const session = new CurrentSession();
-=======
-const userInterface = new UserInterface()
-const donorInterface = new DonorInterface()
-const session = new CurrentSession()
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 
 const urlParams = new URLSearchParams(window.location.search);
 const ratedId = urlParams.get("ratedId");
@@ -30,7 +20,6 @@ if (!ratedId) {
 }
 
 async function fetchAndRenderDonorInfo() {
-<<<<<<< HEAD
   try {
     const { donor } = await donorInterface.getDonorById({ id: ratedId });
     const user = await userInterface.getUserById({ id: donor.props.userId });
@@ -40,19 +29,6 @@ async function fetchAndRenderDonorInfo() {
   } catch (error) {
     console.error('Erro ao carregar dados do doador:', error);
   }
-=======
-    try {
-        const { donor } = await donorInterface.getDonorById({ id: ratedId })
-        console.log()
-        
-        const user = await userInterface.getUserById({ id: donor.props.userId })
-
-        $('#img').attr('src', user.user.props.imgUrl)
-        $('#name').text(user.user.props.name)
-    } catch (error) {
-        console.error('Erro ao carregar dados do doador:', error)
-    }
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 }
 
 const stars = document.querySelectorAll('.star');
@@ -104,11 +80,7 @@ submitBtn.addEventListener('click', async () => {
 
   const result = await useCase.execute({
     appraiserId: session.userId,
-<<<<<<< HEAD
     ratedId,
-=======
-    ratedId, // O ID do perfil sendo avaliado, vindo da URL
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
     content: comment,
     rate: currentRating
   });
@@ -186,16 +158,6 @@ $('#request-btn').click(function () {
   $('#request-modal').fadeIn();
 });
 
-<<<<<<< HEAD
 $('#close-request-modal').click(function () {
   $('#request-modal').fadeOut();
 });
-=======
-window.addEventListener("load", async () => {
-    await fetchAndRenderDonorInfo()
-})
-
-$("#searchBar").on("propertychange input", onSearchBar)
-
-$("#searchButton").click(handleSeachButton)
->>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
