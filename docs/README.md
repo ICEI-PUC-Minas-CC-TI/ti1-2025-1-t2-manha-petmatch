@@ -354,7 +354,6 @@ Clique em "Meus pets".
 Os pets são listados com opções de editar ou excluir.
 
 Tela da funcionalidade:
-Tela de Funcionalidade
 
 Funcionalidade 4 - Edição e remoção de Pets
 Permite alterar ou excluir um pet previamente cadastrado.
@@ -371,7 +370,6 @@ Preencha todas as informações do Pet, até as que não irão sofrer alteraçõ
 Clique em "Salvar".
 
 Tela da funcionalidade:
-Tela de Funcionalidade
 
 Funcionalidade 5 – Exploração de Pets sem Filtros
 Permite aos usuários navegar por todos os pets.
@@ -449,7 +447,7 @@ Permite que o usuário acompanhe as notícias mais recentes relacionadas ao mund
 Estrutura de dados: noticias
 Instruções de acesso:
 
-Clicar em "Noticias".
+Clicar em "Pet News".
 Decidir qual notícia o usuário quer ler.
 Clicar em "Ler mais".
 Para voltar, vá ao final da notícia e clique em "Voltar".
@@ -466,6 +464,11 @@ Decidir sobre qual animal o usuário quer receber dicas sobre.
 Clicar no nome do animal.
 
 Tela da funcionalidade:
+![image](https://github.com/user-attachments/assets/06ecbbdb-b7f0-4a2a-91ad-3bd52c655ecc)
+![image](https://github.com/user-attachments/assets/2175da1c-7fc3-423b-8595-505d69c6a6c4)
+![image](https://github.com/user-attachments/assets/ade0f95b-4213-463b-be90-eb627024eaf3)
+![image](https://github.com/user-attachments/assets/51e26d39-b808-4fb9-b5c2-dafec06fda47)
+![image](https://github.com/user-attachments/assets/8a7ba3b5-f701-492a-b5e6-abc4396a434f)
 
 
 # Estruturas de Dados
