@@ -1,36 +1,34 @@
+// avaliar.js
 import { JsonRatingUserRepository } from "../../src/database/repositories/adoption/json-rating-user-repository.js";
 import { RatingUserUseCase } from "../../src/domain/adoption/application/use-cases/rating-user.js";
 import { JsonUserRepository } from "../../src/database/repositories/adoption/json-user-repository.js";
 import { JsonDonorRepository } from "../../src/database/repositories/adoption/json-donor-repository.js";
-import {AnimalTypeInterface} from "../../db-interface/animal-type-interface.js"
+import { AnimalTypeInterface } from "../../db-interface/animal-type-interface.js";
 import { CurrentSession } from "../../utils/current-session.js";
 import { DonorInterface } from "../../db-interface/donor-interface.js";
 import { UserInterface } from "../../db-interface/user-interface.js";
 
-const userInterface = new UserInterface()
-const donorInterface = new DonorInterface()
-const session = new CurrentSession()
+const userInterface = new UserInterface();
+const donorInterface = new DonorInterface();
+const session = new CurrentSession();
 
-// Captura do ratedId da URL (ex: avaliar.html?ratedId=abcd1234)
 const urlParams = new URLSearchParams(window.location.search);
-const ratedId = urlParams.get("ratedId"); // O ID do perfil que está sendo avaliado
+const ratedId = urlParams.get("ratedId");
 
 if (!ratedId) {
   alert("Erro: Nenhum usuário foi definido para avaliação. Por favor, forneça um 'ratedId' na URL.");
 }
 
 async function fetchAndRenderDonorInfo() {
-    try {
-        const { donor } = await donorInterface.getDonorById({ id: ratedId })
-        console.log()
-        
-        const user = await userInterface.getUserById({ id: donor.props.userId })
+  try {
+    const { donor } = await donorInterface.getDonorById({ id: ratedId });
+    const user = await userInterface.getUserById({ id: donor.props.userId });
 
-        $('#img').attr('src', user.user.props.imgUrl)
-        $('#name').text(user.user.props.name)
-    } catch (error) {
-        console.error('Erro ao carregar dados do doador:', error)
-    }
+    $('#img').attr('src', user.user.props.imgUrl);
+    $('#name').text(user.user.props.name);
+  } catch (error) {
+    console.error('Erro ao carregar dados do doador:', error);
+  }
 }
 
 const stars = document.querySelectorAll('.star');
@@ -67,12 +65,9 @@ function highlightStars(value) {
   });
 }
 
-// Inicialização dos repositórios
 const userRepository = new JsonUserRepository();
 const ratingUserRepository = new JsonRatingUserRepository();
 const donorRepository = new JsonDonorRepository();
-
-// Instanciação do useCase
 const useCase = new RatingUserUseCase(userRepository, ratingUserRepository, donorRepository);
 
 submitBtn.addEventListener('click', async () => {
@@ -83,20 +78,17 @@ submitBtn.addEventListener('click', async () => {
     return;
   }
 
-  // Em uma aplicação real, este ID viria da sessão do usuário logado.
-  const appraiserId = "userTestId"; // Exemplo de ID fixo
-
   const result = await useCase.execute({
     appraiserId: session.userId,
-    ratedId, // O ID do perfil sendo avaliado, vindo da URL
+    ratedId,
     content: comment,
     rate: currentRating
   });
 
   if (result.isRight()) {
     commentDisplay.innerHTML = `
-    <strong>Você</strong> avaliou com <strong>${currentRating}/5</strong><br/>
-    <p>${comment}</p>
+      <strong>Você</strong> avaliou com <strong>${currentRating}/5</strong><br/>
+      <p>${comment}</p>
     `;
 
     commentInput.value = '';
@@ -104,29 +96,68 @@ submitBtn.addEventListener('click', async () => {
     highlightStars(0);
     ratingValue.textContent = "Nota: 0/5";
     alert("Avaliação enviada com sucesso!");
+    await fetchAndRenderPreviousRatings();
   } else {
     alert("Erro ao salvar avaliação: " + result.value.message);
   }
 });
 
+async function fetchAndRenderPreviousRatings() {
+  try {
+    const result = await ratingUserRepository.findByRatedId(ratedId);
+    const ratings = result.ratingUser;
+
+    if (!ratings || ratings.length === 0) {
+      document.getElementById("comments-list").innerHTML = "<p>Nenhuma avaliação disponível ainda.</p>";
+      return;
+    }
+
+    const namesMap = {};
+    await Promise.all(ratings.map(async (rating) => {
+      try {
+        const { user } = await userInterface.getUserById({ id: rating.appraiserId });
+        namesMap[rating.appraiserId] = user.props.name;
+      } catch {
+        namesMap[rating.appraiserId] = "(Usuário desconhecido)";
+      }
+    }));
+
+    const html = ratings.map(rating => `
+      <div class="rating-entry">
+        <p><strong>${namesMap[rating.appraiserId]}</strong> avaliou com <strong>${rating.rate}/5</strong></p>
+        <p>${rating.content}</p>
+        <hr/>
+      </div>
+    `).join("");
+
+    document.getElementById("comments-list").innerHTML = html;
+  } catch (error) {
+    console.error("Erro ao carregar avaliações:", error);
+    document.getElementById("comments-list").innerHTML = "<p>Erro ao carregar avaliações.</p>";
+  }
+}
+
+window.addEventListener("load", async () => {
+  await fetchAndRenderDonorInfo();
+  await fetchAndRenderPreviousRatings();
+});
 
 let searchBarValue = '';
 document.getElementById('searchButton').addEventListener('click', handleSeachButton);
 document.getElementById('searchBar').addEventListener('input', onSearchBar);
 
-async function handleSeachButton() {
+function onSearchBar(event) {
+  searchBarValue = event.target.value;
+}
+
+function handleSeachButton() {
   window.location.href = `../explore/index.html?search=${searchBarValue}`;
 }
 
-function onSearchBar(event) {
-  searchBarValue = event.target.value;
-  console.log(searchBarValue)
-}
+$('#request-btn').click(function () {
+  $('#request-modal').fadeIn();
+});
 
-window.addEventListener("load", async () => {
-    await fetchAndRenderDonorInfo()
-})
-
-$("#searchBar").on("propertychange input", onSearchBar)
-
-$("#searchButton").click(handleSeachButton)
+$('#close-request-modal').click(function () {
+  $('#request-modal').fadeOut();
+});

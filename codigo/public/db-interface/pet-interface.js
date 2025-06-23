@@ -16,6 +16,8 @@ import {JsonAddressRepository} from '../src/database/repositories/adoption/json-
 
 import {CurrentSession} from '../utils/current-session.js'
 import { FetchAllPetsUseCase } from '../src/domain/adoption/application/use-cases/fetch-all-pets.js'
+import {AddressInterface} from './address-interface.js'
+import { CloudinaryService } from '../src/services/cloudinary/cloudinary-service.js'
 
 export class PetInterface {
     addressRepository = new JsonAddressRepository()
@@ -23,8 +25,12 @@ export class PetInterface {
     donorRepository = new JsonDonorRepository();
     userRepository = new JsonUserRepository()
     favoritePetRepository = new JsonFavoritePetRepository()
-
+    addressInterface = new AddressInterface()
     session = new CurrentSession()
+    // Service
+    cloudinaryService = new CloudinaryService()
+
+
 
     /*
     INPUT {
@@ -45,17 +51,24 @@ export class PetInterface {
     }
     }
     */
-    async registerPetInterface({petInfo}) {
+    async registerPetInterface({petInfo, petAddress}) {
 
-        const registerPetUseCase = new RegisterPetUseCase(this.petRepository, this.donorRepository)
 
+        const registerPetUseCase = new RegisterPetUseCase(this.petRepository, this.donorRepository, this.cloudinaryService)
         
         const response = await registerPetUseCase.execute({...petInfo, donorId: this.session.donorId});
+
         
         if(response.isLeft() === true) {
             console.error(response);
             return response;
         }
+
+        await this.addressInterface.registerPetAddress({
+              entityId: response.value.pet.id,
+              donorId: this.session.donorId,
+              ...petAddress
+        })
 
         return response.value;
     }
@@ -233,6 +246,13 @@ export class PetInterface {
             return response;
         }
 
+        const address = await this.addressInterface.getPetAddressByPet({petId})
+
+        await this.addressInterface.deletePetAddress({
+                   addressId:address.id ,
+                   donorId: this.session.donorId
+        })
+
         return response.value;
     } 
  
@@ -261,15 +281,23 @@ export class PetInterface {
     }
     */
    // ATENÇÃO, OS DADOS DEVEM SER REEVIADOS, CAMPOS NÃO PREECHIDOS SERÃO INTERPRETADOS COMO UNDEFINED E ESTARÃO NULOS NO BANCO DE DADOS
-    async editPet({pet, petId}) {
+    async editPet({petInfo, petId, petAddress}) {
         const editPetUseCase = new EditPetUseCase(this.petRepository, this.donorRepository)
 
-        const response = await editPetUseCase.execute({...pet, donorId: this.session.donorId, id: petId});
+        const response = await editPetUseCase.execute({...petInfo, donorId: this.session.donorId, id: petId});
 
         if(response.isLeft() === true) {
             console.error(response);
             return response;
         }
+
+        const address = await this.addressInterface.getPetAddressByPet({petId})
+
+        await this.addressInterface.editPetAddress({
+              addressId: address._id,
+              donorId: this.session.donorId,
+              ...petAddress
+        })
 
         return response.value;
     }

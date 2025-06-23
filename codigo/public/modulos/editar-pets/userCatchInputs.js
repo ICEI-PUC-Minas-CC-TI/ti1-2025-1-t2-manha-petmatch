@@ -1,10 +1,13 @@
 import { PetInterface } from '../../db-interface/pet-interface.js';
 
+const searchParams = new URLSearchParams(window.location.search);
+const petId = searchParams.get('petId');
+
 const petService = new PetInterface();
 
-async function petRegister(params) {
+async function petEditar(params) {
   try {
-    const registerPetInterface = await petService.registerPetInterface(params);
+    const registerPetInterface = await petService.editPet(params);
     return registerPetInterface;
   } catch (error) {
     console.error("Erro na interface de registro:", error);
@@ -14,7 +17,6 @@ async function petRegister(params) {
 document.querySelector('.submit').addEventListener('click', async () => {
   try {
     // Imagens (base64)
-    const inputImagens = document.getElementById('file-button');
 
     const getValue = (selector) => {
       const el = document.querySelector(selector);
@@ -54,20 +56,18 @@ document.querySelector('.submit').addEventListener('click', async () => {
 
     const petInfo = {
       name: nome,
-      description: descricao,
+      descriptions: descricao,
       animalTypeId: classificacao,
       size: tamanho,
       breed: [breed],
       vaccinated: vacinado,
       castrated: castrado,
       personality: [],
-      imgData: inputImagens.files[0],
       bornAt: dataEncontro,
       donorId: "donorTestId",
       availableForAdoption: true,
       animalSex: "Male",
     };
-
     const petAddress = {
         street:rua,
         number: numero,
@@ -78,7 +78,7 @@ document.querySelector('.submit').addEventListener('click', async () => {
         zipCode: cep,
     }
 
-    const resultado = await petRegister({ petInfo, petAddress });
+    const resultado = await petEditar({ petInfo, petAddress, petId });
 
 
     if (resultado?.erro) {

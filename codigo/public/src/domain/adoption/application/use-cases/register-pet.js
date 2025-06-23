@@ -26,9 +26,11 @@ import { RequestMissingDataError } from '../errors/request-missing-data-error.js
 export class RegisterPetUseCase {
     petRepository;
     donorRepository;
-    constructor(petRepository, donorRepository) {
+    uploadService
+    constructor(petRepository, donorRepository, uploadService) {
         this.petRepository = petRepository;
         this.donorRepository = donorRepository
+        this.uploadService = uploadService
     }
 
     async execute({
@@ -37,7 +39,7 @@ export class RegisterPetUseCase {
         size,
         animalSex,
         description,
-        imgUrls,
+        imgData,
         bornAt,
         breed,
         vaccinated,
@@ -53,7 +55,7 @@ export class RegisterPetUseCase {
             size == undefined ||
             animalSex == undefined ||
             description == undefined ||
-            imgUrls == undefined ||
+            imgData == undefined ||
             bornAt == undefined ||
             breed == undefined ||
             vaccinated == undefined ||
@@ -77,7 +79,7 @@ export class RegisterPetUseCase {
                 size,
                 animalSex,
                 description,
-                imgUrls,
+                imgUrls: [],
                 bornAt,
                 breed,
                 vaccinated,
@@ -88,6 +90,17 @@ export class RegisterPetUseCase {
 
             }
         )
+
+        if(imgData) {
+            const response = await this.uploadService.upload({
+                file: imgData,
+                entityId: pet.id
+            })
+
+            console.log(response)
+            pet.imgUrls = [response.url]
+        }
+
 
         await this.petRepository.create(pet);
 

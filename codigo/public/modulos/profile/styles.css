@@ -147,6 +147,18 @@ main {
     position: absolute;
     bottom: 10px;
     right: 10px;
+     padding: 6px 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--yellow);
+    color: #000;
+    transition: filter 0.2s ease;
+}
+
+#request-btn:hover {
+    filter: brightness(.9);
 }
 
 #pets-header h2 {

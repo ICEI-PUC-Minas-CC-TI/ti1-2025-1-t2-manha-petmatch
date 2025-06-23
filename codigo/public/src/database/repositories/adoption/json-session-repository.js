@@ -17,7 +17,7 @@ export class JsonSessionRepository {
                 },        
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 

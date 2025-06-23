@@ -17,7 +17,7 @@ export class JsonAdoptionRepository {
                 },        
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 
@@ -118,7 +118,7 @@ export class JsonAdoptionRepository {
                 method: "DELETE"
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 

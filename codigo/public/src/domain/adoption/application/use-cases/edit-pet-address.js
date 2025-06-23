@@ -42,16 +42,14 @@ export class EditPetAddressUseCase {
         city,
         state,
         zipCode,
-        country,
         donorId,
         addressId
     }) {
 
-         if(!entityId || !street ||  !number ||
+         if( !street ||  !number ||
         !city ||
         !state ||
         !zipCode ||
-        !country ||
         !neighborhood ||
         !donorId
     ) {
@@ -86,7 +84,7 @@ export class EditPetAddressUseCase {
                 city,
                 state,
                 zipCode,
-                country,
+                country: "Brasil",
         })
 
         if(!coordinates) {
@@ -100,7 +98,7 @@ export class EditPetAddressUseCase {
         address.city = city;
         address.state = state;
         address.zipCode = zipCode;
-        address.country = country;
+        address.country = 'Brasil';
         address.latitude = coordinates.lat;
         address.longitude = coordinates.lon;    
 

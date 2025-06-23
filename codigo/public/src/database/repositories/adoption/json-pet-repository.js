@@ -20,7 +20,7 @@ export class JsonPetRepository {
                 },        
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 
@@ -139,7 +139,7 @@ export class JsonPetRepository {
 
             await this.addressRepository.delete(address.id)
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 }

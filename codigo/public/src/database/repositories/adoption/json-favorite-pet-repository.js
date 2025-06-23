@@ -17,7 +17,7 @@ export class JsonFavoritePetRepository {
                 },        
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 
@@ -94,7 +94,7 @@ export class JsonFavoritePetRepository {
                 method: "DELETE"
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 }

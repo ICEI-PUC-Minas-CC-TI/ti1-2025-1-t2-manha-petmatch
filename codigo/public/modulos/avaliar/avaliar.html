@@ -14,67 +14,66 @@
   <link rel="stylesheet" href="../../components/header/styles.css">
   <link rel="stylesheet" href="../../components/pet-card/style.css">
   <link rel="stylesheet" href="avaliar.css" />
-   <link rel="stylesheet" href="../../components/sidebar/styles.css">
+  <link rel="stylesheet" href="../../components/sidebar/styles.css">
 </head>
 
 <body>
-
   <div id="screen-container">
     <header class="topbar">
-      <h1 class="logo">PETMATCH</h1>
-
-      <div class="search">
-        <input type="text" placeholder="Pesquisa" id="searchBar" />
-        <button id="searchButton"><i class="material-icons">search</i></button>
-      </div>
+      <h1 class="logo" style="color: black;">PETMATCH</h1>
     </header>
 
     <!-- Foto de perfil e nota -->
-      <div class="perfil">
-        <img src="../../Images/someone.jpg" id="img" alt="Foto de Perfil">
-        <h2 id="name"></h2>
-        <div class="star-rating">
-          <span class="star" data-value="1">&#9733;</span>
-          <span class="star" data-value="2">&#9733;</span>
-          <span class="star" data-value="3">&#9733;</span>
-          <span class="star" data-value="4">&#9733;</span>
-          <span class="star" data-value="5">&#9733;</span>
-        </div>
-        <p id="rating-value">Nota: 0/5</p>
+    <div class="perfil">
+      <img src="../../Images/someone.jpg" id="img" alt="Foto de Perfil">
+      <h2 id="name"></h2>
+      <div class="star-rating">
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
       </div>
-      <!-- Formulário de comentário -->
+      <p id="rating-value">Nota: 0/5</p>
+    </div>
+
+    <!-- Formulário de comentário -->
     <textarea id="comment" placeholder="Escreva um comentário..."></textarea>
     <button id="submitBtn">Enviar</button>
 
-    <!-- Onde o comentário será exibido -->
+    <!-- Comentário enviado pelo usuário -->
     <div id="submitted-comment"></div>
+
+    <!-- Comentários anteriores -->
+    <div id="past-comments">
+      <h3>Avaliações anteriores:</h3>
+      <div id="comments-list"></div>
+    </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-    <!-- Footer -->
-    <footer>
-      <span>&copy; 2025 PetMatch</span>
-      <div>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <span>&copy; 2025 PetMatch</span>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+    </div>
+  </footer>
+<div id="request-modal" class="modal-overlay">
+  <div class="modal-content" style="max-height: 80vh; overflow-y: auto">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h2>Pedidos de Adoção</h2>
+      <button id="close-request-modal" style="background: none; color: black; font-size: 20px; border: none;">&times;</button>
+    </div>
+    <ul id="request-list" style="display: flex; flex-direction: column; gap: 10px;"></ul>
   </div>
+</div>
+
+  <!-- Scripts -->
   <script type="module" src="../../utils/verify-login.js"></script>
-
-    <script type="module" src="../../components/sidebar/sidebar.js"></script>
-
+  <script type="module" src="../../components/sidebar/sidebar.js"></script>
   <script src="../../jquery/jquery.js"></script>
   <script type="module" src="avaliar.js"></script>
-  </div>
 </body>
 
 </html>

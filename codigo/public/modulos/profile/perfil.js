@@ -87,10 +87,6 @@ async function fetchAdoptions() {
         const petResponse = await petInterface.fetchAllPets()
         const adoptionResponse = await adoptionInterface.fetchAdoptionByUserId({userId: session.userId})
        
-  console.log({
-            petResponse,
-            adoptionResponse
-        })
         const petsAdopted = petResponse.pets.filter(pet => {
             return adoptionResponse.adoptions.some(adoption => {
                 return pet._id == adoption.props.petId
@@ -104,6 +100,22 @@ async function fetchAdoptions() {
     }
 }
 
+async function fetchAdoptionsDonor() {
+    try {
+        const petResponse = await petInterface.fetchAllPets()
+       
+        const petsAdopted = petResponse.pets.filter(pet => {
+            return pet.props.donorId === session.donorId
+        })
+
+        renderPetList(petsAdopted)
+
+    }catch(error) {
+        console.error(error)
+    }
+}
+
+
 function rediretToDonorPage(donorId) {
     window.location.href = `${window.location.origin}/modulos/donor-profile/index.html?donorId=${donorId}`;
 }
@@ -115,7 +127,20 @@ function renderPetList(petList) {
     petList.forEach(pet => {
 
         console.log(pet)
-        elements += `
+
+    elements += session.donorId ? `
+        <li>
+            <img src="${pet.props.imgUrls[0]}" alt="PetProfile" class="pet-img">
+            <div class="pet-info">
+                <p class="pet-name">${pet.props.name}</p>
+                <p class="pet-breed">${pet.props.breed[0]}</p>
+            </div>
+            <div style="display: flex; align-items: center">
+            <button class="editBtn" value="${pet._id}">Editar</button>
+            <button class="deleteBtn" value="${pet._id}"><i value="${pet._id}" class="material-icons">delete</i></button>
+            </div>
+        </li>    
+    ` : `
                 <li>
                     <img src="${pet.props.imgUrls[0]}" alt="PetProfile" class="pet-img">
                     <div class="pet-info">
@@ -143,7 +168,11 @@ function renderSessionData() {
 }
 
 $(document).ready(async function () {
-    await fetchAdoptions()
+    if(session.donorId) {
+        await fetchAdoptionsDonor()
+    }else {
+        await fetchAdoptions()
+    }
     await fetchRequestAdoption()
     renderSessionData()
 
@@ -180,6 +209,29 @@ $(document).ready(async function () {
         rediretToDonorPage(event.target.value)
     })
 
+$('#pets-content').on('click', '.deleteBtn', async function (event) {
+    const button = $(event.target).closest('.deleteBtn');
+    const petId = button.val();
+
+    try {
+        await petInterface.deletePet({ petId });
+
+        // Remove o <li> mais próximo desse botão
+        button.closest('li').fadeOut(300, function () {
+            $(this).remove();
+        });
+
+        console.log(`Pet ${petId} excluído com sucesso.`);
+    } catch (error) {
+        console.error('Erro ao excluir pet:', error);
+        alert('Erro ao excluir o pet. Tente novamente.');
+    }
+});
+
+$('#pets-content').on('click', '.editBtn', async function (event) {
+    window.location.href = `${window.location.origin}/modulos/editar-pets/editar.html?petId=${event.target.value}`
+});
+
     $('#request-list').on('click', '.approve', function () {
         const adoptionId = $(this).data('id');
         handleAdoptionDecision(adoptionId, true);
@@ -192,6 +244,10 @@ $(document).ready(async function () {
 
 });
 
+
+if(session.donorId) {
+$('#request-btn').show()    
+}
 
 
 $('#request-btn').click(async function () {
