@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Pet</title>
+    <link rel="stylesheet" href="detalhes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <div class="avatar">
+                    <img src="assets/ricardao.png" alt="Foto de Perfil">
+                </div>
+                <div class="user-info">
+                    <h3>Ricardão</h3>
+                    <span class="rating">⭐ 5.0</span>
+                </div>
+                <button class="profile-button">Perfil</button>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-compass"></i> Explorar</a></li>
+                    <li><a href="#"><i class="fas fa-list"></i> Categorias</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Favoritos</a></li>
+                </ul>
+            </nav>
+            <button class="logout-button">SAIR</button>
+        </aside>
+        <main class="content">
+            <header class="header">
+                <h1>PETMATCH</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Pesquisa">
+                    <button type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </header>
+
+            <section class="pet-details-section">
+                <button class="back-button"><i class="fas fa-arrow-left"></i> Voltar</button>
+                <h2>Detalhes do Pet</h2>
+                <div class="pet-details-container">
+                    <div class="pet-details-image">
+                        <img id="pet-image" src="" alt="Imagem do Pet">
+                    </div>
+                    <div class="pet-details-info">
+                        <h3 id="pet-name"></h3>
+                        <p class="pet-details" id="pet-breed"></p>
+                        <p class="pet-details" id="pet-age"></p>
+                        <p class="pet-description" id="pet-description"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+  <script type="module" src="../../utils/verify-login.js"></script>
+
+    <script src="detalhes.js"></script>
+</body>
+
+</html>

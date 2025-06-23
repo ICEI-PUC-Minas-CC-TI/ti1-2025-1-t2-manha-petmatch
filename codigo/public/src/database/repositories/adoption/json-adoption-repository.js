@@ -39,7 +39,11 @@ export class JsonAdoptionRepository {
 
     async findManyAdoptionByUserId(userId) {
         try{
+<<<<<<< HEAD
             const newUrl = `${this.url}?user_id=${userId}&status=APPROVED`
+=======
+            const newUrl = `${this.url}?user_id=${userId}&status="APPROVED`
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 
             const response = await fetch(newUrl);
 
@@ -73,6 +77,7 @@ export class JsonAdoptionRepository {
         }
     }
 
+<<<<<<< HEAD
    async findManyAdoptionByPetId(petId) {
     try {
         const newUrl = `${this.url}?pet_id=${petId}&status=PENDING`;
@@ -95,6 +100,29 @@ export class JsonAdoptionRepository {
         try{
             const newUrl = `${this.url}?donor_id=${donorId}&status=PENDING`
 
+=======
+    async findManyAdoptionByPetId(petId) {
+         try{
+            const newUrl = `${this.url}?pet_id=${petId}&status="PENDING"`
+
+            const response = await fetch(newUrl);
+
+            const jsonFormat = await response.json()
+
+            const adoptions = jsonFormat.map((element) => {
+                return  {...JsonAdoptionRepositoryMapper.toDomain(element)}
+            })
+
+            return adoptions
+        } catch(err) {
+            console.error(err);
+        }
+    }
+
+    async findManyPendingAdoptionByDonorId(donorId) {
+        try{
+            const newUrl = `${this.url}?donor_id=${donorId}&status="PENDING"`
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 
             const response = await fetch(newUrl);
 

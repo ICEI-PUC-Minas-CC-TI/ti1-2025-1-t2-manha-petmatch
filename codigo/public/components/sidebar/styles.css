@@ -21,7 +21,11 @@
   width: 220px;
   background: #fff;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
   padding: .5rem 1rem 1rem;
+=======
+  padding: 1rem;
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -112,7 +116,11 @@
   margin: 0 auto;
   margin-bottom: 20px;
   gap: .5rem;
+<<<<<<< HEAD
   padding: .3rem 0;
+=======
+  padding: 1rem 0;
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
   border-bottom: 1px solid var(--gray);
   border-top: 1px solid var(--gray);
   overflow-y: scroll;

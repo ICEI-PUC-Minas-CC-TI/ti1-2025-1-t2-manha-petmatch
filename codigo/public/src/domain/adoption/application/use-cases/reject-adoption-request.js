@@ -54,6 +54,14 @@ export class RejectAdoptionRequestUseCase {
             return left(new ResourceNotFoundError())
         }
 
+<<<<<<< HEAD
+=======
+
+        if(pet.availableForAdoption === false) {
+            return left(new PetNotAvaiiableForAdoptionError())
+        }
+
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
         if(pet.donorId !== donorId || donor.id !== donorId || adoption.donorId !== donorId) {
             return left(new NotAllowedError())
         }

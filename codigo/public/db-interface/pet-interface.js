@@ -16,8 +16,11 @@ import {JsonAddressRepository} from '../src/database/repositories/adoption/json-
 
 import {CurrentSession} from '../utils/current-session.js'
 import { FetchAllPetsUseCase } from '../src/domain/adoption/application/use-cases/fetch-all-pets.js'
+<<<<<<< HEAD
 import {AddressInterface} from './address-interface.js'
 import { CloudinaryService } from '../src/services/cloudinary/cloudinary-service.js'
+=======
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 
 export class PetInterface {
     addressRepository = new JsonAddressRepository()
@@ -31,6 +34,8 @@ export class PetInterface {
     cloudinaryService = new CloudinaryService()
 
 
+
+    session = new CurrentSession()
 
     /*
     INPUT {
@@ -51,6 +56,7 @@ export class PetInterface {
     }
     }
     */
+<<<<<<< HEAD
     async registerPetInterface({petInfo, petAddress}) {
 
 
@@ -58,6 +64,14 @@ export class PetInterface {
         
         const response = await registerPetUseCase.execute({...petInfo, donorId: this.session.donorId});
 
+=======
+    async registerPetInterface({petInfo}) {
+
+        const registerPetUseCase = new RegisterPetUseCase(this.petRepository, this.donorRepository)
+
+        
+        const response = await registerPetUseCase.execute({...petInfo, donorId: this.session.donorId});
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
         
         if(response.isLeft() === true) {
             console.error(response);
@@ -281,10 +295,17 @@ export class PetInterface {
     }
     */
    // ATENÇÃO, OS DADOS DEVEM SER REEVIADOS, CAMPOS NÃO PREECHIDOS SERÃO INTERPRETADOS COMO UNDEFINED E ESTARÃO NULOS NO BANCO DE DADOS
+<<<<<<< HEAD
     async editPet({petInfo, petId, petAddress}) {
         const editPetUseCase = new EditPetUseCase(this.petRepository, this.donorRepository)
 
         const response = await editPetUseCase.execute({...petInfo, donorId: this.session.donorId, id: petId});
+=======
+    async editPet({pet, petId}) {
+        const editPetUseCase = new EditPetUseCase(this.petRepository, this.donorRepository)
+
+        const response = await editPetUseCase.execute({...pet, donorId: this.session.donorId, id: petId});
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 
         if(response.isLeft() === true) {
             console.error(response);
