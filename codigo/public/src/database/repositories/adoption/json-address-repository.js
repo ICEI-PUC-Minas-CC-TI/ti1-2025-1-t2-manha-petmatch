@@ -123,7 +123,7 @@ export class JsonAddressRepository {
                 method: "DELETE"
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
     

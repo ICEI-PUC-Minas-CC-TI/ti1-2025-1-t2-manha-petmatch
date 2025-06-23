@@ -147,6 +147,21 @@ main {
     position: absolute;
     bottom: 10px;
     right: 10px;
+<<<<<<< HEAD
+     padding: 6px 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--yellow);
+    color: #000;
+    transition: filter 0.2s ease;
+}
+
+#request-btn:hover {
+    filter: brightness(.9);
+=======
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
 }
 
 #pets-header h2 {

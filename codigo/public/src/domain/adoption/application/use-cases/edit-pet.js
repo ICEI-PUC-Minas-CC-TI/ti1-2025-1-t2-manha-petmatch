@@ -39,7 +39,6 @@ export class EditPetUseCase {
         size,
         animalSex,
         descriptions,
-        imgUrls,
         bornAt,
         breed,
         vaccinated,
@@ -50,12 +49,27 @@ export class EditPetUseCase {
         id
     }) {
 
-          if(  name === undefined ||
+        console.log({
+        name,
+        animalTypeId,
+        size,
+        animalSex,
+        descriptions,
+        bornAt,
+        breed,
+        vaccinated,
+        castrated,
+        availableForAdoption,
+        personality,
+        donorId,
+        id
+    })
+
+        if(  name === undefined ||
         animalTypeId === undefined ||
         size === undefined ||
         animalSex === undefined ||
         descriptions === undefined ||
-        imgUrls === undefined ||
         bornAt === undefined ||
         breed === undefined ||
         vaccinated === undefined ||
@@ -74,7 +88,7 @@ export class EditPetUseCase {
             return left(new ResourceNotFoundError());
         }
 
-         const {donor} = await this.donorRepository.findById(donorId)
+        const {donor} = await this.donorRepository.findById(donorId)
 
         if(!donor || pet.donorId != donorId) {
             return left(new NotAllowedError())
@@ -85,7 +99,6 @@ export class EditPetUseCase {
         pet.size = size;
         pet.animalSex = animalSex;
         pet.descriptions = descriptions;
-        pet.imgUrls = imgUrls;
         pet.bornAt = bornAt;
         pet.vaccinated = vaccinated;
         pet.castrated = castrated;

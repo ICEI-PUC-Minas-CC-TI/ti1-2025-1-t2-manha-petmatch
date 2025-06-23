@@ -189,6 +189,28 @@
       "updated_at": "2025-06-22T15:11:48.953Z"
     },
     {
+<<<<<<< HEAD
+      "id": "fc2f88d4-343a-4264-8eff-84d5e7ed6232",
+      "name": "Newnew",
+      "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
+      "size": "Pequeno",
+      "animal_sex": "Male",
+      "description": "asdasda",
+      "img_urls": [
+        "https://res.cloudinary.com/dth1lxikr/image/upload/v1750641109/petmatch_cloudinary_fc2f88d4-343a-4264-8eff-84d5e7ed6232.jpg"
+      ],
+      "born_at": "2025-06-11",
+      "breed": [
+        "asdasd"
+      ],
+      "vaccinated": true,
+      "castrated": true,
+      "available_for_adoption": true,
+      "personality": [],
+      "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "created_at": "2025-06-23T01:11:48.310Z",
+      "updated_at": "2025-06-23T01:36:44.980Z"
+=======
       "id": "102753e3-caeb-47d4-b548-575494daacb7",
       "name": "Carlinhos",
       "animal_type_id": "ea5dc213-d45d-4a9c-b2cd-612c2de42564",
@@ -209,6 +231,7 @@
       "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
       "created_at": "2025-06-22T15:18:23.262Z",
       "updated_at": "2025-06-22T15:18:23.262Z"
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
     }
   ],
   "animal_type": [
@@ -283,6 +306,15 @@
       "appraiser_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
       "pet_id": "96d95ea8-2be3-4275-a840-8d97032a1e35",
       "created_at": "2025-06-22T00:08:31.421Z"
+<<<<<<< HEAD
+    },
+    {
+      "id": "34291026-e66c-418c-b4b9-b9df9c4e6a57",
+      "appraiser_id": "c8f9d7b2-f9cd-465a-ab7c-85fe5b5cf7e5",
+      "pet_id": "fc2f88d4-343a-4264-8eff-84d5e7ed6232",
+      "created_at": "2025-06-23T01:11:58.994Z"
+=======
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
     }
   ],
   "address": [
@@ -506,6 +538,43 @@
       "longitude": -44.023985,
       "created_at": "2025-06-22T15:01:39.181Z",
       "updated_at": "2025-06-22T15:01:39.181Z"
+<<<<<<< HEAD
+    },
+    {
+      "id": "d233f1da-fe0b-4707-bd4a-576f1bb005bb",
+      "entity_type": "pet",
+      "entity_id": "f28e2804-4eee-40ef-8e50-03c708d30326",
+      "street": "R. Santa Rita",
+      "number": "110",
+      "complement": "aadsad",
+      "neighborhood": "Santa",
+      "city": "Serro",
+      "state": "MG",
+      "zipCode": "39150-000",
+      "country": "Brasil",
+      "latitude": -18.6064343,
+      "longitude": -43.38564975524561,
+      "created_at": "2025-06-23T00:38:55.686Z",
+      "updated_at": "2025-06-23T00:38:55.686Z"
+    },
+    {
+      "id": "62140c5f-a93e-466f-9be1-a491585f08cc",
+      "entity_type": "pet",
+      "entity_id": "fc2f88d4-343a-4264-8eff-84d5e7ed6232",
+      "street": "asd",
+      "number": "2",
+      "complement": "asd",
+      "neighborhood": "asd",
+      "city": "asd",
+      "state": "asd",
+      "zipCode": "asd",
+      "country": "Brasil",
+      "latitude": -23.213765,
+      "longitude": -45.859549,
+      "created_at": "2025-06-23T01:11:53.864Z",
+      "updated_at": "2025-06-23T01:36:48.559Z"
+=======
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
     }
   ],
   "session": [
@@ -1132,6 +1201,105 @@
       "expires_at": "2025-06-25T21:23:09.737Z",
       "entity_type": "DONOR",
       "created_at": "2025-06-22T21:23:09.737Z"
+<<<<<<< HEAD
+    },
+    {
+      "id": "0294496b-ba6c-4fcb-b2cb-7c92d58eff16",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-25T22:24:06.558Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-22T22:24:06.558Z"
+    },
+    {
+      "id": "aef3547b-ccf6-4bc6-8336-01a458ed50f6",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-25T22:25:39.729Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-22T22:25:39.729Z"
+    },
+    {
+      "id": "964463ad-78be-421d-baab-3b1f4be4187a",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-25T22:27:49.988Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-22T22:27:49.988Z"
+    },
+    {
+      "id": "0e47e253-65be-4abd-b3b2-fae2d0c3725d",
+      "user_id": "c8f9d7b2-f9cd-465a-ab7c-85fe5b5cf7e5",
+      "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "expires_at": "2025-06-25T22:35:57.238Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-22T22:35:57.238Z"
+    },
+    {
+      "id": "ecc6f8ac-4c55-4d42-9abe-78f0cd29f320",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-25T23:25:08.499Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-22T23:25:08.499Z"
+    },
+    {
+      "id": "96e307cb-74aa-40a5-8512-39b13137cce9",
+      "user_id": "c8f9d7b2-f9cd-465a-ab7c-85fe5b5cf7e5",
+      "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "expires_at": "2025-06-25T23:25:39.354Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-22T23:25:39.354Z"
+    },
+    {
+      "id": "57e4a3fe-ffb8-4457-a1b9-680f2c96149f",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-26T00:53:44.867Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-23T00:53:44.867Z"
+    },
+    {
+      "id": "e98c1ed2-f69d-4cd8-8351-be82e2787b61",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-26T00:53:58.557Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-23T00:53:58.557Z"
+    },
+    {
+      "id": "6430b753-620c-4d96-b91a-ce52b4dc63d5",
+      "user_id": "c8f9d7b2-f9cd-465a-ab7c-85fe5b5cf7e5",
+      "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "expires_at": "2025-06-26T00:54:09.609Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-23T00:54:09.609Z"
+    },
+    {
+      "id": "d920a2a2-2877-4cee-8c01-e53fd4e3e28c",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": null,
+      "expires_at": "2025-06-26T00:54:20.790Z",
+      "entity_type": "USER",
+      "created_at": "2025-06-23T00:54:20.790Z"
+    },
+    {
+      "id": "49bb8b34-89bd-40a2-be54-7b0f08a86b7d",
+      "user_id": "c8f9d7b2-f9cd-465a-ab7c-85fe5b5cf7e5",
+      "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "expires_at": "2025-06-26T00:54:55.289Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-23T00:54:55.289Z"
+    },
+    {
+      "id": "ac2b7926-d67b-4953-8244-e6392acd2508",
+      "user_id": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "donor_id": "fb08df17-72c4-4afa-ac15-46cf30695d50",
+      "expires_at": "2025-06-26T01:48:15.700Z",
+      "entity_type": "DONOR",
+      "created_at": "2025-06-23T01:48:15.700Z"
+=======
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
     }
   ],
   "user": [
@@ -1303,6 +1471,17 @@
       "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
       "pet_id": "102753e3-caeb-47d4-b548-575494daacb7",
       "status": "APPROVED"
+<<<<<<< HEAD
+    },
+    {
+      "created_at": "2025-06-23T00:54:02.142Z",
+      "id": "70d28f57-46e4-400d-ae51-3b9e28717c80",
+      "user_id": "54bb47ea-4786-4440-9b94-4dbe8e7141b1",
+      "donor_id": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "pet_id": "f28e2804-4eee-40ef-8e50-03c708d30326",
+      "status": "APPROVED"
+=======
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
     }
   ],
   "enterprise": [
@@ -1625,6 +1804,33 @@
       "content": "Muito top",
       "rate": 5,
       "created_at": "2025-06-22T17:20:48.492Z"
+<<<<<<< HEAD
+    },
+    {
+      "id": "ab57eafe-1806-4b9d-bef9-edad3e3d58ad",
+      "appraiserID": "c8f9d7b2-f9cd-465a-ab7c-85fe5b5cf7e5",
+      "ratedId": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "content": "asdasdasdsa",
+      "rate": 4,
+      "created_at": "2025-06-23T01:44:50.579Z"
+    },
+    {
+      "id": "32df2821-bbbe-44fc-9876-a85058a49f36",
+      "appraiserID": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "ratedId": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "content": "asda",
+      "rate": 5,
+      "created_at": "2025-06-23T01:48:27.617Z"
+    },
+    {
+      "id": "984fd3d6-2e41-4747-8f45-4b8535faf412",
+      "appraiserID": "1d0c5920-0f34-4aa8-ab8e-1383b90e14cb",
+      "ratedId": "187a0091-960a-4aac-b8d9-cb8f342c4432",
+      "content": "Legal",
+      "rate": 4,
+      "created_at": "2025-06-23T01:54:40.036Z"
+=======
+>>>>>>> 9dd0d3559e6e2ecf02f2730aa5fdc4a5f49f066a
     }
   ],
   "wizard": [

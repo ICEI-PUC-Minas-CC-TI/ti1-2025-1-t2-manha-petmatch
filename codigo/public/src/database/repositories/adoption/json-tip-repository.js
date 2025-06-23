@@ -18,7 +18,7 @@ export class JsonTipRepository {
                 },        
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 
@@ -66,7 +66,7 @@ export class JsonTipRepository {
                 method: "DELETE"
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 }

@@ -18,7 +18,7 @@ export class JsonUserRepository {
                 },        
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 
@@ -96,7 +96,7 @@ export class JsonUserRepository {
                 method: "DELETE"
             })
         } catch(err) {
-            console.err(err)
+            console.error(err)
         }
     }
 }
