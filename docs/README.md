@@ -321,6 +321,7 @@ Informar seu endereço.
 Clicar em "Fazer cadastro". 
 Utilizar o site.
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/471c5e7c-5bb8-45c4-89d4-be6767cb7c1f)
 ![image](https://github.com/user-attachments/assets/503bd703-8024-44ec-8335-5b863d464ab3)
 
@@ -334,6 +335,7 @@ Preencher suas informações de usuário.
 Clicar em "Fazer login". 
 Utilizar o site.
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/03b66823-40d6-402f-b97a-3e44593d3e01)
 
 Funcionalidade 3 - Cadastro de Pets
@@ -349,6 +351,7 @@ Clique em "Perfil".
 Os pets são listados com opções de editar ou excluir.
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/77cc574a-4110-461a-8761-9ff109dc7b34)
 
 
@@ -367,6 +370,7 @@ Preencha todas as informações do Pet, até as que não irão sofrer alteraçõ
 Clique em "Salvar".
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/fc3310e5-f66c-458b-b690-90e657ce6c47)
 ![image](https://github.com/user-attachments/assets/6ef33ae2-585e-4ea0-84d9-d8aeaf3d3fcb)
 
@@ -380,6 +384,7 @@ Clicar em home.
 Ver todos os animais disponíveis no site.
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/5ce0c3fb-3c3d-430e-9aed-4fa2ac63b86e)
 
 
@@ -393,6 +398,7 @@ Selecionar os filtros desejados (Animal , Tamanho).
 Ver todos os animais que se encaixam no filtro.
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/2fb43098-7186-440a-88bd-0cbe8e48bc23)
 
 Funcionalidade 7 – Favoritar Pets
@@ -406,6 +412,7 @@ Clicar no coração do pet selecionado.
 Clicar em Favoritos para ver todos os pets favoritados.
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/a41e1276-f480-4c71-b06f-46a45ea75162)
 
 
@@ -419,6 +426,7 @@ Responder o Quiz de acordo com seu estilo de vida.
 Receber a recomendação do tipo de animal mais adequado.
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/6148f75f-0b01-47b8-9bd0-241dd2eddefa)
 ![image](https://github.com/user-attachments/assets/df727cce-0a18-4db3-9ca9-e84067f3f3a7)
 
@@ -434,6 +442,7 @@ Clicar em um dos animais.
 Ver informações dele.
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/7309c003-b0c3-4c23-b210-5d15ba619207)
 
 
@@ -450,6 +459,7 @@ Adicionar um comentário.
 Clicar em "enviar".
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/6adf7b59-f129-4c44-95f5-711d82819868)
 
 Funcionalidade 11 – Seção de Notícias
@@ -463,6 +473,7 @@ Clicar em "Ler mais".
 Para voltar, vá ao final da notícia e clique em "Voltar".
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/839d9053-4ccf-46c4-868b-1f4064a21593)
 ![image](https://github.com/user-attachments/assets/c25c52e6-ba05-4f86-8233-722112d98491)
 
@@ -477,6 +488,7 @@ Decidir sobre qual animal o usuário quer receber dicas sobre.
 Clicar no nome do animal.
 
 Tela da funcionalidade:
+
 ![image](https://github.com/user-attachments/assets/06ecbbdb-b7f0-4a2a-91ad-3bd52c655ecc)
 ![image](https://github.com/user-attachments/assets/2175da1c-7fc3-423b-8595-505d69c6a6c4)
 ![image](https://github.com/user-attachments/assets/ade0f95b-4213-463b-be90-eb627024eaf3)
