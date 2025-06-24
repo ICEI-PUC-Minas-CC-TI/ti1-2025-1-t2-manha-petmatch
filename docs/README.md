@@ -301,18 +301,13 @@ Para o controle e acompanhamento das entregas, utilizamos o [quadro Kanban no Tr
 Esta seção apresenta todos os detalhes da solução criada no projeto.
 
 # Vídeo do Projeto
-O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. ⚠️ EXEMPLO ⚠️
+O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução.
 
 # Vídeo do projeto
 
-⚠️ APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO
-
-O video de apresentação é voltado para que o público externo possa conhecer a solução. O formato é livre, sendo importante que seja apresentado o problema e a solução numa linguagem complicada e direta.
-
-Inclua um link para o vídeo do projeto.
+Link do vídeo no youtube apresentando a aplicação desenvolvida: https://youtu.be/Dvl9DOPrCqo
 
 # Funcionalidades
-Esta seção apresenta as funcionalidades da solução.Info
 
 Funcionalidade 1 - Cadastro de Usuário
 Permite que novos usuários se registrem para acessar as funcionalidades do sistema.
