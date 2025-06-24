@@ -345,7 +345,7 @@ Instruções de acesso:
 Efetue login como doador.
 Clique no botão “Colocar para adoção”.
 Preencha o formulário e clique em “Colocar para adoção”.
-Clique em "Meus pets".
+Clique em "Perfil".
 Os pets são listados com opções de editar ou excluir.
 
 Tela da funcionalidade:
@@ -359,7 +359,7 @@ Estrutura de dados: pet
 Instruções de acesso:
 
 Efetue login como doador.
-Clique em "Meus pets".
+Clique em "Perfil".
 Os pets são listados com opções de editar ou excluir.
 Clique na opção desejada.
 Caso tenha clicado em "editar":
@@ -613,13 +613,13 @@ Registro das dicas disponíveis no site.
 |-------|----------------------------------|-------------------------------------------------|----------------------------------------------------------------------------------------------|-------------------------------------------------|
 | CT-01 | Cadastro de Usuário              | Validar registro de novo usuário                | 1. Acessar página de cadastro<br>2. Preencher todos os campos válidos<br>3. Enviar formulário | Usuário criado e redirecionado à homepage         |
 | CT-02 | Login de Usuário                 | Validar autenticação com credenciais válidas     | 1. Acessar página de login<br>2. Informar e-mail e senha válidos<br>3. Clicar em Entrar       | Usuário autenticado e direcionado à homepage  |
-| CT-03 | Cadastro de Pets                 | Verificar inclusão de pet na lista de adoção     | 1. Fazer cadastro como doador<br>2. Acessar “Colocar para adoção”<br>3. Preencher dados do pet<br>4. Salvar | Pet listado em “Meus Pets”                   |
+| CT-03 | Cadastro de Pets                 | Verificar inclusão de pet na lista de adoção     | 1. Fazer cadastro como doador<br>2. Acessar “Colocar para adoção”<br>3. Preencher dados do pet<br>4. Salvar | Pet listado em “Perfil”                   |
 | CT-04 | Exploração de Pets com Filtros   | Garantir que o filtro retorna apenas pets válidos| 1. Acessar “Categorias”<br>2. Selecionar filtro “Pequeno”<br>3. Aplicar                         | Apenas pets de porte pequeno aparecem           |
 | CT-05 | Favoritar Pets                   | Checar marcação de favorito                      | 1. Acessar lista de pets<br>2. Clicar no ícone de coração em um pet                           | Pet aparece na lista “Favoritos”                |
 | CT-06 | Quiz de Compatibilidade          | Validar resultado do quiz                        | 1. Acessar “Pet Ideal”<br>2. Responder todas as perguntas<br>                        | Exibe caracteríscas do animal condizente com respostas     |
 | CT-07 | Mapa (Mapbox)                    | Verificar exibição de marcadores                | 1. Acessar “PetMap”<br>2. Visualizar mapa                                                     | Todos os pets com localização aparecem          |
-| CT-08 | Edição de Pets                   | Garantir atualização de dados de um pet          | 1. Acessar “Meus Pets”<br>2. Clicar em “Editar” em um pet<br>3. Alterar campo e salvar         | Alterações refletidas na lista                  |
-| CT-09 | Exclusão de Pets                 | Validar remoção de pet                           | 1. Acessar “Meus Pets”<br>2. Clicar em “Excluir” em um pet<br>3. Confirmar                     | Pet não aparece mais em “Meus Pets”             |
+| CT-08 | Edição de Pets                   | Garantir atualização de dados de um pet          | 1. Acessar “Perfil”<br>2. Clicar em “Editar” em um pet<br>3. Alterar campo e salvar         | Alterações refletidas na lista                  |
+| CT-09 | Exclusão de Pets                 | Validar remoção de pet                           | 1. Acessar “Perfil”<br>2. Clicar em “Excluir” em um pet<br>3. Confirmar                     | Pet não aparece mais em “Perfil”             |
 | CT-10 | Disponibilidade 24h              | Verificar acesso contínuo ao site                | 1. Configurar monitor de uptime (UptimeRobot)<br>2. Aguardar 24 h de coleta de dados          | Uptime 100 % no período monitorado              |
 | CT-11 | Dados salvos no JSON             | Verificar que os dados de cadastro de usuário e de pets estão no JSON | 1. Cadastrar usuários ou pets<br> 2. Preencher todos os dados corretamente<br> 3. Enviar  | Dados salvos no estilo JSON corretamente  | 
 
